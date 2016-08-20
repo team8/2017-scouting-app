@@ -7,12 +7,25 @@
 //
 
 import UIKit
+import Device
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var SettingsTrailing: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Set up the settings button
+        if Device.isLargerThanScreenSize(.Screen4Inch) {
+            print("im not an iphone 4")
+            SettingsTrailing.constant = 50
+        }
+        else {
+            SettingsTrailing.constant = 100
+        }
+        
+        // Set up the Settings Gesture Recognizer
         let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(ViewController.onSettingsClicked(_:)))
         SettingsImage.userInteractionEnabled = true
         SettingsImage.addGestureRecognizer(tapGestureRecognizer)
@@ -32,8 +45,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var SettingsImage: UIImageView!
     
-    
-    
+
     @IBAction func startClicked(sender: AnyObject) {
         print("Clicked")
     }

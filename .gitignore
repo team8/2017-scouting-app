@@ -1,1 +1,3 @@
 scouter.xcodeproj/*
+Pods/
+Podfile.lock

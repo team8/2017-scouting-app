@@ -73,7 +73,7 @@
                                 <constraints>
                                     <constraint firstItem="O0Q-Yy-ngW" firstAttribute="centerX" secondItem="7uD-60-Ag9" secondAttribute="centerX" id="BcQ-AY-XFm"/>
                                     <constraint firstAttribute="bottomMargin" secondItem="Udu-8j-Dpi" secondAttribute="bottom" constant="5" id="Tci-Zh-A3i"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="Udu-8j-Dpi" secondAttribute="trailing" constant="50" id="hO6-JR-M69"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="Udu-8j-Dpi" secondAttribute="trailing" constant="100" id="mYY-0a-wvA"/>
                                     <constraint firstAttribute="height" constant="60" id="oji-b4-yHF"/>
                                     <constraint firstItem="O0Q-Yy-ngW" firstAttribute="centerY" secondItem="7uD-60-Ag9" secondAttribute="centerY" id="pJE-Zy-TFS"/>
                                 </constraints>
@@ -91,6 +91,7 @@
                     </view>
                     <connections>
                         <outlet property="SettingsImage" destination="Udu-8j-Dpi" id="HMM-t5-Boy"/>
+                        <outlet property="SettingsTrailing" destination="mYY-0a-wvA" id="kDo-p1-rEB"/>
                         <outlet property="StartButton" destination="O0Q-Yy-ngW" id="dAb-an-tzi"/>
                     </connections>
                 </viewController>
