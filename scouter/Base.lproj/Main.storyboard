@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,11 +19,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="YEB-wi-d0a">
+                                <rect key="frame" x="180" y="155" width="240" height="265"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="YEB-wi-d0a" secondAttribute="height" multiplier="48:53" id="hN9-cN-fwH"/>
+                                </constraints>
+                            </imageView>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jn7-Ev-qzv">
                                 <rect key="frame" x="20" y="0.0" width="560" height="128"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Tw0-Gu-Uda">
-                                        <rect key="frame" x="225" y="19" width="110" height="90"/>
+                                        <rect key="frame" x="225" y="19" width="168" height="21"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Paly Robotics Scouter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XgW-dS-uaG">
+                                                <rect key="frame" x="0.0" y="0.0" width="168" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.25680719429999999" green="0.69745592950000002" blue="0.012787269089999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -31,18 +47,13 @@
                                     <constraint firstAttribute="height" constant="50" id="X6H-Fw-hod"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Paly Robotics Scouter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XgW-dS-uaG">
-                                <rect key="frame" x="153" y="53" width="168" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="XgW-dS-uaG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cKJ-iX-Bn7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YEB-wi-d0a" secondAttribute="trailing" constant="20" id="0Ns-gU-2L5"/>
+                            <constraint firstItem="YEB-wi-d0a" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ok4-IB-5LJ"/>
+                            <constraint firstItem="YEB-wi-d0a" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="uY3-z5-Ux7"/>
                             <constraint firstItem="Jn7-Ev-qzv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vnQ-Xa-nW5"/>
-                            <constraint firstItem="XgW-dS-uaG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="yQH-os-PgI"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -51,4 +62,7 @@
             <point key="canvasLocation" x="31" y="307"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Logo.png" width="400" height="400"/>
+    </resources>
 </document>
