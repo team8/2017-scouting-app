@@ -47,10 +47,31 @@
                                     <constraint firstAttribute="height" constant="50" id="X6H-Fw-hod"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7uD-60-Ag9">
+                                <rect key="frame" x="20" y="464" width="560" height="128"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O0Q-Yy-ngW">
+                                        <rect key="frame" x="255" y="34" width="99" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="Start Scouting">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.25680719429999999" green="0.69745592950000002" blue="0.012787269089999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="O0Q-Yy-ngW" firstAttribute="centerX" secondItem="7uD-60-Ag9" secondAttribute="centerX" id="BcQ-AY-XFm"/>
+                                    <constraint firstAttribute="height" constant="60" id="oji-b4-yHF"/>
+                                    <constraint firstItem="O0Q-Yy-ngW" firstAttribute="centerY" secondItem="7uD-60-Ag9" secondAttribute="centerY" id="pJE-Zy-TFS"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="YEB-wi-d0a" secondAttribute="trailing" constant="20" id="0Ns-gU-2L5"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7uD-60-Ag9" secondAttribute="bottom" id="8YD-sL-at1"/>
+                            <constraint firstItem="7uD-60-Ag9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="V8v-jz-Oza"/>
                             <constraint firstItem="YEB-wi-d0a" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ok4-IB-5LJ"/>
                             <constraint firstItem="YEB-wi-d0a" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="uY3-z5-Ux7"/>
                             <constraint firstItem="Jn7-Ev-qzv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vnQ-Xa-nW5"/>
