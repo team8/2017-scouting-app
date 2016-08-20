@@ -12,14 +12,31 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(ViewController.onSettingsClicked(_:)))
+        SettingsImage.userInteractionEnabled = true
+        SettingsImage.addGestureRecognizer(tapGestureRecognizer)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
-
+    
+    func onSettingsClicked(img: AnyObject) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("settings")
+        self.presentViewController(vc, animated: true, completion: nil)
+    }
+    
+    @IBOutlet weak var StartButton: UIButton!
+    
+    @IBOutlet weak var SettingsImage: UIImageView!
+    
+    
+    
+    @IBAction func startClicked(sender: AnyObject) {
+        print("Clicked")
+    }
+    
 }
 

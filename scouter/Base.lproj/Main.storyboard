@@ -57,11 +57,23 @@
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="startClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wxO-mZ-xy3"/>
+                                        </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Settings.png" translatesAutoresizingMaskIntoConstraints="NO" id="Udu-8j-Dpi">
+                                        <rect key="frame" x="377" y="44" width="58" height="58"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="GH1-Y3-E5W"/>
+                                            <constraint firstAttribute="width" constant="30" id="qfA-bU-AAQ"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.25680719429999999" green="0.69745592950000002" blue="0.012787269089999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="O0Q-Yy-ngW" firstAttribute="centerX" secondItem="7uD-60-Ag9" secondAttribute="centerX" id="BcQ-AY-XFm"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="Udu-8j-Dpi" secondAttribute="bottom" constant="5" id="Tci-Zh-A3i"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="Udu-8j-Dpi" secondAttribute="trailing" constant="50" id="hO6-JR-M69"/>
                                     <constraint firstAttribute="height" constant="60" id="oji-b4-yHF"/>
                                     <constraint firstItem="O0Q-Yy-ngW" firstAttribute="centerY" secondItem="7uD-60-Ag9" secondAttribute="centerY" id="pJE-Zy-TFS"/>
                                 </constraints>
@@ -77,13 +89,54 @@
                             <constraint firstItem="Jn7-Ev-qzv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vnQ-Xa-nW5"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="SettingsImage" destination="Udu-8j-Dpi" id="HMM-t5-Boy"/>
+                        <outlet property="StartButton" destination="O0Q-Yy-ngW" id="dAb-an-tzi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="31" y="307"/>
         </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="Lcg-Bv-IaR">
+            <objects>
+                <viewController storyboardIdentifier="settings" id="n2S-b3-GIC" customClass="SettingsViewController" customModule="scouter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="V7r-8l-1aO"/>
+                        <viewControllerLayoutGuide type="bottom" id="866-h3-Din"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CY2-NQ-uJR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IBJ-4j-Xek" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="55" y="986"/>
+        </scene>
+        <!--Scout View Controller-->
+        <scene sceneID="Vp5-aK-Dyn">
+            <objects>
+                <viewController id="677-82-ZWo" customClass="ScoutViewController" customModule="scouter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eqS-WF-GaF"/>
+                        <viewControllerLayoutGuide type="bottom" id="UuF-Nk-X60"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lHG-yp-Qn8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SxD-bX-uZx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="807" y="307"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Logo.png" width="400" height="400"/>
+        <image name="Settings.png" width="128" height="128"/>
     </resources>
 </document>
