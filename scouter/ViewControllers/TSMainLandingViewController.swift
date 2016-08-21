@@ -25,8 +25,6 @@ class ViewController: UIViewController {
             SettingsTrailing.constant = 100
         }
         
-        ServerInterfacer.testConnection()
-        
         // Set up the Settings Gesture Recognizer so that the Settings Icon can be clickable
         let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(ViewController.onSettingsClicked(_:)))
         SettingsImage.userInteractionEnabled = true

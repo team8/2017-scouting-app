@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SCLAlertView
 
 class SettingsViewController: UIViewController {
     
@@ -17,6 +18,20 @@ class SettingsViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    @IBAction func ServerTest(sender: AnyObject) {
+            ServerInterfacer.testConnection(callBackToTest)
+    }
+    
+    func callBackToTest(success: Bool) -> Void {
+        if success {
+            let alertViewResponder: SCLAlertViewResponder = SCLAlertView().showSuccess("Connected", subTitle: "You are connected to the scouting server.")
+        }
+        else {
+            let alertViewResponder: SCLAlertViewResponder = SCLAlertView().showError("Not Connected", subTitle: "You are not connected to the scouting server.")
+
+        }
     }
     
 }

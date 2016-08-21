@@ -15,16 +15,26 @@ class ServerInterfacer {
     static let AUTH_TOKEN = "R0yMFRkeaaHPlWWkf73W00C88pHYNVNeFXPrsO8N"
     static let SERVER_ADDRESS = "http://server.palyrobotics.com:5000"
     
-    static func testConnection() {
+    static let MAX_WAIT_TIME : Int = 300
+    
+    static func testConnection(callback: (Bool) -> Void) -> Void {
+        
         Alamofire.request(.GET, SERVER_ADDRESS + "/test/" + AUTH_TOKEN, encoding: .JSON)
             .responseJSON { response in
-                print(response.request)  // original URL request
-                print(response.response) // URL response
-                print(response.data)     // server data
-                print(response.result)   // result of response serialization
-                
                 if let JSON = response.result.value {
-                    print("JSON: \(JSON)")
+                    let raw_val = JSON as! NSDictionary
+                    let shouldReturnVal = raw_val.objectForKey("connection")
+//                    print("JSON: \(JSON)")
+                    print(shouldReturnVal as! String)
+                    if shouldReturnVal as! String == "success"{
+                        callback(true)
+                    }
+                    else {
+                        callback(false)
+                    }
+                }
+                else {
+                    callback(false)
                 }
         }
     }
