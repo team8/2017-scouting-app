@@ -7,5 +7,6 @@ target 'scouter' do
 
   # Pods for scouter
   pod "Device", '~> 1.0.3'
+  pod 'Alamofire', '~> 3.4'
 
 end

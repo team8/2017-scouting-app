@@ -16,16 +16,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Set up the settings button
+        // Set up the settings button.
+        // On a small device, change the constant to 50
         if Device.isLargerThanScreenSize(.Screen4Inch) {
-            print("im not an iphone 4")
             SettingsTrailing.constant = 50
         }
         else {
             SettingsTrailing.constant = 100
         }
         
-        // Set up the Settings Gesture Recognizer
+        ServerInterfacer.testConnection()
+        
+        // Set up the Settings Gesture Recognizer so that the Settings Icon can be clickable
         let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(ViewController.onSettingsClicked(_:)))
         SettingsImage.userInteractionEnabled = true
         SettingsImage.addGestureRecognizer(tapGestureRecognizer)
