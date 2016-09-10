@@ -39,4 +39,20 @@ class ServerInterfacer {
         }
     }
     
+    static func getMatches(callback: (NSDictionary) -> Void, key : String) -> Void {
+        
+        Alamofire.request(.GET, SERVER_ADDRESS + "/match/" + AUTH_TOKEN + "/" + key, encoding: .JSON)
+            .responseJSON { response in
+                if let JSON = response.result.value {
+                    print("JSON: \(JSON)")
+                    let rawVal = JSON as! NSDictionary
+                    callback(rawVal)
+                    
+                }
+                else {
+                    callback(NSDictionary())
+                }
+        }
+    }
+    
 }

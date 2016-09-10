@@ -13,7 +13,10 @@
 		6A1A2E6E1D67F06100F941C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A1A2E6D1D67F06100F941C6 /* Assets.xcassets */; };
 		6A1A2E711D67F06100F941C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A1A2E6F1D67F06100F941C6 /* LaunchScreen.storyboard */; };
 		6A4CC0D11D68098300142498 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A4CC0D01D68098300142498 /* Logo.png */; };
+		6A868D061D839E0700328627 /* TSTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A868D051D839E0700328627 /* TSTableViewController.swift */; };
+		6A868D081D83A15900328627 /* GlobalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A868D071D83A15900328627 /* GlobalData.swift */; };
 		6A8D82151D68172E00866DB3 /* Settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A8D82141D68172E00866DB3 /* Settings.png */; };
+		6A928FAB1D6FA9DD00088FDE /* MatchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A928FAA1D6FA9DD00088FDE /* MatchModel.swift */; };
 		6ABD60FE1D68BCD300409264 /* TSScoutingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABD60FD1D68BCD300409264 /* TSScoutingViewController.swift */; };
 		6AC0D75D1D68257A00F75FC7 /* TSSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC0D75C1D68257A00F75FC7 /* TSSettingsViewController.swift */; };
 		6AC1D7F21D695F67007E9EA4 /* TSServerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC1D7F11D695F67007E9EA4 /* TSServerInteractor.swift */; };
@@ -31,7 +34,10 @@
 		6A1A2E701D67F06100F941C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6A1A2E721D67F06100F941C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A4CC0D01D68098300142498 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Logo.png; path = Images/Logo.png; sourceTree = "<group>"; };
+		6A868D051D839E0700328627 /* TSTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSTableViewController.swift; sourceTree = "<group>"; };
+		6A868D071D83A15900328627 /* GlobalData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlobalData.swift; path = System/GlobalData.swift; sourceTree = "<group>"; };
 		6A8D82141D68172E00866DB3 /* Settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Settings.png; path = scouter/Images/Settings.png; sourceTree = "<group>"; };
+		6A928FAA1D6FA9DD00088FDE /* MatchModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchModel.swift; sourceTree = "<group>"; };
 		6ABD60FD1D68BCD300409264 /* TSScoutingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSScoutingViewController.swift; sourceTree = "<group>"; };
 		6AC0D75C1D68257A00F75FC7 /* TSSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSSettingsViewController.swift; sourceTree = "<group>"; };
 		6AC1D7F11D695F67007E9EA4 /* TSServerInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSServerInteractor.swift; path = Server/TSServerInteractor.swift; sourceTree = "<group>"; };
@@ -86,6 +92,7 @@
 		6A1A2E651D67F06100F941C6 /* scouter */ = {
 			isa = PBXGroup;
 			children = (
+				6A928FAC1D6FA9E100088FDE /* Models */,
 				6AC1D7F31D695F6C007E9EA4 /* Server */,
 				6ACF8E891D68E707004E09D6 /* System */,
 				6AC48F191D6811D300F5189C /* ViewControllers */,
@@ -97,6 +104,14 @@
 				6A1A2E721D67F06100F941C6 /* Info.plist */,
 			);
 			path = scouter;
+			sourceTree = "<group>";
+		};
+		6A928FAC1D6FA9E100088FDE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6A928FAA1D6FA9DD00088FDE /* MatchModel.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		6AC1D7F31D695F6C007E9EA4 /* Server */ = {
@@ -113,6 +128,7 @@
 				6A1A2E681D67F06100F941C6 /* TSMainLandingViewController.swift */,
 				6AC0D75C1D68257A00F75FC7 /* TSSettingsViewController.swift */,
 				6ABD60FD1D68BCD300409264 /* TSScoutingViewController.swift */,
+				6A868D051D839E0700328627 /* TSTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -120,6 +136,7 @@
 		6ACF8E891D68E707004E09D6 /* System */ = {
 			isa = PBXGroup;
 			children = (
+				6A868D071D83A15900328627 /* GlobalData.swift */,
 				6ACF8E871D68E6E9004E09D6 /* TSUserManager.swift */,
 				6ACF8E8A1D68E793004E09D6 /* TSUser.swift */,
 			);
@@ -260,9 +277,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A1A2E691D67F06100F941C6 /* TSMainLandingViewController.swift in Sources */,
+				6A868D061D839E0700328627 /* TSTableViewController.swift in Sources */,
+				6A928FAB1D6FA9DD00088FDE /* MatchModel.swift in Sources */,
 				6AC0D75D1D68257A00F75FC7 /* TSSettingsViewController.swift in Sources */,
 				6AC1D7F21D695F67007E9EA4 /* TSServerInteractor.swift in Sources */,
 				6ACF8E8B1D68E793004E09D6 /* TSUser.swift in Sources */,
+				6A868D081D83A15900328627 /* GlobalData.swift in Sources */,
 				6A1A2E671D67F06100F941C6 /* AppDelegate.swift in Sources */,
 				6ACF8E881D68E6E9004E09D6 /* TSUserManager.swift in Sources */,
 				6ABD60FE1D68BCD300409264 /* TSScoutingViewController.swift in Sources */,
