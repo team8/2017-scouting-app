@@ -28,7 +28,27 @@ class TBAMatch {
     }
     
     func getKeyAsDisplayable() -> String {
-        return self.key.componentsSeparatedByString("_")[1]
+        
+        let continuedString : String = key.componentsSeparatedByString("_")[1]
+        
+        
+        if continuedString[continuedString.startIndex] == Character("q") {
+            if continuedString[continuedString.startIndex.advancedBy(1)] == Character("m") {
+                return "Qualifying Match #: \(continuedString.componentsSeparatedByString("qm")[1])"
+            }
+            else {
+                return "Quarter Final Match #: \(continuedString.componentsSeparatedByString("qf")[1])"
+            }
+        }
+        
+        if continuedString[continuedString.startIndex] == Character("s") {
+            if continuedString[continuedString.startIndex.advancedBy(1)] == Character("f") {
+                return "Semi Final #: \(continuedString.componentsSeparatedByString("sf")[1])"
+            }
+        }
+        
+        return "Unknown match with string \(self.key)"
+        
     }
     
 }

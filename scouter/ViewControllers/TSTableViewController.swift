@@ -24,7 +24,7 @@ class MatchTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("MatchCell", forIndexPath: indexPath)
-        cell.textLabel?.text = Globals.matchData[indexPath.row].key
+        cell.textLabel?.text = Globals.matchData[indexPath.row].getKeyAsDisplayable()
         return cell
     }
     
