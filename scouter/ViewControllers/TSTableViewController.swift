@@ -28,6 +28,14 @@ class MatchTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let scoutingView = ScoutViewController()
+        scoutingView.pointer = indexPath.row
+        self.presentViewController(scoutingView, animated: true, completion: nil)
     
+    }
+    
+    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
 
+    }
 }

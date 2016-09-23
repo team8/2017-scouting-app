@@ -27,6 +27,7 @@ class TBAMatch {
         self.key = keyV
     }
     
+    
     func getKeyAsDisplayable() -> String {
         
         let continuedString : String = key.componentsSeparatedByString("_")[1]
