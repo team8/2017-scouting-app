@@ -8,6 +8,9 @@ target '2017 Scouter' do
   # Pods for scouter
   pod 'Alamofire', '~> 4.0'
   pod 'SCLAlertView'
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
+  pod 'Firebase/Auth'
 end
 
 post_install do |installer|
