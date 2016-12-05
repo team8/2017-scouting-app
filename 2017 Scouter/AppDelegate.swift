@@ -7,15 +7,30 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    var ref: FIRDatabaseReference!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        FIRApp.configure()
+        FIRAuth.auth()?.signInAnonymously() { (user, error) in
+            let isAnonymous = user!.isAnonymous  // true
+            let uid = user!.uid
+            print(isAnonymous.description + uid)
+        }
+        ref = FIRDatabase.database().reference()
+        self.ref.child("test").setValue("It Works!")
+        ref.child("test").observeSingleEvent(of: .value, with: { (snapshot) in
+            print("test: " + (snapshot.value! as! String))
+        }) { (error) in
+            print(error.localizedDescription)
+        }
         return true
     }
 
@@ -40,7 +55,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
 
