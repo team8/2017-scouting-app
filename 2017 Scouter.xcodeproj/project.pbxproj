@@ -81,7 +81,6 @@
 				6AD6C7F71DC429500028DB4D /* Server */,
 				6AD6C7F61DC429410028DB4D /* ViewControllers */,
 				6A62F1181DC4280000479F30 /* AppDelegate.swift */,
-				6A62F11A1DC4280000479F30 /* ViewController.swift */,
 				6A62F11C1DC4280000479F30 /* Main.storyboard */,
 				6A62F11F1DC4280000479F30 /* Assets.xcassets */,
 				6A62F1211DC4280000479F30 /* LaunchScreen.storyboard */,
@@ -103,6 +102,7 @@
 		6AD6C7F61DC429410028DB4D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				6A62F11A1DC4280000479F30 /* ViewController.swift */,
 				A5C4DAEF1DF5F24A00A337FB /* TSMenuViewController.swift */,
 				A5C4DAF01DF5F24A00A337FB /* TSTeamListViewController.swift */,
 				A5B9EFFB1DF791F300C4D6F6 /* TSMatchListViewController.swift */,

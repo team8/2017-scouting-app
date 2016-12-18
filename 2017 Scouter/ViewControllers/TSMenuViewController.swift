@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class MenuViewController: UIViewController {
+class MenuViewController: ViewController {
 //    @IBOutlet weak var myButton : UIButton!
 //    @IBOutlet weak var myTextField : UITextField!
 //    

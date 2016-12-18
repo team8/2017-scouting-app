@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class TeamListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class TeamListViewController: ViewController, UITableViewDataSource, UITableViewDelegate {
 //    @IBOutlet weak var myButton : UIButton!
 //    @IBOutlet weak var myTextField : UITextField!
 //    
