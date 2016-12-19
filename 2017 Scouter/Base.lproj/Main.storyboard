@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2659" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="WKt-c9-1RE">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GoC-jH-tdY">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Light.ttf">
+            <string>Lato-Light</string>
+        </array>
+        <array key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Menu-->
         <scene sceneID="pcU-JN-du5">
@@ -18,93 +27,128 @@
                         <viewControllerLayoutGuide type="bottom" id="Z1g-6l-oud"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="E07-cz-z55">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Team 8 Scouting Viewer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FER-gS-Ra9">
-                                <rect key="frame" x="16" y="100" width="343" height="43"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FER-gS-Ra9">
+                                <rect key="frame" x="111" y="28" width="98" height="47"/>
+                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="39"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PY8-L0-6P8">
-                                <rect key="frame" x="16" y="200" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="24"/>
-                                <state key="normal" title="Team List"/>
-                                <connections>
-                                    <segue destination="a3K-fA-FxR" kind="show" id="JTa-U5-oJC"/>
-                                </connections>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mCl-1I-NL3">
+                                <rect key="frame" x="16" y="111" width="288" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="3wb-nW-QdQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="20"/>
+                                <state key="normal" title="Pit Scouting">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SRb-VH-Vbm">
-                                <rect key="frame" x="16" y="275" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="25"/>
-                                <state key="normal" title="Match List"/>
-                                <connections>
-                                    <segue destination="T82-YU-oFC" kind="show" id="sAh-19-b64"/>
-                                </connections>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W6f-ca-YAW">
+                                <rect key="frame" x="16" y="189" width="288" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="prU-vC-lks"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="20"/>
+                                <state key="normal" title="Teams">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SPO-yQ-fAC">
-                                <rect key="frame" x="16" y="350" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Picklist"/>
-                                <connections>
-                                    <segue destination="sy7-Bl-CvD" kind="show" id="Pf9-BD-M4q"/>
-                                </connections>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tjQ-IB-09V">
+                                <rect key="frame" x="16" y="267" width="288" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="4sV-70-Zsr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="20"/>
+                                <state key="normal" title="Matches">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dCa-av-xcY">
-                                <rect key="frame" x="16" y="425" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Pit Scouting"/>
-                                <connections>
-                                    <segue destination="acx-Ef-wUq" kind="show" id="IZT-tc-Yhh"/>
-                                </connections>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mzG-nU-wql">
+                                <rect key="frame" x="16" y="345" width="288" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="MmX-5G-krB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="20"/>
+                                <state key="normal" title="Picklist">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Www-yK-kNP">
-                                <rect key="frame" x="16" y="500" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Match Upload"/>
-                                <connections>
-                                    <segue destination="DfV-5x-gAY" kind="show" id="hsp-mW-9Ku"/>
-                                </connections>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lKC-tr-7aH">
+                                <rect key="frame" x="16" y="423" width="288" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="ey9-lR-mv0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="20"/>
+                                <state key="normal" title="Upload a QR Code">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dGb-7y-sOZ">
-                                <rect key="frame" x="16" y="575" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Report a Bug"/>
-                                <connections>
-                                    <segue destination="YD9-7a-hMb" kind="show" id="HH1-6S-dzn"/>
-                                </connections>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qTR-0h-6sH">
+                                <rect key="frame" x="1" y="546" width="72" height="28"/>
+                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="13"/>
+                                <state key="normal" title="Report a Bug">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.13333333333333333" green="0.54509803921568623" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="FER-gS-Ra9" firstAttribute="top" secondItem="Wib-P6-s2J" secondAttribute="bottom" constant="8" id="2l6-Pb-bEx"/>
+                            <constraint firstItem="tjQ-IB-09V" firstAttribute="trailing" secondItem="E07-cz-z55" secondAttribute="trailingMargin" id="7Hl-b9-bfD"/>
+                            <constraint firstItem="lKC-tr-7aH" firstAttribute="top" secondItem="mzG-nU-wql" secondAttribute="bottom" constant="23" id="9lL-O2-RBg"/>
+                            <constraint firstItem="mzG-nU-wql" firstAttribute="centerX" secondItem="E07-cz-z55" secondAttribute="centerX" id="EDY-Wh-yH8"/>
+                            <constraint firstItem="mzG-nU-wql" firstAttribute="top" secondItem="tjQ-IB-09V" secondAttribute="bottom" constant="23" id="ETt-R7-ke9"/>
+                            <constraint firstItem="lKC-tr-7aH" firstAttribute="leading" secondItem="E07-cz-z55" secondAttribute="leadingMargin" id="KOG-2E-VXw"/>
+                            <constraint firstItem="lKC-tr-7aH" firstAttribute="trailing" secondItem="E07-cz-z55" secondAttribute="trailingMargin" id="LzJ-v0-0ub"/>
+                            <constraint firstItem="mCl-1I-NL3" firstAttribute="trailing" secondItem="E07-cz-z55" secondAttribute="trailingMargin" id="VIy-zf-Y8a"/>
+                            <constraint firstItem="tjQ-IB-09V" firstAttribute="centerX" secondItem="E07-cz-z55" secondAttribute="centerX" id="VK2-Br-bDK"/>
+                            <constraint firstItem="qTR-0h-6sH" firstAttribute="leading" secondItem="E07-cz-z55" secondAttribute="leading" constant="1" id="VOk-yh-fkS"/>
+                            <constraint firstItem="FER-gS-Ra9" firstAttribute="centerX" secondItem="E07-cz-z55" secondAttribute="centerX" id="WZc-vm-dyE"/>
+                            <constraint firstItem="tjQ-IB-09V" firstAttribute="top" secondItem="W6f-ca-YAW" secondAttribute="bottom" constant="23" id="aIG-L9-hxf"/>
+                            <constraint firstItem="mzG-nU-wql" firstAttribute="trailing" secondItem="E07-cz-z55" secondAttribute="trailingMargin" id="bmb-AF-ddD"/>
+                            <constraint firstItem="mzG-nU-wql" firstAttribute="leading" secondItem="E07-cz-z55" secondAttribute="leadingMargin" id="c80-wO-ex1"/>
+                            <constraint firstItem="tjQ-IB-09V" firstAttribute="leading" secondItem="E07-cz-z55" secondAttribute="leadingMargin" id="d0i-mN-Qfh"/>
+                            <constraint firstItem="W6f-ca-YAW" firstAttribute="centerX" secondItem="E07-cz-z55" secondAttribute="centerX" id="kT8-iB-A8K"/>
+                            <constraint firstItem="mCl-1I-NL3" firstAttribute="top" secondItem="FER-gS-Ra9" secondAttribute="bottom" constant="36" id="mu0-HZ-zYj"/>
+                            <constraint firstItem="lKC-tr-7aH" firstAttribute="centerX" secondItem="E07-cz-z55" secondAttribute="centerX" id="ndv-8z-09w"/>
+                            <constraint firstItem="mCl-1I-NL3" firstAttribute="leading" secondItem="E07-cz-z55" secondAttribute="leadingMargin" id="qaQ-EH-aLN"/>
+                            <constraint firstItem="mCl-1I-NL3" firstAttribute="centerX" secondItem="E07-cz-z55" secondAttribute="centerX" id="tEw-rp-gvo"/>
+                            <constraint firstItem="W6f-ca-YAW" firstAttribute="top" secondItem="mCl-1I-NL3" secondAttribute="bottom" constant="23" id="tmc-DK-Cfg"/>
+                            <constraint firstAttribute="bottom" secondItem="qTR-0h-6sH" secondAttribute="bottom" constant="-6" id="tvB-M2-60B"/>
+                            <constraint firstItem="W6f-ca-YAW" firstAttribute="trailing" secondItem="E07-cz-z55" secondAttribute="trailingMargin" id="v5B-3d-KOp"/>
+                            <constraint firstItem="W6f-ca-YAW" firstAttribute="leading" secondItem="E07-cz-z55" secondAttribute="leadingMargin" id="vbs-5k-53P"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qZA-fu-nPB"/>
+                    <connections>
+                        <outletCollection property="menuButtons" destination="mCl-1I-NL3" collectionClass="NSMutableArray" id="j3M-3y-hzH"/>
+                        <outletCollection property="menuButtons" destination="W6f-ca-YAW" collectionClass="NSMutableArray" id="K92-Jd-FFa"/>
+                        <outletCollection property="menuButtons" destination="tjQ-IB-09V" collectionClass="NSMutableArray" id="eca-Rg-3XM"/>
+                        <outletCollection property="menuButtons" destination="mzG-nU-wql" collectionClass="NSMutableArray" id="tza-F6-dxZ"/>
+                        <outletCollection property="menuButtons" destination="lKC-tr-7aH" collectionClass="NSMutableArray" id="GiZ-Vt-ahc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wzX-3T-6a9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="886" y="161"/>
+            <point key="canvasLocation" x="885" y="160.56338028169014"/>
         </scene>
         <!--Pit Scouting-->
         <scene sceneID="yGh-zK-lFl">
             <objects>
                 <tableViewController title="Pit Scouting" id="acx-Ef-wUq" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="oK9-gK-WMN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Wfd-JH-gaf">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wfd-JH-gaf" id="bIk-oD-R1Q">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -124,15 +168,15 @@
             <objects>
                 <tableViewController title="Match Upload" id="DfV-5x-gAY" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="kol-B7-Nsc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ISl-Uw-Ti2">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ISl-Uw-Ti2" id="sqi-TG-090">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -156,7 +200,7 @@
                         <viewControllerLayoutGuide type="bottom" id="yh3-oh-pFI"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="PhH-fh-I0F">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -174,7 +218,7 @@
                         <viewControllerLayoutGuide type="bottom" id="2Nf-4h-7mE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="xa4-Ay-8pc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -192,7 +236,7 @@
                         <viewControllerLayoutGuide type="bottom" id="ck2-Zp-OmE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="wka-pr-Ty9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Bx9-TS-Zxw">
@@ -244,24 +288,6 @@
             </objects>
             <point key="canvasLocation" x="2024.8" y="-1442.4287856071965"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="lOu-tf-qSt">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="WKt-c9-1RE" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dTx-cl-T4r">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="GoC-jH-tdY" kind="relationship" relationship="rootViewController" id="SMp-u1-Piq"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Bkc-4Q-zGy" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="122" y="162"/>
-        </scene>
         <!--Match List-->
         <scene sceneID="apQ-mP-2Jh">
             <objects>
@@ -271,7 +297,7 @@
                         <viewControllerLayoutGuide type="bottom" id="czF-Uk-jDX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Dul-ok-WbL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4og-JT-lbO">

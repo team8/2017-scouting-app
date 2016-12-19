@@ -20,6 +20,17 @@
 		A5C4DAF21DF5F24A00A337FB /* TSTeamListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C4DAF01DF5F24A00A337FB /* TSTeamListViewController.swift */; };
 		A5CFA19B1DF50CE10008D74F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5CFA19A1DF50CE10008D74F /* GoogleService-Info.plist */; };
 		A5CFD7EE1DF69D8F0062EE74 /* TSData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CFD7ED1DF69D8F0062EE74 /* TSData.swift */; };
+		AA2B727B1E07135200BE66DC /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA2B72701E07135200BE66DC /* Lato-Black.ttf */; };
+		AA2B727C1E07135200BE66DC /* Lato-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA2B72711E07135200BE66DC /* Lato-BlackItalic.ttf */; };
+		AA2B727D1E07135200BE66DC /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA2B72721E07135200BE66DC /* Lato-Bold.ttf */; };
+		AA2B727E1E07135200BE66DC /* Lato-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA2B72731E07135200BE66DC /* Lato-BoldItalic.ttf */; };
+		AA2B727F1E07135200BE66DC /* Lato-Hairline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA2B72741E07135200BE66DC /* Lato-Hairline.ttf */; };
+		AA2B72801E07135200BE66DC /* Lato-HairlineItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA2B72751E07135200BE66DC /* Lato-HairlineItalic.ttf */; };
+		AA2B72811E07135200BE66DC /* Lato-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA2B72761E07135200BE66DC /* Lato-Italic.ttf */; };
+		AA2B72821E07135200BE66DC /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA2B72771E07135200BE66DC /* Lato-Light.ttf */; };
+		AA2B72831E07135200BE66DC /* Lato-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA2B72781E07135200BE66DC /* Lato-LightItalic.ttf */; };
+		AA2B72841E07135200BE66DC /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA2B72791E07135200BE66DC /* Lato-Regular.ttf */; };
+		AA2B72851E07135200BE66DC /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = AA2B727A1E07135200BE66DC /* OFL.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +52,17 @@
 		A5CFA19A1DF50CE10008D74F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A5CFA19C1DF512D70008D74F /* 2017 Scouter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "2017 Scouter.entitlements"; sourceTree = "<group>"; };
 		A5CFD7ED1DF69D8F0062EE74 /* TSData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSData.swift; sourceTree = "<group>"; };
+		AA2B72701E07135200BE66DC /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
+		AA2B72711E07135200BE66DC /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BlackItalic.ttf"; sourceTree = "<group>"; };
+		AA2B72721E07135200BE66DC /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
+		AA2B72731E07135200BE66DC /* Lato-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BoldItalic.ttf"; sourceTree = "<group>"; };
+		AA2B72741E07135200BE66DC /* Lato-Hairline.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Hairline.ttf"; sourceTree = "<group>"; };
+		AA2B72751E07135200BE66DC /* Lato-HairlineItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-HairlineItalic.ttf"; sourceTree = "<group>"; };
+		AA2B72761E07135200BE66DC /* Lato-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Italic.ttf"; sourceTree = "<group>"; };
+		AA2B72771E07135200BE66DC /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
+		AA2B72781E07135200BE66DC /* Lato-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-LightItalic.ttf"; sourceTree = "<group>"; };
+		AA2B72791E07135200BE66DC /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		AA2B727A1E07135200BE66DC /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,12 +100,14 @@
 			children = (
 				A5CFA19C1DF512D70008D74F /* 2017 Scouter.entitlements */,
 				A5CFA19A1DF50CE10008D74F /* GoogleService-Info.plist */,
+				AA2B72861E075A9E00BE66DC /* images */,
 				6AD6C7F71DC429500028DB4D /* Server */,
 				6AD6C7F61DC429410028DB4D /* ViewControllers */,
 				6A62F1181DC4280000479F30 /* AppDelegate.swift */,
 				6A62F11A1DC4280000479F30 /* ViewController.swift */,
 				6A62F11C1DC4280000479F30 /* Main.storyboard */,
 				6A62F11F1DC4280000479F30 /* Assets.xcassets */,
+				AA2B726F1E07135200BE66DC /* Lato */,
 				6A62F1211DC4280000479F30 /* LaunchScreen.storyboard */,
 				6A62F1241DC4280000479F30 /* Info.plist */,
 				6AD6C7F51DC429310028DB4D /* Models */,
@@ -116,6 +140,31 @@
 				6AD6C7F81DC4295D0028DB4D /* TSServerInteractor.swift */,
 			);
 			name = Server;
+			sourceTree = "<group>";
+		};
+		AA2B726F1E07135200BE66DC /* Lato */ = {
+			isa = PBXGroup;
+			children = (
+				AA2B72701E07135200BE66DC /* Lato-Black.ttf */,
+				AA2B72711E07135200BE66DC /* Lato-BlackItalic.ttf */,
+				AA2B72721E07135200BE66DC /* Lato-Bold.ttf */,
+				AA2B72731E07135200BE66DC /* Lato-BoldItalic.ttf */,
+				AA2B72741E07135200BE66DC /* Lato-Hairline.ttf */,
+				AA2B72751E07135200BE66DC /* Lato-HairlineItalic.ttf */,
+				AA2B72761E07135200BE66DC /* Lato-Italic.ttf */,
+				AA2B72771E07135200BE66DC /* Lato-Light.ttf */,
+				AA2B72781E07135200BE66DC /* Lato-LightItalic.ttf */,
+				AA2B72791E07135200BE66DC /* Lato-Regular.ttf */,
+				AA2B727A1E07135200BE66DC /* OFL.txt */,
+			);
+			path = Lato;
+			sourceTree = "<group>";
+		};
+		AA2B72861E075A9E00BE66DC /* images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 		C51659D98D9A16BA7393AAFD /* Pods */ = {
@@ -170,7 +219,6 @@
 				TargetAttributes = {
 					6A62F1141DC4280000479F30 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = N8P6K8B6V2;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -203,10 +251,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA2B72851E07135200BE66DC /* OFL.txt in Resources */,
+				AA2B727D1E07135200BE66DC /* Lato-Bold.ttf in Resources */,
 				6A62F1231DC4280000479F30 /* LaunchScreen.storyboard in Resources */,
+				AA2B72801E07135200BE66DC /* Lato-HairlineItalic.ttf in Resources */,
+				AA2B72821E07135200BE66DC /* Lato-Light.ttf in Resources */,
 				A5CFA19B1DF50CE10008D74F /* GoogleService-Info.plist in Resources */,
+				AA2B72811E07135200BE66DC /* Lato-Italic.ttf in Resources */,
+				AA2B727E1E07135200BE66DC /* Lato-BoldItalic.ttf in Resources */,
+				AA2B727C1E07135200BE66DC /* Lato-BlackItalic.ttf in Resources */,
+				AA2B727F1E07135200BE66DC /* Lato-Hairline.ttf in Resources */,
 				6A62F1201DC4280000479F30 /* Assets.xcassets in Resources */,
+				AA2B727B1E07135200BE66DC /* Lato-Black.ttf in Resources */,
+				AA2B72841E07135200BE66DC /* Lato-Regular.ttf in Resources */,
 				6A62F11E1DC4280000479F30 /* Main.storyboard in Resources */,
+				AA2B72831E07135200BE66DC /* Lato-LightItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,7 +454,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "2017 Scouter/2017 Scouter.entitlements";
-				DEVELOPMENT_TEAM = N8P6K8B6V2;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "2017 Scouter/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.palyrobotics.-017-Scouter";
@@ -410,7 +469,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "2017 Scouter/2017 Scouter.entitlements";
-				DEVELOPMENT_TEAM = N8P6K8B6V2;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "2017 Scouter/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.palyrobotics.-017-Scouter";
