@@ -39,36 +39,18 @@ class ServerInterfacer {
     }
     
     static func getMatches(_ callback: @escaping (NSDictionary) -> Void, key : String) -> Void {
-//    static func getMatches(_ callback: handleMatchJSON, key : String) -> [TBAMatch] {
         Alamofire.request(SERVER_ADDRESS + "/" + AUTH_TOKEN + "/match/" + key, headers: nil)
             .responseJSON { response in
                 if let JSON = response.result.value {
                     print("JSON: \(JSON)")
                     let rawVal = JSON as! NSDictionary
                     callback(rawVal)
-                    
                 }
                 else {
-                    callback(NSDictionary())
+                    print(response)
+                    print("[ERROR] Error parsing server response, please make sure the server is running.")
+                    callback(["query": ["success": "no"]])
                 }
-        }
-    }
-    
-    static func handleMatchJSON(value: NSDictionary) -> Void {
-        if (((value.value(forKey: "query") as! NSDictionary).value(forKey: "success"))! as! String == "yes") {
-            for (key, value) in (value.value(forKey: "query") as! NSDictionary).value(forKey: "matches") as! NSDictionary {
-                print(key)
-                let name = key as! String
-                
-                let payloadDict = value as! NSDictionary
-                
-                let blue = payloadDict.object(forKey: "blue") as! [String]
-                let red = payloadDict.object(forKey: "red") as! [String]
-                Data.matchList.append(TBAMatch(keyV: name, blueAlliance: blue, redAlliance: red))
-            }
-        }
-        for f in Data.matchList {
-            print(f.getKeyAsDisplayable())
         }
     }
     

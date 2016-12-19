@@ -25,10 +25,11 @@ class MenuViewController: UIViewController {
         //Gradient
         let gradient:CAGradientLayer = CAGradientLayer()
         gradient.frame = self.view.frame
-        var color1 = UIColor(colorLiteralRed: 34/255, green: 139/255, blue: 34/255, alpha: 1).cgColor
-        var color2 = UIColor(colorLiteralRed: 17/255, green: 38/255, blue: 11/255, alpha: 1).cgColor
+        let color1 = UIColor(colorLiteralRed: 34/255, green: 139/255, blue: 34/255, alpha: 1).cgColor
+        let color2 = UIColor(colorLiteralRed: 17/255, green: 38/255, blue: 11/255, alpha: 1).cgColor
         gradient.colors = [color1, color2] //Or any colors
         self.view.layer.insertSublayer(gradient, at: 0)
+        
         
         //Borders
         for menuButton in menuButtons{

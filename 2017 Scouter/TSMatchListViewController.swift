@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class MatchListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class MatchListViewController: ViewController, UITableViewDataSource, UITableViewDelegate {
     //    @IBOutlet weak var myButton : UIButton!
     //    @IBOutlet weak var myTextField : UITextField!
     //
@@ -22,14 +22,31 @@ class MatchListViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     @IBAction func refresh(_ sender: UIButton) {
-        print("ym")
-        ServerInterfacer.getMatches(ServerInterfacer.handleMatchJSON, key: "2016cacc")
-        self.matchTable.reloadData()
+        addActivityIndicator()
+        self.view.isUserInteractionEnabled = false
+        Data.fetch(complete: fetchComplete)
     }
     
-    //    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    //
-    //    }
+    func addActivityIndicator() {
+        let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+        activityIndicator.frame = CGRect(x: 230, y: 30, width: 30, height: 30)
+        activityIndicator.tag = 100
+        activityIndicator.startAnimating()
+        self.view.addSubview(activityIndicator)
+        
+    }
+    
+    func removeActivityIndicator() {
+        if let activityIndicator = self.view.viewWithTag(100) {
+            activityIndicator.removeFromSuperview()
+        }
+    }
+    
+    func fetchComplete() {
+        self.matchTable.reloadData()
+        removeActivityIndicator()
+        self.view.isUserInteractionEnabled = true
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MatchCell", for: indexPath)

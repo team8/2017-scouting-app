@@ -258,26 +258,42 @@
                                     <outlet property="delegate" destination="wka-pr-Ty9" id="hOa-m7-43V"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aVB-so-JXI">
-                                <rect key="frame" x="16" y="28" width="66" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Menu"/>
-                                <connections>
-                                    <segue destination="thB-NU-AuU" kind="unwind" unwindAction="menuUnwindWithUnwindSegue:" id="P5Q-c7-GzG"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gko-R6-9P6">
-                                <rect key="frame" x="260" y="28" width="100" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Refresh"/>
-                                <connections>
-                                    <action selector="refresh:" destination="a3K-fA-FxR" eventType="touchUpInside" id="MQZ-3q-Zfk"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="7x3-sb-hGY">
+                                <rect key="frame" x="10" y="5" width="349" height="41"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aVB-so-JXI">
+                                        <rect key="frame" x="0.0" y="0.0" width="61" height="41"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Menu">
+                                                    <attributes>
+                                                        <font key="NSFont" size="24" name=".SFNSDisplay"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                        <connections>
+                                            <segue destination="thB-NU-AuU" kind="unwind" unwindAction="menuUnwindWithUnwindSegue:" id="P5Q-c7-GzG"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gko-R6-9P6">
+                                        <rect key="frame" x="267" y="0.0" width="82" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <state key="normal" title="Refresh"/>
+                                        <connections>
+                                            <action selector="refresh:" destination="a3K-fA-FxR" eventType="touchUpInside" id="MQZ-3q-Zfk"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="7x3-sb-hGY" secondAttribute="trailing" id="Q2U-vF-LwY"/>
+                            <constraint firstItem="7x3-sb-hGY" firstAttribute="topMargin" secondItem="wka-pr-Ty9" secondAttribute="top" constant="5" id="W2A-2Y-qYh"/>
+                            <constraint firstItem="7x3-sb-hGY" firstAttribute="leadingMargin" secondItem="wka-pr-Ty9" secondAttribute="leading" constant="10" id="jcL-l7-VHR"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="teamTable" destination="Bx9-TS-Zxw" id="jvH-Z5-5BG"/>
@@ -286,7 +302,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hqz-jP-m3g" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="thB-NU-AuU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2024.8" y="-1442.4287856071965"/>
+            <point key="canvasLocation" x="2108" y="-1386"/>
         </scene>
         <!--Match List-->
         <scene sceneID="apQ-mP-2Jh">
@@ -309,7 +325,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kUl-2e-pL2" id="l4X-ER-SKF">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
