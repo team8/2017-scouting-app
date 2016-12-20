@@ -9,7 +9,8 @@
 import Foundation
 import UIKit
 
-class TSErrorViewController : ViewController {
+//UITextFieldDelegate is used for dismissing the keyboard when tapped return
+class TSErrorViewController : ViewController, UITextFieldDelegate {
     
     @IBOutlet weak var Name: UITextField!
     
@@ -20,8 +21,26 @@ class TSErrorViewController : ViewController {
     
     override func viewDidLoad() {
         SubmitButton.addTarget(self, action: #selector(TSErrorViewController.submit(_:)), for: .touchUpInside)
+        
+        //Setting the delegate to self so we can use the "textfieldShouldReturn" function
+        Name.delegate = self
+        
+        //This runs when the user taps anywhere other than the textfield and textview
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
 
         
+    }
+    //hides keyboard (only on textfield) when return is pressed
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool{
+        print("here")
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    //hides keyboard
+    func dismissKeyboard(){
+        view.endEditing(true);
     }
     override func viewWillAppear(_ animated: Bool) {
         //Gradient
@@ -46,6 +65,7 @@ class TSErrorViewController : ViewController {
         return UIStatusBarStyle.lightContent;
     }
     
+
     @IBAction func submit(_ sender: UIButton) {
         let messageContent = "FROM: " + Name.text! + ". MESSAGE: " + BigTextField.text
         print(messageContent)

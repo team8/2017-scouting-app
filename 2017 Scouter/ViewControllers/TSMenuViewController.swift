@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+var currentScreen = "menu"
 class MenuViewController: UIViewController {
     
     
@@ -47,5 +48,6 @@ class MenuViewController: UIViewController {
     override var preferredStatusBarStyle : UIStatusBarStyle {
         return UIStatusBarStyle.lightContent;
     }
+    
 
 }
