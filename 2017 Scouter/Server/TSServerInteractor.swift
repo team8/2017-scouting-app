@@ -38,6 +38,29 @@ class ServerInterfacer {
         }
     }
     
+    static func sendBug(data: String, callback: @escaping (Bool) -> Void ) -> Void {
+        
+        let headers = ["issue" : data]
+        print(SERVER_ADDRESS + "/" + AUTH_TOKEN + "/error/")
+        Alamofire.request(SERVER_ADDRESS + "/" + AUTH_TOKEN + "/error", headers: headers)
+            .responseJSON { response in
+                if let JSON = response.result.value {
+                    let raw_val = JSON as! NSDictionary
+                    let shouldReturnVal = raw_val.object(forKey: "report")
+                    
+                    if shouldReturnVal as! String == "success"{
+                        callback(true)
+                    }
+                    else {
+                        callback(false)
+                    }
+                }
+                else {
+                    callback(false)
+                }
+        }
+    }
+    
     static func getMatches(_ callback: @escaping (NSDictionary) -> Void, key : String) -> Void {
         Alamofire.request(SERVER_ADDRESS + "/" + AUTH_TOKEN + "/match/" + key, headers: nil)
             .responseJSON { response in
