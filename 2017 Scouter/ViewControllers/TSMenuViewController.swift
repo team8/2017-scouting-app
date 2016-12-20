@@ -9,7 +9,10 @@
 import Foundation
 import UIKit
 
+
+var previousScreen = "none"
 var currentScreen = "menu"
+
 class MenuViewController: UIViewController {
     
     
@@ -22,6 +25,11 @@ class MenuViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        if previousScreen != "none"{
+            previousScreen = currentScreen
+        }
+        currentScreen = "menu"
         
         //Gradient
         let gradient:CAGradientLayer = CAGradientLayer()

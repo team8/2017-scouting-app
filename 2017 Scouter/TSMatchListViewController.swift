@@ -25,9 +25,11 @@ class MatchListViewController: ViewController, UITableViewDataSource, UITableVie
         addActivityIndicator()
         self.view.isUserInteractionEnabled = false
         Data.fetch(complete: fetchComplete)
+        
     }
     
     func addActivityIndicator() {
+        
         let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
         activityIndicator.frame = CGRect(x: 230, y: 30, width: 30, height: 30)
         activityIndicator.tag = 100
@@ -57,7 +59,9 @@ class MatchListViewController: ViewController, UITableViewDataSource, UITableVie
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Data.matchList.count
     }
-    
+    public func saveToCoreData(){
+        print("Ran:save to core data")
+    }
     @IBAction func teamListUnwind(unwindSegue: UIStoryboardSegue) {
         
     }

@@ -20,6 +20,9 @@ class TSErrorViewController : ViewController, UITextFieldDelegate {
     
     
     override func viewDidLoad() {
+        previousScreen = currentScreen
+        currentScreen = "bug-report"
+        
         SubmitButton.addTarget(self, action: #selector(TSErrorViewController.submit(_:)), for: .touchUpInside)
         
         //Setting the delegate to self so we can use the "textfieldShouldReturn" function
@@ -56,7 +59,7 @@ class TSErrorViewController : ViewController, UITextFieldDelegate {
         SubmitButton.layer.borderWidth = 1.0
         
         //TextView Padding
-        BigTextField.textContainerInset = UIEdgeInsets(top: 5, left: 5, bottom: 0, right: 5)
+        BigTextField.textContainerInset = UIEdgeInsets(top: 12, left: 10, bottom: 10, right: 10)
         BigTextField.layer.cornerRadius = 5.0
     }
     

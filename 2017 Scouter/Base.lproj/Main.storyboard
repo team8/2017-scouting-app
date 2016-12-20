@@ -65,6 +65,9 @@
                                 <state key="normal" title="Matches">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="T82-YU-oFC" kind="show" id="due-RD-hJe"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mzG-nU-wql">
                                 <rect key="frame" x="16" y="345" width="288" height="55"/>
@@ -196,7 +199,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wfd-JH-gaf" id="bIk-oD-R1Q">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -209,7 +212,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xHJ-Kb-xnR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2024.8" y="497.90104947526243"/>
+            <point key="canvasLocation" x="2681" y="254"/>
         </scene>
         <!--Match Upload-->
         <scene sceneID="ylv-6y-xrT">
@@ -224,7 +227,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ISl-Uw-Ti2" id="sqi-TG-090">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -237,7 +240,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="19a-oA-VmO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2025" y="1150"/>
+            <point key="canvasLocation" x="1860" y="687"/>
         </scene>
         <!--Report a Bug-->
         <scene sceneID="2pf-Kr-Sgb">
@@ -297,10 +300,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5S3-BW-luZ">
-                                <rect key="frame" x="16" y="195" width="288" height="200"/>
+                                <rect key="frame" x="16" y="195" width="288" height="100"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="n3g-dq-0JB"/>
+                                    <constraint firstAttribute="height" constant="100" id="n3g-dq-0JB"/>
                                 </constraints>
                                 <inset key="scrollIndicatorInsets" minX="1" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="15"/>
@@ -322,6 +325,17 @@
                                     <action selector="submit:" destination="sy7-Bl-CvD" eventType="touchUpInside" id="PMf-t3-RXF"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HWa-be-RUA">
+                                <rect key="frame" x="16" y="39" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="DB2-2J-thD"/>
+                                    <constraint firstAttribute="width" constant="24" id="ckj-Mr-AZh"/>
+                                </constraints>
+                                <state key="normal" image="menu-button"/>
+                                <connections>
+                                    <segue destination="GoC-jH-tdY" kind="show" id="ybx-H0-LGU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1333333333" green="0.5450980392" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -332,6 +346,7 @@
                             <constraint firstItem="CoI-eo-ZtK" firstAttribute="top" secondItem="6U6-F5-PCN" secondAttribute="bottom" constant="8" id="8zg-Pw-lVB"/>
                             <constraint firstItem="8XP-ef-Ibn" firstAttribute="leading" secondItem="xa4-Ay-8pc" secondAttribute="leadingMargin" id="9Q4-Jc-kHp"/>
                             <constraint firstItem="5S3-BW-luZ" firstAttribute="top" secondItem="jeR-1x-eLm" secondAttribute="bottom" constant="8" id="EXv-TS-s50"/>
+                            <constraint firstItem="HWa-be-RUA" firstAttribute="centerY" secondItem="ujG-ot-LfV" secondAttribute="centerY" id="JHE-ce-xWp"/>
                             <constraint firstItem="CoI-eo-ZtK" firstAttribute="leading" secondItem="xa4-Ay-8pc" secondAttribute="leadingMargin" id="WEM-1B-kWk"/>
                             <constraint firstItem="CoI-eo-ZtK" firstAttribute="trailing" secondItem="xa4-Ay-8pc" secondAttribute="trailingMargin" id="XQ8-lK-Fl0"/>
                             <constraint firstItem="5S3-BW-luZ" firstAttribute="trailing" secondItem="xa4-Ay-8pc" secondAttribute="trailingMargin" id="YzK-dN-irh"/>
@@ -340,6 +355,7 @@
                             <constraint firstItem="8XP-ef-Ibn" firstAttribute="trailing" secondItem="xa4-Ay-8pc" secondAttribute="trailingMargin" id="ePS-6A-s4o"/>
                             <constraint firstItem="jeR-1x-eLm" firstAttribute="leading" secondItem="xa4-Ay-8pc" secondAttribute="leadingMargin" id="fHP-9s-9al"/>
                             <constraint firstItem="6U6-F5-PCN" firstAttribute="leading" secondItem="xa4-Ay-8pc" secondAttribute="leadingMargin" id="gMF-WU-rJF"/>
+                            <constraint firstItem="HWa-be-RUA" firstAttribute="leading" secondItem="xa4-Ay-8pc" secondAttribute="leadingMargin" id="hQu-6l-rlC"/>
                             <constraint firstItem="ujG-ot-LfV" firstAttribute="centerX" secondItem="xa4-Ay-8pc" secondAttribute="centerX" id="lAC-QF-mUu"/>
                             <constraint firstItem="5S3-BW-luZ" firstAttribute="top" secondItem="jeR-1x-eLm" secondAttribute="bottom" constant="8" id="ma2-A1-cdP"/>
                             <constraint firstItem="5S3-BW-luZ" firstAttribute="centerX" secondItem="xa4-Ay-8pc" secondAttribute="centerX" id="vgp-eJ-3Qt"/>
@@ -354,7 +370,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ntu-8m-4KL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2023.125" y="-150"/>
+            <point key="canvasLocation" x="1976" y="-399"/>
         </scene>
         <!--Team List-->
         <scene sceneID="xmC-i0-Knb">
@@ -377,7 +393,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Pl6-VU-AlU" id="DiW-xR-VaI">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -454,7 +470,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kUl-2e-pL2" id="l4X-ER-SKF">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -492,12 +508,13 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4YY-FT-gL2" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="e4H-8C-5Mh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2299" y="-1106"/>
+            <point key="canvasLocation" x="1823" y="260"/>
         </scene>
     </scenes>
     <resources>
         <image name="Group" width="48" height="39"/>
         <image name="matches.png" width="42" height="63"/>
+        <image name="menu-button" width="93" height="93"/>
         <image name="picklist" width="54" height="57"/>
         <image name="teams" width="48" height="54"/>
         <image name="upload-qr-code.png" width="57" height="51"/>

@@ -27,6 +27,9 @@ class Data {
             completeFunction!()
             fetchesComplete = 0
         }
+        
+        let matchListVC = MatchListViewController()
+        matchListVC.saveToCoreData()
     }
     
     static func handleMatchJSON(value: NSDictionary) -> Void {
@@ -40,6 +43,9 @@ class Data {
                 let blue = payloadDict.object(forKey: "blue") as! [String]
                 let red = payloadDict.object(forKey: "red") as! [String]
                 matchList.append(TBAMatch(keyV: name, blueAlliance: blue, redAlliance: red))
+
+                
+                
             }
         } else {
             print(value)

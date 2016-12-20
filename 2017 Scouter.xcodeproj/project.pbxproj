@@ -21,6 +21,7 @@
 		A5C4DAF21DF5F24A00A337FB /* TSTeamListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C4DAF01DF5F24A00A337FB /* TSTeamListViewController.swift */; };
 		A5CFA19B1DF50CE10008D74F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5CFA19A1DF50CE10008D74F /* GoogleService-Info.plist */; };
 		A5CFD7EE1DF69D8F0062EE74 /* TSData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CFD7ED1DF69D8F0062EE74 /* TSData.swift */; };
+		AA2072B61E0920AC0001DD6F /* 2017-Scouter-Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA2072B41E0920AC0001DD6F /* 2017-Scouter-Model.xcdatamodeld */; };
 		AA2B727B1E07135200BE66DC /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA2B72701E07135200BE66DC /* Lato-Black.ttf */; };
 		AA2B727C1E07135200BE66DC /* Lato-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA2B72711E07135200BE66DC /* Lato-BlackItalic.ttf */; };
 		AA2B727D1E07135200BE66DC /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA2B72721E07135200BE66DC /* Lato-Bold.ttf */; };
@@ -59,6 +60,7 @@
 		A5CFA19A1DF50CE10008D74F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A5CFA19C1DF512D70008D74F /* 2017 Scouter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "2017 Scouter.entitlements"; sourceTree = "<group>"; };
 		A5CFD7ED1DF69D8F0062EE74 /* TSData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSData.swift; sourceTree = "<group>"; };
+		AA2072B51E0920AC0001DD6F /* 2017-Scouter-Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "2017-Scouter-Model.xcdatamodel"; sourceTree = "<group>"; };
 		AA2B72701E07135200BE66DC /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
 		AA2B72711E07135200BE66DC /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BlackItalic.ttf"; sourceTree = "<group>"; };
 		AA2B72721E07135200BE66DC /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 		6A62F1171DC4280000479F30 /* 2017 Scouter */ = {
 			isa = PBXGroup;
 			children = (
+				AA2072B41E0920AC0001DD6F /* 2017-Scouter-Model.xcdatamodeld */,
 				A5CFA19C1DF512D70008D74F /* 2017 Scouter.entitlements */,
 				A5CFA19A1DF50CE10008D74F /* GoogleService-Info.plist */,
 				6AD6C7F71DC429500028DB4D /* Server */,
@@ -352,6 +355,7 @@
 				A5C4DAF21DF5F24A00A337FB /* TSTeamListViewController.swift in Sources */,
 				6A28B8641E0895AC00EB2904 /* TSErrorReportViewController.swift in Sources */,
 				6AD6C7F91DC4295D0028DB4D /* TSServerInteractor.swift in Sources */,
+				AA2072B61E0920AC0001DD6F /* 2017-Scouter-Model.xcdatamodeld in Sources */,
 				6A62F11B1DC4280000479F30 /* ViewController.swift in Sources */,
 				6A62F1191DC4280000479F30 /* AppDelegate.swift in Sources */,
 				6AD6C7F41DC429260028DB4D /* TSModels.swift in Sources */,
@@ -524,6 +528,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AA2072B41E0920AC0001DD6F /* 2017-Scouter-Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AA2072B51E0920AC0001DD6F /* 2017-Scouter-Model.xcdatamodel */,
+			);
+			currentVersion = AA2072B51E0920AC0001DD6F /* 2017-Scouter-Model.xcdatamodel */;
+			path = "2017-Scouter-Model.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 6A62F10D1DC4280000479F30 /* Project object */;
 }
