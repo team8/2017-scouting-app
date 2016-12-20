@@ -31,6 +31,11 @@
 		AA2B72831E07135200BE66DC /* Lato-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA2B72781E07135200BE66DC /* Lato-LightItalic.ttf */; };
 		AA2B72841E07135200BE66DC /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA2B72791E07135200BE66DC /* Lato-Regular.ttf */; };
 		AA2B72851E07135200BE66DC /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = AA2B727A1E07135200BE66DC /* OFL.txt */; };
+		AA54324C1E08AD3B00000A88 /* Group.png in Resources */ = {isa = PBXBuildFile; fileRef = AA5432471E08AD3B00000A88 /* Group.png */; };
+		AA54324D1E08AD3B00000A88 /* matches.png in Resources */ = {isa = PBXBuildFile; fileRef = AA5432481E08AD3B00000A88 /* matches.png */; };
+		AA54324E1E08AD3B00000A88 /* picklist.png in Resources */ = {isa = PBXBuildFile; fileRef = AA5432491E08AD3B00000A88 /* picklist.png */; };
+		AA54324F1E08AD3B00000A88 /* teams.png in Resources */ = {isa = PBXBuildFile; fileRef = AA54324A1E08AD3B00000A88 /* teams.png */; };
+		AA5432501E08AD3B00000A88 /* upload-qr-code.png in Resources */ = {isa = PBXBuildFile; fileRef = AA54324B1E08AD3B00000A88 /* upload-qr-code.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +68,11 @@
 		AA2B72781E07135200BE66DC /* Lato-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-LightItalic.ttf"; sourceTree = "<group>"; };
 		AA2B72791E07135200BE66DC /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		AA2B727A1E07135200BE66DC /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		AA5432471E08AD3B00000A88 /* Group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Group.png; sourceTree = "<group>"; };
+		AA5432481E08AD3B00000A88 /* matches.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = matches.png; sourceTree = "<group>"; };
+		AA5432491E08AD3B00000A88 /* picklist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = picklist.png; sourceTree = "<group>"; };
+		AA54324A1E08AD3B00000A88 /* teams.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teams.png; sourceTree = "<group>"; };
+		AA54324B1E08AD3B00000A88 /* upload-qr-code.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "upload-qr-code.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,11 +110,11 @@
 			children = (
 				A5CFA19C1DF512D70008D74F /* 2017 Scouter.entitlements */,
 				A5CFA19A1DF50CE10008D74F /* GoogleService-Info.plist */,
-				AA2B72861E075A9E00BE66DC /* images */,
 				6AD6C7F71DC429500028DB4D /* Server */,
 				6AD6C7F61DC429410028DB4D /* ViewControllers */,
 				6A62F1181DC4280000479F30 /* AppDelegate.swift */,
 				6A62F11C1DC4280000479F30 /* Main.storyboard */,
+				AA5432461E08AD3B00000A88 /* menu-images */,
 				6A62F11F1DC4280000479F30 /* Assets.xcassets */,
 				AA2B726F1E07135200BE66DC /* Lato */,
 				6A62F1211DC4280000479F30 /* LaunchScreen.storyboard */,
@@ -160,11 +170,16 @@
 			path = Lato;
 			sourceTree = "<group>";
 		};
-		AA2B72861E075A9E00BE66DC /* images */ = {
+		AA5432461E08AD3B00000A88 /* menu-images */ = {
 			isa = PBXGroup;
 			children = (
+				AA5432471E08AD3B00000A88 /* Group.png */,
+				AA5432481E08AD3B00000A88 /* matches.png */,
+				AA5432491E08AD3B00000A88 /* picklist.png */,
+				AA54324A1E08AD3B00000A88 /* teams.png */,
+				AA54324B1E08AD3B00000A88 /* upload-qr-code.png */,
 			);
-			path = images;
+			path = "menu-images";
 			sourceTree = "<group>";
 		};
 		C51659D98D9A16BA7393AAFD /* Pods */ = {
@@ -254,17 +269,22 @@
 				AA2B72851E07135200BE66DC /* OFL.txt in Resources */,
 				AA2B727D1E07135200BE66DC /* Lato-Bold.ttf in Resources */,
 				6A62F1231DC4280000479F30 /* LaunchScreen.storyboard in Resources */,
+				AA54324F1E08AD3B00000A88 /* teams.png in Resources */,
 				AA2B72801E07135200BE66DC /* Lato-HairlineItalic.ttf in Resources */,
 				AA2B72821E07135200BE66DC /* Lato-Light.ttf in Resources */,
 				A5CFA19B1DF50CE10008D74F /* GoogleService-Info.plist in Resources */,
 				AA2B72811E07135200BE66DC /* Lato-Italic.ttf in Resources */,
 				AA2B727E1E07135200BE66DC /* Lato-BoldItalic.ttf in Resources */,
 				AA2B727C1E07135200BE66DC /* Lato-BlackItalic.ttf in Resources */,
+				AA54324C1E08AD3B00000A88 /* Group.png in Resources */,
 				AA2B727F1E07135200BE66DC /* Lato-Hairline.ttf in Resources */,
 				6A62F1201DC4280000479F30 /* Assets.xcassets in Resources */,
 				AA2B727B1E07135200BE66DC /* Lato-Black.ttf in Resources */,
+				AA5432501E08AD3B00000A88 /* upload-qr-code.png in Resources */,
 				AA2B72841E07135200BE66DC /* Lato-Regular.ttf in Resources */,
 				6A62F11E1DC4280000479F30 /* Main.storyboard in Resources */,
+				AA54324D1E08AD3B00000A88 /* matches.png in Resources */,
+				AA54324E1E08AD3B00000A88 /* picklist.png in Resources */,
 				AA2B72831E07135200BE66DC /* Lato-LightItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
