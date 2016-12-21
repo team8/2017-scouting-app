@@ -13,8 +13,10 @@
 		6A62F11E1DC4280000479F30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A62F11C1DC4280000479F30 /* Main.storyboard */; };
 		6A62F1201DC4280000479F30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A62F11F1DC4280000479F30 /* Assets.xcassets */; };
 		6A62F1231DC4280000479F30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A62F1211DC4280000479F30 /* LaunchScreen.storyboard */; };
-		6AD6C7F41DC429260028DB4D /* TSModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD6C7F31DC429260028DB4D /* TSModels.swift */; };
+		6A6D6B041E0A351C00559506 /* TSScanModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6D6B031E0A351C00559506 /* TSScanModels.swift */; };
+		6AD6C7F41DC429260028DB4D /* TSMatchModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD6C7F31DC429260028DB4D /* TSMatchModels.swift */; };
 		6AD6C7F91DC4295D0028DB4D /* TSServerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD6C7F81DC4295D0028DB4D /* TSServerInteractor.swift */; };
+		6AFF7DA31E09AE52008F522B /* TSQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFF7DA21E09AE52008F522B /* TSQRCodeViewController.swift */; };
 		A388C1B8F767CA9FAE9B2B45 /* Pods_2017_Scouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63DF2611370533B9C4D8BDED /* Pods_2017_Scouter.framework */; };
 		A5B9EFFC1DF791F400C4D6F6 /* TSMatchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B9EFFB1DF791F300C4D6F6 /* TSMatchListViewController.swift */; };
 		A5C4DAF11DF5F24A00A337FB /* TSMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C4DAEF1DF5F24A00A337FB /* TSMenuViewController.swift */; };
@@ -51,8 +53,10 @@
 		6A62F11F1DC4280000479F30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6A62F1221DC4280000479F30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6A62F1241DC4280000479F30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6AD6C7F31DC429260028DB4D /* TSModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSModels.swift; path = Models/TSModels.swift; sourceTree = "<group>"; };
+		6A6D6B031E0A351C00559506 /* TSScanModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSScanModels.swift; path = Models/TSScanModels.swift; sourceTree = "<group>"; };
+		6AD6C7F31DC429260028DB4D /* TSMatchModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSMatchModels.swift; path = Models/TSMatchModels.swift; sourceTree = "<group>"; };
 		6AD6C7F81DC4295D0028DB4D /* TSServerInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSServerInteractor.swift; path = Server/TSServerInteractor.swift; sourceTree = "<group>"; };
+		6AFF7DA21E09AE52008F522B /* TSQRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSQRCodeViewController.swift; path = ViewControllers/TSQRCodeViewController.swift; sourceTree = "<group>"; };
 		7D446CDA0C59D3847E584BFE /* Pods-2017 Scouter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2017 Scouter.release.xcconfig"; path = "Pods/Target Support Files/Pods-2017 Scouter/Pods-2017 Scouter.release.xcconfig"; sourceTree = "<group>"; };
 		A5B9EFFB1DF791F300C4D6F6 /* TSMatchListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSMatchListViewController.swift; sourceTree = "<group>"; };
 		A5C4DAEF1DF5F24A00A337FB /* TSMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSMenuViewController.swift; path = ViewControllers/TSMenuViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				AA2072B41E0920AC0001DD6F /* 2017-Scouter-Model.xcdatamodeld */,
+				6AD6C7F51DC429310028DB4D /* Models */,
 				A5CFA19C1DF512D70008D74F /* 2017 Scouter.entitlements */,
 				A5CFA19A1DF50CE10008D74F /* GoogleService-Info.plist */,
 				6AD6C7F71DC429500028DB4D /* Server */,
@@ -124,7 +129,6 @@
 				AA2B726F1E07135200BE66DC /* Lato */,
 				6A62F1211DC4280000479F30 /* LaunchScreen.storyboard */,
 				6A62F1241DC4280000479F30 /* Info.plist */,
-				6AD6C7F51DC429310028DB4D /* Models */,
 				A5CFD7ED1DF69D8F0062EE74 /* TSData.swift */,
 			);
 			path = "2017 Scouter";
@@ -133,7 +137,8 @@
 		6AD6C7F51DC429310028DB4D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				6AD6C7F31DC429260028DB4D /* TSModels.swift */,
+				6AD6C7F31DC429260028DB4D /* TSMatchModels.swift */,
+				6A6D6B031E0A351C00559506 /* TSScanModels.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -146,6 +151,7 @@
 				A5C4DAEF1DF5F24A00A337FB /* TSMenuViewController.swift */,
 				A5C4DAF01DF5F24A00A337FB /* TSTeamListViewController.swift */,
 				A5B9EFFB1DF791F300C4D6F6 /* TSMatchListViewController.swift */,
+				6AFF7DA21E09AE52008F522B /* TSQRCodeViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -351,14 +357,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5CFD7EE1DF69D8F0062EE74 /* TSData.swift in Sources */,
+				6AFF7DA31E09AE52008F522B /* TSQRCodeViewController.swift in Sources */,
 				A5B9EFFC1DF791F400C4D6F6 /* TSMatchListViewController.swift in Sources */,
 				A5C4DAF21DF5F24A00A337FB /* TSTeamListViewController.swift in Sources */,
+				6A6D6B041E0A351C00559506 /* TSScanModels.swift in Sources */,
 				6A28B8641E0895AC00EB2904 /* TSErrorReportViewController.swift in Sources */,
 				6AD6C7F91DC4295D0028DB4D /* TSServerInteractor.swift in Sources */,
 				AA2072B61E0920AC0001DD6F /* 2017-Scouter-Model.xcdatamodeld in Sources */,
 				6A62F11B1DC4280000479F30 /* ViewController.swift in Sources */,
 				6A62F1191DC4280000479F30 /* AppDelegate.swift in Sources */,
-				6AD6C7F41DC429260028DB4D /* TSModels.swift in Sources */,
+				6AD6C7F41DC429260028DB4D /* TSMatchModels.swift in Sources */,
 				A5C4DAF11DF5F24A00A337FB /* TSMenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
