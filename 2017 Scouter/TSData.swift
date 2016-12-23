@@ -16,7 +16,9 @@ class Data {
     static let fetchesTotal = 1
     static var fetchesComplete = 0
     static var completeFunction: (() -> Void)?
+    
     static func fetch(complete: @escaping () -> Void) {
+        
         ServerInterfacer.getMatches(handleMatchJSON, key: "2016cacc")
         completeFunction = complete
     }
@@ -28,12 +30,18 @@ class Data {
             fetchesComplete = 0
         }
         
-        let matchListVC = MatchListViewController()
-        matchListVC.saveToCoreData()
+
+
     }
     
     static func handleMatchJSON(value: NSDictionary) -> Void {
         if (((value.value(forKey: "query") as! NSDictionary).value(forKey: "success"))! as! String == "yes") {
+            
+            let matchListVC = MatchListViewController()
+            matchListVC.deleteAllData()
+            
+            sendToVC(value: value)
+
             for (key, value) in (value.value(forKey: "query") as! NSDictionary).value(forKey: "matches") as! NSDictionary {
                 print(key)
                 let name = key as! String
@@ -47,12 +55,26 @@ class Data {
                 
                 
             }
-        } else {
+        }
+        else {
             print(value)
         }
         for f in matchList {
             print(f.getKeyAsDisplayable())
         }
+        
         fetchComplete()
+
+        
+    }
+    static func sendToVC(value: NSDictionary){
+        let queryResult : NSDictionary = value.value(forKey: "query") as! NSDictionary
+        let matches : NSDictionary = queryResult.value(forKey: "matches") as! NSDictionary
+        let matchListVC = MatchListViewController()
+        for (a, b) in matches{
+            var temp : NSMutableDictionary = (b as! NSDictionary).mutableCopy() as! NSMutableDictionary
+            temp.setValue(a as! String, forKey: "config")
+            matchListVC.saveToCoreData(dict: temp)
+        }
     }
 }
