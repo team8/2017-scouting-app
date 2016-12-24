@@ -21,6 +21,7 @@ class MatchListViewController: ViewController, UITableViewDataSource, UITableVie
     override func viewDidLoad() {
         matchTable.dataSource = self
         matchTable.delegate = self
+        
         if let alreadySaved = UserDefaults.standard.object(forKey: "alreadySaved"){
 
         }else{
@@ -73,7 +74,9 @@ class MatchListViewController: ViewController, UITableViewDataSource, UITableVie
     }
     override func viewWillAppear(_ animated: Bool) {
         print("viewWillAppear")
-        matchTable.reloadData()
+        DispatchQueue.main.async{
+            self.matchTable.reloadData()
+        }
         
     }
     @IBAction func refresh(_ sender: UIButton) {
