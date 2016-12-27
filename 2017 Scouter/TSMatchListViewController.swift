@@ -72,8 +72,8 @@ class MatchListViewController: ViewController, UITableViewDataSource, UITableVie
         }
         
     }
-    override func viewWillAppear(_ animated: Bool) {
-        print("viewWillAppear")
+    override func viewDidAppear(_ animated: Bool) {
+        print("viewDidAppear")
         DispatchQueue.main.async{
             self.matchTable.reloadData()
         }
@@ -83,6 +83,9 @@ class MatchListViewController: ViewController, UITableViewDataSource, UITableVie
         addActivityIndicator()
         self.view.isUserInteractionEnabled = false
         Data.fetch(complete: fetchComplete)
+        DispatchQueue.main.async{
+            self.matchTable.reloadData()
+        }
         
     }
     
