@@ -40,6 +40,7 @@
 		AA54324E1E08AD3B00000A88 /* picklist.png in Resources */ = {isa = PBXBuildFile; fileRef = AA5432491E08AD3B00000A88 /* picklist.png */; };
 		AA54324F1E08AD3B00000A88 /* teams.png in Resources */ = {isa = PBXBuildFile; fileRef = AA54324A1E08AD3B00000A88 /* teams.png */; };
 		AA5432501E08AD3B00000A88 /* upload-qr-code.png in Resources */ = {isa = PBXBuildFile; fileRef = AA54324B1E08AD3B00000A88 /* upload-qr-code.png */; };
+		AAA730F01E1333490003ECC0 /* UnplayedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA730EF1E1333490003ECC0 /* UnplayedTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,7 @@
 		AA5432491E08AD3B00000A88 /* picklist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = picklist.png; sourceTree = "<group>"; };
 		AA54324A1E08AD3B00000A88 /* teams.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teams.png; sourceTree = "<group>"; };
 		AA54324B1E08AD3B00000A88 /* upload-qr-code.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "upload-qr-code.png"; sourceTree = "<group>"; };
+		AAA730EF1E1333490003ECC0 /* UnplayedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnplayedTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				A5CFA19C1DF512D70008D74F /* 2017 Scouter.entitlements */,
 				A5CFA19A1DF50CE10008D74F /* GoogleService-Info.plist */,
 				6AD6C7F71DC429500028DB4D /* Server */,
+				AAA730EF1E1333490003ECC0 /* UnplayedTableViewCell.swift */,
 				6AD6C7F61DC429410028DB4D /* ViewControllers */,
 				6A62F1181DC4280000479F30 /* AppDelegate.swift */,
 				6A62F11C1DC4280000479F30 /* Main.storyboard */,
@@ -367,6 +370,7 @@
 				6A62F11B1DC4280000479F30 /* ViewController.swift in Sources */,
 				6A62F1191DC4280000479F30 /* AppDelegate.swift in Sources */,
 				6AD6C7F41DC429260028DB4D /* TSMatchModels.swift in Sources */,
+				AAA730F01E1333490003ECC0 /* UnplayedTableViewCell.swift in Sources */,
 				A5C4DAF11DF5F24A00A337FB /* TSMenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

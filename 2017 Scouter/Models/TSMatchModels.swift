@@ -17,6 +17,8 @@ class TBAMatch {
     var matchType : MatchType
     var matchIn: Int?
     
+    public static var matchListUnordered  = [TBAMatch]()
+    
     enum MatchType {
         case qualifying
         case quarterFinal
@@ -26,6 +28,7 @@ class TBAMatch {
     }
     
     init(keyV: String, blueAlliance : [String], redAlliance : [String]) {
+        
         self.blue = blueAlliance
         self.red = redAlliance
         self.key = keyV
@@ -36,7 +39,12 @@ class TBAMatch {
             if (arrayOfCharc[1] == Character("m")){
                 matchType = MatchType.qualifying
                 var matchNumberString: String = String(arrayOfCharc[2])
-                matchNumberString += String(arrayOfCharc[3])
+                if arrayOfCharc.count == 4{
+                    matchNumberString += String(arrayOfCharc[3])
+                }
+                print(arrayOfCharc)
+//                matchNumberString += String(arrayOfCharc[3])
+                
                 matchNumber = Int(matchNumberString)!
             }else{
                 matchType = MatchType.quarterFinal
@@ -65,27 +73,54 @@ class TBAMatch {
     }
     
     
-    func getKeyAsDisplayable() -> String {
+    public static func orderMatches() -> [TBAMatch]{
+        var qualifyingMatches = [TBAMatch]()
+        var quarterFinals = [TBAMatch]()
+        var semiFinals = [TBAMatch]()
+        var finals = [TBAMatch]()
+        var unknowns = [TBAMatch]()
         
-        let continuedString : String = key.components(separatedBy: "_")[1]
-        
-        
-        if continuedString[continuedString.startIndex] == Character("q") {
-            if continuedString[continuedString.characters.index(continuedString.startIndex, offsetBy: 1)] == Character("m") {
-                return "Qualifying Match #: \(continuedString.components(separatedBy: "qm")[1])"
-            }
-            else {
-                return "Quarter Final Match #: \(continuedString.components(separatedBy: "qf")[1])"
+        for matchToAssign : TBAMatch in matchListUnordered{
+            switch matchToAssign.matchType {
+            case MatchType.qualifying:
+                qualifyingMatches.append(matchToAssign)
+            case MatchType.quarterFinal:
+                quarterFinals.append(matchToAssign)
+            case MatchType.semiFinal:
+                semiFinals.append(matchToAssign)
+            case MatchType.final:
+                
+                finals.append(matchToAssign)
+            default:
+                unknowns.append(matchToAssign)
             }
         }
         
-        if continuedString[continuedString.startIndex] == Character("s") {
-            if continuedString[continuedString.characters.index(continuedString.startIndex, offsetBy: 1)] == Character("f") {
-                return "Semi Final #: \(continuedString.components(separatedBy: "sf")[1])"
+        qualifyingMatches = qualifyingMatches.sorted{ return $0.matchNumber < $1.matchNumber}
+        quarterFinals = quarterFinals.sorted{a,b in
+            if a.matchNumber != b.matchNumber{
+                return a.matchNumber < b.matchNumber
+            }else{
+                return a.matchIn! < b.matchIn!
             }
         }
-        
-        return "Unknown match with string \(self.key)"
+        semiFinals = semiFinals.sorted{a,b in
+            if a.matchNumber != b.matchNumber{
+                return a.matchNumber < b.matchNumber
+            }else{
+                return a.matchIn! < b.matchIn!
+            }
+        }
+        finals = finals.sorted{a,b in
+            if a.matchNumber != b.matchNumber{
+                return a.matchNumber < b.matchNumber
+            }else{
+                return a.matchIn! < b.matchIn!
+            }
+        }
+        var fullArray = qualifyingMatches + quarterFinals + semiFinals + finals
+        print(fullArray[fullArray.count - 1].key)
+        return fullArray
         
     }
     

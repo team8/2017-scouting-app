@@ -10,8 +10,21 @@ import UIKit
 
 class UnplayedTableViewCell: UITableViewCell {
 
+    
+
+    @IBOutlet weak var redTeams: UILabel!
+    @IBOutlet weak var matchAbbr: UILabel!
+    @IBOutlet weak var matchNumber: UILabel!
+    @IBOutlet weak var blueTeams: UILabel!
+    @IBOutlet weak var matchIn: UILabel!
+    @IBOutlet weak var container: UIView!
+
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        container.layer.borderColor = UIColor.white.cgColor
+        container.layer.borderWidth = 1.0
+        
         // Initialization code
     }
 

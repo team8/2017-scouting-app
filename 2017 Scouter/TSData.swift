@@ -59,9 +59,6 @@ class Data {
         else {
             print(value)
         }
-        for f in matchList {
-            print(f.getKeyAsDisplayable())
-        }
         
         fetchComplete()
 

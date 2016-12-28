@@ -15,9 +15,25 @@ class MatchListViewController: ViewController, UITableViewDataSource, UITableVie
     //    @IBOutlet weak var myTextField : UITextField!
     //
     //    @IBAction func myButtonAction(sender: id)
+
     
     @IBOutlet weak var matchTable: UITableView!
     var matchList = [TBAMatch]()
+    override func viewWillAppear(_ animated: Bool) {
+        //Gradient
+        let gradient:CAGradientLayer = CAGradientLayer()
+        gradient.frame = self.view.frame
+        let color1 = UIColor(colorLiteralRed: 34/255, green: 139/255, blue: 34/255, alpha: 1).cgColor
+        let color2 = UIColor(colorLiteralRed: 17/255, green: 38/255, blue: 11/255, alpha: 1).cgColor
+        gradient.colors = [color1, color2] //Or any colors
+        self.view.layer.insertSublayer(gradient, at: 0)
+        
+        matchTable.backgroundColor = UIColor.clear
+        
+    }
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent;
+    }
     override func viewDidLoad() {
         matchTable.dataSource = self
         matchTable.delegate = self
@@ -54,8 +70,7 @@ class MatchListViewController: ViewController, UITableViewDataSource, UITableVie
                             let redTeams = match.value(forKey: "red") as! [String]
                             let teamToAppend = TBAMatch(keyV: config, blueAlliance: blueTeams, redAlliance: redTeams)
                             print(config)
-                            matchList.append(teamToAppend)
-                            
+                            TBAMatch.matchListUnordered.append(teamToAppend)
                             
                         }catch{
                             print(":(")
@@ -70,6 +85,7 @@ class MatchListViewController: ViewController, UITableViewDataSource, UITableVie
             let fetchError = error as NSError
             print(fetchError)
         }
+        self.matchList = TBAMatch.orderMatches()
         
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -79,6 +95,8 @@ class MatchListViewController: ViewController, UITableViewDataSource, UITableVie
         }
         
     }
+
+    
     @IBAction func refresh(_ sender: UIButton) {
         addActivityIndicator()
         self.view.isUserInteractionEnabled = false
@@ -112,9 +130,57 @@ class MatchListViewController: ViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MatchCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MatchCell", for: indexPath) as! UnplayedTableViewCell
+        var blueTeamString = ""
+        for blueTeamWithFRC in matchList[indexPath.row].blue{
+            let blueTeam : String = blueTeamWithFRC.components(separatedBy: "c")[1]
+            blueTeamString += blueTeam
+            if blueTeamWithFRC != matchList[indexPath.row].blue[matchList[indexPath.row].blue.count - 1]{
+                blueTeamString += "\n"
+            }
+
+        }
+        cell.blueTeams.text = blueTeamString
+        
+        switch matchList[indexPath.row].matchType{
+        case TBAMatch.MatchType.qualifying:
+            cell.matchAbbr.text = "QM"
+            cell.matchNumber.text = String(matchList[indexPath.row].matchNumber)
+            cell.matchIn.text = ""
+        case TBAMatch.MatchType.quarterFinal:
+             cell.matchAbbr.text = "QF"
+             cell.matchNumber.text =  String(matchList[indexPath.row].matchNumber)
+             cell.matchIn.text = "Match #" + String(matchList[indexPath.row].matchIn!)
+
+        case TBAMatch.MatchType.semiFinal:
+            cell.matchAbbr.text = "SF"
+            cell.matchNumber.text =  String(matchList[indexPath.row].matchNumber)
+            cell.matchIn.text = "Match #" + String(matchList[indexPath.row].matchIn!)
+            
+        case TBAMatch.MatchType.final:
+            cell.matchAbbr.text = "F"
+            cell.matchNumber.text =  String(matchList[indexPath.row].matchNumber)
+            cell.matchIn.text = "Match #" + String(matchList[indexPath.row].matchIn!)
+            
+        default:
+            cell.matchAbbr.text = "UNK"
+            
+        }
+        
+        
+        var redTeamString = ""
+        for redTeamWithFRC in matchList[indexPath.row].red{
+            let redTeam : String = redTeamWithFRC.components(separatedBy: "c")[1]
+            redTeamString += redTeam
+            if redTeamWithFRC != matchList[indexPath.row].red[matchList[indexPath.row].red.count - 1]{
+                redTeamString += "\n"
+            }
+        }
+        cell.redTeams.text = redTeamString
+        
+        cell.backgroundColor = UIColor.clear
+        
         print("tb-refreshed")
-        cell.textLabel?.text = 	matchList[indexPath.row].getKeyAsDisplayable()
         return cell
     }
     
