@@ -295,7 +295,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wfd-JH-gaf" id="bIk-oD-R1Q">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -323,7 +323,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ISl-Uw-Ti2" id="sqi-TG-090">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -368,8 +368,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Report a Bug" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ujG-ot-LfV">
-                                <rect key="frame" x="52" y="28" width="216" height="47"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bug Report" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ujG-ot-LfV">
+                                <rect key="frame" x="65.5" y="28" width="189.5" height="47"/>
                                 <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="39"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -422,10 +422,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HWa-be-RUA">
-                                <rect key="frame" x="16" y="40" width="24" height="24"/>
+                                <rect key="frame" x="16" y="40" width="30" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="DB2-2J-thD"/>
-                                    <constraint firstAttribute="width" constant="24" id="ckj-Mr-AZh"/>
+                                    <constraint firstAttribute="height" constant="30" id="DB2-2J-thD"/>
+                                    <constraint firstAttribute="width" constant="30" id="ckj-Mr-AZh"/>
                                 </constraints>
                                 <state key="normal" image="menu-button"/>
                                 <connections>
@@ -442,7 +442,7 @@
                             <constraint firstItem="CoI-eo-ZtK" firstAttribute="top" secondItem="6U6-F5-PCN" secondAttribute="bottom" constant="8" id="8zg-Pw-lVB"/>
                             <constraint firstItem="8XP-ef-Ibn" firstAttribute="leading" secondItem="xa4-Ay-8pc" secondAttribute="leadingMargin" id="9Q4-Jc-kHp"/>
                             <constraint firstItem="5S3-BW-luZ" firstAttribute="top" secondItem="jeR-1x-eLm" secondAttribute="bottom" constant="8" id="EXv-TS-s50"/>
-                            <constraint firstItem="HWa-be-RUA" firstAttribute="centerY" secondItem="ujG-ot-LfV" secondAttribute="centerY" id="JHE-ce-xWp"/>
+                            <constraint firstItem="HWa-be-RUA" firstAttribute="centerY" secondItem="ujG-ot-LfV" secondAttribute="centerY" constant="3.5" id="JHE-ce-xWp"/>
                             <constraint firstItem="CoI-eo-ZtK" firstAttribute="leading" secondItem="xa4-Ay-8pc" secondAttribute="leadingMargin" id="WEM-1B-kWk"/>
                             <constraint firstItem="CoI-eo-ZtK" firstAttribute="trailing" secondItem="xa4-Ay-8pc" secondAttribute="trailingMargin" id="XQ8-lK-Fl0"/>
                             <constraint firstItem="5S3-BW-luZ" firstAttribute="trailing" secondItem="xa4-Ay-8pc" secondAttribute="trailingMargin" id="YzK-dN-irh"/>
@@ -507,7 +507,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGq-J3-Hzb">
-                                                            <rect key="frame" x="138" y="7" width="13" height="27"/>
+                                                            <rect key="frame" x="138" y="6" width="13" height="27"/>
                                                             <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="22"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -550,10 +550,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UTb-IM-FhR">
-                                <rect key="frame" x="16" y="39" width="24" height="24"/>
+                                <rect key="frame" x="16" y="39" width="30" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="tvl-Z2-FhT"/>
-                                    <constraint firstAttribute="width" constant="24" id="y1C-Mc-GDb"/>
+                                    <constraint firstAttribute="height" constant="30" id="tvl-Z2-FhT"/>
+                                    <constraint firstAttribute="width" constant="30" id="y1C-Mc-GDb"/>
                                 </constraints>
                                 <state key="normal" image="menu-button"/>
                                 <connections>
@@ -566,7 +566,7 @@
                                     <constraint firstAttribute="height" constant="41" id="8nD-n6-ewc"/>
                                     <constraint firstAttribute="width" constant="30" id="cd2-3T-udl"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="19"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="22"/>
                                 <state key="normal" title="RF">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -584,7 +584,7 @@
                             <constraint firstItem="gko-R6-9P6" firstAttribute="centerY" secondItem="YqC-to-zVe" secondAttribute="centerY" id="TGR-iL-9GM"/>
                             <constraint firstItem="Bx9-TS-Zxw" firstAttribute="top" secondItem="YqC-to-zVe" secondAttribute="bottom" constant="8" id="ZcR-ch-8Nh"/>
                             <constraint firstItem="gko-R6-9P6" firstAttribute="trailing" secondItem="wka-pr-Ty9" secondAttribute="trailingMargin" id="eES-fP-nQl"/>
-                            <constraint firstItem="UTb-IM-FhR" firstAttribute="centerY" secondItem="YqC-to-zVe" secondAttribute="centerY" id="m5f-RW-SnH"/>
+                            <constraint firstItem="UTb-IM-FhR" firstAttribute="centerY" secondItem="YqC-to-zVe" secondAttribute="centerY" constant="2.5" id="m5f-RW-SnH"/>
                             <constraint firstItem="UTb-IM-FhR" firstAttribute="leading" secondItem="wka-pr-Ty9" secondAttribute="leadingMargin" id="vpN-SW-afN"/>
                             <constraint firstItem="Bx9-TS-Zxw" firstAttribute="leading" secondItem="wka-pr-Ty9" secondAttribute="leadingMargin" id="vvV-Nr-Isf"/>
                         </constraints>
@@ -737,10 +737,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ssX-CS-bw6">
-                                <rect key="frame" x="16" y="39" width="24" height="24"/>
+                                <rect key="frame" x="16" y="39" width="30" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="AmM-gJ-p9r"/>
-                                    <constraint firstAttribute="width" constant="24" id="RJ9-Fj-wQ7"/>
+                                    <constraint firstAttribute="height" constant="30" id="AmM-gJ-p9r"/>
+                                    <constraint firstAttribute="width" constant="30" id="RJ9-Fj-wQ7"/>
                                 </constraints>
                                 <state key="normal" image="menu-button"/>
                                 <connections>
@@ -748,8 +748,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y34-qK-5bQ">
-                                <rect key="frame" x="274" y="34" width="30" height="35"/>
-                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="19"/>
+                                <rect key="frame" x="274" y="32" width="30" height="39"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="22"/>
                                 <state key="normal" title="RF">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -762,7 +762,7 @@
                         <constraints>
                             <constraint firstItem="L1C-lb-KiG" firstAttribute="centerX" secondItem="Dul-ok-WbL" secondAttribute="centerX" id="28S-5g-F7q"/>
                             <constraint firstItem="L1C-lb-KiG" firstAttribute="top" secondItem="Xlc-HP-god" secondAttribute="bottom" constant="8" id="3jU-Fj-Car"/>
-                            <constraint firstItem="ssX-CS-bw6" firstAttribute="centerY" secondItem="L1C-lb-KiG" secondAttribute="centerY" id="IB6-lL-4Bb"/>
+                            <constraint firstItem="ssX-CS-bw6" firstAttribute="centerY" secondItem="L1C-lb-KiG" secondAttribute="centerY" constant="2.5" id="IB6-lL-4Bb"/>
                             <constraint firstItem="czF-Uk-jDX" firstAttribute="top" secondItem="4og-JT-lbO" secondAttribute="bottom" constant="8" id="UFZ-TH-Kam"/>
                             <constraint firstItem="ssX-CS-bw6" firstAttribute="leading" secondItem="Dul-ok-WbL" secondAttribute="leadingMargin" id="g7s-OQ-ncA"/>
                             <constraint firstItem="4og-JT-lbO" firstAttribute="trailing" secondItem="Dul-ok-WbL" secondAttribute="trailingMargin" id="hTZ-Ca-jNF"/>
@@ -790,6 +790,6 @@
         <image name="upload-qr-code.png" width="57" height="51"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Vgn-qY-4DG"/>
+        <segue reference="I8S-nU-tDs"/>
     </inferredMetricsTieBreakers>
 </document>
