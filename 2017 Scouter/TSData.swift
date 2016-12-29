@@ -10,7 +10,7 @@ import Foundation
 
 class Data {
     
-    static var teamList = ["frc8", "frc254", "frc1678", "ym"]
+    static var teamList = ["8", "254", "1678", "YM"]
     static var matchList = [TBAMatch]()
     
     static let fetchesTotal = 1

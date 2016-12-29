@@ -19,26 +19,39 @@ class TeamListViewController: ViewController, UITableViewDataSource, UITableView
     
     override func viewDidLoad() {
         teamTable.dataSource = self
+        teamTable.delegate = self
     }
     
     @IBAction func refresh(_ sender: UIButton) {
         print("ym")
     }
-    
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        
-//    }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        //Gradient
+        let gradient:CAGradientLayer = CAGradientLayer()
+        gradient.frame = self.view.frame
+        let color1 = UIColor(colorLiteralRed: 34/255, green: 139/255, blue: 34/255, alpha: 1).cgColor
+        let color2 = UIColor(colorLiteralRed: 17/255, green: 38/255, blue: 11/255, alpha: 1).cgColor
+        gradient.colors = [color1, color2]
+        self.view.layer.insertSublayer(gradient, at: 0)
+        
+        teamTable.backgroundColor = UIColor.clear
+    }
+    //White status bar
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent;
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TeamCell", for: indexPath)
-        cell.textLabel?.text = Data.teamList[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TeamCell", for: indexPath) as! TeamTableViewCell
+        cell.rankingNumber.text = "#" + String(indexPath.row + 1)
+        cell.teamNumber.text = Data.teamList[indexPath.row]
+        cell.backgroundColor = UIColor.clear
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Data.teamList.count
     }
-    
+
     @IBAction func teamListUnwind(unwindSegue: UIStoryboardSegue) {
         
     }
