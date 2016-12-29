@@ -42,8 +42,6 @@ class TBAMatch {
                 if arrayOfCharc.count == 4{
                     matchNumberString += String(arrayOfCharc[3])
                 }
-                print(arrayOfCharc)
-//                matchNumberString += String(arrayOfCharc[3])
                 
                 matchNumber = Int(matchNumberString)!
             }else{
@@ -119,7 +117,6 @@ class TBAMatch {
             }
         }
         var fullArray = qualifyingMatches + quarterFinals + semiFinals + finals
-        print(fullArray[fullArray.count - 1].key)
         return fullArray
         
     }

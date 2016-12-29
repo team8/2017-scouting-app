@@ -41,14 +41,14 @@ class MatchListViewController: ViewController, UITableViewDataSource, UITableVie
         if let alreadySaved = UserDefaults.standard.object(forKey: "alreadySaved"){
 
         }else{
-            print("ran")
+
             Data.fetch(complete: fetchComplete)
         }
         populateMatchList()
 
     }
     func populateMatchList() -> Void {
-        print("populateMatchList")
+
         //Populating matchList
         let appDel = UIApplication.shared.delegate as! AppDelegate
         let managedContext = appDel.managedObjectContext
@@ -69,11 +69,11 @@ class MatchListViewController: ViewController, UITableViewDataSource, UITableVie
                             let blueTeams = match.value(forKey: "blue") as! [String]
                             let redTeams = match.value(forKey: "red") as! [String]
                             let teamToAppend = TBAMatch(keyV: config, blueAlliance: blueTeams, redAlliance: redTeams)
-                            print(config)
+
                             TBAMatch.matchListUnordered.append(teamToAppend)
                             
                         }catch{
-                            print(":(")
+                            print("core data fetch error")
                         }
                         
                     }
@@ -89,7 +89,6 @@ class MatchListViewController: ViewController, UITableViewDataSource, UITableVie
         
     }
     override func viewDidAppear(_ animated: Bool) {
-        print("viewDidAppear")
         DispatchQueue.main.async{
             self.matchTable.reloadData()
         }
@@ -180,7 +179,6 @@ class MatchListViewController: ViewController, UITableViewDataSource, UITableVie
         
         cell.backgroundColor = UIColor.clear
         
-        print("tb-refreshed")
         return cell
     }
     
@@ -219,7 +217,6 @@ class MatchListViewController: ViewController, UITableViewDataSource, UITableVie
     
     func deleteAllData(){
         if (UserDefaults.standard.bool(forKey: "alreadySaved") as? Bool) != nil{
-            print("delete ran")
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             let managedContext = appDelegate.managedObjectContext
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Matches")
