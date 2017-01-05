@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GoC-jH-tdY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GoC-jH-tdY">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -38,7 +38,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Scan QR Code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y9c-H6-zDh">
                                 <rect key="frame" x="41" y="44" width="239" height="47"/>
-                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="39"/>
+                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="36"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -84,16 +84,29 @@
                                     <constraint firstItem="sSW-QZ-VzW" firstAttribute="top" secondItem="dCe-By-0ft" secondAttribute="top" constant="10" id="gS1-zh-Ged"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XP8-M9-YxB">
+                                <rect key="frame" x="16" y="52" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="Ka2-fO-rUb"/>
+                                    <constraint firstAttribute="height" constant="30" id="LOf-wi-n1v"/>
+                                </constraints>
+                                <state key="normal" image="menu-button"/>
+                                <connections>
+                                    <segue destination="GoC-jH-tdY" kind="presentation" id="u5H-Ul-qXQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1333333333" green="0.5450980392" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="y9c-H6-zDh" firstAttribute="centerX" secondItem="l7W-RA-Hb0" secondAttribute="centerX" id="02w-wV-vQg"/>
                             <constraint firstItem="ljs-i9-NuJ" firstAttribute="centerX" secondItem="l7W-RA-Hb0" secondAttribute="centerX" id="5Pg-aQ-3LW"/>
-                            <constraint firstItem="y9c-H6-zDh" firstAttribute="top" secondItem="g8G-we-osH" secondAttribute="bottom" constant="25" id="C0t-zP-PZD"/>
+                            <constraint firstItem="XP8-M9-YxB" firstAttribute="leading" secondItem="l7W-RA-Hb0" secondAttribute="leadingMargin" id="96o-wf-qq0"/>
+                            <constraint firstItem="y9c-H6-zDh" firstAttribute="top" secondItem="g8G-we-osH" secondAttribute="bottom" constant="10" id="GR2-Ih-hRF"/>
                             <constraint firstItem="dCe-By-0ft" firstAttribute="top" secondItem="ljs-i9-NuJ" secondAttribute="bottom" constant="30" id="IAu-Oe-IP3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dCe-By-0ft" secondAttribute="trailing" constant="10" id="LKL-ej-fKE"/>
                             <constraint firstItem="dCe-By-0ft" firstAttribute="leading" secondItem="l7W-RA-Hb0" secondAttribute="leadingMargin" constant="10" id="OUJ-RS-uvg"/>
                             <constraint firstItem="ljs-i9-NuJ" firstAttribute="leading" secondItem="l7W-RA-Hb0" secondAttribute="leadingMargin" constant="20" id="QIA-b8-F5b"/>
+                            <constraint firstItem="XP8-M9-YxB" firstAttribute="top" secondItem="y9c-H6-zDh" secondAttribute="top" constant="6.5" id="gKM-rM-RMg"/>
                             <constraint firstItem="MFp-sI-MXg" firstAttribute="top" secondItem="dCe-By-0ft" secondAttribute="bottom" constant="10" id="gpL-JP-Iil"/>
                             <constraint firstItem="ljs-i9-NuJ" firstAttribute="top" secondItem="y9c-H6-zDh" secondAttribute="bottom" constant="25" id="hdQ-Fi-xoN"/>
                             <constraint firstItem="dCe-By-0ft" firstAttribute="centerX" secondItem="l7W-RA-Hb0" secondAttribute="centerX" id="xyv-rs-k0G"/>
@@ -790,6 +803,6 @@
         <image name="upload-qr-code.png" width="57" height="51"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="I8S-nU-tDs"/>
+        <segue reference="u5H-Ul-qXQ"/>
     </inferredMetricsTieBreakers>
 </document>
