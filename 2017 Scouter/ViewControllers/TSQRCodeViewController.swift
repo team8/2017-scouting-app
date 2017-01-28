@@ -11,21 +11,45 @@ import UIKit
 import QRCodeReader
 import AVFoundation
 
-class QRCodeViewController : ViewController, QRCodeReaderViewControllerDelegate {
+class QRCodeViewController : ViewController, QRCodeReaderViewControllerDelegate, UITableViewDataSource, UITableViewDelegate  {
     
     @IBOutlet weak var ScanButton: UIButton!
     
     @IBOutlet weak var ScanView: UIView!
     
+    @IBOutlet var QRCodeREsults: UITableView!
+    
+    var realizedData : ScannedMatchData!
     
     override func viewDidLoad() {
         ScanView.isHidden = true
+        QRCodeREsults.dataSource = self
+        QRCodeREsults.delegate = self
     }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "QRCell", for: indexPath) 
+        cell.backgroundView?.backgroundColor = UIColor.blue
+        let field = Array(realizedData.scoringElements.keys)[indexPath.section]
+        let data = realizedData.scoringElements[field]
+        print("RUNNING \(indexPath.section)")
+        cell.textLabel?.text = field + ": " + data!
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return ScannedMatchData.CURRENT_DATA_ELEMENTS_NUMBER
+    }
+
     
     func hasReceivedQRData(with result: String) {
         ScanButton.setTitle("Re-Scan QR Code", for: .normal)
-        var realizedData : ScannedMatchData = ScannedMatchData(from: result)
+        realizedData = ScannedMatchData(from: result)
         ScanView.isHidden = false
+        QRCodeREsults.reloadData()
     }
     
     

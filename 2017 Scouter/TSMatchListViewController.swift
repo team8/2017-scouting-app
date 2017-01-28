@@ -129,7 +129,6 @@ class MatchListViewController: ViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
         let cell = tableView.dequeueReusableCell(withIdentifier: "MatchCell", for: indexPath) as! UnplayedTableViewCell
         var blueTeamString = ""
         for blueTeamWithFRC in matchList[indexPath.row].blue{

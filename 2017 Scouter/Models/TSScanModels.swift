@@ -13,8 +13,9 @@ import Foundation
  */
 class ScannedMatchData {
     
-    var match_number : Int
-    var team : String
+    static let CURRENT_DATA_ELEMENTS_NUMBER : Int = 2
+    
+    var scoringElements = ["":""]
     
     // CSV Format
     // Index 0: Match Number
@@ -22,16 +23,8 @@ class ScannedMatchData {
     // Index 2: ...
     init(from data : String) {
         var splitVersion = data.components(separatedBy: ",")
-//            match_number = Int(splitVersion[0])!
-        if splitVersion.count == 3 {
-            match_number = Int(splitVersion[0])!
-            team = splitVersion[1]
-        }
-        else {
-            match_number = 0
-            team = "Error"
-        }
-        
+        scoringElements["match"] = splitVersion[0]
+        scoringElements["team"] = splitVersion[1]
     }
     
     
