@@ -1,7 +1,8 @@
-2017\ Scouter.xcodeproj/xcuserdata/*
+2017\ Scouter.xcodeproj/xcuserdata/**
 2017\ Scouter.xcodeproj/project.xcworkspace/
-2017\ Scouter.xcworkspace/xcuserdata/*
+2017\ Scouter.xcworkspace/xcuserdata/**
+2017\ Scouter.xcodeproj/project.pbxproj
 Pods/
 Podfile.lock
-*~
-*.DS_Store
+**~
+**.DS_Store
