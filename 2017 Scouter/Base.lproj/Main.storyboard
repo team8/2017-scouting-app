@@ -36,14 +36,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Scan QR Code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y9c-H6-zDh">
-                                <rect key="frame" x="41" y="44" width="239" height="47"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan QR Code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y9c-H6-zDh">
+                                <rect key="frame" x="49.5" y="30" width="221" height="44"/>
                                 <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="36"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ljs-i9-NuJ">
-                                <rect key="frame" x="16" y="119" width="288" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ljs-i9-NuJ">
+                                <rect key="frame" x="36" y="99" width="248" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="B2Y-3o-9nM"/>
                                 </constraints>
@@ -56,17 +56,17 @@
                                     <action selector="submit:" destination="sy7-Bl-CvD" eventType="touchUpInside" id="lRV-7e-bxs"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dCe-By-0ft">
-                                <rect key="frame" x="40" y="187" width="240" height="361"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dCe-By-0ft">
+                                <rect key="frame" x="26" y="169" width="268" height="389"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Data Collected" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSW-QZ-VzW">
-                                        <rect key="frame" x="-4" y="28" width="249" height="47"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data Collected" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSW-QZ-VzW">
+                                        <rect key="frame" x="4" y="10" width="260" height="47"/>
                                         <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="39"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5vU-bi-JS6">
-                                        <rect key="frame" x="-24" y="291" width="288" height="41"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5vU-bi-JS6">
+                                        <rect key="frame" x="29" y="340" width="224" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="5G0-87-frv"/>
                                         </constraints>
@@ -75,17 +75,37 @@
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                     </button>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YcQ-E4-aWK">
+                                        <rect key="frame" x="14" y="65" width="240" height="273"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="sectionIndexBackgroundColor" red="0.18692482724349335" green="0.37886685877565862" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="QRCell" id="fYY-dF-546">
+                                                <rect key="frame" x="0.0" y="28" width="240" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fYY-dF-546" id="CtO-Lb-SzT">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="Hyb-PL-BNU" id="9pS-DF-LPn"/>
+                                            <outlet property="delegate" destination="Hyb-PL-BNU" id="IEt-pz-GrT"/>
+                                        </connections>
+                                    </tableView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="sSW-QZ-VzW" firstAttribute="centerX" secondItem="dCe-By-0ft" secondAttribute="centerX" id="3Ot-Ue-CBi"/>
                                     <constraint firstItem="5vU-bi-JS6" firstAttribute="centerX" secondItem="dCe-By-0ft" secondAttribute="centerX" constant="7" id="D2a-oc-efb"/>
+                                    <constraint firstItem="YcQ-E4-aWK" firstAttribute="leading" secondItem="dCe-By-0ft" secondAttribute="leadingMargin" constant="6" id="Nzd-wo-qnV"/>
                                     <constraint firstItem="5vU-bi-JS6" firstAttribute="top" secondItem="dCe-By-0ft" secondAttribute="bottom" constant="-49" id="R7c-6w-BTa"/>
                                     <constraint firstItem="sSW-QZ-VzW" firstAttribute="top" secondItem="dCe-By-0ft" secondAttribute="top" constant="10" id="gS1-zh-Ged"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XP8-M9-YxB">
-                                <rect key="frame" x="16" y="52" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XP8-M9-YxB">
+                                <rect key="frame" x="16" y="37" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="Ka2-fO-rUb"/>
                                     <constraint firstAttribute="height" constant="30" id="LOf-wi-n1v"/>
@@ -95,25 +115,6 @@
                                     <segue destination="GoC-jH-tdY" kind="presentation" id="u5H-Ul-qXQ"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YcQ-E4-aWK">
-                                <rect key="frame" x="40" y="283" width="240" height="186"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="sectionIndexBackgroundColor" red="0.18692482724349335" green="0.37886685877565862" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="QRCell" id="fYY-dF-546">
-                                        <rect key="frame" x="0.0" y="28" width="240" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fYY-dF-546" id="CtO-Lb-SzT">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="Hyb-PL-BNU" id="9pS-DF-LPn"/>
-                                    <outlet property="delegate" destination="Hyb-PL-BNU" id="IEt-pz-GrT"/>
-                                </connections>
-                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.1333333333" green="0.5450980392" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -124,9 +125,7 @@
                             <constraint firstItem="dCe-By-0ft" firstAttribute="top" secondItem="ljs-i9-NuJ" secondAttribute="bottom" constant="30" id="IAu-Oe-IP3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dCe-By-0ft" secondAttribute="trailing" constant="10" id="LKL-ej-fKE"/>
                             <constraint firstItem="dCe-By-0ft" firstAttribute="leading" secondItem="l7W-RA-Hb0" secondAttribute="leadingMargin" constant="10" id="OUJ-RS-uvg"/>
-                            <constraint firstItem="MFp-sI-MXg" firstAttribute="top" secondItem="YcQ-E4-aWK" secondAttribute="bottom" constant="10" id="PD1-RS-rYV"/>
                             <constraint firstItem="ljs-i9-NuJ" firstAttribute="leading" secondItem="l7W-RA-Hb0" secondAttribute="leadingMargin" constant="20" id="QIA-b8-F5b"/>
-                            <constraint firstItem="YcQ-E4-aWK" firstAttribute="top" secondItem="ljs-i9-NuJ" secondAttribute="bottom" constant="10" id="UOm-qJ-lCw"/>
                             <constraint firstItem="XP8-M9-YxB" firstAttribute="top" secondItem="y9c-H6-zDh" secondAttribute="top" constant="6.5" id="gKM-rM-RMg"/>
                             <constraint firstItem="MFp-sI-MXg" firstAttribute="top" secondItem="dCe-By-0ft" secondAttribute="bottom" constant="10" id="gpL-JP-Iil"/>
                             <constraint firstItem="ljs-i9-NuJ" firstAttribute="top" secondItem="y9c-H6-zDh" secondAttribute="bottom" constant="25" id="hdQ-Fi-xoN"/>
@@ -825,6 +824,6 @@
         <image name="upload-qr-code.png" width="57" height="51"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="u5H-Ul-qXQ"/>
+        <segue reference="I8S-nU-tDs"/>
     </inferredMetricsTieBreakers>
 </document>

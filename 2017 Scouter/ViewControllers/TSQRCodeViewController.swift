@@ -32,10 +32,12 @@ class QRCodeViewController : ViewController, QRCodeReaderViewControllerDelegate,
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "QRCell", for: indexPath) 
         cell.backgroundView?.backgroundColor = UIColor.blue
-        let field = Array(realizedData.scoringElements.keys)[indexPath.section]
-        let data = realizedData.scoringElements[field]
-        print("RUNNING \(indexPath.section)")
-        cell.textLabel?.text = field + ": " + data!
+        if (realizedData != nil){
+            let field = Array(realizedData.scoringElements.keys)[indexPath.row]
+            let data = realizedData.scoringElements[field]
+            print("RUNNING \(indexPath.row)")
+            cell.textLabel?.text = field + ": " + data!
+        }
         
         return cell
     }
