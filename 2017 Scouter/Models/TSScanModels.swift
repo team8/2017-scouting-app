@@ -15,7 +15,7 @@ class ScannedMatchData {
     
     static let CURRENT_DATA_ELEMENTS_NUMBER : Int = 2
     
-    var scoringElements = ["":""]
+    var scoringElements = [String: String]()
     
     // CSV Format
     // Index 0: Match Number
