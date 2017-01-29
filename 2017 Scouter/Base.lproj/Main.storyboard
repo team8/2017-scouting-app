@@ -267,11 +267,19 @@
                                     <segue destination="sy7-Bl-CvD" kind="show" id="lXv-EA-tdm"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="Tvm-2T-oqR">
+                                <rect key="frame" x="60" y="184" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="CjI-4q-Rjl"/>
+                                    <constraint firstAttribute="width" constant="200" id="VTX-Vl-1a0"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.13333333333333333" green="0.54509803921568623" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="FER-gS-Ra9" firstAttribute="top" secondItem="Wib-P6-s2J" secondAttribute="bottom" constant="8" id="2l6-Pb-bEx"/>
                             <constraint firstItem="tjQ-IB-09V" firstAttribute="top" secondItem="U2V-oq-rC0" secondAttribute="bottom" constant="-44" id="6y9-nM-Iai"/>
+                            <constraint firstItem="Tvm-2T-oqR" firstAttribute="centerX" secondItem="E07-cz-z55" secondAttribute="centerX" id="75D-20-IX7"/>
                             <constraint firstItem="tjQ-IB-09V" firstAttribute="trailing" secondItem="E07-cz-z55" secondAttribute="trailingMargin" id="7Hl-b9-bfD"/>
                             <constraint firstItem="lKC-tr-7aH" firstAttribute="top" secondItem="mzG-nU-wql" secondAttribute="bottom" constant="23" id="9lL-O2-RBg"/>
                             <constraint firstItem="mzG-nU-wql" firstAttribute="centerX" secondItem="E07-cz-z55" secondAttribute="centerX" id="EDY-Wh-yH8"/>
@@ -289,6 +297,7 @@
                             <constraint firstItem="tjQ-IB-09V" firstAttribute="top" secondItem="W6f-ca-YAW" secondAttribute="bottom" constant="23" id="aIG-L9-hxf"/>
                             <constraint firstItem="mzG-nU-wql" firstAttribute="trailing" secondItem="E07-cz-z55" secondAttribute="trailingMargin" id="bmb-AF-ddD"/>
                             <constraint firstItem="mzG-nU-wql" firstAttribute="leading" secondItem="E07-cz-z55" secondAttribute="leadingMargin" id="c80-wO-ex1"/>
+                            <constraint firstItem="Tvm-2T-oqR" firstAttribute="centerY" secondItem="E07-cz-z55" secondAttribute="centerY" id="ch1-9g-dOO"/>
                             <constraint firstItem="tjQ-IB-09V" firstAttribute="leading" secondItem="E07-cz-z55" secondAttribute="leadingMargin" id="d0i-mN-Qfh"/>
                             <constraint firstItem="mzG-nU-wql" firstAttribute="leading" secondItem="7cp-gm-tA0" secondAttribute="trailing" constant="-41" id="izm-5I-WFQ"/>
                             <constraint firstItem="W6f-ca-YAW" firstAttribute="centerX" secondItem="E07-cz-z55" secondAttribute="centerX" id="kT8-iB-A8K"/>
@@ -308,6 +317,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="qZA-fu-nPB"/>
                     <connections>
+                        <outlet property="testImage" destination="Tvm-2T-oqR" id="BAG-bj-Zpp"/>
                         <outletCollection property="menuButtons" destination="mCl-1I-NL3" collectionClass="NSMutableArray" id="j3M-3y-hzH"/>
                         <outletCollection property="menuButtons" destination="W6f-ca-YAW" collectionClass="NSMutableArray" id="K92-Jd-FFa"/>
                         <outletCollection property="menuButtons" destination="tjQ-IB-09V" collectionClass="NSMutableArray" id="eca-Rg-3XM"/>
@@ -823,6 +833,7 @@
         <image name="matches.png" width="42" height="63"/>
         <image name="menu-button" width="93" height="93"/>
         <image name="picklist" width="54" height="57"/>
+        <image name="placeholder.png" width="600" height="600"/>
         <image name="teams" width="48" height="54"/>
         <image name="upload-qr-code.png" width="57" height="51"/>
     </resources>
