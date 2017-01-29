@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SwiftyDropbox
 
 
 var previousScreen = "none"
@@ -24,7 +25,31 @@ class MenuViewController: UIViewController {
         
     }
     
+    var client: DropboxClient?
+    
+    @IBOutlet weak var testImage: UIImageView!
     override func viewWillAppear(_ animated: Bool) {
+        
+        let fileManager = FileManager.default
+        let directoryURL = FileManager().urls(for: .applicationSupportDirectory, in: .userDomainMask)[0] as URL
+        let destURL = directoryURL.appendingPathComponent("myTestFile")
+        let destination: (URL, HTTPURLResponse) -> URL = { temporaryURL, response in
+            return destURL
+        }
+        
+        client = DropboxClient(accessToken: "uzaRy4m3BHAAAAAAAAAAFMyywnsKTZDeS5ONnUvnYNXW5Mzcw1CogAguXx03o8u3")
+        client!.files.getThumbnail(path: "/Scouting/Robot Pictures 2017/test/frc8.png", format: Files.ThumbnailFormat.png, size: Files.ThumbnailSize.w1024h768, overwrite: true, destination: destination)
+            .response { response, error in
+                if let response = response {
+                    print(response)
+                    self.testImage.image = UIImage(data: fileManager.contents(atPath: destURL.relativePath)!)
+                } else if let error = error {
+                    print(error)
+                }
+            }
+            .progress { progressData in
+                print(progressData)
+        }
         
         if previousScreen != "none"{
             previousScreen = currentScreen

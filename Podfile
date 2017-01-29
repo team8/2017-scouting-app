@@ -11,6 +11,7 @@ target '2017 Scouter' do
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
   pod 'QRCodeReader.swift', '~> 7.2.0'
+  pod 'SwiftyDropbox'
 end
 
 post_install do |installer|

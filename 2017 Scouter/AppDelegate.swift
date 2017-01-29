@@ -8,7 +8,9 @@
 
 import UIKit
 import Firebase
+import SwiftyDropbox
 import CoreData
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,20 +22,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         
-        // Override point for customization after application launch.
+        // Firebase initialization
         FIRApp.configure()
+        // Sign in to Firebase anonymously
         FIRAuth.auth()?.signInAnonymously() { (user, error) in
             let isAnonymous = user!.isAnonymous  // true
             let uid = user!.uid
             print(isAnonymous.description + uid)
         }
         ref = FIRDatabase.database().reference()
-        self.ref.child("test").setValue("It Works!")
-        ref.child("test").observeSingleEvent(of: .value, with: { (snapshot) in
-            print("test: " + (snapshot.value! as! String))
-        }) { (error) in
-            print(error.localizedDescription)
-        }
+//        self.ref.child("test").setValue("It Works!")
+//        ref.child("test").observeSingleEvent(of: .value, with: { (snapshot) in
+//            print("test: " + (snapshot.value! as! String))
+//        }) { (error) in
+//            print(error.localizedDescription)
+//        }
+        
+        // Dropbox initialization
+        DropboxClientsManager.setupWithAppKey("sjtr0udzq3arm1t")
         return true
     }
 
