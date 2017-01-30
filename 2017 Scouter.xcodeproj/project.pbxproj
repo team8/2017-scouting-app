@@ -1,0 +1,562 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6A28B8641E0895AC00EB2904 /* TSErrorReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A28B8631E0895AC00EB2904 /* TSErrorReportViewController.swift */; };
+		6A62F1191DC4280000479F30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A62F1181DC4280000479F30 /* AppDelegate.swift */; };
+		6A62F11B1DC4280000479F30 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A62F11A1DC4280000479F30 /* ViewController.swift */; };
+		6A62F11E1DC4280000479F30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A62F11C1DC4280000479F30 /* Main.storyboard */; };
+		6A62F1201DC4280000479F30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A62F11F1DC4280000479F30 /* Assets.xcassets */; };
+		6A62F1231DC4280000479F30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A62F1211DC4280000479F30 /* LaunchScreen.storyboard */; };
+		6A6D6B041E0A351C00559506 /* TSScanModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6D6B031E0A351C00559506 /* TSScanModels.swift */; };
+		6AD6C7F41DC429260028DB4D /* TSMatchModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD6C7F31DC429260028DB4D /* TSMatchModels.swift */; };
+		6AD6C7F91DC4295D0028DB4D /* TSServerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD6C7F81DC4295D0028DB4D /* TSServerInteractor.swift */; };
+		6AFF7DA31E09AE52008F522B /* TSQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFF7DA21E09AE52008F522B /* TSQRCodeViewController.swift */; };
+		A388C1B8F767CA9FAE9B2B45 /* Pods_2017_Scouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63DF2611370533B9C4D8BDED /* Pods_2017_Scouter.framework */; };
+		A5B9EFFC1DF791F400C4D6F6 /* TSMatchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B9EFFB1DF791F300C4D6F6 /* TSMatchListViewController.swift */; };
+		A5C4DAF11DF5F24A00A337FB /* TSMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C4DAEF1DF5F24A00A337FB /* TSMenuViewController.swift */; };
+		A5C4DAF21DF5F24A00A337FB /* TSTeamListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C4DAF01DF5F24A00A337FB /* TSTeamListViewController.swift */; };
+		A5CFA19B1DF50CE10008D74F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5CFA19A1DF50CE10008D74F /* GoogleService-Info.plist */; };
+		A5CFD7EE1DF69D8F0062EE74 /* TSData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CFD7ED1DF69D8F0062EE74 /* TSData.swift */; };
+		AA1D86251E14F5FE00B12722 /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1D86241E14F5FE00B12722 /* TeamTableViewCell.swift */; };
+		AA2072B61E0920AC0001DD6F /* 2017-Scouter-Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA2072B41E0920AC0001DD6F /* 2017-Scouter-Model.xcdatamodeld */; };
+		AA2B727B1E07135200BE66DC /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA2B72701E07135200BE66DC /* Lato-Black.ttf */; };
+		AA2B727C1E07135200BE66DC /* Lato-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA2B72711E07135200BE66DC /* Lato-BlackItalic.ttf */; };
+		AA2B727D1E07135200BE66DC /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA2B72721E07135200BE66DC /* Lato-Bold.ttf */; };
+		AA2B727E1E07135200BE66DC /* Lato-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA2B72731E07135200BE66DC /* Lato-BoldItalic.ttf */; };
+		AA2B727F1E07135200BE66DC /* Lato-Hairline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA2B72741E07135200BE66DC /* Lato-Hairline.ttf */; };
+		AA2B72801E07135200BE66DC /* Lato-HairlineItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA2B72751E07135200BE66DC /* Lato-HairlineItalic.ttf */; };
+		AA2B72811E07135200BE66DC /* Lato-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA2B72761E07135200BE66DC /* Lato-Italic.ttf */; };
+		AA2B72821E07135200BE66DC /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA2B72771E07135200BE66DC /* Lato-Light.ttf */; };
+		AA2B72831E07135200BE66DC /* Lato-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA2B72781E07135200BE66DC /* Lato-LightItalic.ttf */; };
+		AA2B72841E07135200BE66DC /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA2B72791E07135200BE66DC /* Lato-Regular.ttf */; };
+		AA2B72851E07135200BE66DC /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = AA2B727A1E07135200BE66DC /* OFL.txt */; };
+		AA54324C1E08AD3B00000A88 /* Group.png in Resources */ = {isa = PBXBuildFile; fileRef = AA5432471E08AD3B00000A88 /* Group.png */; };
+		AA54324D1E08AD3B00000A88 /* matches.png in Resources */ = {isa = PBXBuildFile; fileRef = AA5432481E08AD3B00000A88 /* matches.png */; };
+		AA54324E1E08AD3B00000A88 /* picklist.png in Resources */ = {isa = PBXBuildFile; fileRef = AA5432491E08AD3B00000A88 /* picklist.png */; };
+		AA54324F1E08AD3B00000A88 /* teams.png in Resources */ = {isa = PBXBuildFile; fileRef = AA54324A1E08AD3B00000A88 /* teams.png */; };
+		AA5432501E08AD3B00000A88 /* upload-qr-code.png in Resources */ = {isa = PBXBuildFile; fileRef = AA54324B1E08AD3B00000A88 /* upload-qr-code.png */; };
+		AAA730F01E1333490003ECC0 /* UnplayedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA730EF1E1333490003ECC0 /* UnplayedTableViewCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		332959FC1037473E9A2D0FF5 /* Pods-2017 Scouter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2017 Scouter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-2017 Scouter/Pods-2017 Scouter.debug.xcconfig"; sourceTree = "<group>"; };
+		63DF2611370533B9C4D8BDED /* Pods_2017_Scouter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_2017_Scouter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A28B8631E0895AC00EB2904 /* TSErrorReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSErrorReportViewController.swift; path = ViewControllers/TSErrorReportViewController.swift; sourceTree = "<group>"; };
+		6A62F1151DC4280000479F30 /* 2017 Scouter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "2017 Scouter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A62F1181DC4280000479F30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6A62F11A1DC4280000479F30 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6A62F11D1DC4280000479F30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6A62F11F1DC4280000479F30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6A62F1221DC4280000479F30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6A62F1241DC4280000479F30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A6D6B031E0A351C00559506 /* TSScanModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSScanModels.swift; path = Models/TSScanModels.swift; sourceTree = "<group>"; };
+		6AD6C7F31DC429260028DB4D /* TSMatchModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSMatchModels.swift; path = Models/TSMatchModels.swift; sourceTree = "<group>"; };
+		6AD6C7F81DC4295D0028DB4D /* TSServerInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSServerInteractor.swift; path = Server/TSServerInteractor.swift; sourceTree = "<group>"; };
+		6AFF7DA21E09AE52008F522B /* TSQRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSQRCodeViewController.swift; path = ViewControllers/TSQRCodeViewController.swift; sourceTree = "<group>"; };
+		7D446CDA0C59D3847E584BFE /* Pods-2017 Scouter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2017 Scouter.release.xcconfig"; path = "Pods/Target Support Files/Pods-2017 Scouter/Pods-2017 Scouter.release.xcconfig"; sourceTree = "<group>"; };
+		A5B9EFFB1DF791F300C4D6F6 /* TSMatchListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSMatchListViewController.swift; sourceTree = "<group>"; };
+		A5C4DAEF1DF5F24A00A337FB /* TSMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSMenuViewController.swift; path = ViewControllers/TSMenuViewController.swift; sourceTree = "<group>"; };
+		A5C4DAF01DF5F24A00A337FB /* TSTeamListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSTeamListViewController.swift; path = ViewControllers/TSTeamListViewController.swift; sourceTree = "<group>"; };
+		A5CFA19A1DF50CE10008D74F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A5CFA19C1DF512D70008D74F /* 2017 Scouter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "2017 Scouter.entitlements"; sourceTree = "<group>"; };
+		A5CFD7ED1DF69D8F0062EE74 /* TSData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSData.swift; sourceTree = "<group>"; };
+		AA1D86241E14F5FE00B12722 /* TeamTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
+		AA2072B51E0920AC0001DD6F /* 2017-Scouter-Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "2017-Scouter-Model.xcdatamodel"; sourceTree = "<group>"; };
+		AA2B72701E07135200BE66DC /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
+		AA2B72711E07135200BE66DC /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BlackItalic.ttf"; sourceTree = "<group>"; };
+		AA2B72721E07135200BE66DC /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
+		AA2B72731E07135200BE66DC /* Lato-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BoldItalic.ttf"; sourceTree = "<group>"; };
+		AA2B72741E07135200BE66DC /* Lato-Hairline.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Hairline.ttf"; sourceTree = "<group>"; };
+		AA2B72751E07135200BE66DC /* Lato-HairlineItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-HairlineItalic.ttf"; sourceTree = "<group>"; };
+		AA2B72761E07135200BE66DC /* Lato-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Italic.ttf"; sourceTree = "<group>"; };
+		AA2B72771E07135200BE66DC /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
+		AA2B72781E07135200BE66DC /* Lato-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-LightItalic.ttf"; sourceTree = "<group>"; };
+		AA2B72791E07135200BE66DC /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		AA2B727A1E07135200BE66DC /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		AA5432471E08AD3B00000A88 /* Group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Group.png; sourceTree = "<group>"; };
+		AA5432481E08AD3B00000A88 /* matches.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = matches.png; sourceTree = "<group>"; };
+		AA5432491E08AD3B00000A88 /* picklist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = picklist.png; sourceTree = "<group>"; };
+		AA54324A1E08AD3B00000A88 /* teams.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teams.png; sourceTree = "<group>"; };
+		AA54324B1E08AD3B00000A88 /* upload-qr-code.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "upload-qr-code.png"; sourceTree = "<group>"; };
+		AAA730EF1E1333490003ECC0 /* UnplayedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnplayedTableViewCell.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6A62F1121DC4280000479F30 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A388C1B8F767CA9FAE9B2B45 /* Pods_2017_Scouter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6A62F10C1DC4280000479F30 = {
+			isa = PBXGroup;
+			children = (
+				6A62F1171DC4280000479F30 /* 2017 Scouter */,
+				6A62F1161DC4280000479F30 /* Products */,
+				C51659D98D9A16BA7393AAFD /* Pods */,
+				CBAD4FB129774046299D8DC8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		6A62F1161DC4280000479F30 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6A62F1151DC4280000479F30 /* 2017 Scouter.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6A62F1171DC4280000479F30 /* 2017 Scouter */ = {
+			isa = PBXGroup;
+			children = (
+				AA2072B41E0920AC0001DD6F /* 2017-Scouter-Model.xcdatamodeld */,
+				6AD6C7F51DC429310028DB4D /* Models */,
+				A5CFA19C1DF512D70008D74F /* 2017 Scouter.entitlements */,
+				A5CFA19A1DF50CE10008D74F /* GoogleService-Info.plist */,
+				6AD6C7F71DC429500028DB4D /* Server */,
+				AAA730EF1E1333490003ECC0 /* UnplayedTableViewCell.swift */,
+				6AD6C7F61DC429410028DB4D /* ViewControllers */,
+				6A62F1181DC4280000479F30 /* AppDelegate.swift */,
+				6A62F11C1DC4280000479F30 /* Main.storyboard */,
+				AA1D86241E14F5FE00B12722 /* TeamTableViewCell.swift */,
+				AA5432461E08AD3B00000A88 /* menu-images */,
+				6A62F11F1DC4280000479F30 /* Assets.xcassets */,
+				AA2B726F1E07135200BE66DC /* Lato */,
+				6A62F1211DC4280000479F30 /* LaunchScreen.storyboard */,
+				6A62F1241DC4280000479F30 /* Info.plist */,
+				A5CFD7ED1DF69D8F0062EE74 /* TSData.swift */,
+			);
+			path = "2017 Scouter";
+			sourceTree = "<group>";
+		};
+		6AD6C7F51DC429310028DB4D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6AD6C7F31DC429260028DB4D /* TSMatchModels.swift */,
+				6A6D6B031E0A351C00559506 /* TSScanModels.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		6AD6C7F61DC429410028DB4D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6A28B8631E0895AC00EB2904 /* TSErrorReportViewController.swift */,
+				6A62F11A1DC4280000479F30 /* ViewController.swift */,
+				A5C4DAEF1DF5F24A00A337FB /* TSMenuViewController.swift */,
+				A5C4DAF01DF5F24A00A337FB /* TSTeamListViewController.swift */,
+				A5B9EFFB1DF791F300C4D6F6 /* TSMatchListViewController.swift */,
+				6AFF7DA21E09AE52008F522B /* TSQRCodeViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		6AD6C7F71DC429500028DB4D /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				6AD6C7F81DC4295D0028DB4D /* TSServerInteractor.swift */,
+			);
+			name = Server;
+			sourceTree = "<group>";
+		};
+		AA2B726F1E07135200BE66DC /* Lato */ = {
+			isa = PBXGroup;
+			children = (
+				AA2B72701E07135200BE66DC /* Lato-Black.ttf */,
+				AA2B72711E07135200BE66DC /* Lato-BlackItalic.ttf */,
+				AA2B72721E07135200BE66DC /* Lato-Bold.ttf */,
+				AA2B72731E07135200BE66DC /* Lato-BoldItalic.ttf */,
+				AA2B72741E07135200BE66DC /* Lato-Hairline.ttf */,
+				AA2B72751E07135200BE66DC /* Lato-HairlineItalic.ttf */,
+				AA2B72761E07135200BE66DC /* Lato-Italic.ttf */,
+				AA2B72771E07135200BE66DC /* Lato-Light.ttf */,
+				AA2B72781E07135200BE66DC /* Lato-LightItalic.ttf */,
+				AA2B72791E07135200BE66DC /* Lato-Regular.ttf */,
+				AA2B727A1E07135200BE66DC /* OFL.txt */,
+			);
+			path = Lato;
+			sourceTree = "<group>";
+		};
+		AA5432461E08AD3B00000A88 /* menu-images */ = {
+			isa = PBXGroup;
+			children = (
+				AA5432471E08AD3B00000A88 /* Group.png */,
+				AA5432481E08AD3B00000A88 /* matches.png */,
+				AA5432491E08AD3B00000A88 /* picklist.png */,
+				AA54324A1E08AD3B00000A88 /* teams.png */,
+				AA54324B1E08AD3B00000A88 /* upload-qr-code.png */,
+			);
+			path = "menu-images";
+			sourceTree = "<group>";
+		};
+		C51659D98D9A16BA7393AAFD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				332959FC1037473E9A2D0FF5 /* Pods-2017 Scouter.debug.xcconfig */,
+				7D446CDA0C59D3847E584BFE /* Pods-2017 Scouter.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CBAD4FB129774046299D8DC8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				63DF2611370533B9C4D8BDED /* Pods_2017_Scouter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6A62F1141DC4280000479F30 /* 2017 Scouter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A62F1271DC4280000479F30 /* Build configuration list for PBXNativeTarget "2017 Scouter" */;
+			buildPhases = (
+				A354211AC74A5F730B22E571 /* [CP] Check Pods Manifest.lock */,
+				6A62F1111DC4280000479F30 /* Sources */,
+				6A62F1121DC4280000479F30 /* Frameworks */,
+				6A62F1131DC4280000479F30 /* Resources */,
+				286E0D0BB91CD9B5A2DBB3F7 /* [CP] Embed Pods Frameworks */,
+				BD66C2AD3732E6908DBE0F86 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "2017 Scouter";
+			productName = "2017 Scouter";
+			productReference = 6A62F1151DC4280000479F30 /* 2017 Scouter.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6A62F10D1DC4280000479F30 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Team 8";
+				TargetAttributes = {
+					6A62F1141DC4280000479F30 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 6A62F1101DC4280000479F30 /* Build configuration list for PBXProject "2017 Scouter" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6A62F10C1DC4280000479F30;
+			productRefGroup = 6A62F1161DC4280000479F30 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6A62F1141DC4280000479F30 /* 2017 Scouter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6A62F1131DC4280000479F30 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA2B72851E07135200BE66DC /* OFL.txt in Resources */,
+				AA2B727D1E07135200BE66DC /* Lato-Bold.ttf in Resources */,
+				6A62F1231DC4280000479F30 /* LaunchScreen.storyboard in Resources */,
+				AA54324F1E08AD3B00000A88 /* teams.png in Resources */,
+				AA2B72801E07135200BE66DC /* Lato-HairlineItalic.ttf in Resources */,
+				AA2B72821E07135200BE66DC /* Lato-Light.ttf in Resources */,
+				A5CFA19B1DF50CE10008D74F /* GoogleService-Info.plist in Resources */,
+				AA2B72811E07135200BE66DC /* Lato-Italic.ttf in Resources */,
+				AA2B727E1E07135200BE66DC /* Lato-BoldItalic.ttf in Resources */,
+				AA2B727C1E07135200BE66DC /* Lato-BlackItalic.ttf in Resources */,
+				AA54324C1E08AD3B00000A88 /* Group.png in Resources */,
+				AA2B727F1E07135200BE66DC /* Lato-Hairline.ttf in Resources */,
+				6A62F1201DC4280000479F30 /* Assets.xcassets in Resources */,
+				AA2B727B1E07135200BE66DC /* Lato-Black.ttf in Resources */,
+				AA5432501E08AD3B00000A88 /* upload-qr-code.png in Resources */,
+				AA2B72841E07135200BE66DC /* Lato-Regular.ttf in Resources */,
+				6A62F11E1DC4280000479F30 /* Main.storyboard in Resources */,
+				AA54324D1E08AD3B00000A88 /* matches.png in Resources */,
+				AA54324E1E08AD3B00000A88 /* picklist.png in Resources */,
+				AA2B72831E07135200BE66DC /* Lato-LightItalic.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		286E0D0BB91CD9B5A2DBB3F7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-2017 Scouter/Pods-2017 Scouter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A354211AC74A5F730B22E571 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BD66C2AD3732E6908DBE0F86 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-2017 Scouter/Pods-2017 Scouter-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6A62F1111DC4280000479F30 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5CFD7EE1DF69D8F0062EE74 /* TSData.swift in Sources */,
+				6AFF7DA31E09AE52008F522B /* TSQRCodeViewController.swift in Sources */,
+				A5B9EFFC1DF791F400C4D6F6 /* TSMatchListViewController.swift in Sources */,
+				A5C4DAF21DF5F24A00A337FB /* TSTeamListViewController.swift in Sources */,
+				AA1D86251E14F5FE00B12722 /* TeamTableViewCell.swift in Sources */,
+				6A6D6B041E0A351C00559506 /* TSScanModels.swift in Sources */,
+				6A28B8641E0895AC00EB2904 /* TSErrorReportViewController.swift in Sources */,
+				6AD6C7F91DC4295D0028DB4D /* TSServerInteractor.swift in Sources */,
+				AA2072B61E0920AC0001DD6F /* 2017-Scouter-Model.xcdatamodeld in Sources */,
+				6A62F11B1DC4280000479F30 /* ViewController.swift in Sources */,
+				6A62F1191DC4280000479F30 /* AppDelegate.swift in Sources */,
+				6AD6C7F41DC429260028DB4D /* TSMatchModels.swift in Sources */,
+				AAA730F01E1333490003ECC0 /* UnplayedTableViewCell.swift in Sources */,
+				A5C4DAF11DF5F24A00A337FB /* TSMenuViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6A62F11C1DC4280000479F30 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6A62F11D1DC4280000479F30 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6A62F1211DC4280000479F30 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6A62F1221DC4280000479F30 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6A62F1251DC4280000479F30 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6A62F1261DC4280000479F30 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6A62F1281DC4280000479F30 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 332959FC1037473E9A2D0FF5 /* Pods-2017 Scouter.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "2017 Scouter/2017 Scouter.entitlements";
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "2017 Scouter/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.palyrobotics.-017-Scouter";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		6A62F1291DC4280000479F30 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D446CDA0C59D3847E584BFE /* Pods-2017 Scouter.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "2017 Scouter/2017 Scouter.entitlements";
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "2017 Scouter/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.palyrobotics.-017-Scouter";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6A62F1101DC4280000479F30 /* Build configuration list for PBXProject "2017 Scouter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A62F1251DC4280000479F30 /* Debug */,
+				6A62F1261DC4280000479F30 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6A62F1271DC4280000479F30 /* Build configuration list for PBXNativeTarget "2017 Scouter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A62F1281DC4280000479F30 /* Debug */,
+				6A62F1291DC4280000479F30 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AA2072B41E0920AC0001DD6F /* 2017-Scouter-Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AA2072B51E0920AC0001DD6F /* 2017-Scouter-Model.xcdatamodel */,
+			);
+			currentVersion = AA2072B51E0920AC0001DD6F /* 2017-Scouter-Model.xcdatamodel */;
+			path = "2017-Scouter-Model.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 6A62F10D1DC4280000479F30 /* Project object */;
+}
