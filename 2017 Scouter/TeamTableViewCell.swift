@@ -10,6 +10,8 @@ import UIKit
 
 class TeamTableViewCell: UITableViewCell {
 
+    var teamNum = 0
+    
     @IBOutlet weak var rankingNumber: UILabel!
     @IBOutlet weak var teamNumber: UILabel!
     @IBOutlet weak var sortStat: UILabel!

@@ -18,6 +18,9 @@
 		6AD6C7F91DC4295D0028DB4D /* TSServerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD6C7F81DC4295D0028DB4D /* TSServerInteractor.swift */; };
 		6AFF7DA31E09AE52008F522B /* TSQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFF7DA21E09AE52008F522B /* TSQRCodeViewController.swift */; };
 		A388C1B8F767CA9FAE9B2B45 /* Pods_2017_Scouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63DF2611370533B9C4D8BDED /* Pods_2017_Scouter.framework */; };
+		A55BA8201E3EC75D0079B9ED /* TSTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55BA81F1E3EC75D0079B9ED /* TSTeamViewController.swift */; };
+		A55BA8221E3FC39B0079B9ED /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = A55BA8211E3FC39B0079B9ED /* placeholder.png */; };
+		A55BA8241E400C1E0079B9ED /* TSTeamInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55BA8231E400C1D0079B9ED /* TSTeamInfoViewController.swift */; };
 		A5B9EFFC1DF791F400C4D6F6 /* TSMatchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B9EFFB1DF791F300C4D6F6 /* TSMatchListViewController.swift */; };
 		A5C4DAF11DF5F24A00A337FB /* TSMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C4DAEF1DF5F24A00A337FB /* TSMenuViewController.swift */; };
 		A5C4DAF21DF5F24A00A337FB /* TSTeamListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C4DAF01DF5F24A00A337FB /* TSTeamListViewController.swift */; };
@@ -60,6 +63,9 @@
 		6AD6C7F81DC4295D0028DB4D /* TSServerInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSServerInteractor.swift; path = Server/TSServerInteractor.swift; sourceTree = "<group>"; };
 		6AFF7DA21E09AE52008F522B /* TSQRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSQRCodeViewController.swift; path = ViewControllers/TSQRCodeViewController.swift; sourceTree = "<group>"; };
 		7D446CDA0C59D3847E584BFE /* Pods-2017 Scouter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2017 Scouter.release.xcconfig"; path = "Pods/Target Support Files/Pods-2017 Scouter/Pods-2017 Scouter.release.xcconfig"; sourceTree = "<group>"; };
+		A55BA81F1E3EC75D0079B9ED /* TSTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSTeamViewController.swift; path = ViewControllers/TSTeamViewController.swift; sourceTree = "<group>"; };
+		A55BA8211E3FC39B0079B9ED /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
+		A55BA8231E400C1D0079B9ED /* TSTeamInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSTeamInfoViewController.swift; path = ViewControllers/TSTeamInfoViewController.swift; sourceTree = "<group>"; };
 		A5B9EFFB1DF791F300C4D6F6 /* TSMatchListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSMatchListViewController.swift; sourceTree = "<group>"; };
 		A5C4DAEF1DF5F24A00A337FB /* TSMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSMenuViewController.swift; path = ViewControllers/TSMenuViewController.swift; sourceTree = "<group>"; };
 		A5C4DAF01DF5F24A00A337FB /* TSTeamListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSTeamListViewController.swift; path = ViewControllers/TSTeamListViewController.swift; sourceTree = "<group>"; };
@@ -153,6 +159,8 @@
 			isa = PBXGroup;
 			children = (
 				6A28B8631E0895AC00EB2904 /* TSErrorReportViewController.swift */,
+				A55BA81F1E3EC75D0079B9ED /* TSTeamViewController.swift */,
+				A55BA8231E400C1D0079B9ED /* TSTeamInfoViewController.swift */,
 				6A62F11A1DC4280000479F30 /* ViewController.swift */,
 				A5C4DAEF1DF5F24A00A337FB /* TSMenuViewController.swift */,
 				A5C4DAF01DF5F24A00A337FB /* TSTeamListViewController.swift */,
@@ -191,6 +199,7 @@
 		AA5432461E08AD3B00000A88 /* menu-images */ = {
 			isa = PBXGroup;
 			children = (
+				A55BA8211E3FC39B0079B9ED /* placeholder.png */,
 				AA5432471E08AD3B00000A88 /* Group.png */,
 				AA5432481E08AD3B00000A88 /* matches.png */,
 				AA5432491E08AD3B00000A88 /* picklist.png */,
@@ -252,6 +261,7 @@
 				TargetAttributes = {
 					6A62F1141DC4280000479F30 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = N8P6K8B6V2;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -288,6 +298,7 @@
 				AA2B727D1E07135200BE66DC /* Lato-Bold.ttf in Resources */,
 				6A62F1231DC4280000479F30 /* LaunchScreen.storyboard in Resources */,
 				AA54324F1E08AD3B00000A88 /* teams.png in Resources */,
+				A55BA8221E3FC39B0079B9ED /* placeholder.png in Resources */,
 				AA2B72801E07135200BE66DC /* Lato-HairlineItalic.ttf in Resources */,
 				AA2B72821E07135200BE66DC /* Lato-Light.ttf in Resources */,
 				A5CFA19B1DF50CE10008D74F /* GoogleService-Info.plist in Resources */,
@@ -364,12 +375,14 @@
 			files = (
 				A5CFD7EE1DF69D8F0062EE74 /* TSData.swift in Sources */,
 				6AFF7DA31E09AE52008F522B /* TSQRCodeViewController.swift in Sources */,
+				A55BA8241E400C1E0079B9ED /* TSTeamInfoViewController.swift in Sources */,
 				A5B9EFFC1DF791F400C4D6F6 /* TSMatchListViewController.swift in Sources */,
 				A5C4DAF21DF5F24A00A337FB /* TSTeamListViewController.swift in Sources */,
 				AA1D86251E14F5FE00B12722 /* TeamTableViewCell.swift in Sources */,
 				6A6D6B041E0A351C00559506 /* TSScanModels.swift in Sources */,
 				6A28B8641E0895AC00EB2904 /* TSErrorReportViewController.swift in Sources */,
 				6AD6C7F91DC4295D0028DB4D /* TSServerInteractor.swift in Sources */,
+				A55BA8201E3EC75D0079B9ED /* TSTeamViewController.swift in Sources */,
 				AA2072B61E0920AC0001DD6F /* 2017-Scouter-Model.xcdatamodeld in Sources */,
 				6A62F11B1DC4280000479F30 /* ViewController.swift in Sources */,
 				6A62F1191DC4280000479F30 /* AppDelegate.swift in Sources */,
@@ -498,7 +511,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "2017 Scouter/2017 Scouter.entitlements";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = N8P6K8B6V2;
 				INFOPLIST_FILE = "2017 Scouter/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.palyrobotics.-017-Scouter";
@@ -513,7 +526,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "2017 Scouter/2017 Scouter.entitlements";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = N8P6K8B6V2;
 				INFOPLIST_FILE = "2017 Scouter/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.palyrobotics.-017-Scouter";

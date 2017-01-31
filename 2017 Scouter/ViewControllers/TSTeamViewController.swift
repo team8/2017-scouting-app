@@ -7,13 +7,31 @@
 //
 
 import Foundation
-import SwiftyDropbox
+import UIKit
 
-class TeamViewController: ViewController{
+class TeamViewController: ViewController {
     
-    @IBOutlet weak var matchTable: UITableView!
+//    @IBOutlet weak var matchTable: UITableView!
+    var teamNumber = 0
     var matchList = [TBAMatch]()
+    
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    var embeddedViewController: UITabBarController?
+    
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
+        
+    }
+    
+    @IBAction func segmentChanged(_ sender: Any) {
+        self.embeddedViewController?.selectedIndex = segmentedControl.selectedSegmentIndex
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
+        if let vc = segue.destination as? UITabBarController, segue.identifier == "teamEmbed" {
+            self.embeddedViewController = vc
+            (self.embeddedViewController?.viewControllers?[0] as! TeamInfoViewController).teamNumber = self.teamNumber
+        }
     }
 }

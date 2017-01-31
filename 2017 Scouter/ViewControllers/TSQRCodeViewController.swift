@@ -27,6 +27,9 @@ class QRCodeViewController : ViewController, QRCodeReaderViewControllerDelegate,
         QRCodeREsults.delegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         

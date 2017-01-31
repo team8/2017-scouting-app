@@ -26,26 +26,30 @@ class TeamListViewController: ViewController, UITableViewDataSource, UITableView
         print("ym")
     }
     override func viewWillAppear(_ animated: Bool) {
-        //Gradient
-        let gradient:CAGradientLayer = CAGradientLayer()
-        gradient.frame = self.view.frame
-        let color1 = UIColor(colorLiteralRed: 34/255, green: 139/255, blue: 34/255, alpha: 1).cgColor
-        let color2 = UIColor(colorLiteralRed: 17/255, green: 38/255, blue: 11/255, alpha: 1).cgColor
-        gradient.colors = [color1, color2]
-        self.view.layer.insertSublayer(gradient, at: 0)
-        
+        super.viewWillAppear(animated)
+
         teamTable.backgroundColor = UIColor.clear
-    }
-    //White status bar
-    override var preferredStatusBarStyle : UIStatusBarStyle {
-        return UIStatusBarStyle.lightContent;
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TeamCell", for: indexPath) as! TeamTableViewCell
+        cell.teamNum = Data.teamList[indexPath.row]
         cell.rankingNumber.text = "#" + String(indexPath.row + 1)
-        cell.teamNumber.text = Data.teamList[indexPath.row]
+        cell.teamNumber.text = String(Data.teamList[indexPath.row])
         cell.backgroundColor = UIColor.clear
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! TeamTableViewCell
+        self.performSegue(withIdentifier: "teamListToTeam", sender: cell.teamNum)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
+        if (segue.identifier == "teamListToTeam") {
+            let secondViewController = segue.destination as! TeamViewController
+            let teamNumber = sender as! Int
+            secondViewController.teamNumber = teamNumber
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
