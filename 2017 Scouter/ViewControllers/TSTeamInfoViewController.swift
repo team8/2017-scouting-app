@@ -48,7 +48,10 @@ class TeamInfoViewController: ViewController {
                     print(response)
                     self.image.image = UIImage(data: fileManager.contents(atPath: destURL.relativePath)!)
                 } else if let error = error {
-                    print(error)
+                    print(error.description)
+                    if error.description.range(of:"not_found") != nil{
+                        self.image.image = UIImage(named: "placeholder_unavailable.png")
+                    }
                 }
             }
             .progress { progressData in

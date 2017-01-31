@@ -16,6 +16,7 @@ class TeamViewController: ViewController {
     var matchList = [TBAMatch]()
     
     @IBOutlet weak var menuButton: UIButton!
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     var embeddedViewController: UITabBarController?
     
@@ -24,6 +25,9 @@ class TeamViewController: ViewController {
         
         //Menu Button Image Sizing
         menuButton.imageEdgeInsets = UIEdgeInsetsMake(10, 20, 10, 20)
+        
+        //Change Title to team #
+        self.titleLabel.text = "Team " + String(self.teamNumber)
         
     }
     

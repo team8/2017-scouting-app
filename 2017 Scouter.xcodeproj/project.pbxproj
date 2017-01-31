@@ -18,6 +18,7 @@
 		6AD6C7F91DC4295D0028DB4D /* TSServerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD6C7F81DC4295D0028DB4D /* TSServerInteractor.swift */; };
 		6AFF7DA31E09AE52008F522B /* TSQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFF7DA21E09AE52008F522B /* TSQRCodeViewController.swift */; };
 		A388C1B8F767CA9FAE9B2B45 /* Pods_2017_Scouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63DF2611370533B9C4D8BDED /* Pods_2017_Scouter.framework */; };
+		A5058CA41E406CD00059B0BF /* placeholder_unavailable.png in Resources */ = {isa = PBXBuildFile; fileRef = A5058CA31E406CD00059B0BF /* placeholder_unavailable.png */; };
 		A55BA8201E3EC75D0079B9ED /* TSTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55BA81F1E3EC75D0079B9ED /* TSTeamViewController.swift */; };
 		A55BA8221E3FC39B0079B9ED /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = A55BA8211E3FC39B0079B9ED /* placeholder.png */; };
 		A55BA8241E400C1E0079B9ED /* TSTeamInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55BA8231E400C1D0079B9ED /* TSTeamInfoViewController.swift */; };
@@ -63,6 +64,7 @@
 		6AD6C7F81DC4295D0028DB4D /* TSServerInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSServerInteractor.swift; path = Server/TSServerInteractor.swift; sourceTree = "<group>"; };
 		6AFF7DA21E09AE52008F522B /* TSQRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSQRCodeViewController.swift; path = ViewControllers/TSQRCodeViewController.swift; sourceTree = "<group>"; };
 		7D446CDA0C59D3847E584BFE /* Pods-2017 Scouter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2017 Scouter.release.xcconfig"; path = "Pods/Target Support Files/Pods-2017 Scouter/Pods-2017 Scouter.release.xcconfig"; sourceTree = "<group>"; };
+		A5058CA31E406CD00059B0BF /* placeholder_unavailable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder_unavailable.png; sourceTree = "<group>"; };
 		A55BA81F1E3EC75D0079B9ED /* TSTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSTeamViewController.swift; path = ViewControllers/TSTeamViewController.swift; sourceTree = "<group>"; };
 		A55BA8211E3FC39B0079B9ED /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		A55BA8231E400C1D0079B9ED /* TSTeamInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSTeamInfoViewController.swift; path = ViewControllers/TSTeamInfoViewController.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 		AA5432461E08AD3B00000A88 /* menu-images */ = {
 			isa = PBXGroup;
 			children = (
+				A5058CA31E406CD00059B0BF /* placeholder_unavailable.png */,
 				A55BA8211E3FC39B0079B9ED /* placeholder.png */,
 				AA5432471E08AD3B00000A88 /* Group.png */,
 				AA5432481E08AD3B00000A88 /* matches.png */,
@@ -306,6 +309,7 @@
 				AA2B727E1E07135200BE66DC /* Lato-BoldItalic.ttf in Resources */,
 				AA2B727C1E07135200BE66DC /* Lato-BlackItalic.ttf in Resources */,
 				AA54324C1E08AD3B00000A88 /* Group.png in Resources */,
+				A5058CA41E406CD00059B0BF /* placeholder_unavailable.png in Resources */,
 				AA2B727F1E07135200BE66DC /* Lato-Hairline.ttf in Resources */,
 				6A62F1201DC4280000479F30 /* Assets.xcassets in Resources */,
 				AA2B727B1E07135200BE66DC /* Lato-Black.ttf in Resources */,
