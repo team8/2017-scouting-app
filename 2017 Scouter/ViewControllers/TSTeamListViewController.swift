@@ -15,6 +15,7 @@ class TeamListViewController: ViewController, UITableViewDataSource, UITableView
 //    
 //    @IBAction func myButtonAction(sender: id)
     
+    @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var teamTable: UITableView!
     
     override func viewDidLoad() {
@@ -27,7 +28,10 @@ class TeamListViewController: ViewController, UITableViewDataSource, UITableView
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        
+        //Menu Button Image Sizing
+        menuButton.imageEdgeInsets = UIEdgeInsetsMake(10, 20, 10, 20)
+        
         teamTable.backgroundColor = UIColor.clear
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

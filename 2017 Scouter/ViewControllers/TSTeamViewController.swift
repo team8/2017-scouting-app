@@ -15,12 +15,15 @@ class TeamViewController: ViewController {
     var teamNumber = 0
     var matchList = [TBAMatch]()
     
+    @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     var embeddedViewController: UITabBarController?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        //Menu Button Image Sizing
+        menuButton.imageEdgeInsets = UIEdgeInsetsMake(10, 20, 10, 20)
         
     }
     

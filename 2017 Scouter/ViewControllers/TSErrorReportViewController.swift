@@ -12,6 +12,7 @@ import UIKit
 //UITextFieldDelegate is used for dismissing the keyboard when tapped return
 class TSErrorViewController : ViewController, UITextFieldDelegate {
     
+    @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var Name: UITextField!
     
     @IBOutlet weak var BigTextField: UITextView!
@@ -47,6 +48,9 @@ class TSErrorViewController : ViewController, UITextFieldDelegate {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        //Menu Button Image Sizing
+        menuButton.imageEdgeInsets = UIEdgeInsetsMake(10, 20, 10, 20)
         
         //Submit Button Borders
         SubmitButton.layer.borderColor = UIColor.white.cgColor

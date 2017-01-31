@@ -22,14 +22,11 @@ class MenuViewController: ViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        
-        
         if previousScreen != "none"{
             previousScreen = currentScreen
         }
         currentScreen = "menu"
-        
-        
+    
         //Borders
         for menuButton in menuButtons{
             //Borders
@@ -37,7 +34,9 @@ class MenuViewController: ViewController {
             menuButton.layer.borderColor = UIColor.white.cgColor
             
         }
+    }
+    
+    @IBAction func menuUnwind(unwindSegue: UIStoryboardSegue) {
         
-
     }
 }

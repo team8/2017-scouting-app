@@ -13,6 +13,7 @@ import AVFoundation
 
 class QRCodeViewController : ViewController, QRCodeReaderViewControllerDelegate, UITableViewDataSource, UITableViewDelegate  {
     
+    @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var ScanButton: UIButton!
     
     @IBOutlet weak var ScanView: UIView!
@@ -29,6 +30,8 @@ class QRCodeViewController : ViewController, QRCodeReaderViewControllerDelegate,
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        //Menu Button Image Sizing
+        menuButton.imageEdgeInsets = UIEdgeInsetsMake(10, 20, 10, 20)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

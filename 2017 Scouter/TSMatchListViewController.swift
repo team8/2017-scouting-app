@@ -17,10 +17,14 @@ class MatchListViewController: ViewController, UITableViewDataSource, UITableVie
     //    @IBAction func myButtonAction(sender: id)
 
     
+    @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var matchTable: UITableView!
     var matchList = [TBAMatch]()
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        //Menu Button Image Sizing
+        menuButton.imageEdgeInsets = UIEdgeInsetsMake(10, 20, 10, 20)
         
         matchTable.backgroundColor = UIColor.clear
     }
