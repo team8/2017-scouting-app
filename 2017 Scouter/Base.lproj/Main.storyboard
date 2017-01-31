@@ -75,8 +75,8 @@
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                     </button>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YcQ-E4-aWK">
-                                        <rect key="frame" x="14" y="65" width="240" height="273"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YcQ-E4-aWK">
+                                        <rect key="frame" x="14" y="60" width="240" height="279"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="sectionIndexBackgroundColor" red="0.18692482724349335" green="0.37886685877565862" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <prototypes>
@@ -98,6 +98,8 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="sSW-QZ-VzW" firstAttribute="centerX" secondItem="dCe-By-0ft" secondAttribute="centerX" id="3Ot-Ue-CBi"/>
+                                    <constraint firstAttribute="bottom" secondItem="YcQ-E4-aWK" secondAttribute="bottom" constant="50" id="5jw-SS-Q9f"/>
+                                    <constraint firstItem="YcQ-E4-aWK" firstAttribute="top" secondItem="dCe-By-0ft" secondAttribute="top" constant="60" id="73I-WN-M17"/>
                                     <constraint firstItem="5vU-bi-JS6" firstAttribute="centerX" secondItem="dCe-By-0ft" secondAttribute="centerX" constant="7" id="D2a-oc-efb"/>
                                     <constraint firstItem="YcQ-E4-aWK" firstAttribute="leading" secondItem="dCe-By-0ft" secondAttribute="leadingMargin" constant="6" id="Nzd-wo-qnV"/>
                                     <constraint firstItem="5vU-bi-JS6" firstAttribute="top" secondItem="dCe-By-0ft" secondAttribute="bottom" constant="-49" id="R7c-6w-BTa"/>
