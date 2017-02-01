@@ -296,16 +296,31 @@
                                 <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7nS-RK-GIx">
+                                <rect key="frame" x="250" y="27" width="70" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="4I0-bz-zy6"/>
+                                    <constraint firstAttribute="width" constant="70" id="PYD-Lz-BBN"/>
+                                </constraints>
+                                <size key="titleShadowOffset" width="-1" height="0.0"/>
+                                <state key="normal" image="frontarrow.png"/>
+                                <connections>
+                                    <action selector="backPressed:" destination="MRI-NX-uRH" eventType="touchUpInside" id="N55-DB-PcW"/>
+                                    <action selector="backPressed:" destination="GoC-jH-tdY" eventType="touchUpInside" id="RBn-Ry-Cbe"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.13333333333333333" green="0.54509803921568623" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="FER-gS-Ra9" firstAttribute="top" secondItem="Wib-P6-s2J" secondAttribute="bottom" constant="8" id="2l6-Pb-bEx"/>
                             <constraint firstItem="hMC-4a-ff2" firstAttribute="centerX" secondItem="E07-cz-z55" secondAttribute="centerX" id="57v-RI-8Jr"/>
                             <constraint firstItem="tjQ-IB-09V" firstAttribute="top" secondItem="U2V-oq-rC0" secondAttribute="bottom" constant="-44" id="6y9-nM-Iai"/>
+                            <constraint firstItem="7nS-RK-GIx" firstAttribute="centerY" secondItem="FER-gS-Ra9" secondAttribute="centerY" id="72k-Sd-khZ"/>
                             <constraint firstItem="tjQ-IB-09V" firstAttribute="trailing" secondItem="E07-cz-z55" secondAttribute="trailingMargin" id="7Hl-b9-bfD"/>
                             <constraint firstItem="lKC-tr-7aH" firstAttribute="top" secondItem="mzG-nU-wql" secondAttribute="bottom" constant="23" id="9lL-O2-RBg"/>
                             <constraint firstItem="mzG-nU-wql" firstAttribute="centerX" secondItem="E07-cz-z55" secondAttribute="centerX" id="EDY-Wh-yH8"/>
                             <constraint firstItem="mzG-nU-wql" firstAttribute="top" secondItem="tjQ-IB-09V" secondAttribute="bottom" constant="23" id="ETt-R7-ke9"/>
+                            <constraint firstAttribute="trailing" secondItem="7nS-RK-GIx" secondAttribute="trailing" id="Fw6-26-aW0"/>
                             <constraint firstItem="mCl-1I-NL3" firstAttribute="top" secondItem="hMC-4a-ff2" secondAttribute="bottom" constant="10" id="Gvy-co-pId"/>
                             <constraint firstItem="lKC-tr-7aH" firstAttribute="leading" secondItem="E07-cz-z55" secondAttribute="leadingMargin" id="KOG-2E-VXw"/>
                             <constraint firstItem="lKC-tr-7aH" firstAttribute="trailing" secondItem="E07-cz-z55" secondAttribute="trailingMargin" id="LzJ-v0-0ub"/>
@@ -339,12 +354,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="qZA-fu-nPB"/>
                     <connections>
+                        <outlet property="backButton" destination="7nS-RK-GIx" id="rnC-U9-WdZ"/>
                         <outlet property="compTextField" destination="hMC-4a-ff2" id="VHd-JF-cDv"/>
                         <outletCollection property="menuButtons" destination="mCl-1I-NL3" collectionClass="NSMutableArray" id="j3M-3y-hzH"/>
                         <outletCollection property="menuButtons" destination="W6f-ca-YAW" collectionClass="NSMutableArray" id="K92-Jd-FFa"/>
                         <outletCollection property="menuButtons" destination="tjQ-IB-09V" collectionClass="NSMutableArray" id="eca-Rg-3XM"/>
                         <outletCollection property="menuButtons" destination="mzG-nU-wql" collectionClass="NSMutableArray" id="tza-F6-dxZ"/>
                         <outletCollection property="menuButtons" destination="lKC-tr-7aH" collectionClass="NSMutableArray" id="GiZ-Vt-ahc"/>
+                        <segue destination="MRI-NX-uRH" kind="show" identifier="menuToTeam" id="EvQ-ez-gb9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wzX-3T-6a9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -682,7 +699,7 @@
                                 </constraints>
                                 <state key="normal" image="menu-button"/>
                                 <connections>
-                                    <segue destination="UAs-hX-Ox7" kind="unwind" unwindAction="menuUnwindWithUnwindSegue:" id="yex-Rd-Jg4"/>
+                                    <segue destination="UAs-hX-Ox7" kind="unwind" identifier="teamToMenu" unwindAction="menuUnwindWithUnwindSegue:" id="yex-Rd-Jg4"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hb-H6-cE1">
@@ -1200,6 +1217,7 @@
     <resources>
         <image name="Group" width="48" height="39"/>
         <image name="backarrow.png" width="512" height="512"/>
+        <image name="frontarrow.png" width="512" height="512"/>
         <image name="matches.png" width="42" height="63"/>
         <image name="menu-button" width="93" height="93"/>
         <image name="picklist" width="54" height="57"/>
@@ -1207,4 +1225,7 @@
         <image name="teams" width="48" height="54"/>
         <image name="upload-qr-code.png" width="57" height="51"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="EvQ-ez-gb9"/>
+    </inferredMetricsTieBreakers>
 </document>

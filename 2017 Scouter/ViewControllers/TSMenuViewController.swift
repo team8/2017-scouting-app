@@ -16,6 +16,10 @@ var currentScreen = "menu"
 
 class MenuViewController: ViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
     
+    @IBOutlet weak var backButton: UIButton!
+    var previousViewController: ViewController?
+    var hasPrevious = false
+    
     @IBOutlet weak var compTextField: UITextField!
     let compList = ["Ventura 2017", "SVR 2017", "Champs 2017"]
     let compIDs = ["2017cave", "2017casj", "2017cmptx"]
@@ -38,8 +42,13 @@ class MenuViewController: ViewController, UITextFieldDelegate, UIPickerViewDataS
             //Borders
             menuButton.layer.borderWidth = 1
             menuButton.layer.borderColor = UIColor.white.cgColor
-            
         }
+        
+        //Back button sizing
+        backButton.imageEdgeInsets = UIEdgeInsetsMake(10, 20, 10, 20)
+        
+        //Hide back button
+        backButton.isHidden = !self.hasPrevious
     }
     
     override func viewDidLoad() {
@@ -67,6 +76,25 @@ class MenuViewController: ViewController, UITextFieldDelegate, UIPickerViewDataS
         
     }
     
+    //Back button
+    @IBAction func backPressed(_ sender: Any) {
+        if(self.previousViewController! is TeamViewController) {
+            self.performSegue(withIdentifier: "menuToTeam", sender: nil)
+        }
+        self.hasPrevious = false
+//        self.navigationController?.pushViewController(self.previousViewController!, animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? TeamViewController, segue.identifier == "menuToTeam" {
+            let prev = (self.previousViewController! as! TeamViewController)
+            vc.teamNumber = prev.teamNumber
+            vc.previousViewController = prev.previousViewController
+            vc.navigationStack = prev.navigationStack
+        }
+    }
+    
+    //Picker stuff
     func pickerSelect(index: Int) {
         compTextField.text = compList[index]
         Data.competition = compIDs[index]

@@ -22,6 +22,7 @@ class TeamViewController: ViewController {
     var embeddedViewController: UITabBarController?
     
     var previousViewController: ViewController?
+    var navigationStack: [UIViewController]?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -33,9 +34,13 @@ class TeamViewController: ViewController {
         //Change Title to team #
         self.titleLabel.text = "Team " + String(self.teamNumber)
         
+        if(self.navigationStack != nil) {
+            self.navigationController?.viewControllers = self.navigationStack!
+        }
     }
     
     @IBAction func backPressed(_ sender: Any) {
+//        print(self.previousViewController)
         if(self.previousViewController! is TeamListViewController) {
             self.performSegue(withIdentifier: "teamToTeamList", sender: nil)
         }
@@ -46,9 +51,15 @@ class TeamViewController: ViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
+        //Send data to embedded view controllers
         if let vc = segue.destination as? UITabBarController, segue.identifier == "teamEmbed" {
             self.embeddedViewController = vc
             (self.embeddedViewController?.viewControllers?[0] as! TeamInfoViewController).teamNumber = self.teamNumber
+        //Send data to menu when unwinding
+        } else if let vc = segue.destination as? MenuViewController, segue.identifier == "teamToMenu" {
+            self.navigationStack = self.navigationController?.viewControllers
+            vc.previousViewController = self
+            vc.hasPrevious = true
         }
     }
 }
