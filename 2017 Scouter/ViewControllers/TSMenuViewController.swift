@@ -67,15 +67,13 @@ class MenuViewController: ViewController, UITextFieldDelegate, UIPickerViewDataS
         
     }
     
-    func pickerSelect() {
-        compTextField.text = compList[self.picker.selectedRow(inComponent: 0)]
-        Data.competition = compIDs[self.picker.selectedRow(inComponent: 0)]
-        
+    func pickerSelect(index: Int) {
+        compTextField.text = compList[index]
+        Data.competition = compIDs[index]
     }
     
     func donePressed(sender: UIButton!) {
-        print("Button tapped")
-        pickerSelect()
+        pickerSelect(index: self.picker.selectedRow(inComponent: 0))
         self.compTextField.resignFirstResponder()
     }
     
@@ -92,7 +90,7 @@ class MenuViewController: ViewController, UITextFieldDelegate, UIPickerViewDataS
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        compTextField.text = compList[row]
+        pickerSelect(index: row)
     }
     
     @IBAction func menuUnwind(unwindSegue: UIStoryboardSegue) {

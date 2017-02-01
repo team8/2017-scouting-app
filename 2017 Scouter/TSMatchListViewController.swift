@@ -94,16 +94,12 @@ class MatchListViewController: ViewController, UITableViewDataSource, UITableVie
         addActivityIndicator()
         self.view.isUserInteractionEnabled = false
         Data.fetch(complete: fetchComplete)
-        DispatchQueue.main.async{
-            self.matchTable.reloadData()
-        }
-        
     }
     
     func addActivityIndicator() {
         
-        let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
-        activityIndicator.frame = CGRect(x: 230, y: 30, width: 30, height: 30)
+        let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.white)
+        activityIndicator.frame = CGRect(x: 230, y: 40, width: 30, height: 30)
         activityIndicator.tag = 100
         activityIndicator.startAnimating()
         self.view.addSubview(activityIndicator)

@@ -425,7 +425,7 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6U6-F5-PCN">
-                                <rect key="frame" x="16" y="91" width="47.5" height="21"/>
+                                <rect key="frame" x="16" y="91" width="48" height="21"/>
                                 <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -524,7 +524,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="59" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Bx9-TS-Zxw">
-                                <rect key="frame" x="16" y="83" width="288" height="477"/>
+                                <rect key="frame" x="16" y="125" width="288" height="435"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TeamCell" rowHeight="47" id="Pl6-VU-AlU" customClass="TeamTableViewCell" customModule="_017_Scouter" customModuleProvider="target">
@@ -617,15 +617,27 @@
                                     <action selector="refresh:" destination="a3K-fA-FxR" eventType="touchUpInside" id="MQZ-3q-Zfk"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Sort by: Team Number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="af3-0E-aZf">
+                                <rect key="frame" x="35" y="85" width="250" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="2RO-Ci-2EZ"/>
+                                    <constraint firstAttribute="width" constant="250" id="B2l-T3-cdm"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.13333333333333333" green="0.54509803921568623" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Bx9-TS-Zxw" firstAttribute="trailing" secondItem="wka-pr-Ty9" secondAttribute="trailingMargin" id="3ew-8c-p9U"/>
                             <constraint firstItem="YqC-to-zVe" firstAttribute="centerX" secondItem="wka-pr-Ty9" secondAttribute="centerX" id="6dy-xu-69o"/>
                             <constraint firstItem="ck2-Zp-OmE" firstAttribute="top" secondItem="Bx9-TS-Zxw" secondAttribute="bottom" constant="8" id="D9F-X5-7gb"/>
+                            <constraint firstItem="af3-0E-aZf" firstAttribute="top" secondItem="YqC-to-zVe" secondAttribute="bottom" constant="10" id="Ejy-lU-De0"/>
+                            <constraint firstItem="af3-0E-aZf" firstAttribute="centerX" secondItem="wka-pr-Ty9" secondAttribute="centerX" id="K4b-2g-UMz"/>
+                            <constraint firstItem="Bx9-TS-Zxw" firstAttribute="top" secondItem="af3-0E-aZf" secondAttribute="bottom" id="Lkh-xu-iim"/>
                             <constraint firstItem="YqC-to-zVe" firstAttribute="top" secondItem="5YG-r9-Gf7" secondAttribute="bottom" constant="8" id="M0G-4A-537"/>
                             <constraint firstItem="gko-R6-9P6" firstAttribute="centerY" secondItem="YqC-to-zVe" secondAttribute="centerY" id="TGR-iL-9GM"/>
-                            <constraint firstItem="Bx9-TS-Zxw" firstAttribute="top" secondItem="YqC-to-zVe" secondAttribute="bottom" constant="8" id="ZcR-ch-8Nh"/>
                             <constraint firstItem="gko-R6-9P6" firstAttribute="trailing" secondItem="wka-pr-Ty9" secondAttribute="trailingMargin" id="eES-fP-nQl"/>
                             <constraint firstItem="UTb-IM-FhR" firstAttribute="centerY" secondItem="YqC-to-zVe" secondAttribute="centerY" constant="2.5" id="m5f-RW-SnH"/>
                             <constraint firstItem="UTb-IM-FhR" firstAttribute="leading" secondItem="wka-pr-Ty9" secondAttribute="leading" id="vpN-SW-afN"/>
@@ -634,6 +646,7 @@
                     </view>
                     <connections>
                         <outlet property="menuButton" destination="UTb-IM-FhR" id="vQd-KQ-T54"/>
+                        <outlet property="sortTextField" destination="af3-0E-aZf" id="KsH-Vq-PZa"/>
                         <outlet property="teamTable" destination="Bx9-TS-Zxw" id="jvH-Z5-5BG"/>
                         <segue destination="MRI-NX-uRH" kind="show" identifier="teamListToTeam" id="MF9-EP-i8M"/>
                     </connections>
