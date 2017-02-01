@@ -12,16 +12,17 @@ class Data {
     
     static var competition: String?
     
-    static var teamList = [8, 254, 1678]
+    static var teamList = [Int]()
     static var matchList = [TBAMatch]()
     
-    static let fetchesTotal = 1
+    static let fetchesTotal = 2
     static var fetchesComplete = 0
     static var completeFunction: (() -> Void)?
     
     static func fetch(complete: @escaping () -> Void) {
         
-        ServerInterfacer.getMatches(handleMatchJSON, key: Data.competition?)
+        ServerInterfacer.getTeams(handleTeamJSON, key: Data.competition!)
+        ServerInterfacer.getMatches(handleMatchJSON, key: Data.competition!)
         completeFunction = complete
     }
     
@@ -34,6 +35,23 @@ class Data {
         
 
 
+    }
+    
+    static func handleTeamJSON(value: NSDictionary) -> Void {
+        if (((value.value(forKey: "query") as! NSDictionary).value(forKey: "success"))! as! String == "yes") {
+            for (key, value) in (value.value(forKey: "query") as! NSDictionary).value(forKey: "teams") as! NSDictionary {
+                print(key)
+                let payloadDict = value as! NSDictionary
+                
+                let teamNumber = payloadDict.object(forKey: "team_number") as! Int
+                teamList.append(teamNumber)
+                
+            }
+            print(teamList)
+        } else {
+            print(value)
+        }
+        fetchComplete()
     }
     
     static func handleMatchJSON(value: NSDictionary) -> Void {
