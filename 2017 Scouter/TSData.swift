@@ -47,7 +47,7 @@ class Data {
                 teamList.append(teamNumber)
                 
             }
-            print(teamList)
+//            print(teamList)
         } else {
             print(value)
         }

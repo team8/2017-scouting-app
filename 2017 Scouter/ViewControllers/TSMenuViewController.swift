@@ -81,7 +81,6 @@ class MenuViewController: ViewController, UITextFieldDelegate, UIPickerViewDataS
         if(self.previousViewController! is TeamViewController) {
             self.performSegue(withIdentifier: "menuToTeam", sender: nil)
         }
-        self.hasPrevious = false
 //        self.navigationController?.pushViewController(self.previousViewController!, animated: true)
     }
     
@@ -92,6 +91,7 @@ class MenuViewController: ViewController, UITextFieldDelegate, UIPickerViewDataS
             vc.previousViewController = prev.previousViewController
             vc.navigationStack = prev.navigationStack
         }
+        self.hasPrevious = false
     }
     
     //Picker stuff
