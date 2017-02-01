@@ -40,14 +40,13 @@ class Data {
     static func handleTeamJSON(value: NSDictionary) -> Void {
         if (((value.value(forKey: "query") as! NSDictionary).value(forKey: "success"))! as! String == "yes") {
             for (key, value) in (value.value(forKey: "query") as! NSDictionary).value(forKey: "teams") as! NSDictionary {
-                print(key)
                 let payloadDict = value as! NSDictionary
                 
                 let teamNumber = payloadDict.object(forKey: "team_number") as! Int
                 teamList.append(teamNumber)
                 
             }
-            print(teamList)
+//            print(teamList)
         } else {
             print(value)
         }

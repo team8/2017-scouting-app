@@ -26,7 +26,6 @@ class TeamInfoViewController: ViewController {
         let fileManager = FileManager.default
         let directoryURL = FileManager().urls(for: .applicationSupportDirectory, in: .userDomainMask)[0] as URL
         let destURL = directoryURL.appendingPathComponent(Data.competition! + "/frc" + String(self.teamNumber))
-//        let destURL = directoryURL.appendingPathComponent("frc" + String(self.teamNumber))
         
         if(fileManager.contents(atPath: destURL.relativePath) != nil) {
             self.image.image = UIImage(data: fileManager.contents(atPath: destURL.relativePath)!)
@@ -39,10 +38,9 @@ class TeamInfoViewController: ViewController {
         do {
             try fileManager.createDirectory(atPath: directoryURL.appendingPathComponent(Data.competition!).relativePath, withIntermediateDirectories: false, attributes: nil)
         } catch let error as NSError {
-            print(error.localizedDescription);
+//            print(error.localizedDescription);
         }
         let destURL = directoryURL.appendingPathComponent(Data.competition! + "/frc" + String(self.teamNumber))
-//        let destURL = directoryURL.appendingPathComponent("frc" + String(self.teamNumber))
         let destination: (URL, HTTPURLResponse) -> URL = { temporaryURL, response in
             return destURL
         }

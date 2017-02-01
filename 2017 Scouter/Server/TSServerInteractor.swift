@@ -65,7 +65,7 @@ class ServerInterfacer {
         Alamofire.request(SERVER_ADDRESS + "/" + AUTH_TOKEN + "/match/" + key, headers: nil)
             .responseJSON { response in
                 if let JSON = response.result.value {
-                    print("JSON: \(JSON)")
+//                    print("JSON: \(JSON)")
                     let rawVal = JSON as! NSDictionary
                     callback(rawVal)
                 }
@@ -81,7 +81,7 @@ class ServerInterfacer {
         Alamofire.request(SERVER_ADDRESS + "/" + AUTH_TOKEN + "/teams/" + key, headers: nil)
             .responseJSON { response in
                 if let JSON = response.result.value {
-                    print("JSON: \(JSON)")
+//                    print("JSON: \(JSON)")
                     let rawVal = JSON as! NSDictionary
                     callback(rawVal)
                 }
