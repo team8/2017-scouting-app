@@ -21,6 +21,8 @@ class TeamViewController: ViewController {
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     var embeddedViewController: UITabBarController?
     
+    var previousViewController: ViewController?
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -31,6 +33,12 @@ class TeamViewController: ViewController {
         //Change Title to team #
         self.titleLabel.text = "Team " + String(self.teamNumber)
         
+    }
+    
+    @IBAction func backPressed(_ sender: Any) {
+        if(self.previousViewController! is TeamListViewController) {
+            self.performSegue(withIdentifier: "teamToTeamList", sender: nil)
+        }
     }
     
     @IBAction func segmentChanged(_ sender: Any) {

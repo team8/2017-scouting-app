@@ -138,6 +138,7 @@ class TeamListViewController: ViewController, UITextFieldDelegate, UIPickerViewD
         if (segue.identifier == "teamListToTeam") {
             let secondViewController = segue.destination as! TeamViewController
             let teamNumber = sender as! Int
+            secondViewController.previousViewController = self
             secondViewController.teamNumber = teamNumber
         }
     }

@@ -724,6 +724,9 @@
                                 </constraints>
                                 <size key="titleShadowOffset" width="-1" height="0.0"/>
                                 <state key="normal" image="backarrow.png"/>
+                                <connections>
+                                    <action selector="backPressed:" destination="MRI-NX-uRH" eventType="touchUpInside" id="xGA-yB-2no"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.04191788338" green="0.6047603627" blue="0.017816367989999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -750,6 +753,7 @@
                         <outlet property="menuButton" destination="frr-0K-FtF" id="DH9-mo-h8n"/>
                         <outlet property="segmentedControl" destination="mKM-cl-h9L" id="gQw-X9-daf"/>
                         <outlet property="titleLabel" destination="gAU-68-r9G" id="nXL-lH-7a0"/>
+                        <segue destination="UAs-hX-Ox7" kind="unwind" identifier="teamToTeamList" unwindAction="teamListUnwindWithUnwindSegue:" id="C6F-Eb-o12"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0tV-Sf-lwQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
