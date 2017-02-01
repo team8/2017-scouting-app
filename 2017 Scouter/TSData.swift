@@ -10,6 +10,8 @@ import Foundation
 
 class Data {
     
+    static var competition: String?
+    
     static var teamList = [8, 254, 1678]
     static var matchList = [TBAMatch]()
     
@@ -19,7 +21,7 @@ class Data {
     
     static func fetch(complete: @escaping () -> Void) {
         
-        ServerInterfacer.getMatches(handleMatchJSON, key: "2016cacc")
+        ServerInterfacer.getMatches(handleMatchJSON, key: Data.competition?)
         completeFunction = complete
     }
     

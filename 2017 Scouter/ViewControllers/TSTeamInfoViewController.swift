@@ -41,7 +41,7 @@ class TeamInfoViewController: ViewController {
         }
         
         client = DropboxClient(accessToken: "uzaRy4m3BHAAAAAAAAAAFMyywnsKTZDeS5ONnUvnYNXW5Mzcw1CogAguXx03o8u3")
-        client!.files.getThumbnail(path: "/Scouting/Robot Pictures 2017/test/frc" + String(self.teamNumber) +   ".png", format: Files.ThumbnailFormat.png, size: Files.ThumbnailSize.w1024h768, overwrite: true, destination: destination)
+        client!.files.getThumbnail(path: "/Scouting/Robot Pictures 2017/" + Data.competition + "/frc" + String(self.teamNumber) +   ".png", format: Files.ThumbnailFormat.png, size: Files.ThumbnailSize.w1024h768, overwrite: true, destination: destination)
             .response { response, error in
                 self.removeActivityIndicator()
                 if let response = response {
