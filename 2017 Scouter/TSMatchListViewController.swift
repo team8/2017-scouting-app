@@ -19,7 +19,7 @@ class MatchListViewController: ViewController, UITableViewDataSource, UITableVie
     
     @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var matchTable: UITableView!
-    var matchList = [TBAMatch]()
+//    var matchList = [TBAMatch]()
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -38,50 +38,50 @@ class MatchListViewController: ViewController, UITableViewDataSource, UITableVie
 
             Data.fetch(complete: fetchComplete)
         }
-        populateMatchList()
+//        populateMatchList()
 
     }
-    func populateMatchList() -> Void {
-
-        //Populating matchList
-        let appDel = UIApplication.shared.delegate as! AppDelegate
-        let managedContext = appDel.managedObjectContext
-        let entity = NSEntityDescription.entity(forEntityName: "Matches", in:managedContext)
-        
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>()
-        fetchRequest.entity = entity
-        
-        do {
-            let results = try managedContext.fetch(fetchRequest)
-            if (results.count > 0) {
-                if let managedObjectResults = results as? [NSManagedObject]{
-                    for i : NSManagedObject in managedObjectResults{
-                        let unarchivedData : NSData = i.value(forKey: "match") as! NSData
-                        do{
-                            let match : NSDictionary = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(unarchivedData) as! NSDictionary
-                            let config = match.value(forKey: "config") as! String
-                            let blueTeams = match.value(forKey: "blue") as! [String]
-                            let redTeams = match.value(forKey: "red") as! [String]
-                            let teamToAppend = TBAMatch(keyV: config, blueAlliance: blueTeams, redAlliance: redTeams)
-
-                            TBAMatch.matchListUnordered.append(teamToAppend)
-                            
-                        }catch{
-                            print("core data fetch error")
-                        }
-                        
-                    }
-                }
-                
-            }
-            
-        } catch {
-            let fetchError = error as NSError
-            print(fetchError)
-        }
-        self.matchList = TBAMatch.orderMatches()
-        
-    }
+//    func populateMatchList() -> Void {
+//
+//        //Populating matchList
+//        let appDel = UIApplication.shared.delegate as! AppDelegate
+//        let managedContext = appDel.managedObjectContext
+//        let entity = NSEntityDescription.entity(forEntityName: "Matches", in:managedContext)
+//        
+//        let fetchRequest = NSFetchRequest<NSFetchRequestResult>()
+//        fetchRequest.entity = entity
+//        
+//        do {
+//            let results = try managedContext.fetch(fetchRequest)
+//            if (results.count > 0) {
+//                if let managedObjectResults = results as? [NSManagedObject]{
+//                    for i : NSManagedObject in managedObjectResults{
+//                        let unarchivedData : NSData = i.value(forKey: "match") as! NSData
+//                        do{
+//                            let match : NSDictionary = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(unarchivedData) as! NSDictionary
+//                            let config = match.value(forKey: "config") as! String
+//                            let blueTeams = match.value(forKey: "blue") as! [String]
+//                            let redTeams = match.value(forKey: "red") as! [String]
+//                            let teamToAppend = TBAMatch(keyV: config, blueAlliance: blueTeams, redAlliance: redTeams)
+//
+////                            TBAMatch.matchListUnordered.append(teamToAppend)
+//                            
+//                        }catch{
+//                            print("core data fetch error")
+//                        }
+//                        
+//                    }
+//                }
+//                
+//            }
+//            
+//        } catch {
+//            let fetchError = error as NSError
+//            print(fetchError)
+//        }
+////        self.matchList = TBAMatch.orderMatches()
+//        
+//    }
     override func viewDidAppear(_ animated: Bool) {
         DispatchQueue.main.async{
             self.matchTable.reloadData()
@@ -120,36 +120,37 @@ class MatchListViewController: ViewController, UITableViewDataSource, UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MatchCell", for: indexPath) as! UnplayedTableViewCell
+        let match = Data.matchList[indexPath.row]
         var blueTeamString = ""
-        for blueTeamWithFRC in matchList[indexPath.row].blue{
-            let blueTeam : String = blueTeamWithFRC.components(separatedBy: "c")[1]
+        for blueTeamWithFRC in match.blue{
+            let blueTeam : String = String(blueTeamWithFRC.teamNumber)
             blueTeamString += blueTeam
-            if blueTeamWithFRC != matchList[indexPath.row].blue[matchList[indexPath.row].blue.count - 1]{
+            if blueTeamWithFRC.teamNumber != match.blue[match.blue.count - 1].teamNumber {
                 blueTeamString += "\n"
             }
 
         }
         cell.blueTeams.text = blueTeamString
         
-        switch matchList[indexPath.row].matchType{
+        switch match.matchType{
         case TBAMatch.MatchType.qualifying:
             cell.matchAbbr.text = "QM"
-            cell.matchNumber.text = String(matchList[indexPath.row].matchNumber)
+            cell.matchNumber.text = String(match.matchNumber)
             cell.matchIn.text = ""
         case TBAMatch.MatchType.quarterFinal:
              cell.matchAbbr.text = "QF"
-             cell.matchNumber.text =  String(matchList[indexPath.row].matchNumber)
-             cell.matchIn.text = "Match #" + String(matchList[indexPath.row].matchIn!)
+             cell.matchNumber.text =  String(match.matchNumber)
+             cell.matchIn.text = "Match #" + String(match.matchIn!)
 
         case TBAMatch.MatchType.semiFinal:
             cell.matchAbbr.text = "SF"
-            cell.matchNumber.text =  String(matchList[indexPath.row].matchNumber)
-            cell.matchIn.text = "Match #" + String(matchList[indexPath.row].matchIn!)
+            cell.matchNumber.text =  String(match.matchNumber)
+            cell.matchIn.text = "Match #" + String(match.matchIn!)
             
         case TBAMatch.MatchType.final:
             cell.matchAbbr.text = "F"
-            cell.matchNumber.text =  String(matchList[indexPath.row].matchNumber)
-            cell.matchIn.text = "Match #" + String(matchList[indexPath.row].matchIn!)
+            cell.matchNumber.text =  String(match.matchNumber)
+            cell.matchIn.text = "Match #" + String(match.matchIn!)
             
         default:
             cell.matchAbbr.text = "UNK"
@@ -158,10 +159,10 @@ class MatchListViewController: ViewController, UITableViewDataSource, UITableVie
         
         
         var redTeamString = ""
-        for redTeamWithFRC in matchList[indexPath.row].red{
-            let redTeam : String = redTeamWithFRC.components(separatedBy: "c")[1]
+        for redTeamWithFRC in match.red{
+            let redTeam : String = String(redTeamWithFRC.teamNumber)
             redTeamString += redTeam
-            if redTeamWithFRC != matchList[indexPath.row].red[matchList[indexPath.row].red.count - 1]{
+            if redTeamWithFRC.teamNumber != match.red[match.red.count - 1].teamNumber {
                 redTeamString += "\n"
             }
         }
@@ -173,57 +174,57 @@ class MatchListViewController: ViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return matchList.count
+        return Data.matchList.count
     }
-    public func saveToCoreData(dict: NSMutableDictionary){
-        
-        //Getting and converting the matchesDict to NSData
-        let matchesDict = dict as NSDictionary
-        let dataToSave = NSKeyedArchiver.archivedData(withRootObject: matchesDict)
-        
-        //Getting stuff from the appDelegate
-        let appDel = UIApplication.shared.delegate as! AppDelegate
-        let managedContext = appDel.managedObjectContext
-        let entity = NSEntityDescription.entity(forEntityName: "Matches", in:managedContext)
-        
-        //Creating the managed object and saving the match
-        let managedObject = NSManagedObject(entity: entity!, insertInto: managedContext)
-        managedObject.setValue(dataToSave, forKey: "match")
-        
-        //This will succeed 99% of the time
-        do{
-            try managedContext.save()
-            if (UserDefaults.standard.bool(forKey: "alreadySaved") as? Bool) == nil{
-                UserDefaults.standard.set(true, forKey: "alreadySaved")
-            }
-            populateMatchList()
-            
-        }catch let error as NSError  {
-            print("Could not save \(error), \(error.userInfo)")
-        }
-        
-        
-    }
+//    public func saveToCoreData(dict: NSMutableDictionary){
+//        
+//        //Getting and converting the matchesDict to NSData
+//        let matchesDict = dict as NSDictionary
+//        let dataToSave = NSKeyedArchiver.archivedData(withRootObject: matchesDict)
+//        
+//        //Getting stuff from the appDelegate
+//        let appDel = UIApplication.shared.delegate as! AppDelegate
+//        let managedContext = appDel.managedObjectContext
+//        let entity = NSEntityDescription.entity(forEntityName: "Matches", in:managedContext)
+//        
+//        //Creating the managed object and saving the match
+//        let managedObject = NSManagedObject(entity: entity!, insertInto: managedContext)
+//        managedObject.setValue(dataToSave, forKey: "match")
+//        
+//        //This will succeed 99% of the time
+//        do{
+//            try managedContext.save()
+//            if (UserDefaults.standard.bool(forKey: "alreadySaved") as? Bool) == nil{
+//                UserDefaults.standard.set(true, forKey: "alreadySaved")
+//            }
+//            populateMatchList()
+//            
+//        }catch let error as NSError  {
+//            print("Could not save \(error), \(error.userInfo)")
+//        }
+//        
+//        
+//    }
     
-    func deleteAllData(){
-        if (UserDefaults.standard.bool(forKey: "alreadySaved") as? Bool) != nil{
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            let managedContext = appDelegate.managedObjectContext
-            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Matches")
-            fetchRequest.returnsObjectsAsFaults = false
-            
-            do{
-                let results = try managedContext.fetch(fetchRequest)
-                for managedObject in results
-                {
-                    let managedObjectData:NSManagedObject = managedObject as! NSManagedObject
-                    managedContext.delete(managedObjectData)
-                }
-            } catch let error as NSError {
-                print("error : \(error) \(error.userInfo)")
-            }
-        }
-    }
+//    func deleteAllData(){
+//        if (UserDefaults.standard.bool(forKey: "alreadySaved") as? Bool) != nil{
+//            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//            let managedContext = appDelegate.managedObjectContext
+//            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Matches")
+//            fetchRequest.returnsObjectsAsFaults = false
+//            
+//            do{
+//                let results = try managedContext.fetch(fetchRequest)
+//                for managedObject in results
+//                {
+//                    let managedObjectData:NSManagedObject = managedObject as! NSManagedObject
+//                    managedContext.delete(managedObjectData)
+//                }
+//            } catch let error as NSError {
+//                print("error : \(error) \(error.userInfo)")
+//            }
+//        }
+//    }
     @IBAction func teamListUnwind(unwindSegue: UIStoryboardSegue) {
         
     }

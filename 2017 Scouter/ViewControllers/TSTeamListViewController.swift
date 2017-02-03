@@ -20,7 +20,7 @@ class TeamListViewController: ViewController, UITextFieldDelegate, UIPickerViewD
     @IBOutlet weak var sortTextField: UITextField!
     let sortCriteria = ["Team Number", "Ranking"]
     var criteriaIndex = 0
-    var sortedTeamList = [Int]()
+    var sortedTeamList = [Team]()
     let pickerView = UIView(frame: CGRect(x: 0, y: 0, width: 320, height: 200))
     let doneButton = UIButton(frame: CGRect(x: 220, y: 0, width: 100, height: 50))
     let picker = UIPickerView(frame: CGRect(x: 0, y: 50, width: 320, height: 150))
@@ -108,18 +108,22 @@ class TeamListViewController: ViewController, UITextFieldDelegate, UIPickerViewD
         switch(self.criteriaIndex) {
         case 0:
             //Team number
-            self.sortedTeamList = Data.teamList.sorted()
+            self.sortedTeamList = Data.teamList.sorted(by: { (t1: Team, t2: Team) -> Bool in
+                return t1.teamNumber < t2.teamNumber
+            })
             break
         case 1:
             //Ranking
             //temporary reverse sorting
-            self.sortedTeamList = Data.teamList.sorted().reversed()
+            self.sortedTeamList = Data.teamList.sorted(by: { (t1: Team, t2: Team) -> Bool in
+                return t1.teamNumber < t2.teamNumber
+            }).reversed()
             break
         default:
             break
         }
         
-        let teamNumber = self.sortedTeamList[indexPath.row]
+        let teamNumber = self.sortedTeamList[indexPath.row].teamNumber
         
         cell.teamNum = teamNumber
         cell.rankingNumber.text = "#" + String(indexPath.row + 1)

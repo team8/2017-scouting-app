@@ -10,8 +10,6 @@ import UIKit
 
 class UnplayedTableViewCell: UITableViewCell {
 
-    
-
     @IBOutlet weak var redTeams: UILabel!
     @IBOutlet weak var matchAbbr: UILabel!
     @IBOutlet weak var matchNumber: UILabel!

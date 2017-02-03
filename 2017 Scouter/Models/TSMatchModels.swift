@@ -10,14 +10,12 @@ import Foundation
 
 class TBAMatch {
     
-    var blue : [String]
-    var red : [String]
+    var blue : [Team]
+    var red : [Team]
     var key : String
     var matchNumber : Int
     var matchType : MatchType
     var matchIn: Int?
-    
-    public static var matchListUnordered  = [TBAMatch]()
     
     enum MatchType {
         case qualifying
@@ -27,7 +25,7 @@ class TBAMatch {
         case unknown
     }
     
-    init(keyV: String, blueAlliance : [String], redAlliance : [String]) {
+    init(keyV: String, blueAlliance : [Team], redAlliance : [Team]) {
         
         self.blue = blueAlliance
         self.red = redAlliance
@@ -69,56 +67,4 @@ class TBAMatch {
         }
         
     }
-    
-    
-    public static func orderMatches() -> [TBAMatch]{
-        var qualifyingMatches = [TBAMatch]()
-        var quarterFinals = [TBAMatch]()
-        var semiFinals = [TBAMatch]()
-        var finals = [TBAMatch]()
-        var unknowns = [TBAMatch]()
-        
-        for matchToAssign : TBAMatch in matchListUnordered{
-            switch matchToAssign.matchType {
-            case MatchType.qualifying:
-                qualifyingMatches.append(matchToAssign)
-            case MatchType.quarterFinal:
-                quarterFinals.append(matchToAssign)
-            case MatchType.semiFinal:
-                semiFinals.append(matchToAssign)
-            case MatchType.final:
-                
-                finals.append(matchToAssign)
-            default:
-                unknowns.append(matchToAssign)
-            }
-        }
-        
-        qualifyingMatches = qualifyingMatches.sorted{ return $0.matchNumber < $1.matchNumber}
-        quarterFinals = quarterFinals.sorted{a,b in
-            if a.matchNumber != b.matchNumber{
-                return a.matchNumber < b.matchNumber
-            }else{
-                return a.matchIn! < b.matchIn!
-            }
-        }
-        semiFinals = semiFinals.sorted{a,b in
-            if a.matchNumber != b.matchNumber{
-                return a.matchNumber < b.matchNumber
-            }else{
-                return a.matchIn! < b.matchIn!
-            }
-        }
-        finals = finals.sorted{a,b in
-            if a.matchNumber != b.matchNumber{
-                return a.matchNumber < b.matchNumber
-            }else{
-                return a.matchIn! < b.matchIn!
-            }
-        }
-        var fullArray = qualifyingMatches + quarterFinals + semiFinals + finals
-        return fullArray
-        
-    }
-    
 }

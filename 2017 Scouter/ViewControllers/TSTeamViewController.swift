@@ -55,6 +55,7 @@ class TeamViewController: ViewController {
         if let vc = segue.destination as? UITabBarController, segue.identifier == "teamEmbed" {
             self.embeddedViewController = vc
             (self.embeddedViewController?.viewControllers?[0] as! TeamInfoViewController).teamNumber = self.teamNumber
+            (self.embeddedViewController?.viewControllers?[1] as! TeamMatchesViewController).teamNumber = self.teamNumber
         //Send data to menu when unwinding
         } else if let vc = segue.destination as? MenuViewController, segue.identifier == "teamToMenu" {
             self.navigationStack = self.navigationController?.viewControllers
