@@ -173,6 +173,22 @@ class MatchListViewController: ViewController, UITableViewDataSource, UITableVie
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! UnplayedTableViewCell
+        let match = Data.matchList[indexPath.row]
+        self.performSegue(withIdentifier: "matchListToMatch", sender: match)
+    }
+    
+    //Send team number data to team view controller
+    override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
+        if (segue.identifier == "matchListToMatch") {
+            let secondViewController = segue.destination as! MatchViewController
+            let match = sender as! TBAMatch
+            secondViewController.previousViewController = self
+            secondViewController.match = match
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Data.matchList.count
     }

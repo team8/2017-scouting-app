@@ -168,6 +168,7 @@ class Data {
                 return team
             }
         }
+        print(withNumber)
         return nil
     }
 //    static func sendToVC(value: NSDictionary){
