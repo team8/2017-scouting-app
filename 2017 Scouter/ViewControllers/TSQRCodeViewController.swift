@@ -15,6 +15,7 @@ class QRCodeViewController : ViewController, QRCodeReaderViewControllerDelegate,
     
     @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var ScanButton: UIButton!
+    @IBOutlet var SubmitButton: UIButton!
     
     @IBOutlet weak var ScanView: UIView!
     
@@ -26,12 +27,25 @@ class QRCodeViewController : ViewController, QRCodeReaderViewControllerDelegate,
         ScanView.isHidden = true
         QRCodeREsults.dataSource = self
         QRCodeREsults.delegate = self
+        SubmitButton.addTarget(self, action: #selector(self.sendData(sender:)), for: .touchUpInside)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //Menu Button Image Sizing
         menuButton.imageEdgeInsets = UIEdgeInsetsMake(10, 20, 10, 20)
+    }
+
+    func sendData(sender: UIButton) {
+        ServerInterfacer.uploadData(with: realizedData.scoringElements, callback: statusOfSubmission(_:))
+    }
+
+    func statusOfSubmission(_ data: Bool) {
+        let alert : UIAlertController = UIAlertController(title: "Status", message: "Status: \(data)", preferredStyle: .alert)
+        let action : UIAlertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(action)
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
