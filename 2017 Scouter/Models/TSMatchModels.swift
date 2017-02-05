@@ -17,6 +17,15 @@ class TBAMatch {
     var matchType : MatchType
     var matchIn: Int?
     
+    var played: Bool
+    
+    var blueScore: Int?
+    var redScore: Int?
+    var blueFourRotor: Bool?
+    var redFourRotor: Bool?
+    var blueFortyKPa: Bool?
+    var redFortyKPa: Bool?
+    
     enum MatchType {
         case qualifying
         case quarterFinal
@@ -25,11 +34,24 @@ class TBAMatch {
         case unknown
     }
     
-    init(keyV: String, blueAlliance : [Team], redAlliance : [Team]) {
+    init(keyV: String, blueAlliance : [Team], redAlliance : [Team], scoreBreakdown: NSDictionary?) {
         
         self.blue = blueAlliance
         self.red = redAlliance
         self.key = keyV
+        if (scoreBreakdown == nil) {
+            self.played = false
+        } else {
+            self.played = true
+            let blueDict = scoreBreakdown!.object(forKey: "blue") as! NSDictionary
+            let redDict = scoreBreakdown!.object(forKey: "red") as! NSDictionary
+            self.blueScore = blueDict.object(forKey: "totalPoints") as! Int
+            self.redScore = redDict.object(forKey: "totalPoints") as! Int
+            self.blueFourRotor = blueDict.object(forKey: "teleopDefensesBreached") as! Bool
+            self.redFourRotor = redDict.object(forKey: "teleopDefensesBreached") as! Bool
+            self.blueFortyKPa = blueDict.object(forKey: "teleopTowerCaptured") as! Bool
+            self.redFortyKPa = redDict.object(forKey: "teleopTowerCaptured") as! Bool
+        }
         let continuedString : String = key.components(separatedBy: "_")[1]
         let arrayOfCharc = Array(continuedString.characters) as! [Character]
         

@@ -32,6 +32,66 @@ class MatchViewController: ViewController {
         let matchKey = self.match!.key
         self.titleLabel.text = matchKey.components(separatedBy: "_")[1].uppercased()
         
+        //Change scores and match stats
+        //Scores
+        self.redAllianceView.score.text = String(self.match!.redScore!)
+        self.blueAllianceView.score.text = String(self.match!.blueScore!)
+        //Winner/loser/tie
+        if(self.match!.redScore! > self.match!.blueScore!) {
+            self.redAllianceView.winner.text = "Winner"
+            self.redAllianceView.score.font = UIFont(name: "Lato-Bold", size: 50)
+            self.blueAllianceView.winner.text = "Loser"
+        } else if(self.match!.redScore! < self.match!.blueScore!) {
+            self.redAllianceView.winner.text = "Loser"
+            self.blueAllianceView.winner.text = "Winner"
+            self.blueAllianceView.score.font = UIFont(name: "Lato-Bold", size: 50)
+        } else {
+            self.redAllianceView.winner.text = "Tie"
+            self.blueAllianceView.winner.text = "Tie"
+        }
+        
+        //Match stats
+        if(!self.match!.redFourRotor!) {
+            self.redAllianceView.fourRotor.image = UIImage(named: "four-rotor-false")
+        }
+        if(!self.match!.blueFourRotor!) {
+            self.blueAllianceView.fourRotor.image = UIImage(named: "four-rotor-false")
+        }
+        if(!self.match!.redFortyKPa!) {
+            self.redAllianceView.fortyKPa.image = UIImage(named: "forty-kpa-false")
+        }
+        if(!self.match!.blueFortyKPa!) {
+            self.blueAllianceView.fortyKPa.image = UIImage(named: "forty-kpa-false")
+        }
+        
+        //Teams
+        for (i, button) in self.redAllianceView.teamButtons.enumerated() {
+            button.setTitle(String(self.match!.red[i].teamNumber), for: .normal)
+        }
+        for (i, button) in self.blueAllianceView.teamButtons.enumerated() {
+            button.setTitle(String(self.match!.blue[i].teamNumber), for: .normal)
+        }
+        
+        //Borders
+        for (button) in self.redAllianceView.teamButtons! {
+            button.layer.borderWidth = 1
+            button.layer.borderColor = UIColor.white.cgColor
+        }
+        for (button) in self.redAllianceView.viewStatButtons! {
+            button.layer.borderWidth = 1
+            button.layer.borderColor = UIColor.white.cgColor
+        }
+        for (button) in self.blueAllianceView.teamButtons! {
+            button.layer.borderWidth = 1
+            button.layer.borderColor = UIColor.white.cgColor
+        }
+        for (button) in self.blueAllianceView.viewStatButtons! {
+            button.layer.borderWidth = 1
+            button.layer.borderColor = UIColor.white.cgColor
+        }
+        
+        
+        //Set navigation stack
         if(self.navigationStack != nil) {
             self.navigationController?.viewControllers = self.navigationStack!
         }

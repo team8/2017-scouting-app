@@ -57,7 +57,7 @@ class Data {
     static func handleMatchJSON(value: NSDictionary) -> Void {
         if (((value.value(forKey: "query") as! NSDictionary).value(forKey: "success"))! as! String == "yes") {
             matchList.removeAll()
-            
+            print(value)
 //            let matchListVC = MatchListViewController()
 //            matchListVC.deleteAllData()
             
@@ -77,7 +77,8 @@ class Data {
                 for (num) in (payloadDict.object(forKey: "red") as! [Int]) {
                     red.append(Data.getTeam(withNumber: num)!)
                 }
-                matchList.append(TBAMatch(keyV: name, blueAlliance: blue, redAlliance: red))
+                let scoreBreakdown = payloadDict.object(forKey: "score_breakdown") as! NSDictionary
+                matchList.append(TBAMatch(keyV: name, blueAlliance: blue, redAlliance: red, scoreBreakdown: scoreBreakdown))
                 
             }
             
@@ -168,7 +169,10 @@ class Data {
                 return team
             }
         }
-        print(withNumber)
+        print("Team number " + String(withNumber) + " does not exist")
+        for (team) in Data.teamList {
+            print(team.teamNumber)
+        }
         return nil
     }
 //    static func sendToVC(value: NSDictionary){
