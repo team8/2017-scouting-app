@@ -65,7 +65,7 @@ class TeamViewController: ViewController {
             vc.hasPrevious = true
         //Send data to selected match view controller
         } else if let vc = segue.destination as? MatchViewController, segue.identifier == "teamToMatch" {
-            vc.match = sender as! TBAMatch
+            vc.match = sender as? TBAMatch
             vc.previousViewController = self
         //Send data to match view controller when unwinding
         } else if let vc = segue.destination as? MatchViewController, segue.identifier == "unwindTeamToMatch" {

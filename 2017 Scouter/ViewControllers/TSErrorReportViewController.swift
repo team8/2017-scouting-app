@@ -30,7 +30,7 @@ class TSErrorViewController : ViewController, UITextFieldDelegate {
         Name.delegate = self
         
         //This runs when the user taps anywhere other than the textfield and textview
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(TSErrorViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
 
         

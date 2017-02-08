@@ -21,7 +21,7 @@ class MenuViewController: ViewController, UITextFieldDelegate, UIPickerViewDataS
     var hasPrevious = false
     
     @IBOutlet weak var compTextField: UITextField!
-    let compList = ["Ventura 2017", "SVR 2017", "Champs 2017"]
+    let compList = ["Ventura 2017", "SVR 2017", "Camps 2017"]
     let compIDs = ["2017cave", "2017casj", "2017cmptx"]
     let pickerView = UIView(frame: CGRect(x: 0, y: 0, width: 320, height: 200))
     let doneButton = UIButton(frame: CGRect(x: 220, y: 0, width: 100, height: 50))
@@ -49,6 +49,13 @@ class MenuViewController: ViewController, UITextFieldDelegate, UIPickerViewDataS
         
         //Hide back button
         backButton.isHidden = !self.hasPrevious
+        
+        //Picker
+        if let saved = UserDefaults.standard.integer(forKey: "competition") {
+            pickerSelect(saved)
+        } else {
+            pickerSelect(0)
+        }
     }
     
     override func viewDidLoad() {
@@ -95,13 +102,14 @@ class MenuViewController: ViewController, UITextFieldDelegate, UIPickerViewDataS
     }
     
     //Picker stuff
-    func pickerSelect(index: Int) {
+    func pickerSelect(_ index: Int) {
         compTextField.text = compList[index]
         Data.competition = compIDs[index]
+        UserDefaults.standard.set(index, forKey: "competition")
     }
     
     func donePressed(sender: UIButton!) {
-        pickerSelect(index: self.picker.selectedRow(inComponent: 0))
+        pickerSelect(self.picker.selectedRow(inComponent: 0))
         self.compTextField.resignFirstResponder()
     }
     
@@ -118,7 +126,7 @@ class MenuViewController: ViewController, UITextFieldDelegate, UIPickerViewDataS
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        pickerSelect(index: row)
+        pickerSelect(row)
     }
     
     @IBAction func menuUnwind(unwindSegue: UIStoryboardSegue) {

@@ -36,7 +36,7 @@ class TeamListViewController: ViewController, UITextFieldDelegate, UIPickerViewD
         teamTable.backgroundColor = UIColor.clear
         
 //        Data.fetch(complete: fetchComplete)
-        refresh()
+//        refresh()
     }
     
     override func viewDidLoad() {

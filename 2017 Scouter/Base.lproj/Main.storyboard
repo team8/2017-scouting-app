@@ -370,52 +370,6 @@
             </objects>
             <point key="canvasLocation" x="163" y="241"/>
         </scene>
-        <!--Pit Scouting-->
-        <scene sceneID="yGh-zK-lFl">
-            <objects>
-                <tableViewController title="Pit Scouting" id="acx-Ef-wUq" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="oK9-gK-WMN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Wfd-JH-gaf">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wfd-JH-gaf" id="bIk-oD-R1Q">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="acx-Ef-wUq" id="gIW-Rg-zkX"/>
-                            <outlet property="delegate" destination="acx-Ef-wUq" id="mR3-ul-MF3"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xHJ-Kb-xnR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="161" y="-1026"/>
-        </scene>
-        <!--Picklist-->
-        <scene sceneID="2pf-Kr-Sgb">
-            <objects>
-                <viewController title="Picklist" id="YD9-7a-hMb" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="yQM-CR-sVC"/>
-                        <viewControllerLayoutGuide type="bottom" id="yh3-oh-pFI"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="PhH-fh-I0F">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hld-cA-Lxt" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2025" y="1798"/>
-        </scene>
         <!--Report a Bug-->
         <scene sceneID="F1d-Fa-dzy">
             <objects>
@@ -1186,7 +1140,7 @@
                                 <rect key="frame" x="160" y="137" width="160" height="431"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="do5-OY-So5">
-                                        <rect key="frame" x="8" y="199" width="69.5" height="60"/>
+                                        <rect key="frame" x="8" y="199" width="70" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="XeS-tE-HEa"/>
                                         </constraints>
@@ -1199,7 +1153,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="OTU-ln-2WY">
-                                        <rect key="frame" x="82.5" y="199" width="69.5" height="60"/>
+                                        <rect key="frame" x="83" y="199" width="69" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="OhN-bv-aV5"/>
                                         </constraints>
@@ -1209,7 +1163,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dnn-ud-4sa">
-                                        <rect key="frame" x="8" y="264" width="69.5" height="60"/>
+                                        <rect key="frame" x="8" y="264" width="70" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="Ia5-w9-r7d"/>
                                         </constraints>
@@ -1222,7 +1176,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="0lP-8Q-g4R">
-                                        <rect key="frame" x="82.5" y="264" width="69.5" height="60"/>
+                                        <rect key="frame" x="83" y="264" width="69" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="83Q-IY-3Q3"/>
                                         </constraints>
@@ -1232,7 +1186,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5X5-VE-i2a">
-                                        <rect key="frame" x="8" y="329" width="69.5" height="60"/>
+                                        <rect key="frame" x="8" y="329" width="70" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="dKv-2h-JZd"/>
                                         </constraints>
@@ -1271,7 +1225,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="N4X-Zx-CEg">
-                                        <rect key="frame" x="82.5" y="329" width="69.5" height="60"/>
+                                        <rect key="frame" x="83" y="329" width="69" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="mxD-0B-k5f"/>
                                         </constraints>

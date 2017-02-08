@@ -32,12 +32,12 @@ class MatchListViewController: ViewController, UITableViewDataSource, UITableVie
         matchTable.dataSource = self
         matchTable.delegate = self
         
-        if let alreadySaved = UserDefaults.standard.object(forKey: "alreadySaved"){
-
-        }else{
-
-            Data.fetch(complete: fetchComplete)
-        }
+//        if let alreadySaved = UserDefaults.standard.object(forKey: "alreadySaved"){
+//
+//        }else{
+//
+//            Data.fetch(complete: fetchComplete)
+//        }
 //        populateMatchList()
 
     }
@@ -174,7 +174,7 @@ class MatchListViewController: ViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath) as! UnplayedTableViewCell
+//        let cell = tableView.cellForRow(at: indexPath) as! UnplayedTableViewCell
         let match = Data.matchList[indexPath.row]
         self.performSegue(withIdentifier: "matchListToMatch", sender: match)
     }
