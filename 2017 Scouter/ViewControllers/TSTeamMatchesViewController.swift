@@ -14,6 +14,8 @@ class TeamMatchesViewController: ViewController, UITableViewDataSource, UITableV
 
     var teamNumber = 0
     
+    var parentVC: TeamViewController?
+    
     @IBOutlet weak var matchTable: UITableView!
     
 //    var matchList = [TBAMatch]()
@@ -122,6 +124,12 @@ class TeamMatchesViewController: ViewController, UITableViewDataSource, UITableV
         cell.backgroundColor = UIColor.clear
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let cell = tableView.cellForRow(at: indexPath) as! UnplayedTableViewCell
+        let match = Data.getTeam(withNumber: self.teamNumber)!.matches[indexPath.row]
+        self.parentVC!.performSegue(withIdentifier: "teamToMatch", sender: match)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

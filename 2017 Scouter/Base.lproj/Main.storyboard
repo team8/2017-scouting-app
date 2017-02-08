@@ -772,6 +772,7 @@
                         <outlet property="segmentedControl" destination="mKM-cl-h9L" id="gQw-X9-daf"/>
                         <outlet property="titleLabel" destination="gAU-68-r9G" id="nXL-lH-7a0"/>
                         <segue destination="UAs-hX-Ox7" kind="unwind" identifier="teamToTeamList" unwindAction="teamListUnwindWithUnwindSegue:" id="C6F-Eb-o12"/>
+                        <segue destination="l8D-3F-ONH" kind="show" identifier="teamToMatch" id="Djs-Vu-Ufb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0tV-Sf-lwQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -994,6 +995,9 @@
                                     <constraint firstAttribute="width" constant="70" id="MIk-VL-GhA"/>
                                 </constraints>
                                 <state key="normal" image="menu-button"/>
+                                <connections>
+                                    <segue destination="edO-Jx-VUY" kind="unwind" identifier="matchToMenu" unwindAction="menuUnwindWithUnwindSegue:" id="d4k-Xw-qHc"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qY5-i3-upn">
                                 <rect key="frame" x="250" y="27" width="70" height="50"/>
@@ -1031,57 +1035,59 @@
                                 </constraints>
                                 <size key="titleShadowOffset" width="-1" height="0.0"/>
                                 <state key="normal" image="backarrow.png"/>
+                                <connections>
+                                    <action selector="backPressed:" destination="l8D-3F-ONH" eventType="touchUpInside" id="p3f-te-M5s"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MXO-6u-zWD" customClass="MatchAllianceView" customModule="_017_Scouter" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="137" width="160" height="431"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eHP-7c-1B3">
-                                        <rect key="frame" x="8" y="199" width="144" height="30"/>
+                                        <rect key="frame" x="8" y="199" width="70" height="60"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="EgQ-fq-B4q"/>
+                                            <constraint firstAttribute="height" constant="60" id="EgQ-fq-B4q"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="24"/>
-                                        <state key="normal" title="99999">
+                                        <state key="normal" title="9999">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbo-pZ-z5c">
-                                        <rect key="frame" x="8" y="234" width="144" height="29"/>
-                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
-                                        <state key="normal" title="View Stats">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="gbo-pZ-z5c">
+                                        <rect key="frame" x="83" y="199" width="69" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="pF1-FU-Gmt"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
+                                        <state key="normal" title="View Stats &gt;">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXH-Q5-DAt">
-                                        <rect key="frame" x="8" y="268" width="144" height="30"/>
+                                        <rect key="frame" x="8" y="264" width="70" height="60"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="WdW-kT-b6A"/>
+                                            <constraint firstAttribute="height" constant="60" id="WdW-kT-b6A"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="24"/>
-                                        <state key="normal" title="99999">
+                                        <state key="normal" title="9999">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dal-Pv-P7t">
-                                        <rect key="frame" x="8" y="303" width="144" height="29"/>
-                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Dal-Pv-P7t">
+                                        <rect key="frame" x="83" y="264" width="69" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="rXe-9F-TXm"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
                                         <state key="normal" title="View Stats">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8TZ-Gh-agj">
-                                        <rect key="frame" x="8" y="337" width="144" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="CXg-IL-dsA">
+                                        <rect key="frame" x="83" y="329" width="69" height="60"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="az6-JF-s6p"/>
+                                            <constraint firstAttribute="height" constant="60" id="DRJ-GQ-2EW"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="24"/>
-                                        <state key="normal" title="99999">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CXg-IL-dsA">
-                                        <rect key="frame" x="8" y="372" width="144" height="29"/>
-                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
                                         <state key="normal" title="View Stats">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -1112,35 +1118,45 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8TZ-Gh-agj">
+                                        <rect key="frame" x="8" y="329" width="70" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="az6-JF-s6p"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="24"/>
+                                        <state key="normal" title="9999">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.63529411759999999" green="0.28627450980000002" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="4vI-3n-UXf" firstAttribute="top" secondItem="Olo-Gl-0Xl" secondAttribute="bottom" constant="15" id="07u-mm-T6q"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="gbo-pZ-z5c" secondAttribute="trailing" id="0LJ-RM-hUX"/>
+                                    <constraint firstItem="8TZ-Gh-agj" firstAttribute="top" secondItem="cXH-Q5-DAt" secondAttribute="bottom" constant="5" id="1gd-M2-1Es"/>
+                                    <constraint firstAttribute="centerX" secondItem="eHP-7c-1B3" secondAttribute="trailing" constant="2.5" id="42e-sO-6Op"/>
                                     <constraint firstItem="4vI-3n-UXf" firstAttribute="leading" secondItem="MXO-6u-zWD" secondAttribute="leadingMargin" constant="5" id="4mM-Ob-EZG"/>
-                                    <constraint firstItem="CXg-IL-dsA" firstAttribute="leading" secondItem="MXO-6u-zWD" secondAttribute="leadingMargin" id="8pi-Zy-Lkq"/>
-                                    <constraint firstItem="Dal-Pv-P7t" firstAttribute="leading" secondItem="MXO-6u-zWD" secondAttribute="leadingMargin" id="EZQ-iC-aHO"/>
-                                    <constraint firstItem="8TZ-Gh-agj" firstAttribute="centerX" secondItem="MXO-6u-zWD" secondAttribute="centerX" id="KGP-v3-5W0"/>
+                                    <constraint firstItem="cXH-Q5-DAt" firstAttribute="centerY" secondItem="Dal-Pv-P7t" secondAttribute="centerY" id="6nn-3J-wns"/>
+                                    <constraint firstAttribute="centerX" secondItem="cXH-Q5-DAt" secondAttribute="trailing" constant="2.5" id="84d-xv-CBx"/>
+                                    <constraint firstItem="gbo-pZ-z5c" firstAttribute="centerY" secondItem="eHP-7c-1B3" secondAttribute="centerY" id="Inr-Mb-BLy"/>
                                     <constraint firstItem="8TZ-Gh-agj" firstAttribute="leading" secondItem="MXO-6u-zWD" secondAttribute="leadingMargin" id="KRf-cD-JBp"/>
-                                    <constraint firstItem="8TZ-Gh-agj" firstAttribute="top" secondItem="Dal-Pv-P7t" secondAttribute="bottom" constant="5" id="Kh3-iv-W5Z"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="64Y-xO-4zS" secondAttribute="trailing" constant="5" id="LCf-44-zjB"/>
                                     <constraint firstItem="64Y-xO-4zS" firstAttribute="centerY" secondItem="4vI-3n-UXf" secondAttribute="centerY" id="Lsm-5r-1cv"/>
-                                    <constraint firstItem="cXH-Q5-DAt" firstAttribute="top" secondItem="gbo-pZ-z5c" secondAttribute="bottom" constant="5" id="MRe-tf-F9A"/>
-                                    <constraint firstItem="gbo-pZ-z5c" firstAttribute="centerX" secondItem="MXO-6u-zWD" secondAttribute="centerX" id="NRV-3z-EIB"/>
-                                    <constraint firstItem="cXH-Q5-DAt" firstAttribute="centerX" secondItem="MXO-6u-zWD" secondAttribute="centerX" id="Nij-sj-At5"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="Dal-Pv-P7t" secondAttribute="trailing" id="Nr1-9r-kCs"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="CXg-IL-dsA" secondAttribute="trailing" id="Nr2-vd-nXs"/>
+                                    <constraint firstItem="CXg-IL-dsA" firstAttribute="leading" secondItem="8TZ-Gh-agj" secondAttribute="trailing" constant="5" id="OMH-dc-MCY"/>
                                     <constraint firstItem="Olo-Gl-0Xl" firstAttribute="centerX" secondItem="MXO-6u-zWD" secondAttribute="centerX" id="QVZ-Dl-EOJ"/>
                                     <constraint firstItem="cXH-Q5-DAt" firstAttribute="leading" secondItem="MXO-6u-zWD" secondAttribute="leadingMargin" id="S2s-xy-ZmG"/>
                                     <constraint firstItem="eHP-7c-1B3" firstAttribute="top" secondItem="4vI-3n-UXf" secondAttribute="bottom" constant="20" id="TsC-Uz-sMT"/>
-                                    <constraint firstItem="CXg-IL-dsA" firstAttribute="top" secondItem="8TZ-Gh-agj" secondAttribute="bottom" constant="5" id="TvV-hV-wfr"/>
-                                    <constraint firstItem="CXg-IL-dsA" firstAttribute="centerX" secondItem="MXO-6u-zWD" secondAttribute="centerX" id="Xzs-II-p82"/>
-                                    <constraint firstItem="Dal-Pv-P7t" firstAttribute="centerX" secondItem="MXO-6u-zWD" secondAttribute="centerX" id="ZRt-ye-VrJ"/>
+                                    <constraint firstItem="cXH-Q5-DAt" firstAttribute="top" secondItem="eHP-7c-1B3" secondAttribute="bottom" constant="5" id="UJ0-bv-kNs"/>
+                                    <constraint firstItem="Dal-Pv-P7t" firstAttribute="leading" secondItem="cXH-Q5-DAt" secondAttribute="trailing" constant="5" id="XM8-bQ-Izg"/>
                                     <constraint firstItem="egH-rt-BR9" firstAttribute="centerX" secondItem="MXO-6u-zWD" secondAttribute="centerX" id="ZwQ-oe-zzM"/>
-                                    <constraint firstItem="gbo-pZ-z5c" firstAttribute="top" secondItem="eHP-7c-1B3" secondAttribute="bottom" constant="5" id="coa-ZH-8TZ"/>
-                                    <constraint firstItem="eHP-7c-1B3" firstAttribute="centerX" secondItem="MXO-6u-zWD" secondAttribute="centerX" id="kmX-aq-Znr"/>
-                                    <constraint firstItem="Dal-Pv-P7t" firstAttribute="top" secondItem="cXH-Q5-DAt" secondAttribute="bottom" constant="5" id="laJ-KJ-efc"/>
+                                    <constraint firstAttribute="centerX" secondItem="8TZ-Gh-agj" secondAttribute="trailing" constant="2.5" id="eud-Ku-ezg"/>
+                                    <constraint firstItem="gbo-pZ-z5c" firstAttribute="leading" secondItem="eHP-7c-1B3" secondAttribute="trailing" constant="5" id="nlw-sR-73z"/>
                                     <constraint firstItem="eHP-7c-1B3" firstAttribute="leading" secondItem="MXO-6u-zWD" secondAttribute="leadingMargin" id="o2e-kB-aAi"/>
                                     <constraint firstItem="egH-rt-BR9" firstAttribute="top" secondItem="MXO-6u-zWD" secondAttribute="top" constant="20" id="oIu-yb-vXP"/>
+                                    <constraint firstItem="CXg-IL-dsA" firstAttribute="centerY" secondItem="8TZ-Gh-agj" secondAttribute="centerY" id="owC-gx-TGn"/>
                                     <constraint firstItem="Olo-Gl-0Xl" firstAttribute="top" secondItem="egH-rt-BR9" secondAttribute="bottom" id="q9Q-OR-Kze"/>
-                                    <constraint firstItem="gbo-pZ-z5c" firstAttribute="leading" secondItem="MXO-6u-zWD" secondAttribute="leadingMargin" id="sxh-gL-KqK"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="fortyKPa" destination="64Y-xO-4zS" id="foO-Gx-yKF"/>
@@ -1307,9 +1323,11 @@
                         <outlet property="menuButton" destination="N2d-sh-Nor" id="HqQ-iU-imz"/>
                         <outlet property="redAllianceView" destination="MXO-6u-zWD" id="ry7-3e-2qq"/>
                         <outlet property="titleLabel" destination="0CP-UB-wxM" id="RI9-6z-4oy"/>
+                        <segue destination="MRI-NX-uRH" kind="show" identifier="matchToTeam" id="7jk-Ox-nUT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="toU-fp-KvS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="edO-Jx-VUY" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1847" y="-355"/>
         </scene>
@@ -1578,6 +1596,7 @@
         <image name="upload-qr-code.png" width="57" height="51"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MF9-EP-i8M"/>
+        <segue reference="7jk-Ox-nUT"/>
+        <segue reference="Djs-Vu-Ufb"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -40,7 +40,6 @@ class TeamViewController: ViewController {
     }
     
     @IBAction func backPressed(_ sender: Any) {
-//        print(self.previousViewController)
         if(self.previousViewController! is TeamListViewController) {
             self.performSegue(withIdentifier: "teamToTeamList", sender: nil)
         }
@@ -56,11 +55,17 @@ class TeamViewController: ViewController {
             self.embeddedViewController = vc
             (self.embeddedViewController?.viewControllers?[0] as! TeamInfoViewController).teamNumber = self.teamNumber
             (self.embeddedViewController?.viewControllers?[1] as! TeamMatchesViewController).teamNumber = self.teamNumber
+            (self.embeddedViewController?.viewControllers?[1] as! TeamMatchesViewController).parentVC = self
         //Send data to menu when unwinding
         } else if let vc = segue.destination as? MenuViewController, segue.identifier == "teamToMenu" {
             self.navigationStack = self.navigationController?.viewControllers
             vc.previousViewController = self
             vc.hasPrevious = true
+        } else if let vc = segue.destination as? MatchViewController, segue.identifier == "unwindTeamToMatch" {
+            let navStack = self.navigationController?.viewControllers
+            print(navStack?[(navStack?.count)! - 2])
+            vc.previousViewController = navStack?[(navStack?.count)! - 2] as! ViewController?
+            vc.match = (self.previousViewController as! MatchViewController).match
         }
     }
 }

@@ -96,10 +96,32 @@ class MatchViewController: ViewController {
             self.navigationController?.viewControllers = self.navigationStack!
         }
     }
+    @IBAction func backPressed(_ sender: Any) {
+        if (self.previousViewController! is MatchListViewController) {
+            self.performSegue(withIdentifier: "matchToMatchList", sender: nil)
+        } else if (self.previousViewController! is TeamViewController) {
+            self.performSegue(withIdentifier: "matchToTeam", sender: nil)
+        }
+    }
     @IBAction func viewTBAPressed(_ sender: Any) {
     }
     @IBAction func refresh(_ sender: Any) {
     }
+    
+    //Sending info to next VC
+    override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
+        if let vc = segue.destination as? MenuViewController, segue.identifier == "matchToMenu" {
+            self.navigationStack = self.navigationController?.viewControllers
+            vc.previousViewController = self
+            vc.hasPrevious = true
+        } else if let vc = segue.destination as? TeamViewController, segue.identifier == "matchToTeam" {
+            let navStack = self.navigationController?.viewControllers
+            print(navStack?[(navStack?.count)! - 2])
+            vc.previousViewController = navStack?[(navStack?.count)! - 2] as! ViewController?
+            vc.teamNumber = (self.previousViewController as! TeamViewController).teamNumber
+        }
+    }
+    
 }
 class MatchAllianceView: UIView {
     @IBOutlet weak var score: UILabel!
