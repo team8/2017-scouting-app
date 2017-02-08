@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2659" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2Yl-KG-r4D">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2Yl-KG-r4D">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -85,7 +85,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="240" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fYY-dF-546" id="CtO-Lb-SzT">
-                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="43"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </tableViewCellContentView>
                                             </tableViewCell>
@@ -141,6 +141,7 @@
                         <outlet property="QRCodeREsults" destination="YcQ-E4-aWK" id="bxv-qV-8xe"/>
                         <outlet property="ScanButton" destination="ljs-i9-NuJ" id="G8e-yD-V16"/>
                         <outlet property="ScanView" destination="dCe-By-0ft" id="DkI-py-3QU"/>
+                        <outlet property="SubmitButton" destination="5vU-bi-JS6" id="eI2-w0-k1h"/>
                         <outlet property="menuButton" destination="XP8-M9-YxB" id="RNi-F2-btz"/>
                     </connections>
                 </viewController>
@@ -382,7 +383,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wfd-JH-gaf" id="bIk-oD-R1Q">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
