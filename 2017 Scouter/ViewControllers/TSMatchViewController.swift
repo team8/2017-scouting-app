@@ -54,17 +54,23 @@ class MatchViewController: ViewController {
         }
         
         //Match stats
-        if(!self.match!.redFourRotor!) {
-            self.redAllianceView.fourRotor.image = UIImage(named: "four-rotor-false")
-        }
-        if(!self.match!.blueFourRotor!) {
-            self.blueAllianceView.fourRotor.image = UIImage(named: "four-rotor-false")
-        }
+//        if(!self.match!.redFourRotor!) {
+//            self.redAllianceView.fourRotor.image = UIImage(named: "four-rotor-false")
+//        }
+//        if(!self.match!.blueFourRotor!) {
+//            self.blueAllianceView.fourRotor.image = UIImage(named: "four-rotor-false")
+//        }
+        self.redAllianceView.rotorLabel.text = String(self.match!.redRotor!)
+        self.blueAllianceView.rotorLabel.text = String(self.match!.blueRotor!)
         if(!self.match!.redFortyKPa!) {
             self.redAllianceView.fortyKPa.image = UIImage(named: "forty-kpa-false")
+        } else {
+            self.redAllianceView.fortyKPa.image = UIImage(named: "forty-kpa-true")
         }
         if(!self.match!.blueFortyKPa!) {
             self.blueAllianceView.fortyKPa.image = UIImage(named: "forty-kpa-false")
+        } else {
+            self.blueAllianceView.fortyKPa.image = UIImage(named: "forty-kpa-true")
         }
         
         //Teams
@@ -136,7 +142,7 @@ class MatchViewController: ViewController {
 class MatchAllianceView: UIView {
     @IBOutlet weak var score: UILabel!
     @IBOutlet weak var winner: UILabel!
-    @IBOutlet weak var fourRotor: UIImageView!
+    @IBOutlet weak var rotorLabel: UILabel!
     @IBOutlet weak var fortyKPa: UIImageView!
     @IBOutlet var teamButtons: [UIButton]!
     @IBOutlet var viewStatButtons: [UIButton]!

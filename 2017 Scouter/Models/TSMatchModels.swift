@@ -21,8 +21,8 @@ class TBAMatch {
     
     var blueScore: Int?
     var redScore: Int?
-    var blueFourRotor: Bool?
-    var redFourRotor: Bool?
+    var blueRotor: Int?
+    var redRotor: Int?
     var blueFortyKPa: Bool?
     var redFortyKPa: Bool?
     
@@ -45,15 +45,22 @@ class TBAMatch {
             self.played = true
             let blueDict = scoreBreakdown!.object(forKey: "blue") as! NSDictionary
             let redDict = scoreBreakdown!.object(forKey: "red") as! NSDictionary
-            self.blueScore = blueDict.object(forKey: "totalPoints") as! Int
-            self.redScore = redDict.object(forKey: "totalPoints") as! Int
-            self.blueFourRotor = blueDict.object(forKey: "teleopDefensesBreached") as! Bool
-            self.redFourRotor = redDict.object(forKey: "teleopDefensesBreached") as! Bool
-            self.blueFortyKPa = blueDict.object(forKey: "teleopTowerCaptured") as! Bool
-            self.redFortyKPa = redDict.object(forKey: "teleopTowerCaptured") as! Bool
+            self.blueScore = blueDict.object(forKey: "totalPoints") as? Int
+            self.redScore = redDict.object(forKey: "totalPoints") as? Int
+            
+            self.blueRotor = Int(NSNumber(value: blueDict.object(forKey: "teleopDefensesBreached") as! Bool))
+            self.redRotor = Int(NSNumber(value: redDict.object(forKey: "teleopDefensesBreached") as! Bool))
+            print(Int(NSNumber(value: blueDict.object(forKey: "teleopDefensesBreached") as! Bool)))
+            self.blueFortyKPa = blueDict.object(forKey: "teleopTowerCaptured") as? Bool
+            self.redFortyKPa = redDict.object(forKey: "teleopTowerCaptured") as? Bool
+            
+//            self.blueRotor = Int(NSNumber(value: (blueDict.object(forKey: "rotor1Engaged") as! Int))) + Int(NSNumber(value: (blueDict.object(forKey: "rotor2Engaged"))) as! Int) + Int(NSNumber(value: (blueDict.object(forKey: "rotor3Engaged") as! Int))) + Int(NSNumber(value: (blueDict.object(forKey: "rotor4Engaged") as! Int)))
+//            self.redRotor = Int(NSNumber(value: (redDict.object(forKey: "rotor1Engaged") as! Int))) + Int(NSNumber(value: (redDict.object(forKey: "rotor2Engaged") as! Int))) + Int(NSNumber(value: (redDict.object(forKey: "rotor3Engaged") as! Int))) + Int(NSNumber(value: (redDict.object(forKey: "rotor4Engaged") as! Int)))
+//            self.blueFortyKPa = blueDict.object(forKey: "kPaRankingPointAchieved") as! Bool
+//            self.redFortyKPa = redDict.object(forKey: "kPaRankingPointAchieved") as! Bool
         }
         let continuedString : String = key.components(separatedBy: "_")[1]
-        let arrayOfCharc = Array(continuedString.characters) as! [Character]
+        let arrayOfCharc = Array(continuedString.characters) 
         
         if arrayOfCharc[0] == Character("q"){
             if (arrayOfCharc[1] == Character("m")){
@@ -79,7 +86,7 @@ class TBAMatch {
             matchIn = Int(matchInString)
         }else if arrayOfCharc[0] == Character("f"){
             matchType = MatchType.final
-            var matchNumberString : String = String(arrayOfCharc[1])
+            let matchNumberString : String = String(arrayOfCharc[1])
             matchNumber = Int(matchNumberString)!
             let matchInString : String = String(arrayOfCharc[3])
             matchIn = Int(matchInString)

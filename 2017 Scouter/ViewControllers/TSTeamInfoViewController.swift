@@ -38,7 +38,7 @@ class TeamInfoViewController: ViewController {
         do {
             try fileManager.createDirectory(atPath: directoryURL.appendingPathComponent(Data.competition!).relativePath, withIntermediateDirectories: false, attributes: nil)
         } catch let error as NSError {
-//            print(error.localizedDescription);
+            print(error.localizedDescription);
         }
         let destURL = directoryURL.appendingPathComponent(Data.competition! + "/frc" + String(self.teamNumber))
         let destination: (URL, HTTPURLResponse) -> URL = { temporaryURL, response in

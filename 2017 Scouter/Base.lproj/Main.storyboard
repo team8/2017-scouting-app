@@ -11,6 +11,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Lato-Black.ttf">
+            <string>Lato-Black</string>
+        </array>
         <array key="Lato-Bold.ttf">
             <string>Lato-Bold</string>
         </array>
@@ -1093,6 +1096,12 @@
                                             <action selector="teamButtonPressed:" destination="MXO-6u-zWD" eventType="touchUpInside" id="wiF-6B-cLt"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GBl-cf-QL3">
+                                        <rect key="frame" x="26" y="113" width="35" height="72"/>
+                                        <fontDescription key="fontDescription" name="Lato-Black" family="Lato" pointSize="60"/>
+                                        <color key="textColor" red="0.04191788338" green="0.6047603627" blue="0.017816367989999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.63529411759999999" green="0.28627450980000002" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1103,6 +1112,7 @@
                                     <constraint firstItem="4vI-3n-UXf" firstAttribute="leading" secondItem="MXO-6u-zWD" secondAttribute="leadingMargin" constant="5" id="4mM-Ob-EZG"/>
                                     <constraint firstItem="cXH-Q5-DAt" firstAttribute="centerY" secondItem="Dal-Pv-P7t" secondAttribute="centerY" id="6nn-3J-wns"/>
                                     <constraint firstAttribute="centerX" secondItem="cXH-Q5-DAt" secondAttribute="trailing" constant="2.5" id="84d-xv-CBx"/>
+                                    <constraint firstItem="GBl-cf-QL3" firstAttribute="centerX" secondItem="4vI-3n-UXf" secondAttribute="centerX" id="DHZ-4y-9ea"/>
                                     <constraint firstItem="gbo-pZ-z5c" firstAttribute="centerY" secondItem="eHP-7c-1B3" secondAttribute="centerY" id="Inr-Mb-BLy"/>
                                     <constraint firstItem="8TZ-Gh-agj" firstAttribute="leading" secondItem="MXO-6u-zWD" secondAttribute="leadingMargin" id="KRf-cD-JBp"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="64Y-xO-4zS" secondAttribute="trailing" constant="5" id="LCf-44-zjB"/>
@@ -1116,6 +1126,7 @@
                                     <constraint firstItem="cXH-Q5-DAt" firstAttribute="top" secondItem="eHP-7c-1B3" secondAttribute="bottom" constant="5" id="UJ0-bv-kNs"/>
                                     <constraint firstItem="Dal-Pv-P7t" firstAttribute="leading" secondItem="cXH-Q5-DAt" secondAttribute="trailing" constant="5" id="XM8-bQ-Izg"/>
                                     <constraint firstItem="egH-rt-BR9" firstAttribute="centerX" secondItem="MXO-6u-zWD" secondAttribute="centerX" id="ZwQ-oe-zzM"/>
+                                    <constraint firstItem="GBl-cf-QL3" firstAttribute="centerY" secondItem="4vI-3n-UXf" secondAttribute="centerY" id="cpt-C1-3DQ"/>
                                     <constraint firstAttribute="centerX" secondItem="8TZ-Gh-agj" secondAttribute="trailing" constant="2.5" id="eud-Ku-ezg"/>
                                     <constraint firstItem="gbo-pZ-z5c" firstAttribute="leading" secondItem="eHP-7c-1B3" secondAttribute="trailing" constant="5" id="nlw-sR-73z"/>
                                     <constraint firstItem="eHP-7c-1B3" firstAttribute="leading" secondItem="MXO-6u-zWD" secondAttribute="leadingMargin" id="o2e-kB-aAi"/>
@@ -1125,7 +1136,7 @@
                                 </constraints>
                                 <connections>
                                     <outlet property="fortyKPa" destination="64Y-xO-4zS" id="foO-Gx-yKF"/>
-                                    <outlet property="fourRotor" destination="4vI-3n-UXf" id="Ujs-Ut-qcV"/>
+                                    <outlet property="rotorLabel" destination="GBl-cf-QL3" id="l3c-nY-tcz"/>
                                     <outlet property="score" destination="egH-rt-BR9" id="QIg-NK-lQd"/>
                                     <outlet property="winner" destination="Olo-Gl-0Xl" id="uqD-sr-FWP"/>
                                     <outletCollection property="teamButtons" destination="eHP-7c-1B3" collectionClass="NSMutableArray" id="2ab-K7-rGV"/>
@@ -1234,6 +1245,12 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dvr-vd-TTZ">
+                                        <rect key="frame" x="26" y="113" width="35" height="72"/>
+                                        <fontDescription key="fontDescription" name="Lato-Black" family="Lato" pointSize="60"/>
+                                        <color key="textColor" red="0.04191788338" green="0.6047603627" blue="0.017816367989999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.31764705879999999" green="0.63921568630000003" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1243,6 +1260,7 @@
                                     <constraint firstItem="do5-OY-So5" firstAttribute="top" secondItem="jJV-0C-2zg" secondAttribute="bottom" constant="20" id="Cfr-bx-Cs9"/>
                                     <constraint firstItem="jJV-0C-2zg" firstAttribute="leading" secondItem="nZ3-bv-gSk" secondAttribute="leadingMargin" constant="5" id="DCs-hx-cAD"/>
                                     <constraint firstItem="AhZ-zh-D8O" firstAttribute="centerX" secondItem="nZ3-bv-gSk" secondAttribute="centerX" id="G0u-jv-QgO"/>
+                                    <constraint firstItem="Dvr-vd-TTZ" firstAttribute="centerY" secondItem="jJV-0C-2zg" secondAttribute="centerY" id="Gok-Lx-j3t"/>
                                     <constraint firstAttribute="centerX" secondItem="dnn-ud-4sa" secondAttribute="trailing" constant="2.5" id="HVH-ly-ire"/>
                                     <constraint firstAttribute="centerX" secondItem="5X5-VE-i2a" secondAttribute="trailing" constant="2.5" id="MPn-ob-op3"/>
                                     <constraint firstAttribute="centerX" secondItem="do5-OY-So5" secondAttribute="trailing" constant="2.5" id="Nhf-NE-xfR"/>
@@ -1258,6 +1276,7 @@
                                     <constraint firstItem="AhZ-zh-D8O" firstAttribute="top" secondItem="YUv-OD-WKd" secondAttribute="bottom" id="cIp-aX-SYa"/>
                                     <constraint firstItem="YUv-OD-WKd" firstAttribute="centerX" secondItem="nZ3-bv-gSk" secondAttribute="centerX" id="hkr-xK-qs8"/>
                                     <constraint firstItem="5X5-VE-i2a" firstAttribute="leading" secondItem="nZ3-bv-gSk" secondAttribute="leadingMargin" id="mrZ-D7-s31"/>
+                                    <constraint firstItem="Dvr-vd-TTZ" firstAttribute="centerX" secondItem="jJV-0C-2zg" secondAttribute="centerX" id="oFy-Mp-fWf"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="OTU-ln-2WY" secondAttribute="trailing" id="pjB-Qh-SkR"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="N4X-Zx-CEg" secondAttribute="trailing" id="tgv-wk-avM"/>
                                     <constraint firstItem="OTU-ln-2WY" firstAttribute="leading" secondItem="do5-OY-So5" secondAttribute="trailing" constant="5" id="tzo-WH-942"/>
@@ -1266,7 +1285,7 @@
                                 </constraints>
                                 <connections>
                                     <outlet property="fortyKPa" destination="v2J-O6-0vL" id="m4P-eL-QQE"/>
-                                    <outlet property="fourRotor" destination="jJV-0C-2zg" id="1MG-R4-whs"/>
+                                    <outlet property="rotorLabel" destination="Dvr-vd-TTZ" id="2YT-N6-cuI"/>
                                     <outlet property="score" destination="YUv-OD-WKd" id="tK0-UD-xc5"/>
                                     <outlet property="winner" destination="AhZ-zh-D8O" id="ceI-hG-O5k"/>
                                     <outletCollection property="teamButtons" destination="do5-OY-So5" collectionClass="NSMutableArray" id="9Jv-p0-Ek5"/>

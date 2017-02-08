@@ -51,7 +51,7 @@ class MenuViewController: ViewController, UITextFieldDelegate, UIPickerViewDataS
         backButton.isHidden = !self.hasPrevious
         
         //Picker
-        if let saved = UserDefaults.standard.integer(forKey: "competition") {
+        if let saved = UserDefaults.standard.value(forKey: "competition") as? Int {
             pickerSelect(saved)
         } else {
             pickerSelect(0)
