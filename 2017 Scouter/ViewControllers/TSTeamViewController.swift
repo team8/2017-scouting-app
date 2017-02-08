@@ -42,6 +42,8 @@ class TeamViewController: ViewController {
     @IBAction func backPressed(_ sender: Any) {
         if(self.previousViewController! is TeamListViewController) {
             self.performSegue(withIdentifier: "teamToTeamList", sender: nil)
+        } else if(self.previousViewController! is MatchViewController) {
+            self.performSegue(withIdentifier: "unwindTeamToMatch", sender: nil)
         }
     }
     
@@ -61,11 +63,20 @@ class TeamViewController: ViewController {
             self.navigationStack = self.navigationController?.viewControllers
             vc.previousViewController = self
             vc.hasPrevious = true
+        //Send data to selected match view controller
+        } else if let vc = segue.destination as? MatchViewController, segue.identifier == "teamToMatch" {
+            vc.match = sender as! TBAMatch
+            vc.previousViewController = self
+        //Send data to match view controller when unwinding
         } else if let vc = segue.destination as? MatchViewController, segue.identifier == "unwindTeamToMatch" {
             let navStack = self.navigationController?.viewControllers
-            print(navStack?[(navStack?.count)! - 2])
-            vc.previousViewController = navStack?[(navStack?.count)! - 2] as! ViewController?
+            print(navStack?[(navStack?.count)! - 3])
+            vc.previousViewController = navStack?[(navStack?.count)! - 3] as! ViewController?
             vc.match = (self.previousViewController as! MatchViewController).match
         }
+    }
+    
+    @IBAction func teamUnwind(unwindSegue: UIStoryboardSegue) {
+        
     }
 }

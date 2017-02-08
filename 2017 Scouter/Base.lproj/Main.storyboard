@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2Yl-KG-r4D">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2659" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2Yl-KG-r4D">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -85,7 +85,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="240" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fYY-dF-546" id="CtO-Lb-SzT">
-                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </tableViewCellContentView>
                                             </tableViewCell>
@@ -383,7 +383,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wfd-JH-gaf" id="bIk-oD-R1Q">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -774,6 +774,7 @@
                         <outlet property="titleLabel" destination="gAU-68-r9G" id="nXL-lH-7a0"/>
                         <segue destination="UAs-hX-Ox7" kind="unwind" identifier="teamToTeamList" unwindAction="teamListUnwindWithUnwindSegue:" id="C6F-Eb-o12"/>
                         <segue destination="l8D-3F-ONH" kind="show" identifier="teamToMatch" id="Djs-Vu-Ufb"/>
+                        <segue destination="UAs-hX-Ox7" kind="unwind" identifier="unwindTeamToMatch" unwindAction="matchUnwindWithUnwindSegue:" id="zb5-xp-fK5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0tV-Sf-lwQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -963,7 +964,7 @@
                     <connections>
                         <outlet property="matchTable" destination="4og-JT-lbO" id="U75-qw-8xW"/>
                         <outlet property="menuButton" destination="ssX-CS-bw6" id="v3B-Nm-KA9"/>
-                        <segue destination="l8D-3F-ONH" kind="show" identifier="matchListToMatch" action="showDetailViewController:sender:" id="eVQ-1D-dhc"/>
+                        <segue destination="l8D-3F-ONH" kind="show" identifier="matchListToMatch" id="xO0-4M-Pxa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4YY-FT-gL2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1052,6 +1053,9 @@
                                         <state key="normal" title="9999">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="teamButtonPressed:" destination="MXO-6u-zWD" eventType="touchUpInside" id="R9w-oB-P9f"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="gbo-pZ-z5c">
                                         <rect key="frame" x="83" y="199" width="69" height="60"/>
@@ -1063,7 +1067,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXH-Q5-DAt">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXH-Q5-DAt">
                                         <rect key="frame" x="8" y="264" width="70" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="WdW-kT-b6A"/>
@@ -1072,6 +1076,9 @@
                                         <state key="normal" title="9999">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="teamButtonPressed:" destination="MXO-6u-zWD" eventType="touchUpInside" id="fOh-cP-dcY"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Dal-Pv-P7t">
                                         <rect key="frame" x="83" y="264" width="69" height="60"/>
@@ -1119,7 +1126,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8TZ-Gh-agj">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8TZ-Gh-agj">
                                         <rect key="frame" x="8" y="329" width="70" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="az6-JF-s6p"/>
@@ -1128,6 +1135,9 @@
                                         <state key="normal" title="9999">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="teamButtonPressed:" destination="MXO-6u-zWD" eventType="touchUpInside" id="wiF-6B-cLt"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.63529411759999999" green="0.28627450980000002" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -1184,6 +1194,9 @@
                                         <state key="normal" title="99999">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="teamButtonPressed:" destination="nZ3-bv-gSk" eventType="touchUpInside" id="MCE-or-YfC"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OTU-ln-2WY">
                                         <rect key="frame" x="8" y="234" width="144" height="29"/>
@@ -1192,7 +1205,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dnn-ud-4sa">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dnn-ud-4sa">
                                         <rect key="frame" x="8" y="268" width="144" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="Ia5-w9-r7d"/>
@@ -1201,6 +1214,9 @@
                                         <state key="normal" title="99999">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="teamButtonPressed:" destination="nZ3-bv-gSk" eventType="touchUpInside" id="1gI-c7-9Lv"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0lP-8Q-g4R">
                                         <rect key="frame" x="8" y="303" width="144" height="29"/>
@@ -1209,7 +1225,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5X5-VE-i2a">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5X5-VE-i2a">
                                         <rect key="frame" x="8" y="337" width="144" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="dKv-2h-JZd"/>
@@ -1218,6 +1234,9 @@
                                         <state key="normal" title="99999">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="teamButtonPressed:" destination="nZ3-bv-gSk" eventType="touchUpInside" id="rut-vu-Riz"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N4X-Zx-CEg">
                                         <rect key="frame" x="8" y="372" width="144" height="29"/>
@@ -1325,6 +1344,8 @@
                         <outlet property="redAllianceView" destination="MXO-6u-zWD" id="ry7-3e-2qq"/>
                         <outlet property="titleLabel" destination="0CP-UB-wxM" id="RI9-6z-4oy"/>
                         <segue destination="MRI-NX-uRH" kind="show" identifier="matchToTeam" id="7jk-Ox-nUT"/>
+                        <segue destination="edO-Jx-VUY" kind="unwind" identifier="unwindMatchToTeam" unwindAction="teamUnwindWithUnwindSegue:" id="rV7-QQ-CI7"/>
+                        <segue destination="edO-Jx-VUY" kind="unwind" identifier="unwindMatchToMatchList" unwindAction="matchListUnwindWithUnwindSegue:" id="PDk-qh-m1D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="toU-fp-KvS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1597,7 +1618,7 @@
         <image name="upload-qr-code.png" width="57" height="51"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="xO0-4M-Pxa"/>
         <segue reference="7jk-Ox-nUT"/>
-        <segue reference="Djs-Vu-Ufb"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -33,6 +33,9 @@ class MatchViewController: ViewController {
         self.titleLabel.text = matchKey.components(separatedBy: "_")[1].uppercased()
         
         //Change scores and match stats
+        //Parent
+        self.redAllianceView.parent = self
+        self.blueAllianceView.parent = self
         //Scores
         self.redAllianceView.score.text = String(self.match!.redScore!)
         self.blueAllianceView.score.text = String(self.match!.blueScore!)
@@ -71,6 +74,8 @@ class MatchViewController: ViewController {
         for (i, button) in self.blueAllianceView.teamButtons.enumerated() {
             button.setTitle(String(self.match!.blue[i].teamNumber), for: .normal)
         }
+        self.redAllianceView.teams = self.match!.red
+        self.blueAllianceView.teams = self.match!.blue
         
         //Borders
         for (button) in self.redAllianceView.teamButtons! {
@@ -98,9 +103,9 @@ class MatchViewController: ViewController {
     }
     @IBAction func backPressed(_ sender: Any) {
         if (self.previousViewController! is MatchListViewController) {
-            self.performSegue(withIdentifier: "matchToMatchList", sender: nil)
+            self.performSegue(withIdentifier: "unwindMatchToMatchList", sender: nil)
         } else if (self.previousViewController! is TeamViewController) {
-            self.performSegue(withIdentifier: "matchToTeam", sender: nil)
+            self.performSegue(withIdentifier: "unwindMatchToTeam", sender: nil)
         }
     }
     @IBAction func viewTBAPressed(_ sender: Any) {
@@ -115,13 +120,19 @@ class MatchViewController: ViewController {
             vc.previousViewController = self
             vc.hasPrevious = true
         } else if let vc = segue.destination as? TeamViewController, segue.identifier == "matchToTeam" {
+            vc.previousViewController = self
+            vc.teamNumber = sender as! Int
+        } else if let vc = segue.destination as? TeamViewController, segue.identifier == "unwindMatchToTeam" {
             let navStack = self.navigationController?.viewControllers
-            print(navStack?[(navStack?.count)! - 2])
-            vc.previousViewController = navStack?[(navStack?.count)! - 2] as! ViewController?
+            print(navStack?[(navStack?.count)! - 3])
+            vc.previousViewController = navStack?[(navStack?.count)! - 3] as! ViewController?
             vc.teamNumber = (self.previousViewController as! TeamViewController).teamNumber
         }
     }
     
+    @IBAction func matchUnwind(unwindSegue: UIStoryboardSegue) {
+        
+    }
 }
 class MatchAllianceView: UIView {
     @IBOutlet weak var score: UILabel!
@@ -130,4 +141,11 @@ class MatchAllianceView: UIView {
     @IBOutlet weak var fortyKPa: UIImageView!
     @IBOutlet var teamButtons: [UIButton]!
     @IBOutlet var viewStatButtons: [UIButton]!
+    
+    var parent: MatchViewController?
+    var teams = [Team]()
+    
+    @IBAction func teamButtonPressed(_ sender: UIButton) {
+        parent!.performSegue(withIdentifier: "matchToTeam", sender: teams[sender.tag].teamNumber)
+    }
 }

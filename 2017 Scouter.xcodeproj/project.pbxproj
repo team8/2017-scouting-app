@@ -154,8 +154,8 @@
 				AAA730EF1E1333490003ECC0 /* UnplayedTableViewCell.swift */,
 				6AD6C7F61DC429410028DB4D /* ViewControllers */,
 				6A62F1181DC4280000479F30 /* AppDelegate.swift */,
-				6A62F11C1DC4280000479F30 /* Main.storyboard */,
 				AA1D86241E14F5FE00B12722 /* TeamTableViewCell.swift */,
+				6A62F11C1DC4280000479F30 /* Main.storyboard */,
 				AA5432461E08AD3B00000A88 /* menu-images */,
 				6A62F11F1DC4280000479F30 /* Assets.xcassets */,
 				AA2B726F1E07135200BE66DC /* Lato */,
@@ -291,6 +291,7 @@
 				TargetAttributes = {
 					6A62F1141DC4280000479F30 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = N8P6K8B6V2;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -550,7 +551,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "2017 Scouter/2017 Scouter.entitlements";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = N8P6K8B6V2;
 				INFOPLIST_FILE = "2017 Scouter/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.palyrobotics.-017-Scouter";
@@ -565,7 +566,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "2017 Scouter/2017 Scouter.entitlements";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = N8P6K8B6V2;
 				INFOPLIST_FILE = "2017 Scouter/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.palyrobotics.-017-Scouter";

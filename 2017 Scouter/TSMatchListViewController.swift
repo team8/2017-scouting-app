@@ -179,7 +179,7 @@ class MatchListViewController: ViewController, UITableViewDataSource, UITableVie
         self.performSegue(withIdentifier: "matchListToMatch", sender: match)
     }
     
-    //Send team number data to team view controller
+    //Send match data to match view controller
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
         if (segue.identifier == "matchListToMatch") {
             let secondViewController = segue.destination as! MatchViewController
@@ -241,7 +241,7 @@ class MatchListViewController: ViewController, UITableViewDataSource, UITableVie
 //            }
 //        }
 //    }
-    @IBAction func teamListUnwind(unwindSegue: UIStoryboardSegue) {
+    @IBAction func matchListUnwind(unwindSegue: UIStoryboardSegue) {
         
     }
     
