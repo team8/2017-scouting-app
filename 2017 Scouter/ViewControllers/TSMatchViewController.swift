@@ -124,7 +124,6 @@ class MatchViewController: ViewController {
             vc.teamNumber = sender as! Int
         } else if let vc = segue.destination as? TeamViewController, segue.identifier == "unwindMatchToTeam" {
             let navStack = self.navigationController?.viewControllers
-            print(navStack?[(navStack?.count)! - 3])
             vc.previousViewController = navStack?[(navStack?.count)! - 3] as! ViewController?
             vc.teamNumber = (self.previousViewController as! TeamViewController).teamNumber
         }

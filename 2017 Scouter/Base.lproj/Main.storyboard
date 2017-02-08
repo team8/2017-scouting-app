@@ -1086,7 +1086,7 @@
                                             <constraint firstAttribute="height" constant="60" id="rXe-9F-TXm"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
-                                        <state key="normal" title="View Stats">
+                                        <state key="normal" title="View Stats &gt;">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -1096,7 +1096,7 @@
                                             <constraint firstAttribute="height" constant="60" id="DRJ-GQ-2EW"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
-                                        <state key="normal" title="View Stats">
+                                        <state key="normal" title="View Stats &gt;">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -1186,64 +1186,63 @@
                                 <rect key="frame" x="160" y="137" width="160" height="431"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="do5-OY-So5">
-                                        <rect key="frame" x="8" y="199" width="144" height="30"/>
+                                        <rect key="frame" x="8" y="199" width="69.5" height="60"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="XeS-tE-HEa"/>
+                                            <constraint firstAttribute="height" constant="60" id="XeS-tE-HEa"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="24"/>
-                                        <state key="normal" title="99999">
+                                        <state key="normal" title="9999">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="teamButtonPressed:" destination="nZ3-bv-gSk" eventType="touchUpInside" id="MCE-or-YfC"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OTU-ln-2WY">
-                                        <rect key="frame" x="8" y="234" width="144" height="29"/>
-                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
-                                        <state key="normal" title="View Stats">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="OTU-ln-2WY">
+                                        <rect key="frame" x="82.5" y="199" width="69.5" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="OhN-bv-aV5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
+                                        <state key="normal" title="View Stats &gt;">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dnn-ud-4sa">
-                                        <rect key="frame" x="8" y="268" width="144" height="30"/>
+                                        <rect key="frame" x="8" y="264" width="69.5" height="60"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="Ia5-w9-r7d"/>
+                                            <constraint firstAttribute="height" constant="60" id="Ia5-w9-r7d"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="24"/>
-                                        <state key="normal" title="99999">
+                                        <state key="normal" title="9999">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="teamButtonPressed:" destination="nZ3-bv-gSk" eventType="touchUpInside" id="1gI-c7-9Lv"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0lP-8Q-g4R">
-                                        <rect key="frame" x="8" y="303" width="144" height="29"/>
-                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
-                                        <state key="normal" title="View Stats">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="0lP-8Q-g4R">
+                                        <rect key="frame" x="82.5" y="264" width="69.5" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="83Q-IY-3Q3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
+                                        <state key="normal" title="View Stats &gt;">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5X5-VE-i2a">
-                                        <rect key="frame" x="8" y="337" width="144" height="30"/>
+                                        <rect key="frame" x="8" y="329" width="69.5" height="60"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="dKv-2h-JZd"/>
+                                            <constraint firstAttribute="height" constant="60" id="dKv-2h-JZd"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="24"/>
-                                        <state key="normal" title="99999">
+                                        <state key="normal" title="9999">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="teamButtonPressed:" destination="nZ3-bv-gSk" eventType="touchUpInside" id="rut-vu-Riz"/>
                                         </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N4X-Zx-CEg">
-                                        <rect key="frame" x="8" y="372" width="144" height="29"/>
-                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
-                                        <state key="normal" title="View Stats">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Winner" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AhZ-zh-D8O">
                                         <rect key="frame" x="47" y="80" width="67" height="24"/>
@@ -1271,35 +1270,45 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="N4X-Zx-CEg">
+                                        <rect key="frame" x="82.5" y="329" width="69.5" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="mxD-0B-k5f"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
+                                        <state key="normal" title="View Stats &gt;">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.31764705879999999" green="0.63921568630000003" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="N4X-Zx-CEg" firstAttribute="top" secondItem="5X5-VE-i2a" secondAttribute="bottom" constant="5" id="3fO-3V-9XX"/>
-                                    <constraint firstItem="5X5-VE-i2a" firstAttribute="centerX" secondItem="nZ3-bv-gSk" secondAttribute="centerX" id="BRn-IN-4v9"/>
+                                    <constraint firstItem="OTU-ln-2WY" firstAttribute="centerY" secondItem="do5-OY-So5" secondAttribute="centerY" id="0gZ-7k-c2R"/>
+                                    <constraint firstItem="5X5-VE-i2a" firstAttribute="top" secondItem="dnn-ud-4sa" secondAttribute="bottom" constant="5" id="1kl-59-3Vv"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="0lP-8Q-g4R" secondAttribute="trailing" id="8MU-hw-p1e"/>
                                     <constraint firstItem="do5-OY-So5" firstAttribute="top" secondItem="jJV-0C-2zg" secondAttribute="bottom" constant="20" id="Cfr-bx-Cs9"/>
                                     <constraint firstItem="jJV-0C-2zg" firstAttribute="leading" secondItem="nZ3-bv-gSk" secondAttribute="leadingMargin" constant="5" id="DCs-hx-cAD"/>
-                                    <constraint firstItem="0lP-8Q-g4R" firstAttribute="leading" secondItem="nZ3-bv-gSk" secondAttribute="leadingMargin" id="EnU-LK-Urk"/>
                                     <constraint firstItem="AhZ-zh-D8O" firstAttribute="centerX" secondItem="nZ3-bv-gSk" secondAttribute="centerX" id="G0u-jv-QgO"/>
-                                    <constraint firstItem="N4X-Zx-CEg" firstAttribute="leading" secondItem="nZ3-bv-gSk" secondAttribute="leadingMargin" id="NmG-ZJ-2lS"/>
+                                    <constraint firstAttribute="centerX" secondItem="dnn-ud-4sa" secondAttribute="trailing" constant="2.5" id="HVH-ly-ire"/>
+                                    <constraint firstAttribute="centerX" secondItem="5X5-VE-i2a" secondAttribute="trailing" constant="2.5" id="MPn-ob-op3"/>
+                                    <constraint firstAttribute="centerX" secondItem="do5-OY-So5" secondAttribute="trailing" constant="2.5" id="Nhf-NE-xfR"/>
                                     <constraint firstItem="v2J-O6-0vL" firstAttribute="centerY" secondItem="jJV-0C-2zg" secondAttribute="centerY" id="P2C-Qr-m3P"/>
-                                    <constraint firstItem="do5-OY-So5" firstAttribute="centerX" secondItem="nZ3-bv-gSk" secondAttribute="centerX" id="R4C-1u-8jN"/>
-                                    <constraint firstItem="N4X-Zx-CEg" firstAttribute="centerX" secondItem="nZ3-bv-gSk" secondAttribute="centerX" id="SBv-nV-HyH"/>
+                                    <constraint firstItem="0lP-8Q-g4R" firstAttribute="centerY" secondItem="dnn-ud-4sa" secondAttribute="centerY" id="QaD-zH-h9c"/>
                                     <constraint firstItem="do5-OY-So5" firstAttribute="leading" secondItem="nZ3-bv-gSk" secondAttribute="leadingMargin" id="Sr2-cu-KDS"/>
-                                    <constraint firstItem="dnn-ud-4sa" firstAttribute="centerX" secondItem="nZ3-bv-gSk" secondAttribute="centerX" id="ULw-7i-8Cr"/>
+                                    <constraint firstItem="0lP-8Q-g4R" firstAttribute="leading" secondItem="dnn-ud-4sa" secondAttribute="trailing" constant="5" id="SvC-Uz-2En"/>
+                                    <constraint firstItem="N4X-Zx-CEg" firstAttribute="leading" secondItem="5X5-VE-i2a" secondAttribute="trailing" constant="5" id="UcR-fa-eVi"/>
                                     <constraint firstItem="YUv-OD-WKd" firstAttribute="top" secondItem="nZ3-bv-gSk" secondAttribute="top" constant="20" id="X7C-mU-yxO"/>
                                     <constraint firstItem="dnn-ud-4sa" firstAttribute="leading" secondItem="nZ3-bv-gSk" secondAttribute="leadingMargin" id="XJL-Ch-Mrp"/>
                                     <constraint firstItem="jJV-0C-2zg" firstAttribute="top" secondItem="AhZ-zh-D8O" secondAttribute="bottom" constant="15" id="YXY-NS-86u"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="v2J-O6-0vL" secondAttribute="trailing" constant="5" id="ZDU-8d-NDV"/>
                                     <constraint firstItem="AhZ-zh-D8O" firstAttribute="top" secondItem="YUv-OD-WKd" secondAttribute="bottom" id="cIp-aX-SYa"/>
-                                    <constraint firstItem="dnn-ud-4sa" firstAttribute="top" secondItem="OTU-ln-2WY" secondAttribute="bottom" constant="5" id="h3h-lF-1s4"/>
-                                    <constraint firstItem="OTU-ln-2WY" firstAttribute="leading" secondItem="nZ3-bv-gSk" secondAttribute="leadingMargin" id="hL2-5a-79b"/>
                                     <constraint firstItem="YUv-OD-WKd" firstAttribute="centerX" secondItem="nZ3-bv-gSk" secondAttribute="centerX" id="hkr-xK-qs8"/>
-                                    <constraint firstItem="0lP-8Q-g4R" firstAttribute="centerX" secondItem="nZ3-bv-gSk" secondAttribute="centerX" id="m9G-7a-f9z"/>
                                     <constraint firstItem="5X5-VE-i2a" firstAttribute="leading" secondItem="nZ3-bv-gSk" secondAttribute="leadingMargin" id="mrZ-D7-s31"/>
-                                    <constraint firstItem="OTU-ln-2WY" firstAttribute="top" secondItem="do5-OY-So5" secondAttribute="bottom" constant="5" id="qxY-8r-fvx"/>
-                                    <constraint firstItem="0lP-8Q-g4R" firstAttribute="top" secondItem="dnn-ud-4sa" secondAttribute="bottom" constant="5" id="xB6-Yw-ck2"/>
-                                    <constraint firstItem="5X5-VE-i2a" firstAttribute="top" secondItem="0lP-8Q-g4R" secondAttribute="bottom" constant="5" id="xfg-bW-PXz"/>
-                                    <constraint firstItem="OTU-ln-2WY" firstAttribute="centerX" secondItem="nZ3-bv-gSk" secondAttribute="centerX" id="yXB-qa-FmK"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="OTU-ln-2WY" secondAttribute="trailing" id="pjB-Qh-SkR"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="N4X-Zx-CEg" secondAttribute="trailing" id="tgv-wk-avM"/>
+                                    <constraint firstItem="OTU-ln-2WY" firstAttribute="leading" secondItem="do5-OY-So5" secondAttribute="trailing" constant="5" id="tzo-WH-942"/>
+                                    <constraint firstItem="N4X-Zx-CEg" firstAttribute="centerY" secondItem="5X5-VE-i2a" secondAttribute="centerY" id="w6w-1C-xuE"/>
+                                    <constraint firstItem="dnn-ud-4sa" firstAttribute="top" secondItem="do5-OY-So5" secondAttribute="bottom" constant="5" id="xTe-Rr-MvM"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="fortyKPa" destination="v2J-O6-0vL" id="m4P-eL-QQE"/>
@@ -1351,7 +1360,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="toU-fp-KvS" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="edO-Jx-VUY" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1847" y="-355"/>
+            <point key="canvasLocation" x="1846.875" y="-355.98591549295776"/>
         </scene>
         <!--Item-->
         <scene sceneID="iIl-Zb-8VF">

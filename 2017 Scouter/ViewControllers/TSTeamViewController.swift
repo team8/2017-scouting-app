@@ -70,7 +70,6 @@ class TeamViewController: ViewController {
         //Send data to match view controller when unwinding
         } else if let vc = segue.destination as? MatchViewController, segue.identifier == "unwindTeamToMatch" {
             let navStack = self.navigationController?.viewControllers
-            print(navStack?[(navStack?.count)! - 3])
             vc.previousViewController = navStack?[(navStack?.count)! - 3] as! ViewController?
             vc.match = (self.previousViewController as! MatchViewController).match
         }
