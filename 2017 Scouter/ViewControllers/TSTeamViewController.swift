@@ -39,6 +39,10 @@ class TeamViewController: ViewController {
         }
     }
     
+    func reloadData() {
+        //TODO
+    }
+    
     @IBAction func backPressed(_ sender: Any) {
         if(self.previousViewController! is TeamListViewController) {
             self.performSegue(withIdentifier: "teamToTeamList", sender: nil)
@@ -73,6 +77,37 @@ class TeamViewController: ViewController {
             vc.previousViewController = navStack?[(navStack?.count)! - 3] as! ViewController?
             vc.match = (self.previousViewController as! MatchViewController).match
         }
+    }
+    @IBAction func refresh(_ sender: Any) {
+        addActivityIndicator()
+        self.view.isUserInteractionEnabled = false
+        Data.fetch(complete: fetchComplete)
+    }
+    
+    func refresh() {
+        refresh(UIButton())
+    }
+    
+    func addActivityIndicator() {
+        
+        let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.white)
+        activityIndicator.frame = CGRect(x: 230, y: 37, width: 30, height: 30)
+        activityIndicator.tag = 100
+        activityIndicator.startAnimating()
+        self.view.addSubview(activityIndicator)
+        
+    }
+    
+    func removeActivityIndicator() {
+        if let activityIndicator = self.view.viewWithTag(100) {
+            activityIndicator.removeFromSuperview()
+        }
+    }
+    
+    func fetchComplete() {
+        reloadData()
+        removeActivityIndicator()
+        self.view.isUserInteractionEnabled = true
     }
     
     @IBAction func teamUnwind(unwindSegue: UIStoryboardSegue) {

@@ -32,56 +32,7 @@ class MatchViewController: ViewController {
         let matchKey = self.match!.key
         self.titleLabel.text = matchKey.components(separatedBy: "_")[1].uppercased()
         
-        //Change scores and match stats
-        //Parent
-        self.redAllianceView.parent = self
-        self.blueAllianceView.parent = self
-        //Scores
-        self.redAllianceView.score.text = String(self.match!.redScore!)
-        self.blueAllianceView.score.text = String(self.match!.blueScore!)
-        //Winner/loser/tie
-        if(self.match!.redScore! > self.match!.blueScore!) {
-            self.redAllianceView.winner.text = "Winner"
-            self.redAllianceView.score.font = UIFont(name: "Lato-Bold", size: 50)
-            self.blueAllianceView.winner.text = "Loser"
-        } else if(self.match!.redScore! < self.match!.blueScore!) {
-            self.redAllianceView.winner.text = "Loser"
-            self.blueAllianceView.winner.text = "Winner"
-            self.blueAllianceView.score.font = UIFont(name: "Lato-Bold", size: 50)
-        } else {
-            self.redAllianceView.winner.text = "Tie"
-            self.blueAllianceView.winner.text = "Tie"
-        }
-        
-        //Match stats
-//        if(!self.match!.redFourRotor!) {
-//            self.redAllianceView.fourRotor.image = UIImage(named: "four-rotor-false")
-//        }
-//        if(!self.match!.blueFourRotor!) {
-//            self.blueAllianceView.fourRotor.image = UIImage(named: "four-rotor-false")
-//        }
-        self.redAllianceView.rotorLabel.text = String(self.match!.redRotor!)
-        self.blueAllianceView.rotorLabel.text = String(self.match!.blueRotor!)
-        if(!self.match!.redFortyKPa!) {
-            self.redAllianceView.fortyKPa.image = UIImage(named: "forty-kpa-false")
-        } else {
-            self.redAllianceView.fortyKPa.image = UIImage(named: "forty-kpa-true")
-        }
-        if(!self.match!.blueFortyKPa!) {
-            self.blueAllianceView.fortyKPa.image = UIImage(named: "forty-kpa-false")
-        } else {
-            self.blueAllianceView.fortyKPa.image = UIImage(named: "forty-kpa-true")
-        }
-        
-        //Teams
-        for (i, button) in self.redAllianceView.teamButtons.enumerated() {
-            button.setTitle(String(self.match!.red[i].teamNumber), for: .normal)
-        }
-        for (i, button) in self.blueAllianceView.teamButtons.enumerated() {
-            button.setTitle(String(self.match!.blue[i].teamNumber), for: .normal)
-        }
-        self.redAllianceView.teams = self.match!.red
-        self.blueAllianceView.teams = self.match!.blue
+        reloadData()
         
         //Borders
         for (button) in self.redAllianceView.teamButtons! {
@@ -107,6 +58,60 @@ class MatchViewController: ViewController {
             self.navigationController?.viewControllers = self.navigationStack!
         }
     }
+    
+    func reloadData() {
+        //Change scores and match stats
+        //Parent
+        self.redAllianceView.parent = self
+        self.blueAllianceView.parent = self
+        //Scores
+        self.redAllianceView.score.text = String(self.match!.redScore!)
+        self.blueAllianceView.score.text = String(self.match!.blueScore!)
+        //Winner/loser/tie
+        if(self.match!.redScore! > self.match!.blueScore!) {
+            self.redAllianceView.winner.text = "Winner"
+            self.redAllianceView.score.font = UIFont(name: "Lato-Bold", size: 50)
+            self.blueAllianceView.winner.text = "Loser"
+        } else if(self.match!.redScore! < self.match!.blueScore!) {
+            self.redAllianceView.winner.text = "Loser"
+            self.blueAllianceView.winner.text = "Winner"
+            self.blueAllianceView.score.font = UIFont(name: "Lato-Bold", size: 50)
+        } else {
+            self.redAllianceView.winner.text = "Tie"
+            self.blueAllianceView.winner.text = "Tie"
+        }
+        
+        //Match stats
+        //        if(!self.match!.redFourRotor!) {
+        //            self.redAllianceView.fourRotor.image = UIImage(named: "four-rotor-false")
+        //        }
+        //        if(!self.match!.blueFourRotor!) {
+        //            self.blueAllianceView.fourRotor.image = UIImage(named: "four-rotor-false")
+        //        }
+        self.redAllianceView.rotorLabel.text = String(self.match!.redRotor!)
+        self.blueAllianceView.rotorLabel.text = String(self.match!.blueRotor!)
+        if(!self.match!.redFortyKPa!) {
+            self.redAllianceView.fortyKPa.image = UIImage(named: "forty-kpa-false")
+        } else {
+            self.redAllianceView.fortyKPa.image = UIImage(named: "forty-kpa-true")
+        }
+        if(!self.match!.blueFortyKPa!) {
+            self.blueAllianceView.fortyKPa.image = UIImage(named: "forty-kpa-false")
+        } else {
+            self.blueAllianceView.fortyKPa.image = UIImage(named: "forty-kpa-true")
+        }
+        
+        //Teams
+        for (i, button) in self.redAllianceView.teamButtons.enumerated() {
+            button.setTitle(String(self.match!.red[i].teamNumber), for: .normal)
+        }
+        for (i, button) in self.blueAllianceView.teamButtons.enumerated() {
+            button.setTitle(String(self.match!.blue[i].teamNumber), for: .normal)
+        }
+        self.redAllianceView.teams = self.match!.red
+        self.blueAllianceView.teams = self.match!.blue
+    }
+    
     @IBAction func backPressed(_ sender: Any) {
         if (self.previousViewController! is MatchListViewController) {
             self.performSegue(withIdentifier: "unwindMatchToMatchList", sender: nil)
@@ -117,6 +122,36 @@ class MatchViewController: ViewController {
     @IBAction func viewTBAPressed(_ sender: Any) {
     }
     @IBAction func refresh(_ sender: Any) {
+        addActivityIndicator()
+        self.view.isUserInteractionEnabled = false
+        Data.fetch(complete: fetchComplete)
+        
+    }
+    
+    func refresh() {
+        refresh(UIButton())
+    }
+    
+    func addActivityIndicator() {
+        
+        let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.white)
+        activityIndicator.frame = CGRect(x: 230, y: 37, width: 30, height: 30)
+        activityIndicator.tag = 100
+        activityIndicator.startAnimating()
+        self.view.addSubview(activityIndicator)
+        
+    }
+    
+    func removeActivityIndicator() {
+        if let activityIndicator = self.view.viewWithTag(100) {
+            activityIndicator.removeFromSuperview()
+        }
+    }
+    
+    func fetchComplete() {
+        reloadData()
+        removeActivityIndicator()
+        self.view.isUserInteractionEnabled = true
     }
     
     //Sending info to next VC

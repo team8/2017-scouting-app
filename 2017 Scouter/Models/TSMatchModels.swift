@@ -50,7 +50,7 @@ class TBAMatch {
             
             self.blueRotor = Int(NSNumber(value: blueDict.object(forKey: "teleopDefensesBreached") as! Bool))
             self.redRotor = Int(NSNumber(value: redDict.object(forKey: "teleopDefensesBreached") as! Bool))
-            print(Int(NSNumber(value: blueDict.object(forKey: "teleopDefensesBreached") as! Bool)))
+//            print(Int(NSNumber(value: blueDict.object(forKey: "teleopDefensesBreached") as! Bool)))
             self.blueFortyKPa = blueDict.object(forKey: "teleopTowerCaptured") as? Bool
             self.redFortyKPa = redDict.object(forKey: "teleopTowerCaptured") as? Bool
             

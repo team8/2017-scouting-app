@@ -673,6 +673,7 @@
                                 </state>
                                 <connections>
                                     <action selector="refresh:" destination="a3K-fA-FxR" eventType="touchUpInside" id="WjZ-vG-j9i"/>
+                                    <action selector="refresh:" destination="MRI-NX-uRH" eventType="touchUpInside" id="v3y-Lo-KRY"/>
                                 </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sXn-AO-Y6p">
@@ -1600,7 +1601,7 @@
         <image name="upload-qr-code.png" width="57" height="51"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xO0-4M-Pxa"/>
         <segue reference="7jk-Ox-nUT"/>
+        <segue reference="Djs-Vu-Ufb"/>
     </inferredMetricsTieBreakers>
 </document>

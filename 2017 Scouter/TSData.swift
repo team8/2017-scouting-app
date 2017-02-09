@@ -28,9 +28,14 @@ class Data {
         completeFunction = complete
     }
     
+    static func finishFetch() {
+        
+    }
+    
     static func fetchComplete() {
         fetchesComplete += 1
         if fetchesComplete == fetchesTotal {
+            finishFetch()
             completeFunction!()
             fetchesComplete = 0
         }
@@ -57,12 +62,14 @@ class Data {
     static func handleMatchJSON(value: NSDictionary) -> Void {
         if (((value.value(forKey: "query") as! NSDictionary).value(forKey: "success"))! as! String == "yes") {
             matchList.removeAll()
-            print(value)
+//            print(value)
 //            let matchListVC = MatchListViewController()
 //            matchListVC.deleteAllData()
             
 //            sendToVC(value: value)
 
+            while(Data.teamList.count == 0){print("hi")}
+            
             for (key, value) in (value.value(forKey: "query") as! NSDictionary).value(forKey: "matches") as! NSDictionary {
 //                print(key)
                 let name = key as! String
