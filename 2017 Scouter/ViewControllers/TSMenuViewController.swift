@@ -87,6 +87,8 @@ class MenuViewController: ViewController, UITextFieldDelegate, UIPickerViewDataS
     @IBAction func backPressed(_ sender: Any) {
         if(self.previousViewController! is TeamViewController) {
             self.performSegue(withIdentifier: "menuToTeam", sender: nil)
+        } else if(self.previousViewController! is MatchViewController) {
+            self.performSegue(withIdentifier: "menuToMatch", sender: nil)
         }
 //        self.navigationController?.pushViewController(self.previousViewController!, animated: true)
     }
@@ -95,6 +97,11 @@ class MenuViewController: ViewController, UITextFieldDelegate, UIPickerViewDataS
         if let vc = segue.destination as? TeamViewController, segue.identifier == "menuToTeam" {
             let prev = (self.previousViewController! as! TeamViewController)
             vc.teamNumber = prev.teamNumber
+            vc.previousViewController = prev.previousViewController
+            vc.navigationStack = prev.navigationStack
+        } else if let vc = segue.destination as? MatchViewController, segue.identifier == "menuToMatch" {
+            let prev = (self.previousViewController! as! MatchViewController)
+            vc.match = prev.match
             vc.previousViewController = prev.previousViewController
             vc.navigationStack = prev.navigationStack
         }
