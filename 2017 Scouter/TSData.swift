@@ -28,20 +28,21 @@ class Data {
         completeFunction = complete
     }
     
-    static func finishFetch() {
-        
-    }
+//    static func finishFetch() {
+//        
+//    }
     
     static func fetchComplete() {
         fetchesComplete += 1
         if fetchesComplete == fetchesTotal {
-            finishFetch()
+//            finishFetch()
             completeFunction!()
             fetchesComplete = 0
         }
     }
     
     static func handleTeamJSON(value: NSDictionary) -> Void {
+        print("finish")
         if (((value.value(forKey: "query") as! NSDictionary).value(forKey: "success"))! as! String == "yes") {
             teamList.removeAll()
             for (_, value) in (value.value(forKey: "query") as! NSDictionary).value(forKey: "teams") as! NSDictionary {
@@ -67,8 +68,14 @@ class Data {
 //            matchListVC.deleteAllData()
             
 //            sendToVC(value: value)
+            if (Data.teamList.count == 0){
+                ServerInterfacer.getTeams(handleTeamJSON, key: "2016casj")
+            }
 
-            while(Data.teamList.count == 0){print("hi")}
+//            while(Data.teamList.count == 0){
+//                sleep(1)
+//                print("Waiting for team request to finish...")
+//            }
             
             for (key, value) in (value.value(forKey: "query") as! NSDictionary).value(forKey: "matches") as! NSDictionary {
 //                print(key)

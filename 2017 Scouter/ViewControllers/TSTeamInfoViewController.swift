@@ -10,11 +10,12 @@ import Foundation
 import UIKit
 import SwiftyDropbox
 
-class TeamInfoViewController: ViewController {
+class TeamInfoViewController: ViewController, UITableViewDelegate, UITableViewDataSource {
     
     var teamNumber = 0
     
     @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var infoTable: InfoTable!
     @IBOutlet weak var scrollingView: UIView!
     
     var client: DropboxClient?
@@ -23,6 +24,7 @@ class TeamInfoViewController: ViewController {
         image.isUserInteractionEnabled = true;
         self.view.layer.backgroundColor = UIColor.clear.cgColor
         
+        //Image stuff
         let fileManager = FileManager.default
         let directoryURL = FileManager().urls(for: .applicationSupportDirectory, in: .userDomainMask)[0] as URL
         let destURL = directoryURL.appendingPathComponent(Data.competition! + "/frc" + String(self.teamNumber))
@@ -30,6 +32,11 @@ class TeamInfoViewController: ViewController {
         if(fileManager.contents(atPath: destURL.relativePath) != nil) {
             self.image.image = UIImage(data: fileManager.contents(atPath: destURL.relativePath)!)
         }
+        
+        //Info table view
+        infoTable.delegate = self
+        infoTable.dataSource = self
+        infoTable.backgroundColor = UIColor.clear
     }
     @IBAction func imageTapped(_ sender: Any) {
         self.addActivityIndicator()
@@ -83,4 +90,77 @@ class TeamInfoViewController: ViewController {
         }
     }
     
+    //Table stuff
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let team = Data.getTeam(withNumber: self.teamNumber)!
+        if (indexPath.row < (team.importantStats.count + 1) / 2) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ImportantCell", for: indexPath) as! ImportantCell
+            let key1 = Array(team.importantStats.keys)[indexPath.row * 2]
+            let value1 = String(describing: team.importantStats[key1]!)
+            cell.stat1.text = key1
+            cell.value1.text = value1
+            if !(indexPath.row * 2 + 1 == team.importantStats.count) {
+                let key2 = Array(team.importantStats.keys)[indexPath.row * 2 + 1]
+                let value2 = String(describing: team.importantStats[key2]!)
+                cell.stat2.text = key2
+                cell.value2.text = value2
+            } else {
+                cell.stat2.text = ""
+                cell.value2.text = ""
+            }
+            cell.backgroundColor = UIColor.clear
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "InfoCell", for: indexPath)
+            let key = Array(team.otherStats.keys)[indexPath.row - (team.importantStats.count + 1) / 2]
+            let value = String(describing: team.otherStats[key]!)
+            cell.textLabel?.text = key + ": " + value
+            cell.textLabel?.textColor = UIColor.white
+            cell.backgroundColor = UIColor.clear
+            return cell
+        }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let cell = tableView.cellForRow(at: indexPath) as! TeamTableViewCell
+//        self.performSegue(withIdentifier: "teamListToTeam", sender: cell.teamNum)
+    }
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return ((Data.getTeam(withNumber: self.teamNumber)?.importantStats.count)! + 1)/2 + (Data.getTeam(withNumber: self.teamNumber)?.otherStats.count)!
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        if (indexPath.row < (Data.getTeam(withNumber: self.teamNumber)!.importantStats.count + 1) / 2) {
+            return 60
+        } else {
+            return 30
+        }
+    }
+}
+
+class InfoTable: UITableView {
+    
+    override var contentSize:CGSize {
+        didSet {
+            self.invalidateIntrinsicContentSize()
+        }
+    }
+    
+    override public var intrinsicContentSize: CGSize {
+        get {
+            self.layoutIfNeeded()
+            return CGSize(width: UIViewNoIntrinsicMetric, height: contentSize.height)
+        }
+    }
+}
+
+class ImportantCell: UITableViewCell {
+    @IBOutlet weak var stat1: UILabel!
+    @IBOutlet weak var stat2: UILabel!
+    @IBOutlet weak var value1: UILabel!
+    @IBOutlet weak var value2: UILabel!
 }
