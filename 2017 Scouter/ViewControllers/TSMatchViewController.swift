@@ -117,6 +117,8 @@ class MatchViewController: ViewController {
             self.performSegue(withIdentifier: "unwindMatchToMatchList", sender: nil)
         } else if (self.previousViewController! is TeamViewController) {
             self.performSegue(withIdentifier: "unwindMatchToTeam", sender: nil)
+        } else if (self.previousViewController! is ViewStatsViewController) {
+            self.performSegue(withIdentifier: "unwindMatchToViewStats", sender: nil)
         }
     }
     @IBAction func viewTBAPressed(_ sender: Any) {
@@ -125,11 +127,6 @@ class MatchViewController: ViewController {
         addActivityIndicator()
         self.view.isUserInteractionEnabled = false
         Data.fetch(complete: fetchComplete)
-        
-    }
-    
-    func refresh() {
-        refresh(UIButton())
     }
     
     func addActivityIndicator() {
@@ -167,6 +164,13 @@ class MatchViewController: ViewController {
             let navStack = self.navigationController?.viewControllers
             vc.previousViewController = navStack?[(navStack?.count)! - 3] as! ViewController?
             vc.teamNumber = (self.previousViewController as! TeamViewController).teamNumber
+        } else if let vc = segue.destination as? ViewStatsViewController, segue.identifier == "matchToViewStats" {
+            vc.previousViewController = self
+            vc.timd = sender as? TIMD
+        } else if let vc = segue.destination as? ViewStatsViewController, segue.identifier == "unwindMatchToViewStats" {
+            let navStack = self.navigationController?.viewControllers
+            vc.previousViewController = navStack?[(navStack?.count)! - 3] as! ViewController?
+            vc.timd = (self.previousViewController as! ViewStatsViewController).timd
         }
     }
     
@@ -187,5 +191,9 @@ class MatchAllianceView: UIView {
     
     @IBAction func teamButtonPressed(_ sender: UIButton) {
         parent!.performSegue(withIdentifier: "matchToTeam", sender: teams[sender.tag].teamNumber)
+    }
+    
+    @IBAction func viewStatsButtonPressed(_ sender: UIButton) {
+        parent!.performSegue(withIdentifier: "matchToViewStats", sender: Data.getTIMD(team: teams[sender.tag], match: parent!.match!))
     }
 }

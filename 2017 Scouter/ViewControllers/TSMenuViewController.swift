@@ -21,8 +21,8 @@ class MenuViewController: ViewController, UITextFieldDelegate, UIPickerViewDataS
     var hasPrevious = false
     
     @IBOutlet weak var compTextField: UITextField!
-    let compList = ["Ventura 2017", "SVR 2017", "Camps 2017"]
-    let compIDs = ["2017cave", "2017casj", "2017cmptx"]
+    let compList = ["SVR 2016", "Ventura 2017", "SVR 2017", "Camps 2017"]
+    let compIDs = ["2016casj", "2017cave", "2017casj", "2017cmptx"]
     let pickerView = UIView(frame: CGRect(x: 0, y: 0, width: 320, height: 200))
     let doneButton = UIButton(frame: CGRect(x: 220, y: 0, width: 100, height: 50))
     let picker = UIPickerView(frame: CGRect(x: 0, y: 50, width: 320, height: 150))
@@ -102,6 +102,11 @@ class MenuViewController: ViewController, UITextFieldDelegate, UIPickerViewDataS
         } else if let vc = segue.destination as? MatchViewController, segue.identifier == "menuToMatch" {
             let prev = (self.previousViewController! as! MatchViewController)
             vc.match = prev.match
+            vc.previousViewController = prev.previousViewController
+            vc.navigationStack = prev.navigationStack
+        } else if let vc = segue.destination as? ViewStatsViewController, segue.identifier == "menuToViewStats" {
+            let prev = (self.previousViewController! as! ViewStatsViewController)
+            vc.timd = prev.timd
             vc.previousViewController = prev.previousViewController
             vc.navigationStack = prev.navigationStack
         }

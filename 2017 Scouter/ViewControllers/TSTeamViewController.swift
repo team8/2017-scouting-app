@@ -48,6 +48,8 @@ class TeamViewController: ViewController {
             self.performSegue(withIdentifier: "teamToTeamList", sender: nil)
         } else if(self.previousViewController! is MatchViewController) {
             self.performSegue(withIdentifier: "unwindTeamToMatch", sender: nil)
+        } else if (self.previousViewController! is ViewStatsViewController) {
+            self.performSegue(withIdentifier: "unwindTeamToViewStats", sender: nil)
         }
     }
     
@@ -76,6 +78,13 @@ class TeamViewController: ViewController {
             let navStack = self.navigationController?.viewControllers
             vc.previousViewController = navStack?[(navStack?.count)! - 3] as! ViewController?
             vc.match = (self.previousViewController as! MatchViewController).match
+        } else if let vc = segue.destination as? ViewStatsViewController, segue.identifier == "teamToViewStats" {
+            vc.previousViewController = self
+            vc.timd = sender as? TIMD
+        } else if let vc = segue.destination as? ViewStatsViewController, segue.identifier == "unwindTeamToViewStats" {
+            let navStack = self.navigationController?.viewControllers
+            vc.previousViewController = navStack?[(navStack?.count)! - 3] as! ViewController?
+            vc.timd = (self.previousViewController as! ViewStatsViewController).timd
         }
     }
     @IBAction func refresh(_ sender: Any) {

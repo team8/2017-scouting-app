@@ -18,6 +18,9 @@
 		6AD6C7F91DC4295D0028DB4D /* TSServerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD6C7F81DC4295D0028DB4D /* TSServerInteractor.swift */; };
 		6AFF7DA31E09AE52008F522B /* TSQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFF7DA21E09AE52008F522B /* TSQRCodeViewController.swift */; };
 		A388C1B8F767CA9FAE9B2B45 /* Pods_2017_Scouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63DF2611370533B9C4D8BDED /* Pods_2017_Scouter.framework */; };
+		A5058C2A1E4E8EB5002A4731 /* TSViewStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5058C291E4E8EB5002A4731 /* TSViewStatsViewController.swift */; };
+		A5058C2C1E4E94A4002A4731 /* TSTIMDModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5058C2B1E4E94A4002A4731 /* TSTIMDModels.swift */; };
+		A5058C2E1E4EC9A1002A4731 /* TSFirebaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5058C2D1E4EC9A1002A4731 /* TSFirebaseInteractor.swift */; };
 		A5058CA41E406CD00059B0BF /* placeholder_unavailable.png in Resources */ = {isa = PBXBuildFile; fileRef = A5058CA31E406CD00059B0BF /* placeholder_unavailable.png */; };
 		A50B642B1E455684009BCD1C /* forty-kpa-false.png in Resources */ = {isa = PBXBuildFile; fileRef = A50B64271E455684009BCD1C /* forty-kpa-false.png */; };
 		A50B642C1E455684009BCD1C /* forty-kpa-true.png in Resources */ = {isa = PBXBuildFile; fileRef = A50B64281E455684009BCD1C /* forty-kpa-true.png */; };
@@ -73,6 +76,9 @@
 		6AD6C7F81DC4295D0028DB4D /* TSServerInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSServerInteractor.swift; path = Server/TSServerInteractor.swift; sourceTree = "<group>"; };
 		6AFF7DA21E09AE52008F522B /* TSQRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSQRCodeViewController.swift; path = ViewControllers/TSQRCodeViewController.swift; sourceTree = "<group>"; };
 		7D446CDA0C59D3847E584BFE /* Pods-2017 Scouter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2017 Scouter.release.xcconfig"; path = "Pods/Target Support Files/Pods-2017 Scouter/Pods-2017 Scouter.release.xcconfig"; sourceTree = "<group>"; };
+		A5058C291E4E8EB5002A4731 /* TSViewStatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSViewStatsViewController.swift; path = ViewControllers/TSViewStatsViewController.swift; sourceTree = "<group>"; };
+		A5058C2B1E4E94A4002A4731 /* TSTIMDModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSTIMDModels.swift; path = ViewControllers/TSTIMDModels.swift; sourceTree = "<group>"; };
+		A5058C2D1E4EC9A1002A4731 /* TSFirebaseInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSFirebaseInteractor.swift; path = Server/TSFirebaseInteractor.swift; sourceTree = "<group>"; };
 		A5058CA31E406CD00059B0BF /* placeholder_unavailable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder_unavailable.png; sourceTree = "<group>"; };
 		A50B64271E455684009BCD1C /* forty-kpa-false.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "forty-kpa-false.png"; sourceTree = "<group>"; };
 		A50B64281E455684009BCD1C /* forty-kpa-true.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "forty-kpa-true.png"; sourceTree = "<group>"; };
@@ -170,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				6AD6C7F31DC429260028DB4D /* TSMatchModels.swift */,
+				A5058C2B1E4E94A4002A4731 /* TSTIMDModels.swift */,
 				A5EC318E1E43FDC500C57ED3 /* TSTeamModels.swift */,
 				6A6D6B031E0A351C00559506 /* TSScanModels.swift */,
 			);
@@ -189,6 +196,7 @@
 				A5B9EFFB1DF791F300C4D6F6 /* TSMatchListViewController.swift */,
 				6AFF7DA21E09AE52008F522B /* TSQRCodeViewController.swift */,
 				A5B0E1D11E45529300A2B5AB /* TSMatchViewController.swift */,
+				A5058C291E4E8EB5002A4731 /* TSViewStatsViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -197,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				6AD6C7F81DC4295D0028DB4D /* TSServerInteractor.swift */,
+				A5058C2D1E4EC9A1002A4731 /* TSFirebaseInteractor.swift */,
 			);
 			name = Server;
 			sourceTree = "<group>";
@@ -417,6 +426,8 @@
 				A5B0E1D21E45529300A2B5AB /* TSMatchViewController.swift in Sources */,
 				A5B9EFFC1DF791F400C4D6F6 /* TSMatchListViewController.swift in Sources */,
 				A5EC318F1E43FDC600C57ED3 /* TSTeamModels.swift in Sources */,
+				A5058C2C1E4E94A4002A4731 /* TSTIMDModels.swift in Sources */,
+				A5058C2E1E4EC9A1002A4731 /* TSFirebaseInteractor.swift in Sources */,
 				A5C4DAF21DF5F24A00A337FB /* TSTeamListViewController.swift in Sources */,
 				AA1D86251E14F5FE00B12722 /* TeamTableViewCell.swift in Sources */,
 				6A6D6B041E0A351C00559506 /* TSScanModels.swift in Sources */,
@@ -428,6 +439,7 @@
 				6A62F1191DC4280000479F30 /* AppDelegate.swift in Sources */,
 				6AD6C7F41DC429260028DB4D /* TSMatchModels.swift in Sources */,
 				AAA730F01E1333490003ECC0 /* UnplayedTableViewCell.swift in Sources */,
+				A5058C2A1E4E8EB5002A4731 /* TSViewStatsViewController.swift in Sources */,
 				A5C4DAF11DF5F24A00A337FB /* TSMenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

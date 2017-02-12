@@ -74,6 +74,10 @@ class TeamMatchesViewController: ViewController, UITableViewDataSource, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MatchCell", for: indexPath) as! UnplayedTableViewCell
         let matchList = Data.getTeam(withNumber: self.teamNumber)!.matches
+        
+        cell.match = matchList[indexPath.row]
+        cell.parentVC = self
+        
         var blueTeamString = ""
         for blueTeamWithFRC in matchList[indexPath.row].blue{
             let blueTeam : String = String(blueTeamWithFRC.teamNumber)
@@ -136,5 +140,7 @@ class TeamMatchesViewController: ViewController, UITableViewDataSource, UITableV
         return Data.getTeam(withNumber: self.teamNumber)!.matches.count
     }
 
-
+    func viewStatsPressed(_ match: TBAMatch) {
+        self.parentVC!.performSegue(withIdentifier: "teamToViewStats", sender: Data.getTIMD(team: Data.getTeam(withNumber: self.teamNumber)!, match: match))
+    }
 }

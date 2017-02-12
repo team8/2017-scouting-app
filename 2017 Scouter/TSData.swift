@@ -14,6 +14,7 @@ class Data {
     
     static var teamList = [Team]()
     static var matchList = [TBAMatch]()
+    static var timdList = [TIMD]()
     
     static let fetchesTotal = 2
     static var fetchesComplete = 0
@@ -28,21 +29,21 @@ class Data {
         completeFunction = complete
     }
     
-//    static func finishFetch() {
-//        
-//    }
+    static func finishFetch() {
+//        fetchTIMD(key: "2016casj")
+        FirebaseInteractor.getFirebaseData(handleFirebaseJSON, forKey: "2016casj")
+    }
     
     static func fetchComplete() {
         fetchesComplete += 1
         if fetchesComplete == fetchesTotal {
-//            finishFetch()
+            finishFetch()
             completeFunction!()
             fetchesComplete = 0
         }
     }
     
     static func handleTeamJSON(value: NSDictionary) -> Void {
-        print("finish")
         if (((value.value(forKey: "query") as! NSDictionary).value(forKey: "success"))! as! String == "yes") {
             teamList.removeAll()
             for (_, value) in (value.value(forKey: "query") as! NSDictionary).value(forKey: "teams") as! NSDictionary {
@@ -69,7 +70,10 @@ class Data {
             
 //            sendToVC(value: value)
             if (Data.teamList.count == 0){
+                print("fuk")
                 ServerInterfacer.getTeams(handleTeamJSON, key: "2016casj")
+                ServerInterfacer.getMatches(handleMatchJSON, key: "2016casj")
+                return
             }
 
 //            while(Data.teamList.count == 0){
@@ -110,6 +114,34 @@ class Data {
         fetchComplete()
 
         
+    }
+    
+    static func handleFirebaseJSON(value: NSDictionary) -> Void {
+        if (((value.value(forKey: "query") as! NSDictionary).value(forKey: "success"))! as! String == "yes") {
+            let teams = (value.value(forKey: "query") as! NSDictionary).value(forKey: "teams") as! NSDictionary
+            //Set team data
+            for (team) in teamList {
+                if let t = teams.value(forKey: "frc" + String(team.teamNumber)) {
+                    let data = (t as! NSDictionary).value(forKey: "data") as! NSDictionary
+                    team.setFirebaseData(data: data)
+                }
+            }
+            
+            //Extract TIMD data
+            timdList.removeAll()
+            for (teamKey, value) in teams {
+                let teamDic = value as! NSDictionary
+                let teamNumber = Int((teamKey as! String).components(separatedBy: "frc")[1])!
+                let team = Data.getTeam(withNumber: teamNumber)!
+                for (matchKey, data) in teamDic.value(forKey: "timd") as! NSDictionary {
+                    let match = Data.getMatch(withKey: Data.competition! + "_" + (matchKey as! String))!
+                    timdList.append(TIMD(team: team, match: match, data: data as! NSDictionary))
+                }
+            }
+        }
+        else {
+            print(value)
+        }
     }
     
     static func orderMatches() {
@@ -177,6 +209,16 @@ class Data {
         return matches
     }
     
+    static func getMatch(withKey: String) -> TBAMatch? {
+        for (match) in Data.matchList {
+            if(match.key == withKey) {
+                return match
+            }
+        }
+        print("Match " + withKey + " does not exist")
+        return nil
+    }
+    
     static func getTeam(withNumber: Int) -> Team? {
         for (team) in Data.teamList {
             if(team.teamNumber == withNumber) {
@@ -184,9 +226,16 @@ class Data {
             }
         }
         print("Team number " + String(withNumber) + " does not exist")
-        for (team) in Data.teamList {
-            print(team.teamNumber)
+        return nil
+    }
+    
+    static func getTIMD(team: Team, match: TBAMatch) -> TIMD? {
+        for (timd) in Data.timdList {
+            if (timd.team.teamNumber == team.teamNumber && timd.match.key == match.key) {
+                return timd
+            }
         }
+        print("TIMD with team " + String(team.teamNumber) + " in " + match.key + " does not exist")
         return nil
     }
 //    static func sendToVC(value: NSDictionary){

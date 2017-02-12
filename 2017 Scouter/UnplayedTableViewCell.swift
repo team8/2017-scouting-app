@@ -16,13 +16,18 @@ class UnplayedTableViewCell: UITableViewCell {
     @IBOutlet weak var blueTeams: UILabel!
     @IBOutlet weak var matchIn: UILabel!
     @IBOutlet weak var container: UIView!
-
+    @IBOutlet weak var viewStatsButton: UIButton?
+    
+    var match: TBAMatch?
+    var parentVC: TeamMatchesViewController?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         container.layer.borderColor = UIColor.white.cgColor
         container.layer.borderWidth = 1.0
         
+        viewStatsButton?.layer.borderColor = UIColor.white.cgColor
+        viewStatsButton?.layer.borderWidth = 1.0
         // Initialization code
     }
 
@@ -32,4 +37,7 @@ class UnplayedTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    @IBAction func viewStatsPressed(_ sender: Any) {
+        self.parentVC?.viewStatsPressed(match!)
+    }
 }

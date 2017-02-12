@@ -30,19 +30,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let uid = user!.uid
             print(isAnonymous.description + uid)
         }
-        ref = FIRDatabase.database().reference()
-//        self.ref.child("test").setValue("It Works!")
-//        ref.child("test").observeSingleEvent(of: .value, with: { (snapshot) in
-//            print("test: " + (snapshot.value! as! String))
-//        }) { (error) in
-//            print(error.localizedDescription)
-//        }
         
         // Dropbox initialization
         DropboxClientsManager.setupWithAppKey("sjtr0udzq3arm1t")
         return true
     }
-
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
