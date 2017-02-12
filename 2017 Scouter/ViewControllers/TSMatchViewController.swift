@@ -41,7 +41,7 @@ class MatchViewController: ViewController {
         }
         for (button) in self.redAllianceView.viewStatButtons! {
             button.layer.borderWidth = 1
-            button.layer.borderColor = UIColor.white.cgColor
+//            button.layer.borderColor = UIColor.white.cgColor
         }
         for (button) in self.blueAllianceView.teamButtons! {
             button.layer.borderWidth = 1
@@ -49,7 +49,7 @@ class MatchViewController: ViewController {
         }
         for (button) in self.blueAllianceView.viewStatButtons! {
             button.layer.borderWidth = 1
-            button.layer.borderColor = UIColor.white.cgColor
+//            button.layer.borderColor = UIColor.white.cgColor
         }
         
         
@@ -102,18 +102,18 @@ class MatchViewController: ViewController {
         }
         
         //Teams
-        for (i, button) in self.redAllianceView.teamButtons.enumerated() {
-            button.setTitle(String(self.match!.red[i].teamNumber), for: .normal)
+        for (button) in self.redAllianceView.teamButtons {
+            button.setTitle(String(self.match!.red[button.tag].teamNumber), for: .normal)
         }
-        for (i, button) in self.blueAllianceView.teamButtons.enumerated() {
-            button.setTitle(String(self.match!.blue[i].teamNumber), for: .normal)
+        for (button) in self.blueAllianceView.teamButtons {
+            button.setTitle(String(self.match!.blue[button.tag].teamNumber), for: .normal)
         }
         self.redAllianceView.teams = self.match!.red
         self.blueAllianceView.teams = self.match!.blue
         
         //View Stat Buttons
-        for (i, button) in self.redAllianceView.viewStatButtons.enumerated() {
-            button.isEnabled = !(Data.getTIMD(team: match!.red[i], match: match!) == nil)
+        for (button) in self.redAllianceView.viewStatButtons {
+            button.isEnabled = !(Data.getTIMD(team: match!.red[button.tag], match: match!) == nil)
             if (button.isEnabled) {
                 button.setTitleColor(UIColor.white, for: .normal)
                 button.layer.borderColor = UIColor.white.cgColor
@@ -122,8 +122,8 @@ class MatchViewController: ViewController {
                 button.layer.borderColor = UIColor.lightGray.cgColor
             }
         }
-        for (i, button) in self.blueAllianceView.viewStatButtons.enumerated() {
-            button.isEnabled = !(Data.getTIMD(team: match!.blue[i], match: match!) == nil)
+        for (button) in self.blueAllianceView.viewStatButtons {
+            button.isEnabled = !(Data.getTIMD(team: match!.blue[button.tag], match: match!) == nil)
             if (button.isEnabled) {
                 button.setTitleColor(UIColor.white, for: .normal)
                 button.layer.borderColor = UIColor.white.cgColor

@@ -1523,7 +1523,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stats For Team 9999 in QM99" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7vQ-bA-3pY">
-                                <rect key="frame" x="70" y="28" width="180" height="67.5"/>
+                                <rect key="frame" x="70" y="28" width="180" height="68"/>
                                 <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="28"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1686,10 +1686,10 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="223" height="52"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xs1-Yv-Fi7">
-                                                            <rect key="frame" x="0.0" y="0.0" width="111.5" height="52"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="112" height="52"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QF" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sxe-s3-svZ">
-                                                                    <rect key="frame" x="70.5" y="12" width="33" height="29"/>
+                                                                    <rect key="frame" x="71" y="12" width="33" height="29"/>
                                                                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="24"/>
                                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -1718,7 +1718,7 @@
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pny-yS-zfp">
-                                                            <rect key="frame" x="111.5" y="0.0" width="111.5" height="52"/>
+                                                            <rect key="frame" x="112" y="0.0" width="111" height="52"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afb-Ag-0nf">
                                                                     <rect key="frame" x="8" y="12" width="14" height="29"/>
@@ -1727,7 +1727,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jrj-O8-YP6">
-                                                                    <rect key="frame" x="68.5" y="4" width="35" height="44"/>
+                                                                    <rect key="frame" x="68" y="4" width="35" height="44"/>
                                                                     <string key="text">99999
 99999
 99999</string>
@@ -1846,6 +1846,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="nyY-cX-Vba"/>
         <segue reference="cpy-Vz-IsI"/>
-        <segue reference="VDi-fK-pGc"/>
+        <segue reference="7jk-Ox-nUT"/>
     </inferredMetricsTieBreakers>
 </document>
