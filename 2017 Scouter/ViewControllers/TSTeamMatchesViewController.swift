@@ -127,6 +127,15 @@ class TeamMatchesViewController: ViewController, UITableViewDataSource, UITableV
         
         cell.backgroundColor = UIColor.clear
         
+        cell.viewStatsButton?.isEnabled = !(Data.getTIMD(team: Data.getTeam(withNumber: teamNumber)!, match: matchList[indexPath.row]) == nil)
+        if (cell.viewStatsButton?.isEnabled)! {
+            cell.viewStatsButton?.setTitleColor(UIColor.white, for: .normal)
+            cell.viewStatsButton?.layer.borderColor = UIColor.white.cgColor
+        } else {
+            cell.viewStatsButton?.setTitleColor(UIColor.lightGray, for: .normal)
+            cell.viewStatsButton?.layer.borderColor = UIColor.lightGray.cgColor
+        }
+        
         return cell
     }
     

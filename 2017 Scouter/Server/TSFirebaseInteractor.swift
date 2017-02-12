@@ -23,7 +23,7 @@ class FirebaseInteractor {
 //            let query = (retVal.value(forKey: "query") as! NSDictionary).mu as! NSMutableDictionary
 //            query.setObject(JSON, forKey: "teams" as NSCopying)
             (retVal["query"] as! NSMutableDictionary)["teams"] = JSON
-            print(retVal)
+//            print(retVal)
             callback(NSDictionary(dictionary: retVal))
 //            callback(retVal)
         }) { (error) in

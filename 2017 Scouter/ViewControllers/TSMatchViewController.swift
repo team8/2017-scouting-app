@@ -110,6 +110,28 @@ class MatchViewController: ViewController {
         }
         self.redAllianceView.teams = self.match!.red
         self.blueAllianceView.teams = self.match!.blue
+        
+        //View Stat Buttons
+        for (i, button) in self.redAllianceView.viewStatButtons.enumerated() {
+            button.isEnabled = !(Data.getTIMD(team: match!.red[i], match: match!) == nil)
+            if (button.isEnabled) {
+                button.setTitleColor(UIColor.white, for: .normal)
+                button.layer.borderColor = UIColor.white.cgColor
+            } else {
+                button.setTitleColor(UIColor.lightGray, for: .normal)
+                button.layer.borderColor = UIColor.lightGray.cgColor
+            }
+        }
+        for (i, button) in self.blueAllianceView.viewStatButtons.enumerated() {
+            button.isEnabled = !(Data.getTIMD(team: match!.blue[i], match: match!) == nil)
+            if (button.isEnabled) {
+                button.setTitleColor(UIColor.white, for: .normal)
+                button.layer.borderColor = UIColor.white.cgColor
+            } else {
+                button.setTitleColor(UIColor.lightGray, for: .normal)
+                button.layer.borderColor = UIColor.lightGray.cgColor
+            }
+        }
     }
     
     @IBAction func backPressed(_ sender: Any) {

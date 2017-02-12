@@ -65,8 +65,6 @@ class ViewStatsViewController: ViewController, UITableViewDataSource, UITableVie
         let key = Array(timd!.stats.keys)[indexPath.row]
         let value = String(describing: timd!.stats[key]!)
         cell.textLabel?.text = key + ": " + value
-        print(timd!.stats[key]!)
-        print(cell.textLabel?.text)
         cell.backgroundColor = UIColor.clear
         
         return cell
