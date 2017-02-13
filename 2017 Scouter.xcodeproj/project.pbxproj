@@ -14,6 +14,7 @@
 		6A62F1201DC4280000479F30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A62F11F1DC4280000479F30 /* Assets.xcassets */; };
 		6A62F1231DC4280000479F30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A62F1211DC4280000479F30 /* LaunchScreen.storyboard */; };
 		6A6D6B041E0A351C00559506 /* TSScanModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6D6B031E0A351C00559506 /* TSScanModels.swift */; };
+		6AAB1EF11E516B160066FD96 /* load-screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AAB1EF01E516B160066FD96 /* load-screen.png */; };
 		6AD6C7F41DC429260028DB4D /* TSMatchModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD6C7F31DC429260028DB4D /* TSMatchModels.swift */; };
 		6AD6C7F91DC4295D0028DB4D /* TSServerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD6C7F81DC4295D0028DB4D /* TSServerInteractor.swift */; };
 		6AFF7DA31E09AE52008F522B /* TSQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFF7DA21E09AE52008F522B /* TSQRCodeViewController.swift */; };
@@ -71,6 +72,7 @@
 		6A62F1221DC4280000479F30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6A62F1241DC4280000479F30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A6D6B031E0A351C00559506 /* TSScanModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSScanModels.swift; path = Models/TSScanModels.swift; sourceTree = "<group>"; };
+		6AAB1EF01E516B160066FD96 /* load-screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "load-screen.png"; sourceTree = "<group>"; };
 		6AD6C7F31DC429260028DB4D /* TSMatchModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSMatchModels.swift; path = Models/TSMatchModels.swift; sourceTree = "<group>"; };
 		6AD6C7F81DC4295D0028DB4D /* TSServerInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSServerInteractor.swift; path = Server/TSServerInteractor.swift; sourceTree = "<group>"; };
 		6AFF7DA21E09AE52008F522B /* TSQRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSQRCodeViewController.swift; path = ViewControllers/TSQRCodeViewController.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 		AA5432461E08AD3B00000A88 /* menu-images */ = {
 			isa = PBXGroup;
 			children = (
+				6AAB1EF01E516B160066FD96 /* load-screen.png */,
 				A59D0DD71E513A7C00D45DDB /* four-rotor.png */,
 				A50B64271E455684009BCD1C /* forty-kpa-false.png */,
 				A50B64281E455684009BCD1C /* forty-kpa-true.png */,
@@ -353,6 +356,7 @@
 				AA5432501E08AD3B00000A88 /* upload-qr-code.png in Resources */,
 				AA2B72841E07135200BE66DC /* Lato-Regular.ttf in Resources */,
 				6A62F11E1DC4280000479F30 /* Main.storyboard in Resources */,
+				6AAB1EF11E516B160066FD96 /* load-screen.png in Resources */,
 				AA54324D1E08AD3B00000A88 /* matches.png in Resources */,
 				A50B642B1E455684009BCD1C /* forty-kpa-false.png in Resources */,
 				AA54324E1E08AD3B00000A88 /* picklist.png in Resources */,
