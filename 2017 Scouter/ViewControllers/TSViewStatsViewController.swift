@@ -42,6 +42,7 @@ class ViewStatsViewController: ViewController, UITableViewDataSource, UITableVie
         //Table stuff
         statsTable.delegate = self
         statsTable.dataSource = self
+        statsTable.backgroundColor = UIColor.clear
         
         //Borders
         viewTeamButton.layer.borderWidth = 1
@@ -65,6 +66,7 @@ class ViewStatsViewController: ViewController, UITableViewDataSource, UITableVie
         let key = Array(timd!.stats.keys)[indexPath.row]
         let value = String(describing: timd!.stats[key]!)
         cell.textLabel?.text = key + ": " + value
+        cell.textLabel?.textColor = UIColor.white
         cell.backgroundColor = UIColor.clear
         
         return cell
