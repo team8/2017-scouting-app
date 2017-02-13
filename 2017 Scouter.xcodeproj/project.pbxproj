@@ -24,14 +24,13 @@
 		A5058CA41E406CD00059B0BF /* placeholder_unavailable.png in Resources */ = {isa = PBXBuildFile; fileRef = A5058CA31E406CD00059B0BF /* placeholder_unavailable.png */; };
 		A50B642B1E455684009BCD1C /* forty-kpa-false.png in Resources */ = {isa = PBXBuildFile; fileRef = A50B64271E455684009BCD1C /* forty-kpa-false.png */; };
 		A50B642C1E455684009BCD1C /* forty-kpa-true.png in Resources */ = {isa = PBXBuildFile; fileRef = A50B64281E455684009BCD1C /* forty-kpa-true.png */; };
-		A50B642D1E455684009BCD1C /* four-rotor-false.png in Resources */ = {isa = PBXBuildFile; fileRef = A50B64291E455684009BCD1C /* four-rotor-false.png */; };
-		A50B642E1E455684009BCD1C /* four-rotor-true.png in Resources */ = {isa = PBXBuildFile; fileRef = A50B642A1E455684009BCD1C /* four-rotor-true.png */; };
 		A55BA8201E3EC75D0079B9ED /* TSTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55BA81F1E3EC75D0079B9ED /* TSTeamViewController.swift */; };
 		A55BA8221E3FC39B0079B9ED /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = A55BA8211E3FC39B0079B9ED /* placeholder.png */; };
 		A55BA8241E400C1E0079B9ED /* TSTeamInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55BA8231E400C1D0079B9ED /* TSTeamInfoViewController.swift */; };
 		A5827D381E4182AA007382C9 /* backarrow.png in Resources */ = {isa = PBXBuildFile; fileRef = A5827D371E4182AA007382C9 /* backarrow.png */; };
 		A5827D3A1E41A29A007382C9 /* TSTeamMatchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5827D391E41A29A007382C9 /* TSTeamMatchesViewController.swift */; };
 		A5827D3C1E427CD0007382C9 /* frontarrow.png in Resources */ = {isa = PBXBuildFile; fileRef = A5827D3B1E427CD0007382C9 /* frontarrow.png */; };
+		A59D0DD81E513A7C00D45DDB /* four-rotor.png in Resources */ = {isa = PBXBuildFile; fileRef = A59D0DD71E513A7C00D45DDB /* four-rotor.png */; };
 		A5B0E1D21E45529300A2B5AB /* TSMatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B0E1D11E45529300A2B5AB /* TSMatchViewController.swift */; };
 		A5B9EFFC1DF791F400C4D6F6 /* TSMatchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B9EFFB1DF791F300C4D6F6 /* TSMatchListViewController.swift */; };
 		A5C4DAF11DF5F24A00A337FB /* TSMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C4DAEF1DF5F24A00A337FB /* TSMenuViewController.swift */; };
@@ -82,14 +81,13 @@
 		A5058CA31E406CD00059B0BF /* placeholder_unavailable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder_unavailable.png; sourceTree = "<group>"; };
 		A50B64271E455684009BCD1C /* forty-kpa-false.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "forty-kpa-false.png"; sourceTree = "<group>"; };
 		A50B64281E455684009BCD1C /* forty-kpa-true.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "forty-kpa-true.png"; sourceTree = "<group>"; };
-		A50B64291E455684009BCD1C /* four-rotor-false.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "four-rotor-false.png"; sourceTree = "<group>"; };
-		A50B642A1E455684009BCD1C /* four-rotor-true.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "four-rotor-true.png"; sourceTree = "<group>"; };
 		A55BA81F1E3EC75D0079B9ED /* TSTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSTeamViewController.swift; path = ViewControllers/TSTeamViewController.swift; sourceTree = "<group>"; };
 		A55BA8211E3FC39B0079B9ED /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		A55BA8231E400C1D0079B9ED /* TSTeamInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSTeamInfoViewController.swift; path = ViewControllers/TSTeamInfoViewController.swift; sourceTree = "<group>"; };
 		A5827D371E4182AA007382C9 /* backarrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backarrow.png; sourceTree = "<group>"; };
 		A5827D391E41A29A007382C9 /* TSTeamMatchesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSTeamMatchesViewController.swift; path = ViewControllers/TSTeamMatchesViewController.swift; sourceTree = "<group>"; };
 		A5827D3B1E427CD0007382C9 /* frontarrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frontarrow.png; sourceTree = "<group>"; };
+		A59D0DD71E513A7C00D45DDB /* four-rotor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "four-rotor.png"; sourceTree = "<group>"; };
 		A5B0E1D11E45529300A2B5AB /* TSMatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSMatchViewController.swift; path = ViewControllers/TSMatchViewController.swift; sourceTree = "<group>"; };
 		A5B9EFFB1DF791F300C4D6F6 /* TSMatchListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSMatchListViewController.swift; sourceTree = "<group>"; };
 		A5C4DAEF1DF5F24A00A337FB /* TSMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSMenuViewController.swift; path = ViewControllers/TSMenuViewController.swift; sourceTree = "<group>"; };
@@ -231,10 +229,9 @@
 		AA5432461E08AD3B00000A88 /* menu-images */ = {
 			isa = PBXGroup;
 			children = (
+				A59D0DD71E513A7C00D45DDB /* four-rotor.png */,
 				A50B64271E455684009BCD1C /* forty-kpa-false.png */,
 				A50B64281E455684009BCD1C /* forty-kpa-true.png */,
-				A50B64291E455684009BCD1C /* four-rotor-false.png */,
-				A50B642A1E455684009BCD1C /* four-rotor-true.png */,
 				A5827D3B1E427CD0007382C9 /* frontarrow.png */,
 				A5827D371E4182AA007382C9 /* backarrow.png */,
 				A5058CA31E406CD00059B0BF /* placeholder_unavailable.png */,
@@ -343,16 +340,15 @@
 				A50B642C1E455684009BCD1C /* forty-kpa-true.png in Resources */,
 				AA2B72801E07135200BE66DC /* Lato-HairlineItalic.ttf in Resources */,
 				AA2B72821E07135200BE66DC /* Lato-Light.ttf in Resources */,
+				A59D0DD81E513A7C00D45DDB /* four-rotor.png in Resources */,
 				A5CFA19B1DF50CE10008D74F /* GoogleService-Info.plist in Resources */,
 				AA2B72811E07135200BE66DC /* Lato-Italic.ttf in Resources */,
 				AA2B727E1E07135200BE66DC /* Lato-BoldItalic.ttf in Resources */,
-				A50B642E1E455684009BCD1C /* four-rotor-true.png in Resources */,
 				AA2B727C1E07135200BE66DC /* Lato-BlackItalic.ttf in Resources */,
 				AA54324C1E08AD3B00000A88 /* Group.png in Resources */,
 				A5058CA41E406CD00059B0BF /* placeholder_unavailable.png in Resources */,
 				AA2B727F1E07135200BE66DC /* Lato-Hairline.ttf in Resources */,
 				6A62F1201DC4280000479F30 /* Assets.xcassets in Resources */,
-				A50B642D1E455684009BCD1C /* four-rotor-false.png in Resources */,
 				AA2B727B1E07135200BE66DC /* Lato-Black.ttf in Resources */,
 				AA5432501E08AD3B00000A88 /* upload-qr-code.png in Resources */,
 				AA2B72841E07135200BE66DC /* Lato-Regular.ttf in Resources */,
