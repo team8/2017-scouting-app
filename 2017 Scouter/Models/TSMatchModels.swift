@@ -193,12 +193,12 @@ class TBAMatch: CoreData {
             }
             self.played = dict.object(forKey: "played") as! Bool
             if (self.played) {
-                self.blueScore = blueDict.object(forKey: "score") as! Int
-                self.blueRotor = blueDict.object(forKey: "rotor") as! Int
-                self.blueFortyKPa = blueDict.object(forKey: "fortyKPa") as! Bool
-                self.redScore = blueDict.object(forKey: "score") as! Int
-                self.redRotor = blueDict.object(forKey: "rotor") as! Int
-                self.redFortyKPa = blueDict.object(forKey: "fortyKPa") as! Bool
+                self.blueScore = blueDict.object(forKey: "score") as? Int
+                self.blueRotor = blueDict.object(forKey: "rotor") as? Int
+                self.blueFortyKPa = blueDict.object(forKey: "fortyKPa") as? Bool
+                self.redScore = redDict.object(forKey: "score") as? Int
+                self.redRotor = redDict.object(forKey: "rotor") as? Int
+                self.redFortyKPa = redDict.object(forKey: "fortyKPa") as? Bool
             }
             super.init(managedObject)
 
