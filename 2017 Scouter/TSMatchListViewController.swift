@@ -99,7 +99,7 @@ class MatchListViewController: ViewController, UITableViewDataSource, UITableVie
     func addActivityIndicator() {
         
         let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.white)
-        activityIndicator.frame = CGRect(x: 230, y: 40, width: 30, height: 30)
+        activityIndicator.frame = CGRect(x: 235, y: 37, width: 30, height: 30)
         activityIndicator.tag = 100
         activityIndicator.startAnimating()
         self.view.addSubview(activityIndicator)
@@ -132,28 +132,25 @@ class MatchListViewController: ViewController, UITableViewDataSource, UITableVie
         }
         cell.blueTeams.text = blueTeamString
         
+        if (match.played) {
+            cell.blueScore.text = String(match.blueScore!)
+            cell.redScore.text = String(match.redScore!)
+        } else {
+            cell.blueScore.text = String(match.blueWinChance!) + "%"
+            cell.redScore.text = String(match.redWinChance!) + "%"
+        }
+        
         switch match.matchType{
         case TBAMatch.MatchType.qualifying:
-            cell.matchAbbr.text = "QM"
-            cell.matchNumber.text = String(match.matchNumber)
-            cell.matchIn.text = ""
+            cell.matchKey.text = "Qualifier " + String(match.matchNumber)
         case TBAMatch.MatchType.quarterFinal:
-             cell.matchAbbr.text = "QF"
-             cell.matchNumber.text =  String(match.matchNumber)
-             cell.matchIn.text = "Match #" + String(match.matchIn!)
-
+            cell.matchKey.text = "Quarter Final " + String(match.matchNumber) + " Match " + String(match.matchIn!)
         case TBAMatch.MatchType.semiFinal:
-            cell.matchAbbr.text = "SF"
-            cell.matchNumber.text =  String(match.matchNumber)
-            cell.matchIn.text = "Match #" + String(match.matchIn!)
-            
+            cell.matchKey.text = "Semi Final " + String(match.matchNumber) + " Match " + String(match.matchIn!)
         case TBAMatch.MatchType.final:
-            cell.matchAbbr.text = "F"
-            cell.matchNumber.text =  String(match.matchNumber)
-            cell.matchIn.text = "Match #" + String(match.matchIn!)
-            
+            cell.matchKey.text = "Final " + String(match.matchNumber) + " Match " + String(match.matchIn!)
         default:
-            cell.matchAbbr.text = "UNK"
+            cell.matchKey.text = "Unknown"
             
         }
         
@@ -176,6 +173,7 @@ class MatchListViewController: ViewController, UITableViewDataSource, UITableVie
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        let cell = tableView.cellForRow(at: indexPath) as! UnplayedTableViewCell
         let match = Data.matchList[indexPath.row]
+        tableView.deselectRow(at: indexPath, animated: true)
         self.performSegue(withIdentifier: "matchListToMatch", sender: match)
     }
     

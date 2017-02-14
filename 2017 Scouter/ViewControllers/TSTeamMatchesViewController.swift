@@ -89,28 +89,25 @@ class TeamMatchesViewController: ViewController, UITableViewDataSource, UITableV
         }
         cell.blueTeams.text = blueTeamString
         
-        switch matchList[indexPath.row].matchType {
+        if (matchList[indexPath.row].played) {
+            cell.blueScore.text = String(matchList[indexPath.row].blueScore!)
+            cell.redScore.text = String(matchList[indexPath.row].redScore!)
+        } else {
+            cell.blueScore.text = String(matchList[indexPath.row].blueWinChance!) + "%"
+            cell.redScore.text = String(matchList[indexPath.row].redWinChance!) + "%"
+        }
+        
+        switch matchList[indexPath.row].matchType{
         case TBAMatch.MatchType.qualifying:
-            cell.matchAbbr.text = "QM"
-            cell.matchNumber.text = String(matchList[indexPath.row].matchNumber)
-            cell.matchIn.text = ""
+            cell.matchKey.text = "Qualifier " + String(matchList[indexPath.row].matchNumber)
         case TBAMatch.MatchType.quarterFinal:
-            cell.matchAbbr.text = "QF"
-            cell.matchNumber.text =  String(matchList[indexPath.row].matchNumber)
-            cell.matchIn.text = "Match #" + String(matchList[indexPath.row].matchIn!)
-            
+            cell.matchKey.text = "Quarter Final " + String(matchList[indexPath.row].matchNumber) + " Match " + String(matchList[indexPath.row].matchIn!)
         case TBAMatch.MatchType.semiFinal:
-            cell.matchAbbr.text = "SF"
-            cell.matchNumber.text =  String(matchList[indexPath.row].matchNumber)
-            cell.matchIn.text = "Match #" + String(matchList[indexPath.row].matchIn!)
-            
+            cell.matchKey.text = "Semi Final " + String(matchList[indexPath.row].matchNumber) + " Match " + String(matchList[indexPath.row].matchIn!)
         case TBAMatch.MatchType.final:
-            cell.matchAbbr.text = "F"
-            cell.matchNumber.text =  String(matchList[indexPath.row].matchNumber)
-            cell.matchIn.text = "Match #" + String(matchList[indexPath.row].matchIn!)
-            
+            cell.matchKey.text = "Final " + String(matchList[indexPath.row].matchNumber) + " Match " + String(matchList[indexPath.row].matchIn!)
         default:
-            cell.matchAbbr.text = "UNK"
+            cell.matchKey.text = "Unknown"
             
         }
         
@@ -142,6 +139,7 @@ class TeamMatchesViewController: ViewController, UITableViewDataSource, UITableV
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        let cell = tableView.cellForRow(at: indexPath) as! UnplayedTableViewCell
         let match = Data.getTeam(withNumber: self.teamNumber)!.matches[indexPath.row]
+        tableView.deselectRow(at: indexPath, animated: true)
         self.parentVC!.performSegue(withIdentifier: "teamToMatch", sender: match)
     }
     

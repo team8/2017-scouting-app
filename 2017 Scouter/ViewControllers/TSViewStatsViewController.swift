@@ -116,7 +116,7 @@ class ViewStatsViewController: ViewController, UITableViewDataSource, UITableVie
     
     func addActivityIndicator() {
         let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.white)
-        activityIndicator.frame = CGRect(x: 230, y: 37, width: 30, height: 30)
+        activityIndicator.frame = CGRect(x: 247, y: 47, width: 30, height: 30)
         activityIndicator.tag = 100
         activityIndicator.startAnimating()
         self.view.addSubview(activityIndicator)

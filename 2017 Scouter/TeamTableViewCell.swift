@@ -26,9 +26,18 @@ class TeamTableViewCell: UITableViewCell {
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
+//        super.setSelected(selected, animated: animated)
+        UIView.animate(withDuration: 0.5, animations: {
+            if (selected) {
+                self.containerView.backgroundColor = UIColor.init(white: 1, alpha: 0.8)
+            } else {
+                self.containerView.backgroundColor = UIColor.clear
+            }
+        })
         // Configure the view for the selected state
     }
-
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        
+    }
+    
 }

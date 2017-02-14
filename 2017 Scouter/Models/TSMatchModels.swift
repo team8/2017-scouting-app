@@ -22,6 +22,8 @@ class TBAMatch: CoreData {
     
     var blueScore: Int?
     var redScore: Int?
+    var blueWinChance: Int?
+    var redWinChance: Int?
     var blueRotor: Int?
     var redRotor: Int?
     var blueFortyKPa: Bool?

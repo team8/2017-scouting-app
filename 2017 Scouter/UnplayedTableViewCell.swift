@@ -11,11 +11,12 @@ import UIKit
 class UnplayedTableViewCell: UITableViewCell {
 
     @IBOutlet weak var redTeams: UILabel!
-    @IBOutlet weak var matchAbbr: UILabel!
-    @IBOutlet weak var matchNumber: UILabel!
     @IBOutlet weak var blueTeams: UILabel!
-    @IBOutlet weak var matchIn: UILabel!
+    @IBOutlet weak var redScore: UILabel!
+    @IBOutlet weak var blueScore: UILabel!
+    @IBOutlet weak var matchKey: UILabel!
     @IBOutlet weak var container: UIView!
+    @IBOutlet weak var overlayView: UIView!
     @IBOutlet weak var viewStatsButton: UIButton?
     
     var match: TBAMatch?
@@ -32,9 +33,18 @@ class UnplayedTableViewCell: UITableViewCell {
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
+        //        super.setSelected(selected, animated: animated)
+        UIView.animate(withDuration: 0.5, animations: {
+            if (selected) {
+                self.overlayView.backgroundColor = UIColor.init(white: 1, alpha: 0.8)
+            } else {
+                self.overlayView.backgroundColor = UIColor.clear
+            }
+        })
         // Configure the view for the selected state
+    }
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        
     }
 
     @IBAction func viewStatsPressed(_ sender: Any) {

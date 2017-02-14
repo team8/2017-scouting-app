@@ -134,6 +134,7 @@ class TeamListViewController: ViewController, UITextFieldDelegate, UIPickerViewD
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! TeamTableViewCell
+        tableView.deselectRow(at: indexPath, animated: true)
         self.performSegue(withIdentifier: "teamListToTeam", sender: cell.teamNum)
     }
 
