@@ -120,6 +120,10 @@ class MenuViewController: ViewController, UITextFieldDelegate, UIPickerViewDataS
     
     //Picker stuff
     func pickerSelect(_ index: Int) {
+        if !(index == UserDefaults.standard.value(forKey: "competition") as? Int) {
+            self.hasPrevious = false
+            backButton.isHidden = true
+        }
         compTextField.text = compList[index]
         Data.competition = compIDs[index]
         UserDefaults.standard.set(index, forKey: "competition")
