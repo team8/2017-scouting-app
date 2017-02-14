@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import CoreData
 
-class TIMD {
+class TIMD: CoreData {
     
     var team: Team
     var match: TBAMatch
@@ -21,7 +22,28 @@ class TIMD {
         for (key, value) in data {
             stats[key as! String] = value
         }
+        super.init(entityName: "TIMDs")
     }
     
+    override init(_ managedObject: NSManagedObject) {
+        let unarchivedData : NSData = managedObject.value(forKey: "data") as! NSData
+        do {
+            let dict: NSDictionary = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(unarchivedData) as! NSDictionary
+            let teamNumber = dict.object(forKey: "teamNumber") as! Int
+            self.team = Data.getTeam(withNumber: teamNumber)!
+            self.match = Data.getMatch(withKey: (dict.object(forKey: "matchKey") as! String))!
+            self.stats = dict.object(forKey: "stats") as! Dictionary<String, Any>
+            super.init(managedObject)
+        } catch {
+            fatalError("core data fetch error")
+        }
+    }
     
+    override func getJSON() -> NSDictionary {
+        return [
+            "teamNumber": self.team.teamNumber,
+            "matchKey": self.match.key,
+            "stats": self.stats
+        ]
+    }
 }

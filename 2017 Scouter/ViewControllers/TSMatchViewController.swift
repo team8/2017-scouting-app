@@ -144,7 +144,7 @@ class MatchViewController: ViewController {
         }
     }
     @IBAction func viewTBAPressed(_ sender: Any) {
-        print(match?.key)
+//        print(match?.key)
         let url : URL = URL(string: "https://thebluealliance.com/match/\(match!.key)")!
         
         UIApplication.shared.open(url, options: [:], completionHandler: nil)

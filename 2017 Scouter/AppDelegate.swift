@@ -10,7 +10,8 @@ import UIKit
 import Firebase
 import SwiftyDropbox
 import CoreData
-
+import Fabric
+import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -28,11 +29,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FIRAuth.auth()?.signInAnonymously() { (user, error) in
             let isAnonymous = user!.isAnonymous  // true
             let uid = user!.uid
-            print(isAnonymous.description + uid)
+            if(isAnonymous) {
+                print("Signed in anonymously to Firebase with UID " + uid)
+            }
         }
         
         // Dropbox initialization
         DropboxClientsManager.setupWithAppKey("sjtr0udzq3arm1t")
+        
+        // Fabric initialization
+        Fabric.with([Crashlytics.self])
+        
+        
+        
         return true
     }
     

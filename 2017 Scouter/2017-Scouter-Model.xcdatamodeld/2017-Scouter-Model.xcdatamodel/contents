@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16C67" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16B2659" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Matches" representedClassName="Matches" syncable="YES" codeGenerationType="class">
-        <attribute name="match" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="data" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="event" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Teams" representedClassName="Teams" syncable="YES" codeGenerationType="class">
+        <attribute name="data" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="event" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="TIMDs" representedClassName="TIMDs" syncable="YES" codeGenerationType="class">
+        <attribute name="data" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="event" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Matches" positionX="-63" positionY="-18" width="128" height="60"/>
+        <element name="Matches" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="Teams" positionX="-63" positionY="0" width="128" height="75"/>
+        <element name="TIMDs" positionX="-54" positionY="18" width="128" height="75"/>
     </elements>
 </model>

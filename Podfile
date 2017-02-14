@@ -6,6 +6,8 @@ target '2017 Scouter' do
   use_frameworks!
 
   # Pods for scouter
+  pod 'Fabric'
+  pod 'Crashlytics'
   pod 'Alamofire', '~> 4.0'
   pod 'Firebase/Core'
   pod 'Firebase/Database'

@@ -16,12 +16,14 @@ var currentScreen = "menu"
 
 class MenuViewController: ViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
     
+    var launch = true
+    
     @IBOutlet weak var backButton: UIButton!
     var previousViewController: ViewController?
     var hasPrevious = false
     
     @IBOutlet weak var compTextField: UITextField!
-    let compList = ["SVR 2016", "Ventura 2017", "SVR 2017", "Camps 2017"]
+    let compList = ["SVR 2016", "Ventura 2017", "SVR 2017", "Champs 2017"]
     let compIDs = ["2016casj", "2017cave", "2017casj", "2017cmptx"]
     let pickerView = UIView(frame: CGRect(x: 0, y: 0, width: 320, height: 200))
     let doneButton = UIButton(frame: CGRect(x: 220, y: 0, width: 100, height: 50))
@@ -51,10 +53,13 @@ class MenuViewController: ViewController, UITextFieldDelegate, UIPickerViewDataS
         backButton.isHidden = !self.hasPrevious
         
         //Picker
-        if let saved = UserDefaults.standard.value(forKey: "competition") as? Int {
-            pickerSelect(saved)
-        } else {
-            pickerSelect(0)
+        if(launch) {
+            if let saved = UserDefaults.standard.value(forKey: "competition") as? Int {
+                pickerSelect(saved)
+            } else {
+                pickerSelect(0)
+            }
+            launch = false
         }
     }
     
@@ -118,6 +123,7 @@ class MenuViewController: ViewController, UITextFieldDelegate, UIPickerViewDataS
         compTextField.text = compList[index]
         Data.competition = compIDs[index]
         UserDefaults.standard.set(index, forKey: "competition")
+        Data.fetchFromCoreData(event: Data.competition!)
     }
     
     func donePressed(sender: UIButton!) {

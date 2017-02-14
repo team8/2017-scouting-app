@@ -15,17 +15,18 @@ class FirebaseInteractor {
     
     static func getFirebaseData(_ callback: @escaping (NSDictionary) -> Void, forKey: String) {
         ref.child(forKey).observeSingleEvent(of: .value, with: { (snapshot) in
+            if (snapshot.value is NSNull) {
+                callback(["query": ["success": "no"]])
+                return
+            }
             let JSON = snapshot.value as! Dictionary<String, Any>
-            let success = ["success": "yes"] as NSMutableDictionary
-            let retVal = ["query": success] as NSMutableDictionary
-//            let retVal = ["query": ["success": "yes"]] as NSDictionary
-//            retVal.val
-//            let query = (retVal.value(forKey: "query") as! NSDictionary).mu as! NSMutableDictionary
-//            query.setObject(JSON, forKey: "teams" as NSCopying)
-            (retVal["query"] as! NSMutableDictionary)["teams"] = JSON
-//            print(retVal)
-            callback(NSDictionary(dictionary: retVal))
-//            callback(retVal)
+            let retVal = [
+                "query": [
+                    "success": "yes",
+                    "teams": JSON
+                ]
+            ]
+            callback(retVal as NSDictionary)
         }) { (error) in
             print(error.localizedDescription)
             print("[ERROR] Error getting value from Firebase")

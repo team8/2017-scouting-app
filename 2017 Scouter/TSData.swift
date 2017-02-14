@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import UIKit
+import CoreData
 
 class Data {
     
@@ -21,17 +23,16 @@ class Data {
     static var completeFunction: (() -> Void)?
     
     static func fetch(complete: @escaping () -> Void) {
-        
-//        ServerInterfacer.getTeams(handleTeamJSON, key: Data.competition!)
-        ServerInterfacer.getTeams(handleTeamJSON, key: "2016casj")
-        //        ServerInterfacer.getMatches(handleMatchJSON, key: Data.competition!)
-        ServerInterfacer.getMatches(handleMatchJSON, key: "2016casj")
+        ServerInterfacer.getTeams(handleTeamJSON, key: Data.competition!)
+//        ServerInterfacer.getTeams(handleTeamJSON, key: "2016casj")
+        ServerInterfacer.getMatches(handleMatchJSON, key: Data.competition!)
+//        ServerInterfacer.getMatches(handleMatchJSON, key: "2016casj")
         completeFunction = complete
     }
     
     static func finishFetch() {
-//        fetchTIMD(key: "2016casj")
-        FirebaseInteractor.getFirebaseData(handleFirebaseJSON, forKey: "2016casj")
+        FirebaseInteractor.getFirebaseData(handleFirebaseJSON, forKey: Data.competition!)
+//        FirebaseInteractor.getFirebaseData(handleFirebaseJSON, forKey: "2016casj")
     }
     
     static func fetchComplete() {
@@ -45,12 +46,16 @@ class Data {
     
     static func handleTeamJSON(value: NSDictionary) -> Void {
         if (((value.value(forKey: "query") as! NSDictionary).value(forKey: "success"))! as! String == "yes") {
+            for (team) in teamList {
+                team.deleteFromCoreData()
+            }
             teamList.removeAll()
             for (_, value) in (value.value(forKey: "query") as! NSDictionary).value(forKey: "teams") as! NSDictionary {
                 let payloadDict = value as! NSDictionary
                 
                 let teamNumber = payloadDict.object(forKey: "team_number") as! Int
                 let team = Team(teamNumber: teamNumber)
+                team.saveToCoreData()
                 teamList.append(team)
                 
             }
@@ -63,26 +68,18 @@ class Data {
     
     static func handleMatchJSON(value: NSDictionary) -> Void {
         if (((value.value(forKey: "query") as! NSDictionary).value(forKey: "success"))! as! String == "yes") {
+            for (match) in matchList {
+                match.deleteFromCoreData()
+            }
             matchList.removeAll()
-//            print(value)
-//            let matchListVC = MatchListViewController()
-//            matchListVC.deleteAllData()
-            
-//            sendToVC(value: value)
             if (Data.teamList.count == 0){
-                print("fuk")
-                ServerInterfacer.getTeams(handleTeamJSON, key: "2016casj")
-                ServerInterfacer.getMatches(handleMatchJSON, key: "2016casj")
+                print("death")
+                ServerInterfacer.getTeams(handleTeamJSON, key: Data.competition!)
+                ServerInterfacer.getMatches(handleMatchJSON, key: Data.competition!)
                 return
             }
 
-//            while(Data.teamList.count == 0){
-//                sleep(1)
-//                print("Waiting for team request to finish...")
-//            }
-            
             for (key, value) in (value.value(forKey: "query") as! NSDictionary).value(forKey: "matches") as! NSDictionary {
-//                print(key)
                 let name = key as! String
                 
                 let payloadDict = value as! NSDictionary
@@ -96,15 +93,17 @@ class Data {
                     red.append(Data.getTeam(withNumber: num)!)
                 }
                 let scoreBreakdown = payloadDict.object(forKey: "score_breakdown") as! NSDictionary
-                matchList.append(TBAMatch(keyV: name, blueAlliance: blue, redAlliance: red, scoreBreakdown: scoreBreakdown))
+                let match = TBAMatch(keyV: name, blueAlliance: blue, redAlliance: red, scoreBreakdown: scoreBreakdown)
+                match.saveToCoreData()
+                matchList.append(match)
                 
             }
             
-            Data.orderMatches()
+            orderMatches()
             
             //Populate teams with matches
-            for (team) in Data.teamList {
-                team.matches = Data.getMatches(withTeam: team)
+            for (team) in teamList {
+                team.matches = getMatches(withTeam: team)
             }
         }
         else {
@@ -128,19 +127,132 @@ class Data {
             }
             
             //Extract TIMD data
+            for (timd) in timdList {
+                timd.deleteFromCoreData()
+            }
             timdList.removeAll()
             for (teamKey, value) in teams {
-                let teamDic = value as! NSDictionary
+                let teamDict = value as! NSDictionary
                 let teamNumber = Int((teamKey as! String).components(separatedBy: "frc")[1])!
                 let team = Data.getTeam(withNumber: teamNumber)!
-                for (matchKey, data) in teamDic.value(forKey: "timd") as! NSDictionary {
+                for (matchKey, data) in teamDict.value(forKey: "timd") as! NSDictionary {
                     let match = Data.getMatch(withKey: Data.competition! + "_" + (matchKey as! String))!
-                    timdList.append(TIMD(team: team, match: match, data: data as! NSDictionary))
+                    let timd = TIMD(team: team, match: match, data: data as! NSDictionary)
+                    timd.saveToCoreData()
+                    timdList.append(timd)
                 }
             }
         }
         else {
             print(value)
+        }
+    }
+    
+    static func fetchFromCoreData(event: String) {
+        fetchTeamsFromCoreData(event: event)
+        fetchMatchesFromCoreData(event: event)
+        fetchTIMDsFromCoreData(event: event)
+    }
+    
+    static func fetchTeamsFromCoreData(event: String) {
+        //Clear list
+        teamList.removeAll()
+        
+        //Getting stuff from the appDelegate
+        let appDel = UIApplication.shared.delegate as! AppDelegate
+        let managedContext = appDel.managedObjectContext
+        let entity = NSEntityDescription.entity(forEntityName: "Teams", in: managedContext)
+        
+        //Fetch Request
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>()
+        fetchRequest.entity = entity
+        
+        do {
+            let results = try managedContext.fetch(fetchRequest)
+            if (results.count > 0) {
+                if let managedObjectResults = results as? [NSManagedObject] {
+                    for i: NSManagedObject in managedObjectResults {
+                        if (i.value(forKey: "event") as! String == Data.competition!) {
+                            teamList.append(Team(i))
+                        }
+                    }
+                }
+        
+            }
+        
+        } catch {
+            let fetchError = error as NSError
+            print(fetchError)
+        }
+    }
+    
+    static func fetchMatchesFromCoreData(event: String) {
+        //Clear list
+        matchList.removeAll()
+        
+        //Getting stuff from the appDelegate
+        let appDel = UIApplication.shared.delegate as! AppDelegate
+        let managedContext = appDel.managedObjectContext
+        let entity = NSEntityDescription.entity(forEntityName: "Matches", in: managedContext)
+        
+        //Fetch Request
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>()
+        fetchRequest.entity = entity
+        
+        do {
+            let results = try managedContext.fetch(fetchRequest)
+            if (results.count > 0) {
+                if let managedObjectResults = results as? [NSManagedObject] {
+                    for i: NSManagedObject in managedObjectResults {
+                        if (i.value(forKey: "event") as! String == Data.competition!) {
+                            matchList.append(TBAMatch(i))
+                        }
+                    }
+                    orderMatches()
+                    
+                    //Populate teams with matches
+                    for (team) in teamList {
+                        team.matches = getMatches(withTeam: team)
+                    }
+                }
+                
+            }
+            
+        } catch {
+            let fetchError = error as NSError
+            print(fetchError)
+        }
+    }
+    
+    static func fetchTIMDsFromCoreData(event: String) {
+        //Clear list
+        timdList.removeAll()
+        
+        //Getting stuff from the appDelegate
+        let appDel = UIApplication.shared.delegate as! AppDelegate
+        let managedContext = appDel.managedObjectContext
+        let entity = NSEntityDescription.entity(forEntityName: "TIMDs", in: managedContext)
+        
+        //Fetch Request
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>()
+        fetchRequest.entity = entity
+        
+        do {
+            let results = try managedContext.fetch(fetchRequest)
+            if (results.count > 0) {
+                if let managedObjectResults = results as? [NSManagedObject] {
+                    for i: NSManagedObject in managedObjectResults {
+                        if (i.value(forKey: "event") as! String == Data.competition!) {
+                            timdList.append(TIMD(i))
+                        }
+                    }
+                }
+                
+            }
+            
+        } catch {
+            let fetchError = error as NSError
+            print(fetchError)
         }
     }
     
