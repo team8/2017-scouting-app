@@ -129,8 +129,8 @@ class TeamMatchesViewController: ViewController, UITableViewDataSource, UITableV
             cell.viewStatsButton?.setTitleColor(UIColor.white, for: .normal)
             cell.viewStatsButton?.layer.borderColor = UIColor.white.cgColor
         } else {
-            cell.viewStatsButton?.setTitleColor(UIColor.lightGray, for: .normal)
-            cell.viewStatsButton?.layer.borderColor = UIColor.lightGray.cgColor
+            cell.viewStatsButton?.setTitleColor(UIColor(white: 1.0, alpha: 0.5), for: .normal)
+            cell.viewStatsButton?.layer.borderColor = UIColor(white: 1.0, alpha: 0.5).cgColor
         }
         
         return cell

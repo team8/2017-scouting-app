@@ -37,10 +37,18 @@ class TeamViewController: ViewController {
         if(self.navigationStack != nil) {
             self.navigationController?.viewControllers = self.navigationStack!
         }
+        
     }
     
     func reloadData() {
-        //TODO
+        let infoViewController = (self.embeddedViewController?.viewControllers?[0] as! TeamInfoViewController)
+        let matchesViewController = (self.embeddedViewController?.viewControllers?[1] as! TeamMatchesViewController)
+        if (infoViewController.infoTable != nil) {
+            infoViewController.infoTable.reloadData()
+        }
+        if (matchesViewController.matchTable != nil) {
+            matchesViewController.matchTable.reloadData()
+        }
     }
     
     @IBAction func backPressed(_ sender: Any) {

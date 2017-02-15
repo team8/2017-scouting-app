@@ -118,8 +118,8 @@ class MatchViewController: ViewController {
                 button.setTitleColor(UIColor.white, for: .normal)
                 button.layer.borderColor = UIColor.white.cgColor
             } else {
-                button.setTitleColor(UIColor.lightGray, for: .normal)
-                button.layer.borderColor = UIColor.lightGray.cgColor
+                button.setTitleColor(UIColor(white: 1.0, alpha: 0.5), for: .normal)
+                button.layer.borderColor = UIColor(white: 1.0, alpha: 0.5).cgColor
             }
         }
         for (button) in self.blueAllianceView.viewStatButtons {
@@ -128,8 +128,8 @@ class MatchViewController: ViewController {
                 button.setTitleColor(UIColor.white, for: .normal)
                 button.layer.borderColor = UIColor.white.cgColor
             } else {
-                button.setTitleColor(UIColor.lightGray, for: .normal)
-                button.layer.borderColor = UIColor.lightGray.cgColor
+                button.setTitleColor(UIColor(white: 1.0, alpha: 0.5), for: .normal)
+                button.layer.borderColor = UIColor(white: 1.0, alpha: 0.5).cgColor
             }
         }
     }

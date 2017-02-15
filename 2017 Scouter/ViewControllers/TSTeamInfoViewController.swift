@@ -139,7 +139,7 @@ class TeamInfoViewController: ViewController, UITableViewDelegate, UITableViewDa
         } else {
             return 30
         }
-    }
+    }   
 }
 
 class InfoTable: UITableView {

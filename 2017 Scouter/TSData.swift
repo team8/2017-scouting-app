@@ -39,7 +39,7 @@ class Data {
         fetchesComplete += 1
         if fetchesComplete == fetchesTotal {
             finishFetch()
-            completeFunction!()
+//            completeFunction!()
             fetchesComplete = 0
         }
     }
@@ -55,7 +55,7 @@ class Data {
                 
                 let teamNumber = payloadDict.object(forKey: "team_number") as! Int
                 let team = Team(teamNumber: teamNumber)
-                team.saveToCoreData()
+//                team.saveToCoreData()
                 teamList.append(team)
                 
             }
@@ -94,7 +94,7 @@ class Data {
                 }
                 let scoreBreakdown = payloadDict.object(forKey: "score_breakdown") as! NSDictionary
                 let match = TBAMatch(keyV: name, blueAlliance: blue, redAlliance: red, scoreBreakdown: scoreBreakdown)
-                match.saveToCoreData()
+//                match.saveToCoreData()
                 matchList.append(match)
                 
             }
@@ -138,13 +138,29 @@ class Data {
                 for (matchKey, data) in teamDict.value(forKey: "timd") as! NSDictionary {
                     let match = Data.getMatch(withKey: Data.competition! + "_" + (matchKey as! String))!
                     let timd = TIMD(team: team, match: match, data: data as! NSDictionary)
-                    timd.saveToCoreData()
+//                    timd.saveToCoreData()
                     timdList.append(timd)
                 }
             }
+            
+            //Fetch finished
+            completeFunction!()
+            saveAllToCoreData()
         }
         else {
             print(value)
+        }
+    }
+    
+    static func saveAllToCoreData() {
+        for (team) in teamList {
+            team.saveToCoreData()
+        }
+        for (match) in matchList {
+            match.saveToCoreData()
+        }
+        for (timd) in timdList {
+            timd.saveToCoreData()
         }
     }
     
