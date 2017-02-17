@@ -4,6 +4,10 @@
         <attribute name="data" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="event" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="PitScoutingEntity" representedClassName="PitScoutingEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="data" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="event" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Teams" representedClassName="Teams" syncable="YES" codeGenerationType="class">
         <attribute name="data" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="event" optional="YES" attributeType="String" syncable="YES"/>
@@ -16,5 +20,6 @@
         <element name="Matches" positionX="-63" positionY="-18" width="128" height="75"/>
         <element name="Teams" positionX="-63" positionY="0" width="128" height="75"/>
         <element name="TIMDs" positionX="-54" positionY="18" width="128" height="75"/>
+        <element name="PitScoutingEntity" positionX="-54" positionY="18" width="128" height="75"/>
     </elements>
 </model>

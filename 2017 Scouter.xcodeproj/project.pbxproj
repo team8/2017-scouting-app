@@ -26,6 +26,7 @@
 		A50B642B1E455684009BCD1C /* forty-kpa-false.png in Resources */ = {isa = PBXBuildFile; fileRef = A50B64271E455684009BCD1C /* forty-kpa-false.png */; };
 		A50B642C1E455684009BCD1C /* forty-kpa-true.png in Resources */ = {isa = PBXBuildFile; fileRef = A50B64281E455684009BCD1C /* forty-kpa-true.png */; };
 		A53614871E52886A000E00F0 /* TSCoreDataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53614861E52886A000E00F0 /* TSCoreDataModels.swift */; };
+		A54B1B7E1E53E80E00448C8B /* TSPitScoutingModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54B1B7D1E53E80E00448C8B /* TSPitScoutingModels.swift */; };
 		A55BA8201E3EC75D0079B9ED /* TSTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55BA81F1E3EC75D0079B9ED /* TSTeamViewController.swift */; };
 		A55BA8221E3FC39B0079B9ED /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = A55BA8211E3FC39B0079B9ED /* placeholder.png */; };
 		A55BA8241E400C1E0079B9ED /* TSTeamInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55BA8231E400C1D0079B9ED /* TSTeamInfoViewController.swift */; };
@@ -84,6 +85,7 @@
 		A50B64271E455684009BCD1C /* forty-kpa-false.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "forty-kpa-false.png"; sourceTree = "<group>"; };
 		A50B64281E455684009BCD1C /* forty-kpa-true.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "forty-kpa-true.png"; sourceTree = "<group>"; };
 		A53614861E52886A000E00F0 /* TSCoreDataModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSCoreDataModels.swift; path = Models/TSCoreDataModels.swift; sourceTree = "<group>"; };
+		A54B1B7D1E53E80E00448C8B /* TSPitScoutingModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSPitScoutingModels.swift; path = Models/TSPitScoutingModels.swift; sourceTree = "<group>"; };
 		A55BA81F1E3EC75D0079B9ED /* TSTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSTeamViewController.swift; path = ViewControllers/TSTeamViewController.swift; sourceTree = "<group>"; };
 		A55BA8211E3FC39B0079B9ED /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		A55BA8231E400C1D0079B9ED /* TSTeamInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSTeamInfoViewController.swift; path = ViewControllers/TSTeamInfoViewController.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				6AD6C7F31DC429260028DB4D /* TSMatchModels.swift */,
+				A54B1B7D1E53E80E00448C8B /* TSPitScoutingModels.swift */,
 				A5058C2B1E4E94A4002A4731 /* TSTIMDModels.swift */,
 				A5EC318E1E43FDC500C57ED3 /* TSTeamModels.swift */,
 				6A6D6B031E0A351C00559506 /* TSScanModels.swift */,
@@ -452,6 +455,7 @@
 				6A28B8641E0895AC00EB2904 /* TSErrorReportViewController.swift in Sources */,
 				6AD6C7F91DC4295D0028DB4D /* TSServerInteractor.swift in Sources */,
 				A55BA8201E3EC75D0079B9ED /* TSTeamViewController.swift in Sources */,
+				A54B1B7E1E53E80E00448C8B /* TSPitScoutingModels.swift in Sources */,
 				AA2072B61E0920AC0001DD6F /* 2017-Scouter-Model.xcdatamodeld in Sources */,
 				6A62F11B1DC4280000479F30 /* ViewController.swift in Sources */,
 				6A62F1191DC4280000479F30 /* AppDelegate.swift in Sources */,

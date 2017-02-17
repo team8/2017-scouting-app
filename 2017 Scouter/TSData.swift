@@ -17,6 +17,7 @@ class Data {
     static var teamList = [Team]()
     static var matchList = [TBAMatch]()
     static var timdList = [TIMD]()
+    static var pitScoutingList = [PitScouting]()
     
     static let fetchesTotal = 2
     static var fetchesComplete = 0
@@ -168,6 +169,7 @@ class Data {
         fetchTeamsFromCoreData(event: event)
         fetchMatchesFromCoreData(event: event)
         fetchTIMDsFromCoreData(event: event)
+        fetchPitScoutingFromCoreData(event: event)
     }
     
     static func fetchTeamsFromCoreData(event: String) {
@@ -260,6 +262,38 @@ class Data {
                     for i: NSManagedObject in managedObjectResults {
                         if (i.value(forKey: "event") as! String == Data.competition!) {
                             timdList.append(TIMD(i))
+                        }
+                    }
+                }
+                
+            }
+            
+        } catch {
+            let fetchError = error as NSError
+            print(fetchError)
+        }
+    }
+    
+    static func fetchPitScoutingFromCoreData(event: String) {
+        //Clear list
+        pitScoutingList.removeAll()
+        
+        //Getting stuff from the appDelegate
+        let appDel = UIApplication.shared.delegate as! AppDelegate
+        let managedContext = appDel.managedObjectContext
+        let entity = NSEntityDescription.entity(forEntityName: "PitScoutingEntity", in: managedContext)
+        
+        //Fetch Request
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>()
+        fetchRequest.entity = entity
+        
+        do {
+            let results = try managedContext.fetch(fetchRequest)
+            if (results.count > 0) {
+                if let managedObjectResults = results as? [NSManagedObject] {
+                    for i: NSManagedObject in managedObjectResults {
+                        if (i.value(forKey: "event") as! String == Data.competition!) {
+                            pitScoutingList.append(PitScouting(i))
                         }
                     }
                 }
