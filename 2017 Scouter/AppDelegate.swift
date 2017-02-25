@@ -19,6 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     var ref: FIRDatabaseReference!
+    
+    static let compList = ["SVR 2016", "Ventura 2017", "SVR 2017", "Champs 2017"]
+    static let compIDs = ["2016casj", "2017cave", "2017casj", "2017cmptx"]
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -40,7 +43,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Fabric initialization
         Fabric.with([Crashlytics.self])
         
-        
+        // Init competition if first launch
+        if (UserDefaults.standard.value(forKey: "competition") == nil) {
+            Data.competition = AppDelegate.compIDs[0]
+            UserDefaults.standard.set(0, forKey: "competition")
+        }
         
         return true
     }

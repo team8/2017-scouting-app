@@ -41,6 +41,10 @@
 		A5CFA19B1DF50CE10008D74F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5CFA19A1DF50CE10008D74F /* GoogleService-Info.plist */; };
 		A5CFD7EE1DF69D8F0062EE74 /* TSData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CFD7ED1DF69D8F0062EE74 /* TSData.swift */; };
 		A5EC318F1E43FDC600C57ED3 /* TSTeamModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC318E1E43FDC500C57ED3 /* TSTeamModels.swift */; };
+		A5FC68921E5FBA5D00CE1DCB /* TSPitListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FC68911E5FBA5D00CE1DCB /* TSPitListViewController.swift */; };
+		A5FC68941E5FBE0300CE1DCB /* TSPitScoutingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FC68931E5FBE0300CE1DCB /* TSPitScoutingViewController.swift */; };
+		A5FC68991E6008DE00CE1DCB /* TSPSSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FC68981E6008DE00CE1DCB /* TSPSSectionViewController.swift */; };
+		A5FC689B1E60090C00CE1DCB /* TSPSDrivetrainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FC689A1E60090C00CE1DCB /* TSPSDrivetrainViewController.swift */; };
 		AA1D86251E14F5FE00B12722 /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1D86241E14F5FE00B12722 /* TeamTableViewCell.swift */; };
 		AA2072B61E0920AC0001DD6F /* 2017-Scouter-Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA2072B41E0920AC0001DD6F /* 2017-Scouter-Model.xcdatamodeld */; };
 		AA2B727B1E07135200BE66DC /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA2B72701E07135200BE66DC /* Lato-Black.ttf */; };
@@ -101,6 +105,10 @@
 		A5CFA19C1DF512D70008D74F /* 2017 Scouter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "2017 Scouter.entitlements"; sourceTree = "<group>"; };
 		A5CFD7ED1DF69D8F0062EE74 /* TSData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSData.swift; sourceTree = "<group>"; };
 		A5EC318E1E43FDC500C57ED3 /* TSTeamModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSTeamModels.swift; path = Models/TSTeamModels.swift; sourceTree = "<group>"; };
+		A5FC68911E5FBA5D00CE1DCB /* TSPitListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSPitListViewController.swift; path = ViewControllers/TSPitListViewController.swift; sourceTree = "<group>"; };
+		A5FC68931E5FBE0300CE1DCB /* TSPitScoutingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSPitScoutingViewController.swift; path = ViewControllers/TSPitScoutingViewController.swift; sourceTree = "<group>"; };
+		A5FC68981E6008DE00CE1DCB /* TSPSSectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSPSSectionViewController.swift; path = "ViewControllers/Pit Scouting Sections/TSPSSectionViewController.swift"; sourceTree = "<group>"; };
+		A5FC689A1E60090C00CE1DCB /* TSPSDrivetrainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSPSDrivetrainViewController.swift; path = "ViewControllers/Pit Scouting Sections/TSPSDrivetrainViewController.swift"; sourceTree = "<group>"; };
 		A5FE9E2C0B557CE2A7CE92E1 /* Pods-2017 Scouter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2017 Scouter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-2017 Scouter/Pods-2017 Scouter.debug.xcconfig"; sourceTree = "<group>"; };
 		AA1D86241E14F5FE00B12722 /* TeamTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
 		AA2072B51E0920AC0001DD6F /* 2017-Scouter-Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "2017-Scouter-Model.xcdatamodel"; sourceTree = "<group>"; };
@@ -180,10 +188,10 @@
 			isa = PBXGroup;
 			children = (
 				6AD6C7F31DC429260028DB4D /* TSMatchModels.swift */,
-				A54B1B7D1E53E80E00448C8B /* TSPitScoutingModels.swift */,
 				A5058C2B1E4E94A4002A4731 /* TSTIMDModels.swift */,
 				A5EC318E1E43FDC500C57ED3 /* TSTeamModels.swift */,
 				6A6D6B031E0A351C00559506 /* TSScanModels.swift */,
+				A54B1B7D1E53E80E00448C8B /* TSPitScoutingModels.swift */,
 				A53614861E52886A000E00F0 /* TSCoreDataModels.swift */,
 			);
 			name = Models;
@@ -192,6 +200,7 @@
 		6AD6C7F61DC429410028DB4D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A5FC68951E60087600CE1DCB /* Pit Scouting Sections */,
 				6A28B8631E0895AC00EB2904 /* TSErrorReportViewController.swift */,
 				A55BA81F1E3EC75D0079B9ED /* TSTeamViewController.swift */,
 				A55BA8231E400C1D0079B9ED /* TSTeamInfoViewController.swift */,
@@ -203,6 +212,8 @@
 				6AFF7DA21E09AE52008F522B /* TSQRCodeViewController.swift */,
 				A5B0E1D11E45529300A2B5AB /* TSMatchViewController.swift */,
 				A5058C291E4E8EB5002A4731 /* TSViewStatsViewController.swift */,
+				A5FC68911E5FBA5D00CE1DCB /* TSPitListViewController.swift */,
+				A5FC68931E5FBE0300CE1DCB /* TSPitScoutingViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -214,6 +225,15 @@
 				A5058C2D1E4EC9A1002A4731 /* TSFirebaseInteractor.swift */,
 			);
 			name = Server;
+			sourceTree = "<group>";
+		};
+		A5FC68951E60087600CE1DCB /* Pit Scouting Sections */ = {
+			isa = PBXGroup;
+			children = (
+				A5FC689A1E60090C00CE1DCB /* TSPSDrivetrainViewController.swift */,
+				A5FC68981E6008DE00CE1DCB /* TSPSSectionViewController.swift */,
+			);
+			name = "Pit Scouting Sections";
 			sourceTree = "<group>";
 		};
 		AA2B726F1E07135200BE66DC /* Lato */ = {
@@ -440,6 +460,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5CFD7EE1DF69D8F0062EE74 /* TSData.swift in Sources */,
+				A5FC689B1E60090C00CE1DCB /* TSPSDrivetrainViewController.swift in Sources */,
 				6AFF7DA31E09AE52008F522B /* TSQRCodeViewController.swift in Sources */,
 				A55BA8241E400C1E0079B9ED /* TSTeamInfoViewController.swift in Sources */,
 				A5827D3A1E41A29A007382C9 /* TSTeamMatchesViewController.swift in Sources */,
@@ -456,11 +477,14 @@
 				6AD6C7F91DC4295D0028DB4D /* TSServerInteractor.swift in Sources */,
 				A55BA8201E3EC75D0079B9ED /* TSTeamViewController.swift in Sources */,
 				A54B1B7E1E53E80E00448C8B /* TSPitScoutingModels.swift in Sources */,
+				A5FC68991E6008DE00CE1DCB /* TSPSSectionViewController.swift in Sources */,
 				AA2072B61E0920AC0001DD6F /* 2017-Scouter-Model.xcdatamodeld in Sources */,
 				6A62F11B1DC4280000479F30 /* ViewController.swift in Sources */,
 				6A62F1191DC4280000479F30 /* AppDelegate.swift in Sources */,
+				A5FC68921E5FBA5D00CE1DCB /* TSPitListViewController.swift in Sources */,
 				6AD6C7F41DC429260028DB4D /* TSMatchModels.swift in Sources */,
 				AAA730F01E1333490003ECC0 /* UnplayedTableViewCell.swift in Sources */,
+				A5FC68941E5FBE0300CE1DCB /* TSPitScoutingViewController.swift in Sources */,
 				A5058C2A1E4E8EB5002A4731 /* TSViewStatsViewController.swift in Sources */,
 				A5C4DAF11DF5F24A00A337FB /* TSMenuViewController.swift in Sources */,
 			);

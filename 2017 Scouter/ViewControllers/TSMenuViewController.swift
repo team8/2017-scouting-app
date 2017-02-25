@@ -23,8 +23,6 @@ class MenuViewController: ViewController, UITextFieldDelegate, UIPickerViewDataS
     var hasPrevious = false
     
     @IBOutlet weak var compTextField: UITextField!
-    let compList = ["SVR 2016", "Ventura 2017", "SVR 2017", "Champs 2017"]
-    let compIDs = ["2016casj", "2017cave", "2017casj", "2017cmptx"]
     let pickerView = UIView(frame: CGRect(x: 0, y: 0, width: 320, height: 200))
     let doneButton = UIButton(frame: CGRect(x: 220, y: 0, width: 100, height: 50))
     let picker = UIPickerView(frame: CGRect(x: 0, y: 50, width: 320, height: 150))
@@ -124,8 +122,8 @@ class MenuViewController: ViewController, UITextFieldDelegate, UIPickerViewDataS
             self.hasPrevious = false
             backButton.isHidden = true
         }
-        compTextField.text = compList[index]
-        Data.competition = compIDs[index]
+        compTextField.text = AppDelegate.compList[index]
+        Data.competition = AppDelegate.compIDs[index]
         UserDefaults.standard.set(index, forKey: "competition")
         Data.fetchFromCoreData(event: Data.competition!)
     }
@@ -140,11 +138,11 @@ class MenuViewController: ViewController, UITextFieldDelegate, UIPickerViewDataS
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return compList.count
+        return AppDelegate.compList.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return compList[row]
+        return AppDelegate.compList[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {

@@ -17,7 +17,8 @@ class Data {
     static var teamList = [Team]()
     static var matchList = [TBAMatch]()
     static var timdList = [TIMD]()
-    static var pitScoutingList = [PitScouting]()
+    //    static var pitScoutingList = [PitScouting]()
+    static var pitScoutingList = [PitScouting(teamNumber: 8)]
     
     static let fetchesTotal = 2
     static var fetchesComplete = 0
@@ -169,7 +170,7 @@ class Data {
         fetchTeamsFromCoreData(event: event)
         fetchMatchesFromCoreData(event: event)
         fetchTIMDsFromCoreData(event: event)
-        fetchPitScoutingFromCoreData(event: event)
+//        fetchPitScoutingFromCoreData(event: event)
     }
     
     static func fetchTeamsFromCoreData(event: String) {

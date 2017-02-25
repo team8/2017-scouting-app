@@ -15,14 +15,15 @@ class PitScouting: CoreData {
     
     var stats = [String: Any]()
     
-    init(_ teamNumber: Int) {
+    init(teamNumber: Int) {
         self.teamNumber = teamNumber
         super.init(entityName: "PitScoutingEntity")
     }
     
-    init(_ teamNumber: Int, data: NSDictionary) {
+    init(teamNumber: Int, data: NSDictionary) {
         self.stats = data as! [String : Any]
-        self.init(teamNumber)
+        self.teamNumber = teamNumber
+        super.init(entityName: "PitScoutingEntity")
     }
     
     override init(_ managedObject: NSManagedObject) {
