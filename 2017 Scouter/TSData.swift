@@ -191,8 +191,10 @@ class Data {
             if (results.count > 0) {
                 if let managedObjectResults = results as? [NSManagedObject] {
                     for i: NSManagedObject in managedObjectResults {
-                        if (i.value(forKey: "event") as! String == Data.competition!) {
-                            teamList.append(Team(i))
+                        if let eventKey = i.value(forKey: "event") {
+                            if (eventKey as! String == Data.competition!) {
+                                teamList.append(Team(i))
+                            }
                         }
                     }
                 }
