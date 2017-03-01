@@ -119,7 +119,7 @@ class Data {
     
     static func handleFirebaseJSON(value: NSDictionary) -> Void {
         if (((value.value(forKey: "query") as! NSDictionary).value(forKey: "success"))! as! String == "yes") {
-            let teams = (value.value(forKey: "query") as! NSDictionary).value(forKey: "teams") as! NSDictionary
+            let teams = ((value.value(forKey: "query") as! NSDictionary).value(forKey: "event") as! NSDictionary).value(forKey: "teams") as! NSDictionary
             //Set team data
             for (team) in teamList {
                 if let t = teams.value(forKey: "frc" + String(team.teamNumber)) {
@@ -133,6 +133,7 @@ class Data {
                 timd.deleteFromCoreData()
             }
             timdList.removeAll()
+//            print(teams)
             for (teamKey, value) in teams {
                 let teamDict = value as! NSDictionary
                 let teamNumber = Int((teamKey as! String).components(separatedBy: "frc")[1])!
@@ -145,13 +146,14 @@ class Data {
                 }
             }
             
-            //Fetch finished
-            completeFunction!()
-            saveAllToCoreData()
         }
         else {
             print(value)
         }
+        
+        //Fetch finished
+        completeFunction!()
+        saveAllToCoreData()
     }
     
     static func saveAllToCoreData() {

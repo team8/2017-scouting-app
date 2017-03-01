@@ -9,10 +9,10 @@
 import Foundation
 import UIKit
 
-class PSSectionViewController: ViewController {
+class PSSectionViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
+        super.viewWillAppear(animated)
         self.view.layer.backgroundColor = UIColor.clear.cgColor
     }
 }

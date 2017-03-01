@@ -9,10 +9,8 @@
 import Foundation
 import UIKit
 
-class PSDrivetrainViewController: PSSectionViewController {
-    
+class PSDriverExperienceViewController: PSSectionViewController {
     @IBOutlet var borderButtons: [UIButton]!
-    @IBOutlet var borderFields: [UITextField]!
     @IBOutlet var borderAreas: [UITextView]!
     
     override func viewWillAppear(_ animated: Bool) {
@@ -20,10 +18,6 @@ class PSDrivetrainViewController: PSSectionViewController {
         for button in self.borderButtons {
             button.layer.borderColor = UIColor.white.cgColor
             button.layer.borderWidth = 1
-        }
-        for field in self.borderFields {
-            field.layer.borderColor = UIColor.white.cgColor
-            field.layer.borderWidth = 1
         }
         for area in borderAreas {
             area.layer.borderColor = UIColor.white.cgColor

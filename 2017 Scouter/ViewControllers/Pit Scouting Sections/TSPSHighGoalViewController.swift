@@ -9,8 +9,7 @@
 import Foundation
 import UIKit
 
-class PSDrivetrainViewController: PSSectionViewController {
-    
+class PSHighGoalViewController: PSSectionViewController {
     @IBOutlet var borderButtons: [UIButton]!
     @IBOutlet var borderFields: [UITextField]!
     @IBOutlet var borderAreas: [UITextView]!

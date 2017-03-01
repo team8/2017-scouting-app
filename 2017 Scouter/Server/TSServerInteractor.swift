@@ -62,32 +62,54 @@ class ServerInterfacer {
     }
     
     static func getMatches(_ callback: @escaping (NSDictionary) -> Void, key : String) -> Void {
+        print("[Server Interactor] Retrieving matches for event " + key)
         Alamofire.request(SERVER_ADDRESS + "/" + AUTH_TOKEN + "/match/" + key, headers: nil)
             .responseJSON { response in
                 if let JSON = response.result.value {
+                    print("[Server Interactor] Successfully retrieved matches for event " + key)
 //                    print("JSON: \(JSON)")
                     let rawVal = JSON as! NSDictionary
                     callback(rawVal)
                 }
-                else {
+                else if let status = response.result.error?._code {
                     print(response)
-                    print("[ERROR] Error parsing server response, please make sure the server is running.")
+                    switch(status){
+                    case -1009:
+                        print("[Server Interactor] Error retrieving matches for event " + key + ": The Internet connection appears to be offline.")
+                    default:
+                        print("[Server Interactor] Error parsing server response, please make sure the server is running.")
+                    }
+                    callback(["query": ["success": "no"]])
+                } else {
+                    print(response)
+                    print("[Server Interactor] Error parsing server response, please make sure the server is running.")
                     callback(["query": ["success": "no"]])
                 }
         }
     }
     
     static func getTeams(_ callback: @escaping (NSDictionary) -> Void, key : String) -> Void {
+        print("[Server Interactor] Retrieving teams for event " + key)
         Alamofire.request(SERVER_ADDRESS + "/" + AUTH_TOKEN + "/teams/" + key, headers: nil)
             .responseJSON { response in
                 if let JSON = response.result.value {
+                    print("[Server Interactor] Successfully retrieved teams for event " + key)
 //                    print("JSON: \(JSON)")
                     let rawVal = JSON as! NSDictionary
                     callback(rawVal)
                 }
-                else {
+                else if let status = response.result.error?._code {
                     print(response)
-                    print("[ERROR] Error parsing server response, please make sure the server is running.")
+                    switch(status){
+                    case -1009:
+                        print("[Server Interactor] Error retrieving teams for event " + key + ": The Internet connection appears to be offline.")
+                    default:
+                        print("[Server Interactor] Error parsing server response, please make sure the server is running.")
+                    }
+                    callback(["query": ["success": "no"]])
+                } else {
+                    print(response)
+                    print("[Server Interactor] Error parsing server response, please make sure the server is running.")
                     callback(["query": ["success": "no"]])
                 }
         }

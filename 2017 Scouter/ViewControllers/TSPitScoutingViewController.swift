@@ -61,7 +61,7 @@ class PitScoutingSectionView: UIView {
             state = false
         } else {
             
-            self.height.constant = 55 + self.container.frame.height
+            self.height.constant = 50 + self.container.frame.height
             state = true
         }
         UIView.animate(withDuration: 0.5, animations: {
