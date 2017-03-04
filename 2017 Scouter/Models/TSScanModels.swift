@@ -14,7 +14,7 @@ import UIKit
  */
 class ScannedMatchData {
     
-    static let CURRENT_DATA_ELEMENTS_NUMBER : Int = 45
+    static let CURRENT_DATA_ELEMENTS_NUMBER : Int = 46
     
     var scoringElements = [String: String]()
     
@@ -47,30 +47,30 @@ class ScannedMatchData {
         scoringElements["tele_gears_position_boiler"] = splitVersion[19]
         scoringElements["tele_gears_position_middle"] = splitVersion[20]
         scoringElements["tele_gears_position_loading"] = splitVersion[21]
-        scoringElements["tele_gears_dropped"] = splitVersion[21]
-        scoringElements["tele_gears_intake_ground"] = splitVersion[22]
-        scoringElements["tele_gears_intake_loading_station"] = splitVersion[23]
-        scoringElements["tele_gears_intake_dropped"] = splitVersion[24]
-        scoringElements["tele_gears_cycles_times"] = splitVersion[25]
-        scoringElements["tele_fuel_high_cycles"] = splitVersion[26]
-        scoringElements["tele_fuel_high_cycles_in_key"] = splitVersion[27]
-        scoringElements["tele_fuel_high_cycles_out_of_key"] = splitVersion[28]
-        scoringElements["tele_fuel_high_cycles_times"] = splitVersion[29]
-        scoringElements["tele_fuel_low_cycles"] = splitVersion[30]
-        scoringElements["tele_fuel_low_cycles_times"] = splitVersion[31]
-        scoringElements["tele_fuel_intake_hopper"] = splitVersion[32]
-        scoringElements["tele_fuel_intake_loading_station"] = splitVersion[33]
-        scoringElements["end_no_show"] = splitVersion[34]
-        scoringElements["end_takeoff"] = splitVersion[35]
-        scoringElements["end_takeoff_speed"] = splitVersion[36]
-        scoringElements["end_defense"] = splitVersion[37]
-        scoringElements["end_defense_rating"] = splitVersion[38]
-        scoringElements["end_gear_ground_intake"] = splitVersion[39]
-        scoringElements["end_gear_ground_intake_rating"] = splitVersion[40]
-        scoringElements["end_fuel_ground_intake"] = splitVersion[41]
-        scoringElements["end_fuel_ground_intake_rating"] = splitVersion[42]
-        scoringElements["end_notes"] = splitVersion[43]
-        scoringElements["event"] = splitVersion[44]
+        scoringElements["tele_gears_dropped"] = splitVersion[22]
+        scoringElements["tele_gears_intake_ground"] = splitVersion[23]
+        scoringElements["tele_gears_intake_loading_station"] = splitVersion[24]
+        scoringElements["tele_gears_intake_dropped"] = splitVersion[25]
+        scoringElements["tele_gears_cycles_times"] = splitVersion[26]
+        scoringElements["tele_fuel_high_cycles"] = splitVersion[27]
+        scoringElements["tele_fuel_high_cycles_in_key"] = splitVersion[28]
+        scoringElements["tele_fuel_high_cycles_out_of_key"] = splitVersion[29]
+        scoringElements["tele_fuel_high_cycles_times"] = splitVersion[30]
+        scoringElements["tele_fuel_low_cycles"] = splitVersion[31]
+        scoringElements["tele_fuel_low_cycles_times"] = splitVersion[32]
+        scoringElements["tele_fuel_intake_hopper"] = splitVersion[33]
+        scoringElements["tele_fuel_intake_loading_station"] = splitVersion[34]
+        scoringElements["end_no_show"] = splitVersion[35]
+        scoringElements["end_takeoff"] = splitVersion[36]
+        scoringElements["end_takeoff_speed"] = splitVersion[37]
+        scoringElements["end_defense"] = splitVersion[38]
+        scoringElements["end_defense_rating"] = splitVersion[39]
+        scoringElements["end_gear_ground_intake"] = splitVersion[40]
+        scoringElements["end_gear_ground_intake_rating"] = splitVersion[41]
+        scoringElements["end_fuel_ground_intake"] = splitVersion[42]
+        scoringElements["end_fuel_ground_intake_rating"] = splitVersion[43]
+        scoringElements["end_notes"] = splitVersion[44]
+        scoringElements["event"] = splitVersion[45]
     }
     
     
