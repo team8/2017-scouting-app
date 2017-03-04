@@ -94,8 +94,12 @@ class Data {
                 for (num) in (payloadDict.object(forKey: "red") as! [Int]) {
                     red.append(Data.getTeam(withNumber: num)!)
                 }
-                let scoreBreakdown = payloadDict.object(forKey: "score_breakdown") as! NSDictionary
-                let match = TBAMatch(keyV: name, blueAlliance: blue, redAlliance: red, scoreBreakdown: scoreBreakdown)
+                var match: TBAMatch
+                if let scoreBreakdown = payloadDict.object(forKey: "score_breakdown") as? NSDictionary {
+                    match = TBAMatch(keyV: name, blueAlliance: blue, redAlliance: red, scoreBreakdown: scoreBreakdown)
+                } else {
+                    	match = TBAMatch(keyV: name, blueAlliance: blue, redAlliance: red, scoreBreakdown: nil)
+                }
 //                match.saveToCoreData()
                 matchList.append(match)
                 
