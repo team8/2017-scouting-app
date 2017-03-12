@@ -16,3 +16,10 @@ class PSSectionViewController: UIViewController {
         self.view.layer.backgroundColor = UIColor.clear.cgColor
     }
 }
+class ButtonGroup: UIStackView {
+    
+    @IBOutlet var buttons: [UIButton]!
+    
+    
+    
+}

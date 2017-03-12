@@ -88,16 +88,16 @@ class TBAMatch: CoreData {
             self.blueScore = blueDict.object(forKey: "totalPoints") as? Int
             self.redScore = redDict.object(forKey: "totalPoints") as? Int
             
-            self.blueRotor = Int(NSNumber(value: blueDict.object(forKey: "teleopDefensesBreached") as! Bool))
-            self.redRotor = Int(NSNumber(value: redDict.object(forKey: "teleopDefensesBreached") as! Bool))
-//            print(Int(NSNumber(value: blueDict.object(forKey: "teleopDefensesBreached") as! Bool)))
-            self.blueFortyKPa = blueDict.object(forKey: "teleopTowerCaptured") as? Bool
-            self.redFortyKPa = redDict.object(forKey: "teleopTowerCaptured") as? Bool
+//            self.blueRotor = Int(NSNumber(value: blueDict.object(forKey: "teleopDefensesBreached") as! Bool))
+//            self.redRotor = Int(NSNumber(value: redDict.object(forKey: "teleopDefensesBreached") as! Bool))
+////            print(Int(NSNumber(value: blueDict.object(forKey: "teleopDefensesBreached") as! Bool)))
+//            self.blueFortyKPa = blueDict.object(forKey: "teleopTowerCaptured") as? Bool
+//            self.redFortyKPa = redDict.object(forKey: "teleopTowerCaptured") as? Bool
             
-//            self.blueRotor = Int(NSNumber(value: (blueDict.object(forKey: "rotor1Engaged") as! Int))) + Int(NSNumber(value: (blueDict.object(forKey: "rotor2Engaged"))) as! Int) + Int(NSNumber(value: (blueDict.object(forKey: "rotor3Engaged") as! Int))) + Int(NSNumber(value: (blueDict.object(forKey: "rotor4Engaged") as! Int)))
-//            self.redRotor = Int(NSNumber(value: (redDict.object(forKey: "rotor1Engaged") as! Int))) + Int(NSNumber(value: (redDict.object(forKey: "rotor2Engaged") as! Int))) + Int(NSNumber(value: (redDict.object(forKey: "rotor3Engaged") as! Int))) + Int(NSNumber(value: (redDict.object(forKey: "rotor4Engaged") as! Int)))
-//            self.blueFortyKPa = blueDict.object(forKey: "kPaRankingPointAchieved") as! Bool
-            //            self.redFortyKPa = redDict.object(forKey: "kPaRankingPointAchieved") as! Bool
+            self.blueRotor = Int(NSNumber(value: (blueDict.object(forKey: "rotor1Engaged") as! Bool))) + Int(NSNumber(value: (blueDict.object(forKey: "rotor2Engaged") as! Bool))) + Int(NSNumber(value: (blueDict.object(forKey: "rotor3Engaged") as! Bool))) + Int(NSNumber(value: (blueDict.object(forKey: "rotor4Engaged") as! Bool)))
+            self.redRotor = Int(NSNumber(value: (redDict.object(forKey: "rotor1Engaged") as! Bool))) + Int(NSNumber(value: (redDict.object(forKey: "rotor2Engaged") as! Bool))) + Int(NSNumber(value: (redDict.object(forKey: "rotor3Engaged") as! Bool))) + Int(NSNumber(value: (redDict.object(forKey: "rotor4Engaged") as! Bool)))
+            self.blueFortyKPa = blueDict.object(forKey: "kPaRankingPointAchieved") as? Bool
+            self.redFortyKPa = redDict.object(forKey: "kPaRankingPointAchieved") as? Bool
         }
         self.blue = blueAlliance
         self.red = redAlliance

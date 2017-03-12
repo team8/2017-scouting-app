@@ -126,9 +126,10 @@ class Data {
             let teams = ((value.value(forKey: "query") as! NSDictionary).value(forKey: "event") as! NSDictionary).value(forKey: "teams") as! NSDictionary
             //Set team data
             for (team) in teamList {
-                if let t = teams.value(forKey: "frc" + String(team.teamNumber)) {
-                    let data = (t as! NSDictionary).value(forKey: "data") as! NSDictionary
-                    team.setFirebaseData(data: data)
+                if let t = teams.value(forKey: String(team.teamNumber)) {
+                    if let data = (t as! NSDictionary).value(forKey: "data") {
+                        team.setFirebaseData(data: data as! NSDictionary)
+                    }
                 }
             }
             
@@ -140,13 +141,17 @@ class Data {
 //            print(teams)
             for (teamKey, value) in teams {
                 let teamDict = value as! NSDictionary
-                let teamNumber = Int((teamKey as! String).components(separatedBy: "frc")[1])!
+//                let teamNumber = Int((teamKey as! String).components(separatedBy: "frc")[1])!
+                let teamNumber = Int(teamKey as! String)!
                 let team = Data.getTeam(withNumber: teamNumber)!
-                for (matchKey, data) in teamDict.value(forKey: "timd") as! NSDictionary {
-                    let match = Data.getMatch(withKey: Data.competition! + "_" + (matchKey as! String))!
-                    let timd = TIMD(team: team, match: match, data: data as! NSDictionary)
-//                    timd.saveToCoreData()
-                    timdList.append(timd)
+                for (compLevel, d) in teamDict.value(forKey: "timd") as! NSDictionary {
+//                for (compLevel, d) in teamDict.value(forKey: "matches") as! NSDictionary {
+                    for (matchNum, data) in d as! NSDictionary {
+                        let match = Data.getMatch(withKey: Data.competition! + "_" + (compLevel as! String) + (matchNum as! String))!
+                        let timd = TIMD(team: team, match: match, data: data as! NSDictionary)
+//                      timd.saveToCoreData()
+                        timdList.append(timd)
+                    }
                 }
             }
             

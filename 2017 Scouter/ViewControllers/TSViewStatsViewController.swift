@@ -69,6 +69,9 @@ class ViewStatsViewController: ViewController, UITableViewDataSource, UITableVie
         cell.textLabel?.textColor = UIColor.white
         cell.backgroundColor = UIColor.clear
         
+        cell.textLabel?.numberOfLines=0
+        cell.textLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
+        
         return cell
     }
     
@@ -94,6 +97,10 @@ class ViewStatsViewController: ViewController, UITableViewDataSource, UITableVie
             vc.previousViewController = navStack?[(navStack?.count)! - 3] as! ViewController?
             vc.teamNumber = (self.previousViewController as! TeamViewController).teamNumber
         }
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

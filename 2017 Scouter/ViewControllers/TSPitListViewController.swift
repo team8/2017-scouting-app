@@ -54,7 +54,7 @@ class PitListViewController: ViewController, UITableViewDelegate, UITableViewDat
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
         if (segue.identifier == "pitListToPitScouting") {
             let secondViewController = segue.destination as! PitScoutingViewController
-            let teamNumber = sender as! Int
+//            let teamNumber = sender as! Int
             secondViewController.previousViewController = self
 //            secondViewController.teamNumber = teamNumber
         }
