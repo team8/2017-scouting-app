@@ -9,9 +9,15 @@
 import Foundation
 import UIKit
 
-class PSDriverExperienceViewController: PSSectionViewController {
+class PSDriverExperienceViewController: PSSectionViewController, UITextViewDelegate {
     @IBOutlet var borderButtons: [UIButton]!
     @IBOutlet var borderAreas: [UITextView]!
+    
+    @IBOutlet weak var exp: ButtonGroup!
+    @IBOutlet weak var practice: ButtonGroup!
+    @IBOutlet weak var notes: UITextView!
+    
+    override var tag: Int { get { return 8 } }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -23,5 +29,25 @@ class PSDriverExperienceViewController: PSSectionViewController {
             area.layer.borderColor = UIColor.white.cgColor
             area.layer.borderWidth = 1
         }
+        self.notes.delegate = self
+        self.notes.returnKeyType = .done
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if (text == "\n") {
+            textView.resignFirstResponder()
+        }
+        return true
+    }
+    
+    override func getData() -> [String : String]? {
+        if (exp.value == nil || practice.value == nil) {
+            return nil
+        }
+        return [
+            "driver_exp": exp.value!,
+            "driver_practice": practice.value!,
+            "driver_notes": notes.text!
+        ]
     }
 }

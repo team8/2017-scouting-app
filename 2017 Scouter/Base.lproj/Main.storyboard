@@ -172,7 +172,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RR7-ZH-HMk">
-                                <rect key="frame" x="0.0" y="30" width="70" height="50"/>
+                                <rect key="frame" x="0.0" y="29" width="70" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="VEd-TA-Dax"/>
                                     <constraint firstAttribute="height" constant="50" id="nJX-fS-Pzf"/>
@@ -322,6 +322,9 @@
                                 <state key="normal" title="Upload Data">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveUploadPressed:" destination="ycK-d9-3w9" eventType="touchUpInside" id="kEM-lh-a7N"/>
+                                </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yAv-yo-KeT">
                                 <rect key="frame" x="16" y="159" width="288" height="334"/>
@@ -370,7 +373,7 @@
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ewQ-OX-SM9" customClass="PitScoutingSectionView" customModule="_017_Scouter" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55" width="288" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8bS-cY-1aN">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8bS-cY-1aN">
                                                 <rect key="frame" x="0.0" y="0.0" width="288" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="cP1-ML-277"/>
@@ -411,7 +414,7 @@
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nvb-X8-rol" customClass="PitScoutingSectionView" customModule="_017_Scouter" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="110" width="288" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XGL-j2-3tO">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XGL-j2-3tO">
                                                 <rect key="frame" x="0.0" y="0.0" width="288" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="7Tb-jm-c1H"/>
@@ -452,7 +455,7 @@
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RC2-Mf-IOF" customClass="PitScoutingSectionView" customModule="_017_Scouter" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="165" width="288" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8fp-4S-dKz">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8fp-4S-dKz">
                                                 <rect key="frame" x="0.0" y="0.0" width="288" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="Skf-5p-4j1"/>
@@ -493,7 +496,7 @@
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VA1-dS-w5K" customClass="PitScoutingSectionView" customModule="_017_Scouter" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="220" width="288" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ua-Lk-yga">
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ua-Lk-yga">
                                                 <rect key="frame" x="0.0" y="0.0" width="288" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="giC-2V-Ruf"/>
@@ -534,7 +537,7 @@
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Vj-6n-9DY" customClass="PitScoutingSectionView" customModule="_017_Scouter" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="275" width="288" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRZ-Bi-7cZ">
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRZ-Bi-7cZ">
                                                 <rect key="frame" x="0.0" y="0.0" width="288" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="Df0-CA-JaZ"/>
@@ -575,7 +578,7 @@
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="58X-hE-YHY" customClass="PitScoutingSectionView" customModule="_017_Scouter" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="330" width="288" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IIZ-2V-1oy">
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IIZ-2V-1oy">
                                                 <rect key="frame" x="0.0" y="0.0" width="288" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="0fh-Vw-aaE"/>
@@ -616,7 +619,7 @@
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MiP-Pg-mto" customClass="PitScoutingSectionView" customModule="_017_Scouter" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="385" width="288" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ymA-Sb-bVU">
+                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ymA-Sb-bVU">
                                                 <rect key="frame" x="0.0" y="0.0" width="288" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="Pk5-WI-6RH"/>
@@ -657,7 +660,7 @@
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hKx-Y5-2ql" customClass="PitScoutingSectionView" customModule="_017_Scouter" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="440" width="288" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="flu-dH-D5P">
+                                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="flu-dH-D5P">
                                                 <rect key="frame" x="0.0" y="0.0" width="288" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="4VP-yd-ChB"/>
@@ -749,6 +752,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="editButton" destination="vWD-9Z-QjD" id="Qzw-q2-m2c"/>
+                        <outlet property="saveUploadButton" destination="T0c-aR-n1r" id="gM0-5d-CRf"/>
                         <outlet property="scrollView" destination="yAv-yo-KeT" id="jjo-NV-dyd"/>
                         <outletCollection property="sectionViews" destination="eBj-xD-MjP" collectionClass="NSMutableArray" id="XGP-ia-oHF"/>
                         <outletCollection property="sectionViews" destination="ewQ-OX-SM9" collectionClass="NSMutableArray" id="BHK-0c-h7t"/>
@@ -1057,7 +1062,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HWa-be-RUA">
-                                <rect key="frame" x="0.0" y="31" width="70" height="50"/>
+                                <rect key="frame" x="0.0" y="30" width="70" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="DB2-2J-thD"/>
                                     <constraint firstAttribute="width" constant="70" id="ckj-Mr-AZh"/>
@@ -1269,7 +1274,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="frr-0K-FtF">
-                                <rect key="frame" x="0.0" y="30" width="70" height="50"/>
+                                <rect key="frame" x="0.0" y="29" width="70" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="M5w-uR-MW1"/>
                                     <constraint firstAttribute="height" constant="50" id="hQA-0E-WvE"/>
@@ -1295,13 +1300,13 @@
                                 </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sXn-AO-Y6p">
-                                <rect key="frame" x="0.0" y="127" width="320" height="441"/>
+                                <rect key="frame" x="0.0" y="126" width="320" height="442"/>
                                 <connections>
                                     <segue destination="dQ7-0x-CgG" kind="embed" identifier="teamEmbed" id="ng0-1J-srA"/>
                                 </connections>
                             </containerView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="mKM-cl-h9L">
-                                <rect key="frame" x="70" y="91" width="180" height="29"/>
+                                <rect key="frame" x="70" y="90" width="180" height="29"/>
                                 <segments>
                                     <segment title="Info"/>
                                     <segment title="Matches"/>
@@ -1312,7 +1317,7 @@
                                 </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BIT-e3-wvX">
-                                <rect key="frame" x="0.0" y="80" width="70" height="50"/>
+                                <rect key="frame" x="0.0" y="79" width="70" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="Odj-FD-slI"/>
                                     <constraint firstAttribute="height" constant="50" id="Ua0-tK-dXl"/>
@@ -1499,13 +1504,13 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Matches" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L1C-lb-KiG">
-                                <rect key="frame" x="89" y="28" width="144" height="47"/>
+                                <rect key="frame" x="88" y="28" width="144" height="47"/>
                                 <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="39"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ssX-CS-bw6">
-                                <rect key="frame" x="0.0" y="30" width="70" height="50"/>
+                                <rect key="frame" x="0.0" y="29" width="70" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="AmM-gJ-p9r"/>
                                     <constraint firstAttribute="width" constant="70" id="RJ9-Fj-wQ7"/>
@@ -1990,7 +1995,7 @@
                         <viewControllerLayoutGuide type="bottom" id="7fp-Wr-JvV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fkq-9f-R3j">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="441"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="442"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3la-4i-lRt">
@@ -2145,7 +2150,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stats For Team 9999 in QM99" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7vQ-bA-3pY">
-                                <rect key="frame" x="70" y="28" width="180" height="68"/>
+                                <rect key="frame" x="70" y="28" width="180" height="67.5"/>
                                 <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="28"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -2327,10 +2332,10 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="223" height="52"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xs1-Yv-Fi7">
-                                                            <rect key="frame" x="0.0" y="0.0" width="112" height="52"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="111.5" height="52"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sxe-s3-svZ">
-                                                                    <rect key="frame" x="62" y="17" width="42" height="29"/>
+                                                                    <rect key="frame" x="61.5" y="17" width="42" height="29"/>
                                                                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="24"/>
                                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -2359,7 +2364,7 @@
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pny-yS-zfp">
-                                                            <rect key="frame" x="112" y="0.0" width="111" height="52"/>
+                                                            <rect key="frame" x="111.5" y="0.0" width="111.5" height="52"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afb-Ag-0nf">
                                                                     <rect key="frame" x="8" y="17" width="42" height="29"/>
@@ -2368,7 +2373,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jrj-O8-YP6">
-                                                                    <rect key="frame" x="68" y="4" width="35" height="44"/>
+                                                                    <rect key="frame" x="68.5" y="4" width="35" height="44"/>
                                                                     <string key="text">99999
 99999
 99999</string>
@@ -2487,7 +2492,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="1gj-4Z-t60">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="1gj-4Z-t60" customClass="ButtonGroup" customModule="_017_Scouter" customModuleProvider="target">
                                 <rect key="frame" x="16" y="51" width="256" height="112"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Eb-ml-uuZ">
@@ -2496,6 +2501,9 @@
                                         <state key="normal" title="Fast (0-5 seconds)">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="1gj-4Z-t60" eventType="touchUpInside" id="MLC-PT-lLN"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDb-sF-u5D">
                                         <rect key="frame" x="0.0" y="39" width="256" height="34"/>
@@ -2503,6 +2511,9 @@
                                         <state key="normal" title="Medium (5-10 seconds)">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="1gj-4Z-t60" eventType="touchUpInside" id="cE0-88-7rL"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LTd-qp-BhN">
                                         <rect key="frame" x="0.0" y="78" width="256" height="34"/>
@@ -2510,10 +2521,18 @@
                                         <state key="normal" title="Slow (10+ seconds)">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="1gj-4Z-t60" eventType="touchUpInside" id="dzX-kS-gUn"/>
+                                        </connections>
                                     </button>
                                 </subviews>
+                                <connections>
+                                    <outletCollection property="buttons" destination="7Eb-ml-uuZ" collectionClass="NSMutableArray" id="hyS-Io-bJB"/>
+                                    <outletCollection property="buttons" destination="TDb-sF-u5D" collectionClass="NSMutableArray" id="I88-3T-WUg"/>
+                                    <outletCollection property="buttons" destination="LTd-qp-BhN" collectionClass="NSMutableArray" id="bHn-Qq-GG7"/>
+                                </connections>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="AAm-e9-IN9">
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="AAm-e9-IN9" customClass="ButtonGroup" customModule="_017_Scouter" customModuleProvider="target">
                                 <rect key="frame" x="16" y="173" width="256" height="34"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Own rope?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pCM-Hr-ndW">
@@ -2528,6 +2547,9 @@
                                         <state key="normal" title="Yes">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="AAm-e9-IN9" eventType="touchUpInside" id="wcD-b2-A56"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Acg-iq-ZMq">
                                         <rect key="frame" x="190" y="0.0" width="66" height="34"/>
@@ -2535,13 +2557,20 @@
                                         <state key="normal" title="No">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="AAm-e9-IN9" eventType="touchUpInside" id="I7i-b9-4mm"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="bbR-95-HTP" firstAttribute="width" secondItem="Acg-iq-ZMq" secondAttribute="width" id="zfb-gy-XtW"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="buttons" destination="bbR-95-HTP" collectionClass="NSMutableArray" id="qdB-a6-7BY"/>
+                                    <outletCollection property="buttons" destination="Acg-iq-ZMq" collectionClass="NSMutableArray" id="FVK-f6-WHk"/>
+                                </connections>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ONi-8H-15i">
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ONi-8H-15i" customClass="ButtonGroup" customModule="_017_Scouter" customModuleProvider="target">
                                 <rect key="frame" x="16" y="256" width="257" height="34"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n3t-JK-avu">
@@ -2550,6 +2579,9 @@
                                         <state key="normal" title="Yes">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="ONi-8H-15i" eventType="touchUpInside" id="uTQ-0D-Pha"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKP-gG-8Rc">
                                         <rect key="frame" x="131" y="0.0" width="126" height="34"/>
@@ -2557,11 +2589,18 @@
                                         <state key="normal" title="No">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="ONi-8H-15i" eventType="touchUpInside" id="fe0-90-XqP"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="n3t-JK-avu" firstAttribute="width" secondItem="cKP-gG-8Rc" secondAttribute="width" id="Tl7-sM-DXx"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="buttons" destination="n3t-JK-avu" collectionClass="NSMutableArray" id="x2p-hs-olu"/>
+                                    <outletCollection property="buttons" destination="cKP-gG-8Rc" collectionClass="NSMutableArray" id="2Qj-q1-geg"/>
+                                </connections>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="d1L-pW-b6R">
                                 <rect key="frame" x="16" y="383" width="256" height="166"/>
@@ -2589,7 +2628,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Can we climb their rope?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YAl-1X-WGe">
-                                <rect key="frame" x="15" y="217" width="258" height="29"/>
+                                <rect key="frame" x="15.5" y="217" width="257.5" height="29"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -2600,7 +2639,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="u1q-KH-O7U">
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="u1q-KH-O7U" customClass="ButtonGroup" customModule="_017_Scouter" customModuleProvider="target">
                                 <rect key="frame" x="16" y="339" width="257" height="34"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ulD-IV-A8h">
@@ -2609,6 +2648,9 @@
                                         <state key="normal" title="Yes">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="u1q-KH-O7U" eventType="touchUpInside" id="I5I-0Q-CdK"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pfq-Gf-meT">
                                         <rect key="frame" x="131" y="0.0" width="126" height="34"/>
@@ -2616,11 +2658,18 @@
                                         <state key="normal" title="No">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="u1q-KH-O7U" eventType="touchUpInside" id="fYl-5p-Jre"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="ulD-IV-A8h" firstAttribute="width" secondItem="Pfq-Gf-meT" secondAttribute="width" id="szn-qz-Ex4"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="buttons" destination="ulD-IV-A8h" collectionClass="NSMutableArray" id="ff2-Q6-57z"/>
+                                    <outletCollection property="buttons" destination="Pfq-Gf-meT" collectionClass="NSMutableArray" id="hXj-6v-fH5"/>
+                                </connections>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.04191788338" green="0.6047603627" blue="0.017816367989999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2650,6 +2699,11 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="1NO-d4-Jbr"/>
                     <connections>
+                        <outlet property="climbOurRope" destination="u1q-KH-O7U" id="ecx-0E-SyQ"/>
+                        <outlet property="climbSpeed" destination="1gj-4Z-t60" id="WGt-Zn-uRN"/>
+                        <outlet property="climbTheirRope" destination="ONi-8H-15i" id="GNz-e9-aOQ"/>
+                        <outlet property="notes" destination="0o9-zq-d7R" id="wDw-cd-aZa"/>
+                        <outlet property="ownRope" destination="AAm-e9-IN9" id="XlQ-4e-qQe"/>
                         <outletCollection property="borderButtons" destination="7Eb-ml-uuZ" collectionClass="NSMutableArray" id="iZ1-fa-Fpi"/>
                         <outletCollection property="borderButtons" destination="TDb-sF-u5D" collectionClass="NSMutableArray" id="lEr-2B-anP"/>
                         <outletCollection property="borderButtons" destination="LTd-qp-BhN" collectionClass="NSMutableArray" id="t4j-xG-UpB"/>
@@ -2684,55 +2738,75 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="VcV-Yk-swM">
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="VcV-Yk-swM" customClass="ButtonGroup" customModule="_017_Scouter" customModuleProvider="target">
                                 <rect key="frame" x="16" y="139" width="256" height="34"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Czy-RJ-dhG">
-                                        <rect key="frame" x="0.0" y="0.0" width="126" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="125.5" height="34"/>
                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                         <state key="normal" title="Yes">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="VcV-Yk-swM" eventType="touchUpInside" id="60M-tH-6zs"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JnH-LD-wDv">
-                                        <rect key="frame" x="131" y="0.0" width="125" height="34"/>
+                                        <rect key="frame" x="130.5" y="0.0" width="125.5" height="34"/>
                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                         <state key="normal" title="No">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="VcV-Yk-swM" eventType="touchUpInside" id="6U9-j3-mLJ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Czy-RJ-dhG" firstAttribute="width" secondItem="JnH-LD-wDv" secondAttribute="width" id="rZX-zw-VWq"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="buttons" destination="Czy-RJ-dhG" collectionClass="NSMutableArray" id="Blh-Dj-9ME"/>
+                                    <outletCollection property="buttons" destination="JnH-LD-wDv" collectionClass="NSMutableArray" id="ltr-0I-bDb"/>
+                                </connections>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ground intake?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DJu-Fw-W4r">
-                                <rect key="frame" x="45" y="93" width="200" height="36"/>
+                                <rect key="frame" x="44" y="93" width="200" height="36"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="yTe-5c-dIy">
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="yTe-5c-dIy" customClass="ButtonGroup" customModule="_017_Scouter" customModuleProvider="target">
                                 <rect key="frame" x="16" y="49" width="256" height="34"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ajk-XO-ReV">
-                                        <rect key="frame" x="0.0" y="0.0" width="126" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="125.5" height="34"/>
                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                         <state key="normal" title="Yes">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="yTe-5c-dIy" eventType="touchUpInside" id="aVt-93-EyJ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ONE-Sl-Xis">
-                                        <rect key="frame" x="131" y="0.0" width="125" height="34"/>
+                                        <rect key="frame" x="130.5" y="0.0" width="125.5" height="34"/>
                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                         <state key="normal" title="No">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="yTe-5c-dIy" eventType="touchUpInside" id="ot3-Lb-Ff6"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="ajk-XO-ReV" firstAttribute="width" secondItem="ONE-Sl-Xis" secondAttribute="width" id="Uk0-T4-sOg"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="buttons" destination="ajk-XO-ReV" collectionClass="NSMutableArray" id="pWB-dL-MsB"/>
+                                    <outletCollection property="buttons" destination="ONE-Sl-Xis" collectionClass="NSMutableArray" id="lTS-uR-VCl"/>
+                                </connections>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="LfU-Uc-4UH">
                                 <rect key="frame" x="16" y="183" width="256" height="166"/>
@@ -2779,6 +2853,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="b2P-We-jCA"/>
                     <connections>
+                        <outlet property="groundIntake" destination="VcV-Yk-swM" id="UjJ-40-5YV"/>
+                        <outlet property="notes" destination="ZWQ-5q-AKq" id="5EY-Va-yyg"/>
+                        <outlet property="pilot" destination="yTe-5c-dIy" id="oe5-b7-Bgt"/>
                         <outletCollection property="borderButtons" destination="ajk-XO-ReV" collectionClass="NSMutableArray" id="aDB-8w-BoG"/>
                         <outletCollection property="borderButtons" destination="ONE-Sl-Xis" collectionClass="NSMutableArray" id="W8r-wM-RwM"/>
                         <outletCollection property="borderButtons" destination="Czy-RJ-dhG" collectionClass="NSMutableArray" id="2zJ-yj-wLT"/>
@@ -2803,60 +2880,80 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ground intake?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QNy-Rt-yqF">
-                                <rect key="frame" x="45" y="100" width="200" height="36"/>
+                                <rect key="frame" x="44" y="100" width="200" height="36"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hopper intake?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0M-6c-A0M">
-                                <rect key="frame" x="44" y="10" width="200" height="36"/>
+                                <rect key="frame" x="44.5" y="10" width="199.5" height="36"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="8dJ-LZ-jEd">
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="8dJ-LZ-jEd" customClass="ButtonGroup" customModule="_017_Scouter" customModuleProvider="target">
                                 <rect key="frame" x="16" y="146" width="256" height="34"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vM2-zq-C3G">
-                                        <rect key="frame" x="0.0" y="0.0" width="126" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="125.5" height="34"/>
                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                         <state key="normal" title="Yes">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="8dJ-LZ-jEd" eventType="touchUpInside" id="iVb-sw-mOV"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UMm-YB-uEe">
-                                        <rect key="frame" x="131" y="0.0" width="125" height="34"/>
+                                        <rect key="frame" x="130.5" y="0.0" width="125.5" height="34"/>
                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                         <state key="normal" title="No">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="8dJ-LZ-jEd" eventType="touchUpInside" id="Wp4-LS-4so"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="vM2-zq-C3G" firstAttribute="width" secondItem="UMm-YB-uEe" secondAttribute="width" id="jmA-3c-Db2"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="buttons" destination="vM2-zq-C3G" collectionClass="NSMutableArray" id="UUl-fM-JbC"/>
+                                    <outletCollection property="buttons" destination="UMm-YB-uEe" collectionClass="NSMutableArray" id="zye-9Z-MEs"/>
+                                </connections>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="QUc-gW-jEV">
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="QUc-gW-jEV" customClass="ButtonGroup" customModule="_017_Scouter" customModuleProvider="target">
                                 <rect key="frame" x="16" y="56" width="256" height="34"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2gw-7s-t1w">
-                                        <rect key="frame" x="0.0" y="0.0" width="126" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="125.5" height="34"/>
                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                         <state key="normal" title="Yes">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="QUc-gW-jEV" eventType="touchUpInside" id="FVt-2a-PtF"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D0E-Ek-tdd">
-                                        <rect key="frame" x="131" y="0.0" width="125" height="34"/>
+                                        <rect key="frame" x="130.5" y="0.0" width="125.5" height="34"/>
                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                         <state key="normal" title="No">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="QUc-gW-jEV" eventType="touchUpInside" id="lQx-Jm-cxR"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="2gw-7s-t1w" firstAttribute="width" secondItem="D0E-Ek-tdd" secondAttribute="width" id="B0A-lY-BH4"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="buttons" destination="2gw-7s-t1w" collectionClass="NSMutableArray" id="eFZ-gG-EwS"/>
+                                    <outletCollection property="buttons" destination="D0E-Ek-tdd" collectionClass="NSMutableArray" id="czu-dj-lAF"/>
+                                </connections>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Holding capacity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqj-ZZ-cm5">
                                 <rect key="frame" x="35" y="190" width="219" height="36"/>
@@ -2868,7 +2965,7 @@
                                 <rect key="frame" x="16" y="231" width="256" height="34"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="0" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="AJi-59-3Hr">
-                                        <rect key="frame" x="0.0" y="0.0" width="220" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="220.5" height="34"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="ZSj-NF-mlo"/>
@@ -2878,7 +2975,7 @@
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fuel" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0i-Gz-KZm">
-                                        <rect key="frame" x="225" y="0.0" width="31" height="34"/>
+                                        <rect key="frame" x="225.5" y="0.0" width="30.5" height="34"/>
                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -2935,6 +3032,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="Mis-DN-Ra2"/>
                     <connections>
+                        <outlet property="capacity" destination="AJi-59-3Hr" id="P6c-u4-nel"/>
+                        <outlet property="intakeGround" destination="8dJ-LZ-jEd" id="da9-cM-BMu"/>
+                        <outlet property="intakeHopper" destination="QUc-gW-jEV" id="dyQ-bW-arT"/>
+                        <outlet property="notes" destination="Cge-0k-Qra" id="qTG-Ag-Oh2"/>
                         <outletCollection property="borderButtons" destination="2gw-7s-t1w" collectionClass="NSMutableArray" id="opT-qR-t8j"/>
                         <outletCollection property="borderButtons" destination="D0E-Ek-tdd" collectionClass="NSMutableArray" id="UWb-Ps-qWV"/>
                         <outletCollection property="borderButtons" destination="vM2-zq-C3G" collectionClass="NSMutableArray" id="h9L-Ij-kjl"/>
@@ -2960,35 +3061,45 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shooting from" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V40-AR-cTz">
-                                <rect key="frame" x="51" y="100" width="187" height="36"/>
+                                <rect key="frame" x="51.5" y="100" width="186.5" height="36"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Oxg-bz-Eg3">
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Oxg-bz-Eg3" customClass="ButtonGroup" customModule="_017_Scouter" customModuleProvider="target">
                                 <rect key="frame" x="16" y="56" width="256" height="34"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZQh-Je-F5W">
-                                        <rect key="frame" x="0.0" y="0.0" width="126" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="125.5" height="34"/>
                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                         <state key="normal" title="Yes">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="Oxg-bz-Eg3" eventType="touchUpInside" id="JgH-cQ-Lmj"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BND-hD-fDP">
-                                        <rect key="frame" x="131" y="0.0" width="125" height="34"/>
+                                        <rect key="frame" x="130.5" y="0.0" width="125.5" height="34"/>
                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                         <state key="normal" title="No">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="Oxg-bz-Eg3" eventType="touchUpInside" id="6dS-aA-tc5"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="ZQh-Je-F5W" firstAttribute="width" secondItem="BND-hD-fDP" secondAttribute="width" id="mIG-XX-TYc"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="buttons" destination="ZQh-Je-F5W" collectionClass="NSMutableArray" id="vea-uQ-Dl6"/>
+                                    <outletCollection property="buttons" destination="BND-hD-fDP" collectionClass="NSMutableArray" id="L62-gY-umk"/>
+                                </connections>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# of fuel per cycle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xGz-y1-xuJ">
-                                <rect key="frame" x="30" y="190" width="229" height="36"/>
+                                <rect key="frame" x="30.5" y="190" width="228.5" height="36"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -3022,7 +3133,7 @@
                                 <rect key="frame" x="16" y="231" width="256" height="34"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="0" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="awk-Cf-r90">
-                                        <rect key="frame" x="0.0" y="0.0" width="220" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="220.5" height="34"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="0aF-um-Xbx"/>
@@ -3032,7 +3143,7 @@
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fuel" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Znz-FQ-Dzr">
-                                        <rect key="frame" x="225" y="0.0" width="31" height="34"/>
+                                        <rect key="frame" x="225.5" y="0.0" width="30.5" height="34"/>
                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -3040,7 +3151,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vision?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2q-3O-OGl">
-                                <rect key="frame" x="97" y="10" width="95" height="36"/>
+                                <rect key="frame" x="97.5" y="10" width="94.5" height="36"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -3048,15 +3159,15 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ZIp-06-t49">
                                 <rect key="frame" x="16" y="146" width="256" height="34"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RXe-w8-ZJT">
-                                        <rect key="frame" x="0.0" y="0.0" width="126" height="34"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RXe-w8-ZJT" customClass="ToggleButton" customModule="_017_Scouter" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="125.5" height="34"/>
                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                         <state key="normal" title="In Key">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gk5-Te-OpX">
-                                        <rect key="frame" x="131" y="0.0" width="125" height="34"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gk5-Te-OpX" customClass="ToggleButton" customModule="_017_Scouter" customModuleProvider="target">
+                                        <rect key="frame" x="130.5" y="0.0" width="125.5" height="34"/>
                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                         <state key="normal" title="Outside Key">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -3068,12 +3179,12 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shooting strategy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCb-DO-ONm">
-                                <rect key="frame" x="28" y="275" width="232" height="36"/>
+                                <rect key="frame" x="28.5" y="275" width="231.5" height="36"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="5l8-l0-tJ3">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="5l8-l0-tJ3" customClass="ButtonGroup" customModule="_017_Scouter" customModuleProvider="target">
                                 <rect key="frame" x="16" y="316" width="256" height="112"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ggj-Vf-3QP">
@@ -3082,6 +3193,9 @@
                                         <state key="normal" title="High Accuracy">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="5l8-l0-tJ3" eventType="touchUpInside" id="JV5-ea-V9P"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9m4-8x-O1v">
                                         <rect key="frame" x="0.0" y="39" width="256" height="34"/>
@@ -3089,6 +3203,9 @@
                                         <state key="normal" title="High Volume Low Accuracy">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="5l8-l0-tJ3" eventType="touchUpInside" id="Gl9-wC-TfW"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hid-Te-Xvq">
                                         <rect key="frame" x="0.0" y="78" width="256" height="34"/>
@@ -3096,8 +3213,16 @@
                                         <state key="normal" title="Other">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="5l8-l0-tJ3" eventType="touchUpInside" id="zwp-Fj-zgR"/>
+                                        </connections>
                                     </button>
                                 </subviews>
+                                <connections>
+                                    <outletCollection property="buttons" destination="Ggj-Vf-3QP" collectionClass="NSMutableArray" id="O0L-js-KZR"/>
+                                    <outletCollection property="buttons" destination="9m4-8x-O1v" collectionClass="NSMutableArray" id="MI2-eL-gia"/>
+                                    <outletCollection property="buttons" destination="hid-Te-Xvq" collectionClass="NSMutableArray" id="bZ5-Us-S4r"/>
+                                </connections>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.04191788338" green="0.6047603627" blue="0.017816367989999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -3129,6 +3254,12 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="OZm-hB-6Xc"/>
                     <connections>
+                        <outlet property="accuracy" destination="5l8-l0-tJ3" id="loK-8i-dAI"/>
+                        <outlet property="capacity" destination="awk-Cf-r90" id="Gzo-Rn-70f"/>
+                        <outlet property="inKey" destination="RXe-w8-ZJT" id="xAy-0T-RU0"/>
+                        <outlet property="notes" destination="92V-hD-oN1" id="QdH-Jo-wSp"/>
+                        <outlet property="outKey" destination="gk5-Te-OpX" id="kkV-pE-M6y"/>
+                        <outlet property="vision" destination="Oxg-bz-Eg3" id="nSH-qj-NRl"/>
                         <outletCollection property="borderButtons" destination="ZQh-Je-F5W" collectionClass="NSMutableArray" id="FAe-Lf-pHH"/>
                         <outletCollection property="borderButtons" destination="BND-hD-fDP" collectionClass="NSMutableArray" id="Pz5-KF-Pq3"/>
                         <outletCollection property="borderButtons" destination="RXe-w8-ZJT" collectionClass="NSMutableArray" id="1pS-Dm-ul0"/>
@@ -3157,7 +3288,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# of fuel per cycle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JPs-8G-O7Q">
-                                <rect key="frame" x="30" y="10" width="229" height="36"/>
+                                <rect key="frame" x="30.5" y="10" width="228.5" height="36"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -3166,7 +3297,7 @@
                                 <rect key="frame" x="16" y="51" width="256" height="34"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="0" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Pnb-yj-lFo">
-                                        <rect key="frame" x="0.0" y="0.0" width="220" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="220.5" height="34"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="8RN-09-DoL"/>
@@ -3176,7 +3307,7 @@
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fuel" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEb-2l-alH">
-                                        <rect key="frame" x="225" y="0.0" width="31" height="34"/>
+                                        <rect key="frame" x="225.5" y="0.0" width="30.5" height="34"/>
                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -3223,6 +3354,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="jyJ-CS-Oww"/>
                     <connections>
+                        <outlet property="capacity" destination="Pnb-yj-lFo" id="YKa-9t-Pyd"/>
+                        <outlet property="notes" destination="umv-5U-s79" id="HXH-Mt-LB8"/>
                         <outletCollection property="borderFields" destination="Pnb-yj-lFo" collectionClass="NSMutableArray" id="ffa-f9-q87"/>
                         <outletCollection property="borderAreas" destination="umv-5U-s79" collectionClass="NSMutableArray" id="sNk-I2-bkt"/>
                     </connections>
@@ -3278,6 +3411,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="dK5-Qf-cBB"/>
                     <connections>
+                        <outlet property="notes" destination="5Jw-J8-VpV" id="O6N-YG-5D8"/>
                         <outletCollection property="borderAreas" destination="5Jw-J8-VpV" collectionClass="NSMutableArray" id="bT5-J3-9ny"/>
                     </connections>
                 </viewController>
@@ -3331,28 +3465,28 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="mBz-I2-quB">
                                 <rect key="frame" x="0.0" y="44" width="288" height="151"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yai-my-tiY">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yai-my-tiY" customClass="ToggleButton" customModule="_017_Scouter" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="288" height="34"/>
                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                         <state key="normal" title="Cross baseline">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tMS-xp-Ah7">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tMS-xp-Ah7" customClass="ToggleButton" customModule="_017_Scouter" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="39" width="288" height="34"/>
                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                         <state key="normal" title="Place gear">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Imd-fu-Q29">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Imd-fu-Q29" customClass="ToggleButton" customModule="_017_Scouter" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="78" width="288" height="34"/>
                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                         <state key="normal" title="High goal">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qqJ-hF-OWG">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qqJ-hF-OWG" customClass="ToggleButton" customModule="_017_Scouter" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="117" width="288" height="34"/>
                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                         <state key="normal" title="Low goal">
@@ -3376,6 +3510,11 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="7wt-zu-gvF"/>
                     <connections>
+                        <outlet property="baseline" destination="yai-my-tiY" id="g3q-1f-gAc"/>
+                        <outlet property="fuelHigh" destination="Imd-fu-Q29" id="C2n-L3-SBZ"/>
+                        <outlet property="fuelLow" destination="qqJ-hF-OWG" id="0Nt-tM-AxJ"/>
+                        <outlet property="gear" destination="tMS-xp-Ah7" id="KHU-75-299"/>
+                        <outlet property="notes" destination="Vwv-NV-k5e" id="Z8w-cu-Xrs"/>
                         <outletCollection property="borderButtons" destination="yai-my-tiY" collectionClass="NSMutableArray" id="hD8-V1-AEe"/>
                         <outletCollection property="borderButtons" destination="tMS-xp-Ah7" collectionClass="NSMutableArray" id="FQ1-Wk-uAy"/>
                         <outletCollection property="borderButtons" destination="Imd-fu-Q29" collectionClass="NSMutableArray" id="5ty-H5-NO2"/>
@@ -3400,7 +3539,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Regular Drive Practice?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L58-cs-FxF">
-                                <rect key="frame" x="11" y="134" width="266" height="32"/>
+                                <rect key="frame" x="11.5" y="139" width="265.5" height="31.5"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -3411,8 +3550,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="oEo-2E-KKh">
-                                <rect key="frame" x="16" y="176" width="257" height="34"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="oEo-2E-KKh" customClass="ButtonGroup" customModule="_017_Scouter" customModuleProvider="target">
+                                <rect key="frame" x="16" y="181" width="257" height="34"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XNR-5P-oh4">
                                         <rect key="frame" x="0.0" y="0.0" width="126" height="34"/>
@@ -3420,6 +3559,9 @@
                                         <state key="normal" title="Yes">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="oEo-2E-KKh" eventType="touchUpInside" id="mJV-mi-54J"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="INd-ek-ra8">
                                         <rect key="frame" x="131" y="0.0" width="126" height="34"/>
@@ -3427,36 +3569,21 @@
                                         <state key="normal" title="No">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="oEo-2E-KKh" eventType="touchUpInside" id="gyj-rf-YQi"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="XNR-5P-oh4" firstAttribute="width" secondItem="INd-ek-ra8" secondAttribute="width" id="dRe-1e-o3J"/>
                                 </constraints>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="5oB-QL-ihQ">
-                                <rect key="frame" x="16" y="90" width="257" height="34"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L3m-ZS-foc">
-                                        <rect key="frame" x="0.0" y="0.0" width="126" height="34"/>
-                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
-                                        <state key="normal" title="3">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJr-HM-FQN">
-                                        <rect key="frame" x="131" y="0.0" width="126" height="34"/>
-                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
-                                        <state key="normal" title="4">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="L3m-ZS-foc" firstAttribute="width" secondItem="lJr-HM-FQN" secondAttribute="width" id="tUh-Ry-7V3"/>
-                                </constraints>
+                                <connections>
+                                    <outletCollection property="buttons" destination="XNR-5P-oh4" collectionClass="NSMutableArray" id="TfT-KN-dfS"/>
+                                    <outletCollection property="buttons" destination="INd-ek-ra8" collectionClass="NSMutableArray" id="fms-Pi-80V"/>
+                                </connections>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Bgy-RA-Dx8">
-                                <rect key="frame" x="16" y="220" width="256" height="166"/>
+                                <rect key="frame" x="16" y="225" width="256" height="166"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Additional notes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zug-1E-j7c">
                                         <rect key="frame" x="0.0" y="0.0" width="256" height="36"/>
@@ -3480,58 +3607,103 @@
                                     <constraint firstItem="Zug-1E-j7c" firstAttribute="centerX" secondItem="Bgy-RA-Dx8" secondAttribute="centerX" id="Uh0-zh-Sm5"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="5so-b4-ot4">
-                                <rect key="frame" x="16" y="51" width="256" height="34"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="dQ5-80-2vX" customClass="ButtonGroup" customModule="_017_Scouter" customModuleProvider="target">
+                                <rect key="frame" x="16" y="56" width="256" height="73"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qbG-Fz-W9f">
-                                        <rect key="frame" x="0.0" y="0.0" width="126" height="34"/>
-                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
-                                        <state key="normal" title="1">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CvE-di-mAo">
-                                        <rect key="frame" x="131" y="0.0" width="125" height="34"/>
-                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
-                                        <state key="normal" title="2">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="5so-b4-ot4">
+                                        <rect key="frame" x="0.0" y="0.0" width="256" height="34"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qbG-Fz-W9f">
+                                                <rect key="frame" x="0.0" y="0.0" width="125.5" height="34"/>
+                                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
+                                                <state key="normal" title="1">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="dQ5-80-2vX" eventType="touchUpInside" id="mEH-JR-qgo"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CvE-di-mAo">
+                                                <rect key="frame" x="130.5" y="0.0" width="125.5" height="34"/>
+                                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
+                                                <state key="normal" title="2">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="dQ5-80-2vX" eventType="touchUpInside" id="1by-Gr-eju"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="qbG-Fz-W9f" firstAttribute="width" secondItem="CvE-di-mAo" secondAttribute="width" id="Q5o-Ew-xDw"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="5oB-QL-ihQ">
+                                        <rect key="frame" x="0.0" y="39" width="256" height="34"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L3m-ZS-foc">
+                                                <rect key="frame" x="0.0" y="0.0" width="125.5" height="34"/>
+                                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
+                                                <state key="normal" title="3">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="dQ5-80-2vX" eventType="touchUpInside" id="xgS-xv-Kbg"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJr-HM-FQN">
+                                                <rect key="frame" x="130.5" y="0.0" width="125.5" height="34"/>
+                                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
+                                                <state key="normal" title="4">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="dQ5-80-2vX" eventType="touchUpInside" id="DGK-xF-n6S"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="L3m-ZS-foc" firstAttribute="width" secondItem="lJr-HM-FQN" secondAttribute="width" id="tUh-Ry-7V3"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="qbG-Fz-W9f" firstAttribute="width" secondItem="CvE-di-mAo" secondAttribute="width" id="Q5o-Ew-xDw"/>
-                                </constraints>
+                                <connections>
+                                    <outletCollection property="buttons" destination="qbG-Fz-W9f" collectionClass="NSMutableArray" id="nk2-mT-SGH"/>
+                                    <outletCollection property="buttons" destination="CvE-di-mAo" collectionClass="NSMutableArray" id="lKH-LG-Gyo"/>
+                                    <outletCollection property="buttons" destination="L3m-ZS-foc" collectionClass="NSMutableArray" id="DnA-J3-B2f"/>
+                                    <outletCollection property="buttons" destination="lJr-HM-FQN" collectionClass="NSMutableArray" id="m1c-ht-ksE"/>
+                                </connections>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.04191788338" green="0.6047603627" blue="0.017816367989999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="GqV-bm-Oi5" firstAttribute="top" secondItem="gTn-Wn-HaQ" secondAttribute="top" constant="10" id="2pS-gn-Wcu"/>
                             <constraint firstItem="oEo-2E-KKh" firstAttribute="centerX" secondItem="gTn-Wn-HaQ" secondAttribute="centerX" id="5FT-8t-eOJ"/>
-                            <constraint firstItem="5oB-QL-ihQ" firstAttribute="leading" secondItem="gTn-Wn-HaQ" secondAttribute="leadingMargin" id="Fop-H9-nMe"/>
                             <constraint firstItem="GqV-bm-Oi5" firstAttribute="centerX" secondItem="gTn-Wn-HaQ" secondAttribute="centerX" id="Idf-sS-jgm"/>
-                            <constraint firstItem="L58-cs-FxF" firstAttribute="top" secondItem="5oB-QL-ihQ" secondAttribute="bottom" constant="10" id="Iw1-91-lfd"/>
-                            <constraint firstItem="5so-b4-ot4" firstAttribute="centerX" secondItem="gTn-Wn-HaQ" secondAttribute="centerX" id="PrR-zv-vWM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dQ5-80-2vX" secondAttribute="trailing" id="PEI-OW-8WP"/>
+                            <constraint firstItem="dQ5-80-2vX" firstAttribute="leading" secondItem="gTn-Wn-HaQ" secondAttribute="leadingMargin" id="Pru-9z-7l1"/>
                             <constraint firstItem="oEo-2E-KKh" firstAttribute="leading" secondItem="gTn-Wn-HaQ" secondAttribute="leadingMargin" id="Q0j-db-Giu"/>
                             <constraint firstItem="Bgy-RA-Dx8" firstAttribute="leading" secondItem="gTn-Wn-HaQ" secondAttribute="leadingMargin" id="UVe-lK-9sy"/>
                             <constraint firstItem="Bgy-RA-Dx8" firstAttribute="top" secondItem="oEo-2E-KKh" secondAttribute="bottom" constant="10" id="bKp-4P-nQT"/>
-                            <constraint firstItem="5so-b4-ot4" firstAttribute="leading" secondItem="gTn-Wn-HaQ" secondAttribute="leadingMargin" id="bR1-Pb-0ph"/>
-                            <constraint firstItem="5oB-QL-ihQ" firstAttribute="centerX" secondItem="gTn-Wn-HaQ" secondAttribute="centerX" id="cc3-ve-eOI"/>
                             <constraint firstItem="L58-cs-FxF" firstAttribute="centerX" secondItem="gTn-Wn-HaQ" secondAttribute="centerX" id="dt8-nI-ETH"/>
-                            <constraint firstItem="5so-b4-ot4" firstAttribute="top" secondItem="GqV-bm-Oi5" secondAttribute="bottom" constant="5" id="eUg-2M-iqP"/>
+                            <constraint firstItem="L58-cs-FxF" firstAttribute="top" secondItem="dQ5-80-2vX" secondAttribute="bottom" constant="10" id="f8P-Jx-FwA"/>
+                            <constraint firstItem="dQ5-80-2vX" firstAttribute="top" secondItem="GqV-bm-Oi5" secondAttribute="bottom" constant="10" id="n3C-0T-YRA"/>
                             <constraint firstItem="Bgy-RA-Dx8" firstAttribute="centerX" secondItem="gTn-Wn-HaQ" secondAttribute="centerX" id="sFr-FP-IlA"/>
-                            <constraint firstItem="5oB-QL-ihQ" firstAttribute="top" secondItem="5so-b4-ot4" secondAttribute="bottom" constant="5" id="xz5-Hi-W3P"/>
                             <constraint firstItem="oEo-2E-KKh" firstAttribute="top" secondItem="L58-cs-FxF" secondAttribute="bottom" constant="10" id="zVc-Av-S7p"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="J0l-is-X4B"/>
                     <connections>
-                        <outletCollection property="borderButtons" destination="qbG-Fz-W9f" collectionClass="NSMutableArray" id="JUH-Q0-qVb"/>
-                        <outletCollection property="borderButtons" destination="CvE-di-mAo" collectionClass="NSMutableArray" id="rtk-U4-QLg"/>
-                        <outletCollection property="borderButtons" destination="L3m-ZS-foc" collectionClass="NSMutableArray" id="g8n-lv-693"/>
-                        <outletCollection property="borderButtons" destination="lJr-HM-FQN" collectionClass="NSMutableArray" id="zDn-jz-rBm"/>
+                        <outlet property="exp" destination="dQ5-80-2vX" id="nrC-pj-qYK"/>
+                        <outlet property="notes" destination="IkG-Zl-IBZ" id="2Hc-NY-2gR"/>
+                        <outlet property="practice" destination="oEo-2E-KKh" id="Yr2-YW-SZr"/>
                         <outletCollection property="borderButtons" destination="XNR-5P-oh4" collectionClass="NSMutableArray" id="6Fz-SS-2zn"/>
                         <outletCollection property="borderButtons" destination="INd-ek-ra8" collectionClass="NSMutableArray" id="qc8-lD-aS8"/>
                         <outletCollection property="borderAreas" destination="IkG-Zl-IBZ" collectionClass="NSMutableArray" id="Lkd-KR-Kw0"/>
+                        <outletCollection property="borderButtons" destination="qbG-Fz-W9f" collectionClass="NSMutableArray" id="JUH-Q0-qVb"/>
+                        <outletCollection property="borderButtons" destination="CvE-di-mAo" collectionClass="NSMutableArray" id="rtk-U4-QLg"/>
+                        <outletCollection property="borderButtons" destination="lJr-HM-FQN" collectionClass="NSMutableArray" id="zDn-jz-rBm"/>
+                        <outletCollection property="borderButtons" destination="L3m-ZS-foc" collectionClass="NSMutableArray" id="g8n-lv-693"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HJY-ip-Qxi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3551,71 +3723,102 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drive speed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xai-mo-LZP">
-                                <rect key="frame" x="66" y="329" width="157" height="36"/>
+                                <rect key="frame" x="66" y="334" width="157" height="36"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# of drivetrain CIMs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B6B-QV-1HY">
-                                <rect key="frame" x="14" y="414" width="262" height="36"/>
+                                <rect key="frame" x="13.5" y="419" width="261.5" height="36"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3tw-2m-PlL">
-                                <rect key="frame" x="16" y="51" width="256" height="34"/>
-                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
-                                <state key="normal" title="Custom West Coast Drive">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WnT-De-hwf">
-                                <rect key="frame" x="16" y="129" width="256" height="34"/>
-                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
-                                <state key="normal" title="H Drive">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bxn-x8-cDc">
-                                <rect key="frame" x="16" y="168" width="256" height="34"/>
-                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
-                                <state key="normal" title="Mecanum">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jHy-x3-COq">
-                                <rect key="frame" x="16" y="207" width="256" height="34"/>
-                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
-                                <state key="normal" title="Swerve">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6c7-hc-hFy">
-                                <rect key="frame" x="16" y="246" width="256" height="34"/>
-                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
-                                <state key="normal" title="Other">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vWo-JN-f78">
-                                <rect key="frame" x="16" y="90" width="256" height="34"/>
-                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
-                                <state key="normal" title="Kit of Parts">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Drivetrain Type" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="RLy-aI-iC7">
-                                <rect key="frame" x="16" y="285" width="257" height="34"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="kkU-B5-doe"/>
-                                </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="dMf-YQ-ZMD" customClass="ButtonGroup" customModule="_017_Scouter" customModuleProvider="target">
+                                <rect key="frame" x="16" y="56" width="256" height="268"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3tw-2m-PlL">
+                                        <rect key="frame" x="0.0" y="0.0" width="256" height="34"/>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
+                                        <state key="normal" title="Custom West Coast Drive">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="dMf-YQ-ZMD" eventType="touchUpInside" id="2kA-ss-GPB"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vWo-JN-f78">
+                                        <rect key="frame" x="0.0" y="39" width="256" height="34"/>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
+                                        <state key="normal" title="Kit of Parts">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="dMf-YQ-ZMD" eventType="touchUpInside" id="jLq-ns-eXT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WnT-De-hwf">
+                                        <rect key="frame" x="0.0" y="78" width="256" height="34"/>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
+                                        <state key="normal" title="H Drive">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="dMf-YQ-ZMD" eventType="touchUpInside" id="Byt-dT-p1J"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bxn-x8-cDc">
+                                        <rect key="frame" x="0.0" y="117" width="256" height="34"/>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
+                                        <state key="normal" title="Mecanum">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="dMf-YQ-ZMD" eventType="touchUpInside" id="Rsn-mT-rdV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jHy-x3-COq">
+                                        <rect key="frame" x="0.0" y="156" width="256" height="34"/>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
+                                        <state key="normal" title="Swerve">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="dMf-YQ-ZMD" eventType="touchUpInside" id="p77-qH-upv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6c7-hc-hFy">
+                                        <rect key="frame" x="0.0" y="195" width="256" height="34"/>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
+                                        <state key="normal" title="Other">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="dMf-YQ-ZMD" eventType="touchUpInside" id="9FO-Ab-DW5"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Drivetrain Type" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="RLy-aI-iC7">
+                                        <rect key="frame" x="0.0" y="234" width="256" height="34"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="kkU-B5-doe"/>
+                                        </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <connections>
+                                    <outletCollection property="buttons" destination="3tw-2m-PlL" collectionClass="NSMutableArray" id="Vca-9r-9CV"/>
+                                    <outletCollection property="buttons" destination="vWo-JN-f78" collectionClass="NSMutableArray" id="VAY-bI-3mF"/>
+                                    <outletCollection property="buttons" destination="WnT-De-hwf" collectionClass="NSMutableArray" id="jdd-sG-RVR"/>
+                                    <outletCollection property="buttons" destination="bxn-x8-cDc" collectionClass="NSMutableArray" id="8a6-mB-7Pz"/>
+                                    <outletCollection property="buttons" destination="jHy-x3-COq" collectionClass="NSMutableArray" id="0Uk-Gd-zbV"/>
+                                    <outletCollection property="buttons" destination="6c7-hc-hFy" collectionClass="NSMutableArray" id="Yi0-EF-bMF"/>
+                                </connections>
+                            </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rdn-Y5-AJd">
-                                <rect key="frame" x="16" y="370" width="256" height="34"/>
+                                <rect key="frame" x="16" y="375" width="256" height="34"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="0" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="pYb-TI-icN">
                                         <rect key="frame" x="0.0" y="0.0" width="226" height="34"/>
@@ -3638,68 +3841,99 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ipQ-Tl-gax">
-                                <rect key="frame" x="16" y="455" width="256" height="34"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="bXw-g0-zhk" customClass="ButtonGroup" customModule="_017_Scouter" customModuleProvider="target">
+                                <rect key="frame" x="16" y="465" width="256" height="73"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tut-xz-QHB">
-                                        <rect key="frame" x="0.0" y="0.0" width="82" height="34"/>
-                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
-                                        <state key="normal" title="1">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mAt-b1-52H">
-                                        <rect key="frame" x="87" y="0.0" width="82" height="34"/>
-                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
-                                        <state key="normal" title="2">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rtN-Ir-Sfp">
-                                        <rect key="frame" x="174" y="0.0" width="82" height="34"/>
-                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
-                                        <state key="normal" title="3">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ipQ-Tl-gax">
+                                        <rect key="frame" x="0.0" y="0.0" width="256" height="34"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tut-xz-QHB">
+                                                <rect key="frame" x="0.0" y="0.0" width="82" height="34"/>
+                                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
+                                                <state key="normal" title="1">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="bXw-g0-zhk" eventType="touchUpInside" id="BYb-Od-lYm"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mAt-b1-52H">
+                                                <rect key="frame" x="87" y="0.0" width="82" height="34"/>
+                                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
+                                                <state key="normal" title="2">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="bXw-g0-zhk" eventType="touchUpInside" id="ZUZ-DX-FfK"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rtN-Ir-Sfp">
+                                                <rect key="frame" x="174" y="0.0" width="82" height="34"/>
+                                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
+                                                <state key="normal" title="3">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="bXw-g0-zhk" eventType="touchUpInside" id="2ue-yo-JfU"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="tut-xz-QHB" firstAttribute="width" secondItem="mAt-b1-52H" secondAttribute="width" id="J0P-4m-ws4"/>
+                                            <constraint firstItem="tut-xz-QHB" firstAttribute="width" secondItem="rtN-Ir-Sfp" secondAttribute="width" id="UrA-wb-zt8"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Sn5-mp-469">
+                                        <rect key="frame" x="0.0" y="39" width="256" height="34"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DZu-yw-Xwr">
+                                                <rect key="frame" x="0.0" y="0.0" width="82" height="34"/>
+                                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
+                                                <state key="normal" title="4">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="bXw-g0-zhk" eventType="touchUpInside" id="Jdq-X4-KEa"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jcg-8q-4si">
+                                                <rect key="frame" x="87" y="0.0" width="82" height="34"/>
+                                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
+                                                <state key="normal" title="5">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="bXw-g0-zhk" eventType="touchUpInside" id="3N3-k8-ehs"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wqZ-81-d1K">
+                                                <rect key="frame" x="174" y="0.0" width="82" height="34"/>
+                                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
+                                                <state key="normal" title="6">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="bXw-g0-zhk" eventType="touchUpInside" id="Rgp-av-Lbq"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="DZu-yw-Xwr" firstAttribute="width" secondItem="jcg-8q-4si" secondAttribute="width" id="IlY-3g-cE2"/>
+                                            <constraint firstItem="DZu-yw-Xwr" firstAttribute="width" secondItem="wqZ-81-d1K" secondAttribute="width" id="LFV-cf-ahv"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="tut-xz-QHB" firstAttribute="width" secondItem="mAt-b1-52H" secondAttribute="width" id="J0P-4m-ws4"/>
-                                    <constraint firstItem="tut-xz-QHB" firstAttribute="width" secondItem="rtN-Ir-Sfp" secondAttribute="width" id="UrA-wb-zt8"/>
-                                </constraints>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Sn5-mp-469">
-                                <rect key="frame" x="16" y="494" width="256" height="34"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DZu-yw-Xwr">
-                                        <rect key="frame" x="0.0" y="0.0" width="82" height="34"/>
-                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
-                                        <state key="normal" title="4">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jcg-8q-4si">
-                                        <rect key="frame" x="87" y="0.0" width="82" height="34"/>
-                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
-                                        <state key="normal" title="5">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wqZ-81-d1K">
-                                        <rect key="frame" x="174" y="0.0" width="82" height="34"/>
-                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
-                                        <state key="normal" title="6">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="DZu-yw-Xwr" firstAttribute="width" secondItem="jcg-8q-4si" secondAttribute="width" id="IlY-3g-cE2"/>
-                                    <constraint firstItem="DZu-yw-Xwr" firstAttribute="width" secondItem="wqZ-81-d1K" secondAttribute="width" id="LFV-cf-ahv"/>
-                                </constraints>
+                                <connections>
+                                    <outletCollection property="buttons" destination="tut-xz-QHB" collectionClass="NSMutableArray" id="I5i-be-gSa"/>
+                                    <outletCollection property="buttons" destination="mAt-b1-52H" collectionClass="NSMutableArray" id="SrD-U1-H3e"/>
+                                    <outletCollection property="buttons" destination="rtN-Ir-Sfp" collectionClass="NSMutableArray" id="1Aq-69-y1a"/>
+                                    <outletCollection property="buttons" destination="DZu-yw-Xwr" collectionClass="NSMutableArray" id="0ro-II-XQa"/>
+                                    <outletCollection property="buttons" destination="jcg-8q-4si" collectionClass="NSMutableArray" id="zbF-6U-ZCj"/>
+                                    <outletCollection property="buttons" destination="wqZ-81-d1K" collectionClass="NSMutableArray" id="Irx-Fa-20x"/>
+                                </connections>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="okY-3O-VOm">
-                                <rect key="frame" x="16" y="538" width="256" height="166"/>
+                                <rect key="frame" x="16" y="548" width="256" height="166"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Additional notes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F1u-ri-3D0">
                                         <rect key="frame" x="0.0" y="0.0" width="256" height="36"/>
@@ -3732,64 +3966,48 @@
                         </subviews>
                         <color key="backgroundColor" red="0.04191788338" green="0.6047603627" blue="0.017816367989999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ipQ-Tl-gax" firstAttribute="leading" secondItem="DBi-AG-jUb" secondAttribute="leadingMargin" id="0Zc-Cy-oEH"/>
+                            <constraint firstItem="dMf-YQ-ZMD" firstAttribute="leading" secondItem="DBi-AG-jUb" secondAttribute="leadingMargin" id="0iy-aq-fXs"/>
                             <constraint firstItem="okY-3O-VOm" firstAttribute="leading" secondItem="DBi-AG-jUb" secondAttribute="leadingMargin" id="2Q2-3d-aiZ"/>
-                            <constraint firstItem="Sn5-mp-469" firstAttribute="top" secondItem="ipQ-Tl-gax" secondAttribute="bottom" constant="5" id="7KM-I6-106"/>
-                            <constraint firstItem="jHy-x3-COq" firstAttribute="centerX" secondItem="DBi-AG-jUb" secondAttribute="centerX" id="9IG-6g-gAP"/>
-                            <constraint firstItem="Sn5-mp-469" firstAttribute="leading" secondItem="DBi-AG-jUb" secondAttribute="leadingMargin" id="9jr-Ho-jmc"/>
+                            <constraint firstItem="dMf-YQ-ZMD" firstAttribute="top" secondItem="t43-dG-MRb" secondAttribute="bottom" constant="10" id="5RB-cr-ic2"/>
                             <constraint firstItem="t43-dG-MRb" firstAttribute="top" secondItem="DBi-AG-jUb" secondAttribute="top" constant="10" id="DEV-hx-5dF"/>
-                            <constraint firstItem="3tw-2m-PlL" firstAttribute="leading" secondItem="DBi-AG-jUb" secondAttribute="leadingMargin" id="G3s-9e-4jL"/>
-                            <constraint firstItem="3tw-2m-PlL" firstAttribute="top" secondItem="t43-dG-MRb" secondAttribute="bottom" constant="5" id="GO6-On-7Ax"/>
                             <constraint firstItem="Rdn-Y5-AJd" firstAttribute="leading" secondItem="DBi-AG-jUb" secondAttribute="leadingMargin" id="GZE-G6-u3z"/>
-                            <constraint firstItem="WnT-De-hwf" firstAttribute="centerX" secondItem="DBi-AG-jUb" secondAttribute="centerX" id="Gwp-jQ-Rnx"/>
-                            <constraint firstItem="ipQ-Tl-gax" firstAttribute="top" secondItem="B6B-QV-1HY" secondAttribute="bottom" constant="5" id="Hex-mL-E7o"/>
-                            <constraint firstItem="RLy-aI-iC7" firstAttribute="top" secondItem="6c7-hc-hFy" secondAttribute="bottom" constant="5" id="JZ0-m2-AGp"/>
-                            <constraint firstItem="6c7-hc-hFy" firstAttribute="top" secondItem="jHy-x3-COq" secondAttribute="bottom" constant="5" id="Mvn-5j-2RJ"/>
-                            <constraint firstItem="6c7-hc-hFy" firstAttribute="centerX" secondItem="DBi-AG-jUb" secondAttribute="centerX" id="OOV-m0-yDe"/>
-                            <constraint firstItem="bxn-x8-cDc" firstAttribute="centerX" secondItem="DBi-AG-jUb" secondAttribute="centerX" id="P57-v3-wb0"/>
-                            <constraint firstItem="Sn5-mp-469" firstAttribute="centerX" secondItem="DBi-AG-jUb" secondAttribute="centerX" id="RwC-2J-ryt"/>
-                            <constraint firstItem="Xai-mo-LZP" firstAttribute="top" secondItem="RLy-aI-iC7" secondAttribute="bottom" constant="10" id="WT4-an-v2g"/>
+                            <constraint firstItem="Xai-mo-LZP" firstAttribute="top" secondItem="dMf-YQ-ZMD" secondAttribute="bottom" constant="10" id="L8U-vI-cDf"/>
                             <constraint firstItem="Rdn-Y5-AJd" firstAttribute="centerX" secondItem="DBi-AG-jUb" secondAttribute="centerX" id="WT9-GX-fKj"/>
-                            <constraint firstItem="bxn-x8-cDc" firstAttribute="leading" secondItem="DBi-AG-jUb" secondAttribute="leadingMargin" id="XEx-sm-IpO"/>
                             <constraint firstItem="B6B-QV-1HY" firstAttribute="top" secondItem="Rdn-Y5-AJd" secondAttribute="bottom" constant="10" id="XO0-Fx-X8a"/>
-                            <constraint firstItem="okY-3O-VOm" firstAttribute="top" secondItem="Sn5-mp-469" secondAttribute="bottom" constant="10" id="Zs4-rQ-lpR"/>
+                            <constraint firstItem="bXw-g0-zhk" firstAttribute="top" secondItem="B6B-QV-1HY" secondAttribute="bottom" constant="10" id="XS5-tE-F3c"/>
                             <constraint firstItem="B6B-QV-1HY" firstAttribute="centerX" secondItem="DBi-AG-jUb" secondAttribute="centerX" id="a2V-Db-S3P"/>
-                            <constraint firstItem="ipQ-Tl-gax" firstAttribute="centerX" secondItem="DBi-AG-jUb" secondAttribute="centerX" id="bpw-EO-dwb"/>
                             <constraint firstItem="Rdn-Y5-AJd" firstAttribute="top" secondItem="Xai-mo-LZP" secondAttribute="bottom" constant="5" id="fCe-Sy-qsU"/>
                             <constraint firstItem="okY-3O-VOm" firstAttribute="centerX" secondItem="DBi-AG-jUb" secondAttribute="centerX" id="fqk-Vg-xUj"/>
-                            <constraint firstItem="jHy-x3-COq" firstAttribute="leading" secondItem="DBi-AG-jUb" secondAttribute="leadingMargin" id="gDc-5L-WnF"/>
-                            <constraint firstItem="vWo-JN-f78" firstAttribute="top" secondItem="3tw-2m-PlL" secondAttribute="bottom" constant="5" id="idj-VY-oke"/>
-                            <constraint firstItem="RLy-aI-iC7" firstAttribute="centerX" secondItem="DBi-AG-jUb" secondAttribute="centerX" id="jLy-Oe-1hi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dMf-YQ-ZMD" secondAttribute="trailing" id="jbg-qZ-lDf"/>
                             <constraint firstItem="t43-dG-MRb" firstAttribute="centerX" secondItem="DBi-AG-jUb" secondAttribute="centerX" id="jrB-AH-zkz"/>
-                            <constraint firstItem="bxn-x8-cDc" firstAttribute="top" secondItem="WnT-De-hwf" secondAttribute="bottom" constant="5" id="nRf-3s-SKD"/>
-                            <constraint firstItem="3tw-2m-PlL" firstAttribute="centerX" secondItem="DBi-AG-jUb" secondAttribute="centerX" id="o9c-QH-y1R"/>
-                            <constraint firstItem="RLy-aI-iC7" firstAttribute="leading" secondItem="DBi-AG-jUb" secondAttribute="leadingMargin" id="oHb-gO-gvh"/>
-                            <constraint firstItem="6c7-hc-hFy" firstAttribute="leading" secondItem="DBi-AG-jUb" secondAttribute="leadingMargin" id="omE-9s-fdZ"/>
-                            <constraint firstItem="jHy-x3-COq" firstAttribute="top" secondItem="bxn-x8-cDc" secondAttribute="bottom" constant="5" id="qHo-35-yqt"/>
-                            <constraint firstItem="WnT-De-hwf" firstAttribute="top" secondItem="vWo-JN-f78" secondAttribute="bottom" constant="5" id="qpd-Sq-PUX"/>
-                            <constraint firstItem="vWo-JN-f78" firstAttribute="leading" secondItem="DBi-AG-jUb" secondAttribute="leadingMargin" id="ux6-nY-S23"/>
-                            <constraint firstItem="WnT-De-hwf" firstAttribute="leading" secondItem="DBi-AG-jUb" secondAttribute="leadingMargin" id="wM0-Re-aXJ"/>
-                            <constraint firstItem="vWo-JN-f78" firstAttribute="centerX" secondItem="DBi-AG-jUb" secondAttribute="centerX" id="wWV-yX-VPt"/>
+                            <constraint firstItem="F1u-ri-3D0" firstAttribute="top" secondItem="bXw-g0-zhk" secondAttribute="bottom" constant="10" id="ra6-UY-5Ok"/>
+                            <constraint firstItem="bXw-g0-zhk" firstAttribute="leading" secondItem="DBi-AG-jUb" secondAttribute="leadingMargin" id="wUa-qV-iPF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bXw-g0-zhk" secondAttribute="trailing" id="xda-BG-o7K"/>
                             <constraint firstItem="Xai-mo-LZP" firstAttribute="centerX" secondItem="DBi-AG-jUb" secondAttribute="centerX" id="y9Z-SM-cvH"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="gDf-qs-n2n"/>
                     <connections>
+                        <outlet property="additionalNotes" destination="CMD-7Q-Qf8" id="f9P-GX-79q"/>
+                        <outlet property="driveCIMs" destination="bXw-g0-zhk" id="zou-wH-Awb"/>
+                        <outlet property="driveSpeed" destination="pYb-TI-icN" id="FlM-kY-Z0P"/>
+                        <outlet property="drivetrainType" destination="RLy-aI-iC7" id="yjJ-rd-YQo"/>
+                        <outlet property="drivetrainTypeGroup" destination="dMf-YQ-ZMD" id="Otm-g6-HT4"/>
+                        <outletCollection property="borderFields" destination="pYb-TI-icN" collectionClass="NSMutableArray" id="LHA-lc-kEm"/>
+                        <outletCollection property="borderAreas" destination="CMD-7Q-Qf8" collectionClass="NSMutableArray" id="ExS-6H-5Ey"/>
                         <outletCollection property="borderButtons" destination="3tw-2m-PlL" collectionClass="NSMutableArray" id="GxQ-gS-TDQ"/>
                         <outletCollection property="borderButtons" destination="vWo-JN-f78" collectionClass="NSMutableArray" id="OUc-tb-q6Q"/>
                         <outletCollection property="borderButtons" destination="WnT-De-hwf" collectionClass="NSMutableArray" id="krF-gI-HLn"/>
                         <outletCollection property="borderButtons" destination="bxn-x8-cDc" collectionClass="NSMutableArray" id="Vdi-FQ-gmm"/>
                         <outletCollection property="borderButtons" destination="jHy-x3-COq" collectionClass="NSMutableArray" id="LTj-kD-a8Q"/>
                         <outletCollection property="borderButtons" destination="6c7-hc-hFy" collectionClass="NSMutableArray" id="Xh6-Il-2Wf"/>
-                        <outletCollection property="borderButtons" destination="tut-xz-QHB" collectionClass="NSMutableArray" id="8Ej-Ep-QWU"/>
+                        <outletCollection property="borderFields" destination="RLy-aI-iC7" collectionClass="NSMutableArray" id="Rnk-NA-D8O"/>
                         <outletCollection property="borderButtons" destination="mAt-b1-52H" collectionClass="NSMutableArray" id="G7n-P4-tjx"/>
+                        <outletCollection property="borderButtons" destination="tut-xz-QHB" collectionClass="NSMutableArray" id="8Ej-Ep-QWU"/>
                         <outletCollection property="borderButtons" destination="rtN-Ir-Sfp" collectionClass="NSMutableArray" id="Cbf-hb-CfK"/>
-                        <outletCollection property="borderButtons" destination="DZu-yw-Xwr" collectionClass="NSMutableArray" id="thY-mQ-6iU"/>
                         <outletCollection property="borderButtons" destination="jcg-8q-4si" collectionClass="NSMutableArray" id="BlQ-8R-EZL"/>
                         <outletCollection property="borderButtons" destination="wqZ-81-d1K" collectionClass="NSMutableArray" id="NyF-SH-EYa"/>
-                        <outletCollection property="borderFields" destination="RLy-aI-iC7" collectionClass="NSMutableArray" id="Rnk-NA-D8O"/>
-                        <outletCollection property="borderFields" destination="pYb-TI-icN" collectionClass="NSMutableArray" id="LHA-lc-kEm"/>
-                        <outletCollection property="borderAreas" destination="CMD-7Q-Qf8" collectionClass="NSMutableArray" id="ExS-6H-5Ey"/>
+                        <outletCollection property="borderButtons" destination="DZu-yw-Xwr" collectionClass="NSMutableArray" id="thY-mQ-6iU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5AT-CZ-dMa" userLabel="First Responder" sceneMemberID="firstResponder"/>

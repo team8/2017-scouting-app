@@ -11,30 +11,72 @@ import UIKit
 
 class PitScoutingViewController: ViewController {
     
+    var viewing: Bool?
+    
+    var pitScouting: PitScouting?
+    
+    @IBOutlet weak var editButton: UIButton!
+    @IBOutlet weak var saveUploadButton: UIButton!
+    
     var previousViewController: ViewController?
     
     @IBOutlet var sectionViews: [PitScoutingSectionView]!
     @IBOutlet weak var scrollView: UIScrollView!
+    
+    var sectionVCs = [PSSectionViewController]()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         for view in sectionViews {
             view.parent = self
         }
+        self.viewing = false
     }
  
     @IBAction func editButtonPressed(_ sender: Any) {
         
     }
+    @IBAction func saveUploadPressed(_ sender: Any) {
+        if (self.viewing)! {
+            
+        } else {
+            var data = [String: String]()
+            for vc in sectionVCs {
+                if (vc.getData() == nil) {
+                    print("rip")
+                    return
+                }
+                for (k, v) in vc.getData()! {
+                    data.updateValue(v, forKey: k)
+                }
+            }
+            print(data)
+        }
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
         //Send data to embedded view controllers
-//        if let vc = segue.destination as? PSSectionViewController, segue.identifier == "drivetrainEmbed" {
-//            self.drivetrainView.child = vc
-////            self.embeddedViewController = vc
-////            (self.embeddedViewController?.viewControllers?[0] as! TeamInfoViewController).teamNumber = self.teamNumber
-////            (self.embeddedViewController?.viewControllers?[1] as! TeamMatchesViewController).teamNumber = self.teamNumber
-////            (self.embeddedViewController?.viewControllers?[1] as! TeamMatchesViewController).parentVC = self
-//        }
+        if let vc = segue.destination as? PSSectionViewController {
+            for view in sectionViews {
+                if (view.displayButton.tag == vc.tag) {
+                    vc.parentView = view
+                }
+            }
+            self.sectionVCs.append(vc)
+//            self.embeddedViewController = vc
+//            (self.embeddedViewController?.viewControllers?[0] as! TeamInfoViewController).teamNumber = self.teamNumber
+//            (self.embeddedViewController?.viewControllers?[1] as! TeamMatchesViewController).teamNumber = self.teamNumber
+//            (self.embeddedViewController?.viewControllers?[1] as! TeamMatchesViewController).parentVC = self
+        }
+    }
+    
+    
+}
+
+extension Dictionary {
+    static func += <K, V> (left: inout [K:V], right: inout [K:V]) {
+        for (k, v) in right {
+            left.updateValue(v, forKey: k)
+        }
     }
 }
 

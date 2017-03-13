@@ -9,11 +9,21 @@
 import Foundation
 import UIKit
 
-class PSDrivetrainViewController: PSSectionViewController {
+class PSDrivetrainViewController: PSSectionViewController, UITextFieldDelegate, UITextViewDelegate {
     
     @IBOutlet var borderButtons: [UIButton]!
     @IBOutlet var borderFields: [UITextField]!
     @IBOutlet var borderAreas: [UITextView]!
+    
+    @IBOutlet weak var drivetrainTypeGroup: ButtonGroup!
+    @IBOutlet weak var driveCIMs: ButtonGroup!
+    
+    @IBOutlet weak var drivetrainType: UITextField!
+    @IBOutlet weak var driveSpeed: UITextField!
+    
+    @IBOutlet weak var additionalNotes: UITextView!
+    
+    override var tag: Int { get { return 0 } }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -29,5 +39,41 @@ class PSDrivetrainViewController: PSSectionViewController {
             area.layer.borderColor = UIColor.white.cgColor
             area.layer.borderWidth = 1
         }
+        self.drivetrainType.delegate = self
+        self.drivetrainType.returnKeyType = .done
+        self.driveSpeed.delegate = self
+        self.driveSpeed.returnKeyType = .done
+        self.additionalNotes.delegate = self
+        self.additionalNotes.returnKeyType = .done
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if (text == "\n") {
+            textView.resignFirstResponder()
+        }
+        return true
+    }
+    
+    override func getData() -> [String: String]? {
+        if (drivetrainTypeGroup.value == nil || driveSpeed.text! == "" || driveCIMs.value == nil) {
+            return nil
+        }
+        var dtType: String
+        if (drivetrainTypeGroup.value! != "Other") {
+            dtType = drivetrainTypeGroup.value!
+        } else {
+            dtType = drivetrainType.text!
+        }
+        return [
+            "dt_type": dtType,
+            "dt_speed": driveSpeed.text!,
+            "dt_cims": driveCIMs.value!,
+            "dt_notes": additionalNotes.text
+        ]
     }
 }
