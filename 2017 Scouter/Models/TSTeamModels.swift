@@ -17,7 +17,7 @@ class Team: CoreData {
     var matches = [TBAMatch]()
     
     //Stats
-    static let importantKeys = ["improtant!!11!1"]
+    static var importantKeys = "improtant-improtant-improtant-improtant"
     var importantStats = [String: Any]()
     var otherStats = [String: Any]()
     
@@ -45,7 +45,7 @@ class Team: CoreData {
     
     func setFirebaseData(data: NSDictionary) {
         let d = data.mutableCopy() as! NSMutableDictionary
-        for (key) in Team.importantKeys {
+        for (key) in Team.importantKeys.components(separatedBy: ",") {
             importantStats[key] = data.value(forKey: key)
             d.removeObject(forKey: key)
         }

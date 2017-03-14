@@ -17,7 +17,7 @@ class Data {
     static var teamList = [Team]()
     static var matchList = [TBAMatch]()
     static var timdList = [TIMD]()
-    //    static var pitScoutingList = [PitScouting]()
+    //    svaric var pitScoutingList = [PitScouting]()
     static var pitScoutingList = [PitScouting]()
     static var firebasePitScouting = [PitScouting]()
     
@@ -124,6 +124,11 @@ class Data {
     
     static func handleFirebaseJSON(value: NSDictionary) -> Void {
         if (((value.value(forKey: "query") as! NSDictionary).value(forKey: "success"))! as! String == "yes") {
+            if let importantKeys = ((value.value(forKey: "query") as! NSDictionary).value(forKey: "event") as! NSDictionary).value(forKey: "important-keys") {
+                Team.importantKeys = importantKeys as! String
+                UserDefaults.standard.set(importantKeys as! String, forKey: "important-keys")
+            }
+            
             let teams = ((value.value(forKey: "query") as! NSDictionary).value(forKey: "event") as! NSDictionary).value(forKey: "teams") as! NSDictionary
             firebasePitScouting.removeAll()
             //Set team data
@@ -193,6 +198,9 @@ class Data {
     }
     
     static func fetchFromCoreData(event: String) {
+        if let importantKeys = UserDefaults.standard.value(forKey: "important-keys") {
+            Team.importantKeys = importantKeys as! String
+        }
         fetchTeamsFromCoreData(event: event)
         fetchMatchesFromCoreData(event: event)
         fetchTIMDsFromCoreData(event: event)

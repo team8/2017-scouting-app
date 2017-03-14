@@ -63,7 +63,7 @@ class ViewStatsViewController: ViewController, UITableViewDataSource, UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StatCell", for: indexPath)
         
-        let key = Array(timd!.stats.keys)[indexPath.row]
+        let key = (Array(timd!.stats.keys).sorted { $0 < $1 })[indexPath.row]
         let value = String(describing: timd!.stats[key]!)
         cell.textLabel?.text = key + ": " + value
         cell.textLabel?.textColor = UIColor.white
@@ -76,7 +76,7 @@ class ViewStatsViewController: ViewController, UITableViewDataSource, UITableVie
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
-        if let vc = segue.destination as? MenuViewController, segue.identifier == "teamToMenu" {
+        if let vc = segue.destination as? MenuViewController, segue.identifier == "viewStatsToMenu" {
             self.navigationStack = self.navigationController?.viewControllers
             vc.previousViewController = self
             vc.hasPrevious = true

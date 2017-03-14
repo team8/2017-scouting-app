@@ -92,6 +92,10 @@ class MenuViewController: ViewController, UITextFieldDelegate, UIPickerViewDataS
             self.performSegue(withIdentifier: "menuToTeam", sender: nil)
         } else if(self.previousViewController! is MatchViewController) {
             self.performSegue(withIdentifier: "menuToMatch", sender: nil)
+        } else if(self.previousViewController! is ViewStatsViewController) {
+            self.performSegue(withIdentifier: "menuToViewStats", sender: nil)
+        } else if(self.previousViewController! is PitScoutingViewController) {
+            self.performSegue(withIdentifier: "menuToPitScouting", sender: nil)
         }
 //        self.navigationController?.pushViewController(self.previousViewController!, animated: true)
     }
@@ -110,6 +114,12 @@ class MenuViewController: ViewController, UITextFieldDelegate, UIPickerViewDataS
         } else if let vc = segue.destination as? ViewStatsViewController, segue.identifier == "menuToViewStats" {
             let prev = (self.previousViewController! as! ViewStatsViewController)
             vc.timd = prev.timd
+            vc.previousViewController = prev.previousViewController
+            vc.navigationStack = prev.navigationStack
+        } else if let vc = segue.destination as? PitScoutingViewController, segue.identifier == "menuToPitScouting" {
+            let prev = (self.previousViewController! as! PitScoutingViewController)
+            vc.pitScouting = prev.pitScouting
+            vc.viewing = prev.viewing
             vc.previousViewController = prev.previousViewController
             vc.navigationStack = prev.navigationStack
         }

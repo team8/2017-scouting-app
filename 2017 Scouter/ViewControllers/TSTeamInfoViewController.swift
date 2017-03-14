@@ -131,14 +131,25 @@ class TeamInfoViewController: ViewController, UITableViewDelegate, UITableViewDa
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "InfoCell", for: indexPath)
-            let key = Array(team.otherStats.keys)[indexPath.row - (team.importantStats.count + 1) / 2]
+            let key = (Array(team.otherStats.keys).sorted { $0 < $1 })[indexPath.row - (team.importantStats.count + 1) / 2]
             let value = String(describing: team.otherStats[key]!)
             cell.textLabel?.text = key + ": " + value
             cell.textLabel?.textColor = UIColor.white
             cell.backgroundColor = UIColor.clear
+            cell.textLabel?.numberOfLines=0
+            cell.textLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
             return cell
         }
         
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        if (indexPath.row < (Data.getTeam(withNumber: self.teamNumber)!.importantStats.count + 1) / 2) {
+            return 300
+        } else {
+            print(indexPath.row)
+            return UITableViewAutomaticDimension
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -151,14 +162,14 @@ class TeamInfoViewController: ViewController, UITableViewDelegate, UITableViewDa
         return ((Data.getTeam(withNumber: self.teamNumber)?.importantStats.count)! + 1)/2 + (Data.getTeam(withNumber: self.teamNumber)?.otherStats.count)!
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
-    {
-        if (indexPath.row < (Data.getTeam(withNumber: self.teamNumber)!.importantStats.count + 1) / 2) {
-            return 60
-        } else {
-            return 30
-        }
-    }   
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+//    {
+//        if (indexPath.row < (Data.getTeam(withNumber: self.teamNumber)!.importantStats.count + 1) / 2) {
+//            return 60
+//        } else {
+//            return UITableViewAutomaticDimension
+//        }
+//    }   
 }
 
 class InfoTable: UITableView {

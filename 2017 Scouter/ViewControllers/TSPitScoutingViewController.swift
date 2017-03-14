@@ -25,6 +25,7 @@ class PitScoutingViewController: ViewController {
     @IBOutlet weak var saveUploadButton: UIButton!
     
     var previousViewController: ViewController?
+    var navigationStack: [UIViewController]?
     
     @IBOutlet var sectionViews: [PitScoutingSectionView]!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -39,7 +40,7 @@ class PitScoutingViewController: ViewController {
         for view in sectionViews {
             view.parent = self
         }
-        print(self.viewing)
+//        print(self.viewing)
         reload()
         
         if (self.pitScouting!.stats.count != 0) {
@@ -49,6 +50,10 @@ class PitScoutingViewController: ViewController {
             for vc in sectionVCs {
                 vc.setData(data: self.pitScouting!.stats)
             }
+        }
+        
+        if(self.navigationStack != nil) {
+            self.navigationController?.viewControllers = self.navigationStack!
         }
 //        self.viewing = false
     }
@@ -89,10 +94,14 @@ class PitScoutingViewController: ViewController {
     }
     
     @IBAction func menuButtonPressed(_ sender: Any) {
-        
+        self.performSegue(withIdentifier: "pitScoutingToMenu", sender: nil)
     }
     @IBAction func backButtonPressed(_ sender: Any) {
-        self.performSegue(withIdentifier: "unwindPitScoutingToPitList", sender: nil)
+        if(self.previousViewController! is PitListViewController) {
+            self.performSegue(withIdentifier: "unwindPitScoutingToPitList", sender: nil)
+        } else if(self.previousViewController! is TeamViewController) {
+            self.performSegue(withIdentifier: "unwindPitScoutingToTeam", sender: nil)
+        }
     }
     @IBAction func editButtonPressed(_ sender: Any) {
         self.viewing = false
@@ -156,6 +165,14 @@ class PitScoutingViewController: ViewController {
 //            (self.embeddedViewController?.viewControllers?[0] as! TeamInfoViewController).teamNumber = self.teamNumber
 //            (self.embeddedViewController?.viewControllers?[1] as! TeamMatchesViewController).teamNumber = self.teamNumber
 //            (self.embeddedViewController?.viewControllers?[1] as! TeamMatchesViewController).parentVC = self
+        } else if let vc = segue.destination as? TeamViewController, segue.identifier == "unwindPitScoutingToTeam" {
+            let navStack = self.navigationController?.viewControllers
+            vc.previousViewController = navStack?[(navStack?.count)! - 3] as! ViewController?
+            vc.teamNumber = (self.previousViewController as! TeamViewController).teamNumber
+        } else if let vc = segue.destination as? MenuViewController, segue.identifier == "pitScoutingToMenu" {
+            self.navigationStack = self.navigationController?.viewControllers
+            vc.previousViewController = self
+            vc.hasPrevious = true
         }
     }
     
