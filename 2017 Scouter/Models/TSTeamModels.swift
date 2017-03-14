@@ -18,6 +18,7 @@ class Team: CoreData {
     
     //Stats
     static var importantKeys = "improtant-improtant-improtant-improtant"
+    static var rankedStats = ""
     var importantStats = [String: Any]()
     var otherStats = [String: Any]()
     

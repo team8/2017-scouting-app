@@ -128,6 +128,10 @@ class Data {
                 Team.importantKeys = importantKeys as! String
                 UserDefaults.standard.set(importantKeys as! String, forKey: "important-keys")
             }
+            if let rankedStats = ((value.value(forKey: "query") as! NSDictionary).value(forKey: "event") as! NSDictionary).value(forKey: "ranked-stats") {
+                Team.rankedStats = rankedStats as! String
+                UserDefaults.standard.set(rankedStats as! String, forKey: "ranked-stats")
+            }
             
             let teams = ((value.value(forKey: "query") as! NSDictionary).value(forKey: "event") as! NSDictionary).value(forKey: "teams") as! NSDictionary
             firebasePitScouting.removeAll()
@@ -200,6 +204,9 @@ class Data {
     static func fetchFromCoreData(event: String) {
         if let importantKeys = UserDefaults.standard.value(forKey: "important-keys") {
             Team.importantKeys = importantKeys as! String
+        }
+        if let rankedStats = UserDefaults.standard.value(forKey: "ranked-stats") {
+            Team.rankedStats = rankedStats as! String
         }
         fetchTeamsFromCoreData(event: event)
         fetchMatchesFromCoreData(event: event)

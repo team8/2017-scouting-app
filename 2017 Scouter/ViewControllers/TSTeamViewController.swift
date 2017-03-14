@@ -98,7 +98,7 @@ class TeamViewController: ViewController {
             vc.previousViewController = self
             vc.pitScouting = Data.getPitScoutingFirebase(teamNumber: sender as! Int)
             vc.viewing = true
-            print(vc.viewing)
+//            print(vc.viewing)
         }
     }
     @IBAction func refresh(_ sender: Any) {
