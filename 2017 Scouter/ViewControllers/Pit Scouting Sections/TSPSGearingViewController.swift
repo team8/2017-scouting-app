@@ -42,16 +42,31 @@ class PSGearingViewController: PSSectionViewController, UITextViewDelegate {
     
     override func getData() -> [String : String]? {
         if (!self.parentView!.state) {
-            return ["gear": "false"]
+            return ["Gear": "false"]
         }
         if (pilot.value == nil || groundIntake.value == nil) {
             return nil
         }
         return [
-            "gear": "true",
-            "gear_pilot": pilot.value!,
-            "gear_ground_intake": groundIntake.value!,
-            "gear_notes": notes.text
+            "Gear": "true",
+            "Gear-Pilot": pilot.value!,
+            "Gear-Ground-Intake": groundIntake.value!,
+            "Gear-Notes": notes.text
         ]
+    }
+    
+    override func setData(data: [String : String]) {
+        if (data["Gear"] == "false") {
+            return
+        }
+        pilot.setButton(data["Gear-Pilot"]!)
+        groundIntake.setButton(data["Gear-Ground-Intake"]!)
+        notes.text = data["Gear-Notes"]
+    }
+    
+    override func setEnabled(_ state: Bool) {
+        pilot.setEnabled(state)
+        groundIntake.setEnabled(state)
+        notes.isUserInteractionEnabled = state
     }
 }

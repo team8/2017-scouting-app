@@ -17,6 +17,9 @@ class TeamInfoViewController: ViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var infoTable: InfoTable!
     @IBOutlet weak var scrollingView: UIView!
+    @IBOutlet weak var pitScoutingButton: UIButton!
+    
+    var parentVC: TeamViewController?
     
     var client: DropboxClient?
     
@@ -37,6 +40,19 @@ class TeamInfoViewController: ViewController, UITableViewDelegate, UITableViewDa
         infoTable.delegate = self
         infoTable.dataSource = self
         infoTable.backgroundColor = UIColor.clear
+        
+        //Button Border
+        pitScoutingButton.layer.borderWidth = 1
+        pitScoutingButton.layer.borderColor = UIColor.white.cgColor
+        if (Data.getPitScoutingFirebase(teamNumber: self.teamNumber) == nil) {
+            pitScoutingButton.isEnabled = false
+            pitScoutingButton.setTitleColor(UIColor(white: 1.0, alpha: 0.5), for: .normal)
+            pitScoutingButton.layer.borderColor = UIColor(white: 1.0, alpha: 0.5).cgColor
+        } else {
+            pitScoutingButton.isEnabled = true
+            pitScoutingButton.setTitleColor(UIColor.white, for: .normal)
+            pitScoutingButton.layer.borderColor = UIColor.white.cgColor
+        }
     }
     @IBAction func imageTapped(_ sender: Any) {
         self.addActivityIndicator()
@@ -90,6 +106,9 @@ class TeamInfoViewController: ViewController, UITableViewDelegate, UITableViewDa
         }
     }
     
+    @IBAction func pitScoutingPressed(_ sender: Any) {
+        self.parentVC!.performSegue(withIdentifier: "teamToPitScouting", sender: self.teamNumber)
+    }
     //Table stuff
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let team = Data.getTeam(withNumber: self.teamNumber)!

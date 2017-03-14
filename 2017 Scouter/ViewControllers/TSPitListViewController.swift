@@ -23,6 +23,7 @@ class PitListViewController: ViewController, UITableViewDelegate, UITableViewDat
         
         teamTable.backgroundColor = UIColor.clear
         
+        self.teamTable.reloadData()
     }
     
     override func viewDidLoad() {
@@ -38,8 +39,8 @@ class PitListViewController: ViewController, UITableViewDelegate, UITableViewDat
         
         let teamNumber = Data.pitScoutingList[indexPath.row].teamNumber
         
-        cell.teamNum = teamNumber
-        cell.teamNumber.text = String(teamNumber)
+        cell.teamNum = teamNumber!
+        cell.teamNumber.text = String(teamNumber!)
         cell.backgroundColor = UIColor.clear
         return cell
     }
@@ -54,9 +55,14 @@ class PitListViewController: ViewController, UITableViewDelegate, UITableViewDat
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
         if (segue.identifier == "pitListToPitScouting") {
             let secondViewController = segue.destination as! PitScoutingViewController
-//            let teamNumber = sender as! Int
             secondViewController.previousViewController = self
-//            secondViewController.teamNumber = teamNumber
+            if let teamNumber = sender {
+                secondViewController.pitScouting = Data.getPitScoutingLocal(teamNumber: teamNumber as! Int)
+                secondViewController.viewing = true
+            } else {
+                secondViewController.pitScouting = PitScouting(local: true)
+                secondViewController.viewing = false
+            }
         }
     }
     
@@ -64,6 +70,9 @@ class PitListViewController: ViewController, UITableViewDelegate, UITableViewDat
         return Data.pitScoutingList.count
     }
     
+    @IBAction func scoutNewTeamPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "pitListToPitScouting", sender: nil)
+    }
     //Unwind segue
     @IBAction func pitListUnwind(unwindSegue: UIStoryboardSegue) {
         

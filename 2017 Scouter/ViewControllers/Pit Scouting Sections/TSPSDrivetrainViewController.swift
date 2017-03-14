@@ -70,10 +70,28 @@ class PSDrivetrainViewController: PSSectionViewController, UITextFieldDelegate, 
             dtType = drivetrainType.text!
         }
         return [
-            "dt_type": dtType,
-            "dt_speed": driveSpeed.text!,
-            "dt_cims": driveCIMs.value!,
-            "dt_notes": additionalNotes.text
+            "Dt-Type": dtType,
+            "Dt-Speed": driveSpeed.text!,
+            "Dt-Cims": driveCIMs.value!,
+            "Dt-Notes": additionalNotes.text
         ]
+    }
+    
+    override func setData(data: [String : String]) {
+        if !(drivetrainTypeGroup.setButton(data["Dt-Type"]!)) {
+            drivetrainTypeGroup.setButton("Other")
+            drivetrainType.text = data["Dt-Type"]
+        }
+        driveSpeed.text = data["Dt-Speed"]
+        driveCIMs.setButton(data["Dt-Cims"]!)
+        additionalNotes.text = data["Dt-Notes"]
+    }
+    
+    override func setEnabled(_ state: Bool) {
+        drivetrainTypeGroup.setEnabled(state)
+        driveCIMs.setEnabled(state)
+        drivetrainType.isUserInteractionEnabled = state
+        driveSpeed.isUserInteractionEnabled = state
+        additionalNotes.isUserInteractionEnabled = state
     }
 }

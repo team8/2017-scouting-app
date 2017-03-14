@@ -49,15 +49,28 @@ class PSLowGoalViewController: PSSectionViewController, UITextFieldDelegate, UIT
     
     override func getData() -> [String : String]? {
         if (!self.parentView!.state) {
-            return ["fuel_low": "false"]
+            return ["Fuel-Low": "false"]
         }
         if (capacity.text! == "") {
             return nil
         }
         return [
-            "fuel_low": "true",
-            "fuel_low_capacity": capacity.text!,
-            "fuel_low_notes": notes.text!
+            "Fuel-Low": "true",
+            "Fuel-Low-Capacity": capacity.text!,
+            "Fuel-Low-Notes": notes.text!
         ]
+    }
+    
+    override func setData(data: [String : String]) {
+        if (data["Fuel-Low"] == "false") {
+            return
+        }
+        capacity.text = data["Fuel-Low-Capacity"]
+        notes.text = data["Fuel-Low-Notes"]
+    }
+    
+    override func setEnabled(_ state: Bool) {
+        capacity.isUserInteractionEnabled = state
+        notes.isUserInteractionEnabled = state
     }
 }

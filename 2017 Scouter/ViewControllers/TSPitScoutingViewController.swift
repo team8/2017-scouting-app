@@ -15,6 +15,12 @@ class PitScoutingViewController: ViewController {
     
     var pitScouting: PitScouting?
     
+    @IBOutlet weak var menuButton: UIButton!
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var teamLabel: UILabel!
+    @IBOutlet weak var teamField: UITextField!
+    @IBOutlet weak var teamFieldWidth: NSLayoutConstraint!
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var saveUploadButton: UIButton!
     
@@ -27,32 +33,116 @@ class PitScoutingViewController: ViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        //Menu Button Image Sizing
+        menuButton.imageEdgeInsets = UIEdgeInsetsMake(10, 20, 10, 20)
+        backButton.imageEdgeInsets = UIEdgeInsetsMake(10, 20, 10, 20)
         for view in sectionViews {
             view.parent = self
         }
-        self.viewing = false
-    }
- 
-    @IBAction func editButtonPressed(_ sender: Any) {
+        print(self.viewing)
+        reload()
         
+        if (self.pitScouting!.stats.count != 0) {
+            for view in sectionViews {
+                view.setEnabled(data: self.pitScouting!.stats)
+            }
+            for vc in sectionVCs {
+                vc.setData(data: self.pitScouting!.stats)
+            }
+        }
+//        self.viewing = false
+    }
+    
+    func reload() {
+        if(self.viewing!) {
+            titleLabel.text = "View Team"
+            teamLabel.text = "Team " + String(pitScouting!.teamNumber!)
+            teamFieldWidth.constant = 0
+            editButton.setTitle("Edit Data", for: .normal)
+            saveUploadButton.setTitle("Upload Data", for: .normal)
+            for vc in self.sectionVCs {
+                vc.setEnabled(false)
+            }
+            for view in self.sectionViews {
+                view.displayButton.isEnabled = false
+            }
+        } else {
+            titleLabel.text = "Edit Team"
+            teamLabel.text = "Team "
+            teamFieldWidth.constant = 78
+            if (self.pitScouting!.teamNumber == nil) {
+                teamField.text = ""
+            } else {
+                teamField.text = String(self.pitScouting!.teamNumber!)
+            }
+            editButton.setTitle("", for: .normal)
+            saveUploadButton.setTitle("Save Data", for: .normal)
+            for vc in self.sectionVCs {
+                vc.setEnabled(true)
+            }
+            for view in self.sectionViews {
+                if (view.displayButton.tag != 0 && view.displayButton.tag != 8) {
+                    view.displayButton.isEnabled = true
+                }
+            }
+        }
+    }
+    
+    @IBAction func menuButtonPressed(_ sender: Any) {
+        
+    }
+    @IBAction func backButtonPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "unwindPitScoutingToPitList", sender: nil)
+    }
+    @IBAction func editButtonPressed(_ sender: Any) {
+        self.viewing = false
+        reload()
     }
     @IBAction func saveUploadPressed(_ sender: Any) {
         if (self.viewing)! {
-            
+            ServerInterfacer.uploadPitData(with: self.pitScouting!.stats, callback: statusOfSubmission(_:))
         } else {
             var data = [String: String]()
             for vc in sectionVCs {
                 if (vc.getData() == nil) {
-                    print("rip")
+                    let alertController = UIAlertController(title: "Error", message: "Please fill out all the fields.", preferredStyle: UIAlertControllerStyle.alert)
+                    alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
+                    self.present(alertController, animated: true, completion: nil)
                     return
                 }
                 for (k, v) in vc.getData()! {
                     data.updateValue(v, forKey: k)
                 }
             }
-            print(data)
+            if (teamField.text == "") {
+                let alertController = UIAlertController(title: "Error", message: "Please fill out all the fields.", preferredStyle: UIAlertControllerStyle.alert)
+                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alertController, animated: true, completion: nil)
+                return
+            }
+            self.pitScouting!.teamNumber = Int(teamField.text!)
+            self.pitScouting!.stats = data
+            self.pitScouting!.stats["team_number"] = teamField.text!
+            self.pitScouting!.stats["event"] = Data.competition!
+            if (Data.getPitScoutingLocal(teamNumber: self.pitScouting!.teamNumber!) == nil) {
+                Data.pitScoutingList.append(self.pitScouting!)
+            }
+//            print(Data.pitScoutingList[0].stats)
+//            print(data)
+            Data.saveLocalPitScoutingToCoreData()
+            self.viewing = true
+            reload()
         }
     }
+    
+    func statusOfSubmission(_ data: Bool) {
+        let alert : UIAlertController = UIAlertController(title: "Status", message: "Status: \(data)", preferredStyle: .alert)
+        let action : UIAlertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(action)
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
         //Send data to embedded view controllers
         if let vc = segue.destination as? PSSectionViewController {
@@ -89,25 +179,57 @@ class PitScoutingSectionView: UIView {
     var parent: PitScoutingViewController?
     var state = false
     
+    let keys = ["", "Takeoff", "Gear", "Fuel", "Fuel-High", "Fuel-Low", "Defense", "Auto"]
+    
     override func awakeFromNib() {
         self.displayButton.layer.borderColor = UIColor.white.cgColor
         self.displayButton.layer.borderWidth = 1
         
         self.container.layer.borderColor = UIColor.white.cgColor
         self.container.layer.borderWidth = 1
+        
+        if(displayButton.tag == 0 || displayButton.tag == 8) {
+            enable()
+//            self.parent!.scrollView.layoutIfNeeded()
+            self.displayButton.isEnabled = false
+        }
     }
     
     @IBAction func displayButtonPressed(_ sender: UIButton) {
         if(state) {
+            UIView.animate(withDuration: 0.25, animations: {
+                self.displayButton.layer.backgroundColor = UIColor.clear.cgColor
+                self.displayButton.setTitleColor(UIColor.white, for: .normal)
+            })
             self.height.constant = 50
             state = false
         } else {
-            
+            UIView.animate(withDuration: 0.25, animations: {
+                self.displayButton.layer.backgroundColor = UIColor.white.cgColor
+                self.displayButton.setTitleColor(UIColor(colorLiteralRed: 39/255, green: 117/255, blue: 46/255, alpha: 1), for: .normal)
+            })
             self.height.constant = 50 + self.container.frame.height
             state = true
         }
         UIView.animate(withDuration: 0.5, animations: {
             self.parent!.scrollView.layoutIfNeeded()
         })
+    }
+    
+    func setEnabled(data: [String: String]) {
+        for (i, key) in keys.enumerated() {
+            if (data[key] == "true" && self.displayButton.tag == i) {
+                enable()
+                self.parent!.scrollView.layoutIfNeeded()
+            }
+        }
+    }
+    
+    func enable() {
+        self.displayButton.layer.backgroundColor = UIColor.white.cgColor
+        self.displayButton.setTitleColor(UIColor(colorLiteralRed: 39/255, green: 117/255, blue: 46/255, alpha: 1), for: .normal)
+        self.height.constant = 50 + self.container.frame.height
+        state = true
+        
     }
 }

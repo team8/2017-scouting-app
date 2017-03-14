@@ -55,17 +55,34 @@ class PSBallStorageViewController: PSSectionViewController, UITextFieldDelegate,
     
     override func getData() -> [String : String]? {
         if (!self.parentView!.state) {
-            return ["fuel": "false"]
+            return ["Fuel": "false"]
         }
         if (intakeHopper.value == nil || intakeGround.value == nil || capacity.text! == "") {
             return nil
         }
         return [
-            "fuel": "true",
-            "fuel_intake_hopper": intakeHopper.value!,
-            "fuel_intake_ground": intakeGround.value!,
-            "fuel_capacity": capacity.text!,
-            "fuel_notes": notes.text!
+            "Fuel": "true",
+            "Fuel-Intake-Hopper": intakeHopper.value!,
+            "Fuel-Intake-Ground": intakeGround.value!,
+            "Fuel-Capacity": capacity.text!,
+            "Fuel-Notes": notes.text!
         ]
+    }
+    
+    override func setData(data: [String : String]) {
+        if (data["Fuel"] == "false") {
+            return
+        }
+        intakeHopper.setButton(data["Fuel-Intake-Hopper"]!)
+        intakeGround.setButton(data["Fuel-Intake-Ground"]!)
+        capacity.text = data["Fuel-Capacity"]
+        notes.text = data["Fuel-Notes"]
+    }
+    
+    override func setEnabled(_ state: Bool) {
+        intakeHopper.setEnabled(state)
+        intakeGround.setEnabled(state)
+        capacity.isUserInteractionEnabled = state
+        notes.isUserInteractionEnabled = state
     }
 }

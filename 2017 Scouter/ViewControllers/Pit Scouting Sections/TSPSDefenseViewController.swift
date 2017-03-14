@@ -36,11 +36,22 @@ class PSDefenseViewController: PSSectionViewController, UITextViewDelegate {
     
     override func getData() -> [String : String]? {
         if (!self.parentView!.state) {
-            return ["defense": "false"]
+            return ["Defense": "false"]
         }
         return [
-            "defense": "true",
-            "defense_notes": notes.text!
+            "Defense": "true",
+            "Defense-Notes": notes.text!
         ]
+    }
+    
+    override func setData(data: [String : String]) {
+        if (data["Defense"] == "false") {
+            return
+        }
+        notes.text = data["Defense-Notes"]
+    }
+    
+    override func setEnabled(_ state: Bool) {
+        notes.isUserInteractionEnabled = state
     }
 }

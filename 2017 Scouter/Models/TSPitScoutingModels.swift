@@ -11,27 +11,39 @@ import CoreData
 
 class PitScouting: CoreData {
 
-    var teamNumber: Int
+    var teamNumber: Int?
     
-    var stats = [String: Any]()
+    var stats = [String: String]()
     
-    init(teamNumber: Int) {
-        self.teamNumber = teamNumber
-        super.init(entityName: "PitScoutingEntity")
+    init(local: Bool) {
+        if(local) {
+            super.init(entityName: "PitScoutingEntity")
+        } else {
+            super.init(entityName: "FirebasePitScoutingEntity")
+        }
     }
     
-    init(teamNumber: Int, data: NSDictionary) {
-        self.stats = data as! [String : Any]
+//    init(teamNumber: Int) {
+//        self.teamNumber = teamNumber
+//        super.init(entityName: "PitScoutingEntity")
+//    }
+    
+    init(teamNumber: Int, data: NSDictionary, local: Bool) {
+        self.stats = data as! [String : String]
         self.teamNumber = teamNumber
-        super.init(entityName: "PitScoutingEntity")
+        if(local) {
+            super.init(entityName: "PitScoutingEntity")
+        } else {
+            super.init(entityName: "FirebasePitScoutingEntity")
+        }
     }
     
     override init(_ managedObject: NSManagedObject) {
         let unarchivedData : NSData = managedObject.value(forKey: "data") as! NSData
         do {
             let dict: NSDictionary = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(unarchivedData) as! NSDictionary
-            self.teamNumber = dict.object(forKey: "teamNumber") as! Int
-            self.stats = dict.object(forKey: "stats") as! Dictionary <String, Any>
+            self.teamNumber = dict.object(forKey: "teamNumber") as? Int
+            self.stats = dict.object(forKey: "stats") as! Dictionary <String, String>
             super.init(managedObject)
         } catch {
             fatalError("core data fetch error")
@@ -40,7 +52,7 @@ class PitScouting: CoreData {
     
     override func getJSON() -> NSDictionary {
         return [
-            "teamNumber": self.teamNumber,
+            "teamNumber": self.teamNumber!,
             "stats": self.stats
         ]
     }

@@ -136,4 +136,25 @@ class ServerInterfacer {
         }
     }
     
+    static func uploadPitData(with data: [String: String], callback: @escaping (Bool) -> Void) -> Void {
+        let headers = data
+        Alamofire.request(SERVER_ADDRESS + "/" + AUTH_TOKEN + "/upload_pit_data", headers: headers)
+            .responseJSON { response in
+                if let JSON = response.result.value {
+                    let raw_val = JSON as! NSDictionary
+                    let shouldReturnVal = raw_val.object(forKey: "status")
+                    
+                    if shouldReturnVal as! String == "success"{
+                        callback(true)
+                    }
+                    else {
+                        callback(false)
+                    }
+                }
+                else {
+                    callback(false)
+                }
+        }
+    }
+    
 }

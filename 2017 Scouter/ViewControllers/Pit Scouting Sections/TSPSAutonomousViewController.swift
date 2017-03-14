@@ -44,15 +44,34 @@ class PSAutonomousViewController: PSSectionViewController, UITextViewDelegate {
     
     override func getData() -> [String : String]? {
         if (!self.parentView!.state) {
-            return ["auto": "false"]
+            return ["Auto": "false"]
         }
         return [
-            "auto": "true",
-            "auto_baseline": String(baseline.toggleState),
-            "auto_gear": String(gear.toggleState),
-            "auto_fuel_high": String(fuelHigh.toggleState),
-            "auto_fuel_low": String(fuelLow.toggleState),
-            "auto_notes": notes.text!
+            "Auto": "true",
+            "Auto-Baseline": String(baseline.toggleState),
+            "Auto-Gear": String(gear.toggleState),
+            "Auto-Fuel-High": String(fuelHigh.toggleState),
+            "Auto-Fuel-Low": String(fuelLow.toggleState),
+            "Auto-Notes": notes.text!
         ]
+    }
+    
+    override func setData(data: [String : String]) {
+        if (data["Auto"]! == "false") {
+            return
+        }
+        baseline.setToggle(data["Auto-Baseline"]!)
+        gear.setToggle(data["Auto-Gear"]!)
+        fuelHigh.setToggle(data["Auto-Fuel-High"]!)
+        fuelLow.setToggle(data["Auto-Fuel-Low"]!)
+        notes.text = data["Auto-Notes"]!
+    }
+    
+    override func setEnabled(_ state: Bool) {
+        baseline.isEnabled = state
+        gear.isEnabled = state
+        fuelHigh.isEnabled = state
+        fuelLow.isEnabled = state
+        notes.isUserInteractionEnabled = state
     }
 }

@@ -70,6 +70,7 @@ class TeamViewController: ViewController {
         if let vc = segue.destination as? UITabBarController, segue.identifier == "teamEmbed" {
             self.embeddedViewController = vc
             (self.embeddedViewController?.viewControllers?[0] as! TeamInfoViewController).teamNumber = self.teamNumber
+            (self.embeddedViewController?.viewControllers?[0] as! TeamInfoViewController).parentVC = self
             (self.embeddedViewController?.viewControllers?[1] as! TeamMatchesViewController).teamNumber = self.teamNumber
             (self.embeddedViewController?.viewControllers?[1] as! TeamMatchesViewController).parentVC = self
         //Send data to menu when unwinding
@@ -93,6 +94,11 @@ class TeamViewController: ViewController {
             let navStack = self.navigationController?.viewControllers
             vc.previousViewController = navStack?[(navStack?.count)! - 3] as! ViewController?
             vc.timd = (self.previousViewController as! ViewStatsViewController).timd
+        } else if let vc = segue.destination as? PitScoutingViewController, segue.identifier == "teamToPitScouting" {
+            vc.previousViewController = self
+            vc.pitScouting = Data.getPitScoutingFirebase(teamNumber: sender as! Int)
+            vc.viewing = true
+            print(vc.viewing)
         }
     }
     @IBAction func refresh(_ sender: Any) {

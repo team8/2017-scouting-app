@@ -45,9 +45,21 @@ class PSDriverExperienceViewController: PSSectionViewController, UITextViewDeleg
             return nil
         }
         return [
-            "driver_exp": exp.value!,
-            "driver_practice": practice.value!,
-            "driver_notes": notes.text!
+            "Driver-Exp": exp.value!,
+            "Driver-Practice": practice.value!,
+            "Driver-Notes": notes.text!
         ]
+    }
+    
+    override func setData(data: [String : String]) {
+        exp.setButton(data["Driver-Exp"]!)
+        practice.setButton(data["Driver-Practice"]!)
+        notes.text = data["Driver-Notes"]
+    }
+    
+    override func setEnabled(_ state: Bool) {
+        exp.setEnabled(state)
+        practice.setEnabled(state)
+        notes.isUserInteractionEnabled = state
     }
 }

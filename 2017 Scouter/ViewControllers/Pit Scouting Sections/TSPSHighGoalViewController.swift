@@ -57,19 +57,40 @@ class PSHighGoalViewController: PSSectionViewController, UITextFieldDelegate, UI
     
     override func getData() -> [String : String]? {
         if (!self.parentView!.state) {
-            return ["fuel_high": "false"]
+            return ["Fuel-High": "false"]
         }
         if (vision.value == nil || capacity.text! == "" || accuracy.value == nil) {
             return nil
         }
         return [
-            "fuel_high": "true",
-            "fuel_high_vision": vision.value!,
-            "fuel_high_in_key": String(describing: inKey.state),
-            "fuel_high_out_key": String(describing: outKey.state),
-            "fuel_high_capacity": capacity.text!,
-            "fuel_high_accuracy": accuracy.value!,
-            "fuel_high_notes": notes.text!
+            "Fuel-High": "true",
+            "Fuel-High-Vision": vision.value!,
+            "Fuel-High-In-Key": String(describing: inKey.toggleState),
+            "Fuel-High-Out-Key": String(describing: outKey.toggleState),
+            "Fuel-High-Capacity": capacity.text!,
+            "Fuel-High-Accuracy": accuracy.value!,
+            "Fuel-High-Notes": notes.text!
         ]
+    }
+    
+    override func setData(data: [String : String]) {
+        if (data["Fuel-High"] == "false") {
+            return
+        }
+        vision.setButton(data["Fuel-High-Vision"]!)
+        inKey.setToggle(data["Fuel-High-In-Key"]!)
+        outKey.setToggle(data["Fuel-High-Out-Key"]!)
+        capacity.text = data["Fuel-High-Capacity"]
+        accuracy.setButton(data["Fuel-High-Accuracy"]!)
+        notes.text = data["Fuel-High-Notes"]
+    }
+    
+    override func setEnabled(_ state: Bool) {
+        vision.setEnabled(state)
+        inKey.isEnabled = state
+        outKey.isEnabled = state
+        capacity.isUserInteractionEnabled = state
+        accuracy.setEnabled(state)
+        notes.isUserInteractionEnabled = state
     }
 }

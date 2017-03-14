@@ -44,18 +44,37 @@ class PSLiftoffViewController: PSSectionViewController, UITextViewDelegate {
     
     override func getData() -> [String : String]? {
         if(!self.parentView!.state) {
-            return ["takeoff": "false"]
+            return ["Takeoff": "false"]
         }
         if(climbSpeed.value == nil || ownRope.value == nil || climbTheirRope.value == nil || climbOurRope.value == nil) {
             return nil
         }
         return [
-            "takeoff": "true",
-            "takeoff_speed": climbSpeed.value!,
-            "takeoff_rope": ownRope.value!,
-            "takeoff_climb_their_rope": climbTheirRope.value!,
-            "takeoff_climb_our_rope": climbOurRope.value!,
-            "takeoff_notes": notes.text
+            "Takeoff": "true",
+            "Takeoff-Speed": climbSpeed.value!,
+            "Takeoff-Rope": ownRope.value!,
+            "Takeoff-Climb-Their-Rope": climbTheirRope.value!,
+            "Takeoff-Climb-Our-Rope": climbOurRope.value!,
+            "Takeoff-Notes": notes.text
         ]
+    }
+    
+    override func setData(data: [String : String]) {
+        if (data["Takeoff"] == "false") {
+            return
+        }
+        climbSpeed.setButton(data["Takeoff-Speed"]!)
+        ownRope.setButton(data["Takeoff-Rope"]!)
+        climbTheirRope.setButton(data["Takeoff-Climb-Their-Rope"]!)
+        climbOurRope.setButton(data["Takeoff-Climb-Our-Rope"]!)
+        notes.text = data["Takeoff-Notes"]
+    }
+    
+    override func setEnabled(_ state: Bool) {
+        climbSpeed.setEnabled(state)
+        ownRope.setEnabled(state)
+        climbTheirRope.setEnabled(state)
+        climbOurRope.setEnabled(state)
+        notes.isUserInteractionEnabled = state
     }
 }

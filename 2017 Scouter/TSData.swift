@@ -18,7 +18,8 @@ class Data {
     static var matchList = [TBAMatch]()
     static var timdList = [TIMD]()
     //    static var pitScoutingList = [PitScouting]()
-    static var pitScoutingList = [PitScouting(teamNumber: 8)]
+    static var pitScoutingList = [PitScouting]()
+    static var firebasePitScouting = [PitScouting]()
     
     static let fetchesTotal = 2
     static var fetchesComplete = 0
@@ -124,11 +125,15 @@ class Data {
     static func handleFirebaseJSON(value: NSDictionary) -> Void {
         if (((value.value(forKey: "query") as! NSDictionary).value(forKey: "success"))! as! String == "yes") {
             let teams = ((value.value(forKey: "query") as! NSDictionary).value(forKey: "event") as! NSDictionary).value(forKey: "teams") as! NSDictionary
+            firebasePitScouting.removeAll()
             //Set team data
             for (team) in teamList {
                 if let t = teams.value(forKey: String(team.teamNumber)) {
                     if let data = (t as! NSDictionary).value(forKey: "data") {
                         team.setFirebaseData(data: data as! NSDictionary)
+                    }
+                    if let pit = (t as! NSDictionary).value(forKey: "pit") {
+                        firebasePitScouting.append(PitScouting(teamNumber: team.teamNumber, data: pit as! NSDictionary, local: false))
                     }
                 }
             }
@@ -143,14 +148,15 @@ class Data {
                 let teamDict = value as! NSDictionary
 //                let teamNumber = Int((teamKey as! String).components(separatedBy: "frc")[1])!
                 let teamNumber = Int(teamKey as! String)!
-                let team = Data.getTeam(withNumber: teamNumber)!
-                for (compLevel, d) in teamDict.value(forKey: "timd") as! NSDictionary {
+                if let team = Data.getTeam(withNumber: teamNumber) {
+                    for (compLevel, d) in teamDict.value(forKey: "timd") as! NSDictionary {
 //                for (compLevel, d) in teamDict.value(forKey: "matches") as! NSDictionary {
-                    for (matchNum, data) in d as! NSDictionary {
-                        let match = Data.getMatch(withKey: Data.competition! + "_" + (compLevel as! String) + (matchNum as! String))!
-                        let timd = TIMD(team: team, match: match, data: data as! NSDictionary)
+                        for (matchNum, data) in d as! NSDictionary {
+                            let match = Data.getMatch(withKey: Data.competition! + "_" + (compLevel as! String) + (matchNum as! String))!
+                            let timd = TIMD(team: team, match: match, data: data as! NSDictionary)
 //                      timd.saveToCoreData()
-                        timdList.append(timd)
+                            timdList.append(timd)
+                        }
                     }
                 }
             }
@@ -175,13 +181,23 @@ class Data {
         for (timd) in timdList {
             timd.saveToCoreData()
         }
+        for (pitScouting) in firebasePitScouting {
+            pitScouting.saveToCoreData()
+        }
+    }
+    
+    static func saveLocalPitScoutingToCoreData() {
+        for (pitScouting) in pitScoutingList {
+            pitScouting.saveToCoreData()
+        }
     }
     
     static func fetchFromCoreData(event: String) {
         fetchTeamsFromCoreData(event: event)
         fetchMatchesFromCoreData(event: event)
         fetchTIMDsFromCoreData(event: event)
-//        fetchPitScoutingFromCoreData(event: event)
+        fetchLocalPitScoutingFromCoreData(event: event)
+        fetchFirebasePitScoutingFromCoreData(event: event)
     }
     
     static func fetchTeamsFromCoreData(event: String) {
@@ -288,7 +304,7 @@ class Data {
         }
     }
     
-    static func fetchPitScoutingFromCoreData(event: String) {
+    static func fetchLocalPitScoutingFromCoreData(event: String) {
         //Clear list
         pitScoutingList.removeAll()
         
@@ -308,6 +324,38 @@ class Data {
                     for i: NSManagedObject in managedObjectResults {
                         if (i.value(forKey: "event") as! String == Data.competition!) {
                             pitScoutingList.append(PitScouting(i))
+                        }
+                    }
+                }
+                
+            }
+            
+        } catch {
+            let fetchError = error as NSError
+            print(fetchError)
+        }
+    }
+    
+    static func fetchFirebasePitScoutingFromCoreData(event: String) {
+        //Clear list
+        firebasePitScouting.removeAll()
+        
+        //Getting stuff from the appDelegate
+        let appDel = UIApplication.shared.delegate as! AppDelegate
+        let managedContext = appDel.managedObjectContext
+        let entity = NSEntityDescription.entity(forEntityName: "FirebasePitScoutingEntity", in: managedContext)
+        
+        //Fetch Request
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>()
+        fetchRequest.entity = entity
+        
+        do {
+            let results = try managedContext.fetch(fetchRequest)
+            if (results.count > 0) {
+                if let managedObjectResults = results as? [NSManagedObject] {
+                    for i: NSManagedObject in managedObjectResults {
+                        if (i.value(forKey: "event") as! String == Data.competition!) {
+                            firebasePitScouting.append(PitScouting(i))
                         }
                     }
                 }
@@ -412,6 +460,26 @@ class Data {
             }
         }
         print("TIMD with team " + String(team.teamNumber) + " in " + match.key + " does not exist")
+        return nil
+    }
+    
+    static func getPitScoutingLocal(teamNumber: Int) -> PitScouting? {
+        for (pitScouting) in Data.pitScoutingList {
+            if (pitScouting.teamNumber == teamNumber) {
+                return pitScouting
+            }
+        }
+        print("Local Pit Scouting Data with team " + String(teamNumber) + " does not exist")
+        return nil
+    }
+    
+    static func getPitScoutingFirebase(teamNumber: Int) -> PitScouting? {
+        for (pitScouting) in Data.firebasePitScouting {
+            if (pitScouting.teamNumber == teamNumber) {
+                return pitScouting
+            }
+        }
+        print("Firebase Pit Scouting Data with team " + String(teamNumber) + " does not exist")
         return nil
     }
 //    static func sendToVC(value: NSDictionary){
