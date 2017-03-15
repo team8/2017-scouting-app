@@ -69,9 +69,10 @@ class ScannedMatchData {
         scoringElements["end_gear_ground_intake_rating"] = splitVersion[41]
         scoringElements["end_fuel_ground_intake"] = splitVersion[42]
         scoringElements["end_fuel_ground_intake_rating"] = splitVersion[43]
-        var notes = splitVersion[44]
-        if(splitVersion.count > 46) {
-            for i in 45..<splitVersion.count-1 {
+        scoringElements["end_driver_rating"] = splitVersion[44]
+        var notes = splitVersion[45]
+        if(splitVersion.count > 47) {
+            for i in 46..<splitVersion.count-1 {
                 notes += "," + splitVersion[i]
             }
         }
