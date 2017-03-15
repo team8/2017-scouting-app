@@ -143,7 +143,14 @@ class TeamListViewController: ViewController, UITextFieldDelegate, UIPickerViewD
                     return true
                 }
                 
-                if let s1 = t1Stat as? Int {
+                if let s1 = t1Stat as? Float {
+                    if let s2 = t2Stat as? Float {
+                        if (s1 == s2) {
+                            return t1.teamNumber < t2.teamNumber
+                        }
+                        return s1 > s2
+                    }
+                } else if let s1 = t1Stat as? Int {
                     if let s2 = t2Stat as? Int {
                         if (s1 == s2) {
                             return t1.teamNumber < t2.teamNumber

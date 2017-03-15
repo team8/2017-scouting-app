@@ -128,6 +128,10 @@ class Data {
                 Team.importantKeys = importantKeys as! String
                 UserDefaults.standard.set(importantKeys as! String, forKey: "important-keys")
             }
+            if let timdImportantKeys = ((value.value(forKey: "query") as! NSDictionary).value(forKey: "event") as! NSDictionary).value(forKey: "timd-important-keys") {
+                TIMD.importantKeys = timdImportantKeys as! String
+                UserDefaults.standard.set(timdImportantKeys as! String, forKey: "timd-important-keys")
+            }
             if let rankedStats = ((value.value(forKey: "query") as! NSDictionary).value(forKey: "event") as! NSDictionary).value(forKey: "ranked-stats") {
                 Team.rankedStats = rankedStats as! String
                 UserDefaults.standard.set(rankedStats as! String, forKey: "ranked-stats")
@@ -204,6 +208,9 @@ class Data {
     static func fetchFromCoreData(event: String) {
         if let importantKeys = UserDefaults.standard.value(forKey: "important-keys") {
             Team.importantKeys = importantKeys as! String
+        }
+        if let timdImportantKeys = UserDefaults.standard.value(forKey: "timd-important-keys") {
+            TIMD.importantKeys = timdImportantKeys as! String
         }
         if let rankedStats = UserDefaults.standard.value(forKey: "ranked-stats") {
             Team.rankedStats = rankedStats as! String

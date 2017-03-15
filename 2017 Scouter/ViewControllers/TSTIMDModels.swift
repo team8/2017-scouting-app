@@ -14,12 +14,20 @@ class TIMD: CoreData {
     var team: Team
     var match: TBAMatch
     
+    static var importantKeys = ""
+    
+    var importantStats = [String: Any]()
     var stats = [String: Any]()
     
     init(team: Team, match: TBAMatch, data: NSDictionary) {
         self.team = team
         self.match = match
-        for (key, value) in data {
+        let d = data.mutableCopy() as! NSMutableDictionary
+        for (key) in TIMD.importantKeys.components(separatedBy: ",") {
+            importantStats[key] = data.value(forKey: key)
+            d.removeObject(forKey: key)
+        }
+        for (key, value) in d {
             stats[key as! String] = value
         }
         super.init(entityName: "TIMDs")
@@ -32,6 +40,7 @@ class TIMD: CoreData {
             let teamNumber = dict.object(forKey: "teamNumber") as! Int
             self.team = Data.getTeam(withNumber: teamNumber)!
             self.match = Data.getMatch(withKey: (dict.object(forKey: "matchKey") as! String))!
+            self.importantStats = dict.object(forKey: "importantStats") as! Dictionary<String, Any>
             self.stats = dict.object(forKey: "stats") as! Dictionary<String, Any>
             super.init(managedObject)
         } catch {
@@ -43,6 +52,7 @@ class TIMD: CoreData {
         return [
             "teamNumber": self.team.teamNumber,
             "matchKey": self.match.key,
+            "importantStats": self.importantStats,
             "stats": self.stats
         ]
     }

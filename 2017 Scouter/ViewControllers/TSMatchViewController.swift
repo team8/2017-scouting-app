@@ -147,7 +147,11 @@ class MatchViewController: ViewController {
 //        print(match?.key)
         let url : URL = URL(string: "https://thebluealliance.com/match/\(match!.key)")!
         
-        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            // Fallback on earlier versions
+        }
         
     }
     @IBAction func refresh(_ sender: Any) {

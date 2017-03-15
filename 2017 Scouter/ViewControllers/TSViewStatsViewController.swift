@@ -61,18 +61,37 @@ class ViewStatsViewController: ViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "StatCell", for: indexPath)
-        
-        let key = (Array(timd!.stats.keys).sorted { $0 < $1 })[indexPath.row]
-        let value = String(describing: timd!.stats[key]!)
-        cell.textLabel?.text = key + ": " + value
-        cell.textLabel?.textColor = UIColor.white
-        cell.backgroundColor = UIColor.clear
-        
-        cell.textLabel?.numberOfLines=0
-        cell.textLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
-        
-        return cell
+        if (indexPath.row < (timd!.importantStats.count + 1) / 2) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ImportantCell", for: indexPath) as! ImportantCell
+            let key1 = Array(timd!.importantStats.keys)[indexPath.row * 2]
+            let value1 = String(describing: timd!.importantStats[key1]!)
+            cell.stat1.text = key1
+            cell.value1.text = value1
+            if !(indexPath.row * 2 + 1 == timd!.importantStats.count) {
+                let key2 = Array(timd!.importantStats.keys)[indexPath.row * 2 + 1]
+                let value2 = String(describing: timd!.importantStats[key2]!)
+                cell.stat2.text = key2
+                cell.value2.text = value2
+            } else {
+                cell.stat2.text = ""
+                cell.value2.text = ""
+            }
+            cell.backgroundColor = UIColor.clear
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "StatCell", for: indexPath)
+            
+            let key = (Array(timd!.stats.keys).sorted { $0 < $1 })[indexPath.row - (timd!.importantStats.count + 1) / 2]
+            let value = String(describing: timd!.stats[key]!)
+            cell.textLabel?.text = key + ": " + value
+            cell.textLabel?.textColor = UIColor.white
+            cell.backgroundColor = UIColor.clear
+            
+            cell.textLabel?.numberOfLines=0
+            cell.textLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
+            
+            return cell
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
@@ -104,7 +123,8 @@ class ViewStatsViewController: ViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (timd?.stats.count)!
+//        return (timd?.stats.count)!
+        return ((timd!.importantStats.count) + 1)/2 + timd!.stats.count
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {

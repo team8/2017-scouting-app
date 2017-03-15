@@ -152,12 +152,6 @@ class TeamInfoViewController: ViewController, UITableViewDelegate, UITableViewDa
         }
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let cell = tableView.cellForRow(at: indexPath) as! TeamTableViewCell
-//        self.performSegue(withIdentifier: "teamListToTeam", sender: cell.teamNum)
-    }
-    
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ((Data.getTeam(withNumber: self.teamNumber)?.importantStats.count)! + 1)/2 + (Data.getTeam(withNumber: self.teamNumber)?.otherStats.count)!
     }
