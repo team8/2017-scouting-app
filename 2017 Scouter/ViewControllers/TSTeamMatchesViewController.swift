@@ -95,8 +95,8 @@ class TeamMatchesViewController: ViewController, UITableViewDataSource, UITableV
         } else {
             //            cell.blueScore.text = String(match.blueWinChance!) + "%"
             //            cell.redScore.text = String(match.redWinChance!) + "%"
-            cell.blueScore.text = "Not"
-            cell.redScore.text = "Played"
+            cell.redScore.text = "Not"
+            cell.blueScore.text = "Played"
         }
         
         switch matchList[indexPath.row].matchType{

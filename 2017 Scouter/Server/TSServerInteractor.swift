@@ -67,7 +67,7 @@ class ServerInterfacer {
             .responseJSON { response in
                 if let JSON = response.result.value {
                     print("[Server Interactor] Successfully retrieved matches for event " + key)
-//                    print("JSON: \(JSON)")
+                    print("JSON: \(JSON)")
                     let rawVal = JSON as! NSDictionary
                     callback(rawVal)
                 }

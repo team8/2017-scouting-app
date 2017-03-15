@@ -18,6 +18,7 @@ class TeamViewController: ViewController {
     @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var rankLabel: UILabel!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     var embeddedViewController: UITabBarController?
     
@@ -33,6 +34,7 @@ class TeamViewController: ViewController {
         
         //Change Title to team #
         self.titleLabel.text = "Team " + String(self.teamNumber)
+        reloadData()
         
         if(self.navigationStack != nil) {
             self.navigationController?.viewControllers = self.navigationStack!
@@ -48,6 +50,12 @@ class TeamViewController: ViewController {
         }
         if (matchesViewController.matchTable != nil) {
             matchesViewController.matchTable.reloadData()
+        }
+        let team = Data.getTeam(withNumber: self.teamNumber)!
+        if let ranking = team.ranking {
+            self.rankLabel.text = "Rank #" + String(ranking) + " - " + team.rankingInfo!
+        } else {
+            self.rankLabel.text = ""
         }
     }
     

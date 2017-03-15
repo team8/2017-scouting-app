@@ -88,7 +88,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="240" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fYY-dF-546" id="CtO-Lb-SzT">
-                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="43"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </tableViewCellContentView>
                                             </tableViewCell>
@@ -190,7 +190,7 @@
                                         <rect key="frame" x="0.0" y="28" width="288" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eSW-YX-k4y" id="8KR-az-lpo">
-                                            <rect key="frame" x="0.0" y="0.0" width="288" height="54"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="288" height="54.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DeL-re-3Dj">
@@ -1372,12 +1372,20 @@
                                     <action selector="backPressed:" destination="MRI-NX-uRH" eventType="touchUpInside" id="xGA-yB-2no"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rank #99 - Ranking Score: 99.99 - 10-10-10 (W-L-T)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gy-qa-Ucm">
+                                <rect key="frame" x="25.5" y="71" width="269" height="14.5"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.04191788338" green="0.6047603627" blue="0.017816367989999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="sXn-AO-Y6p" secondAttribute="bottom" id="0It-4T-bct"/>
+                            <constraint firstItem="9gy-qa-Ucm" firstAttribute="top" secondItem="gAU-68-r9G" secondAttribute="bottom" constant="-4" id="1RW-Bh-ECu"/>
                             <constraint firstItem="mKM-cl-h9L" firstAttribute="centerY" secondItem="BIT-e3-wvX" secondAttribute="centerY" id="3g1-JQ-KIO"/>
                             <constraint firstAttribute="trailing" secondItem="4hb-H6-cE1" secondAttribute="trailing" id="5bl-bm-vQ4"/>
+                            <constraint firstItem="9gy-qa-Ucm" firstAttribute="centerX" secondItem="D6s-Xo-1mY" secondAttribute="centerX" id="7OS-ia-ROT"/>
                             <constraint firstItem="sXn-AO-Y6p" firstAttribute="leading" secondItem="D6s-Xo-1mY" secondAttribute="leading" id="FUM-SV-1ad"/>
                             <constraint firstItem="mKM-cl-h9L" firstAttribute="leading" secondItem="BIT-e3-wvX" secondAttribute="trailing" id="Gfq-Mh-iPO"/>
                             <constraint firstItem="sXn-AO-Y6p" firstAttribute="top" secondItem="mKM-cl-h9L" secondAttribute="bottom" constant="8" id="RhN-U9-7K9"/>
@@ -1395,6 +1403,7 @@
                     <connections>
                         <outlet property="backButton" destination="BIT-e3-wvX" id="iQr-6j-xpo"/>
                         <outlet property="menuButton" destination="frr-0K-FtF" id="DH9-mo-h8n"/>
+                        <outlet property="rankLabel" destination="9gy-qa-Ucm" id="JRZ-Gb-gtX"/>
                         <outlet property="segmentedControl" destination="mKM-cl-h9L" id="gQw-X9-daf"/>
                         <outlet property="titleLabel" destination="gAU-68-r9G" id="nXL-lH-7a0"/>
                         <segue destination="UAs-hX-Ox7" kind="unwind" identifier="teamToTeamList" unwindAction="teamListUnwindWithUnwindSegue:" id="C6F-Eb-o12"/>
@@ -2077,7 +2086,7 @@
                                                         <rect key="frame" x="0.0" y="28" width="304" height="70"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xif-Kr-qzq" id="IMc-Jc-lfe">
-                                                            <rect key="frame" x="0.0" y="0.0" width="304" height="69"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="304" height="69.5"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rdM-bL-fDT">
@@ -2089,13 +2098,13 @@
                                                                     </constraints>
                                                                 </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stat 1" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2X-GD-fDY">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="153" height="15"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="153" height="15.5"/>
                                                                     <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="12"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stat 2" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4AV-52-bCb">
-                                                                    <rect key="frame" x="152" y="0.0" width="152" height="15"/>
+                                                                    <rect key="frame" x="152" y="0.0" width="152" height="15.5"/>
                                                                     <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="12"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
@@ -2144,7 +2153,7 @@
                                                         <rect key="frame" x="0.0" y="98" width="304" height="44"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qpo-Px-AJA" id="own-bE-U5c">
-                                                            <rect key="frame" x="0.0" y="0.0" width="304" height="43"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="304" height="43.5"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                         </tableViewCellContentView>
                                                     </tableViewCell>
@@ -2284,7 +2293,7 @@
                                         <rect key="frame" x="0.0" y="28" width="288" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QVj-OG-arH" id="swW-Mo-VOb">
-                                            <rect key="frame" x="0.0" y="0.0" width="288" height="69"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="288" height="69.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cah-XL-Kbn">
@@ -2296,13 +2305,13 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stat 1" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n7c-d9-KoQ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="144.5" height="15.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="144.5" height="15"/>
                                                     <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="12"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stat 2" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Mz-nV-HPX">
-                                                    <rect key="frame" x="143.5" y="0.0" width="144.5" height="15.5"/>
+                                                    <rect key="frame" x="143.5" y="0.0" width="144.5" height="15"/>
                                                     <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="12"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -2351,7 +2360,7 @@
                                         <rect key="frame" x="0.0" y="98" width="288" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="byo-zO-TYH" id="cHk-Ig-f3p">
-                                            <rect key="frame" x="0.0" y="0.0" width="288" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="288" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>

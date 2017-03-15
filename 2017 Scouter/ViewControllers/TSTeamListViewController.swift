@@ -125,6 +125,8 @@ class TeamListViewController: ViewController, UITextFieldDelegate, UIPickerViewD
             }).reversed()
             if let ri = self.sortedTeamList[indexPath.row].rankingInfo {
                 cell.sortStat.text = ri
+            } else {
+                cell.sortStat.text = "N/A"
             }
             break
         default:
