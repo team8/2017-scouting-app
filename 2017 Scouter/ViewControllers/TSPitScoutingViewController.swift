@@ -109,7 +109,13 @@ class PitScoutingViewController: ViewController {
     }
     @IBAction func saveUploadPressed(_ sender: Any) {
         if (self.viewing)! {
-            ServerInterfacer.uploadPitData(with: self.pitScouting!.stats, callback: statusOfSubmission(_:))
+            let alert = UIAlertController(title: "Upload Confirmation", message: "Are you sure you want to upload this pit scouting data? This will overwrite any previous pit scouting data.", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: { (action) in
+                ServerInterfacer.uploadPitData(with: self.pitScouting!.stats, callback: self.statusOfSubmission(_:))
+            }))
+            alert.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.default, handler: { (action) in
+            }))
+            self.present(alert, animated: true, completion: nil)
         } else {
             var data = [String: String]()
             for vc in sectionVCs {

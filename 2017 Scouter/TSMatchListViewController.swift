@@ -136,8 +136,10 @@ class MatchListViewController: ViewController, UITableViewDataSource, UITableVie
             cell.blueScore.text = String(match.blueScore!)
             cell.redScore.text = String(match.redScore!)
         } else {
-            cell.blueScore.text = String(match.blueWinChance!) + "%"
-            cell.redScore.text = String(match.redWinChance!) + "%"
+//            cell.blueScore.text = String(match.blueWinChance!) + "%"
+//            cell.redScore.text = String(match.redWinChance!) + "%"
+            cell.blueScore.text = "Not"
+            cell.redScore.text = "Played"
         }
         
         switch match.matchType{

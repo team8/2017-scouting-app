@@ -93,8 +93,10 @@ class TeamMatchesViewController: ViewController, UITableViewDataSource, UITableV
             cell.blueScore.text = String(matchList[indexPath.row].blueScore!)
             cell.redScore.text = String(matchList[indexPath.row].redScore!)
         } else {
-            cell.blueScore.text = String(matchList[indexPath.row].blueWinChance!) + "%"
-            cell.redScore.text = String(matchList[indexPath.row].redWinChance!) + "%"
+            //            cell.blueScore.text = String(match.blueWinChance!) + "%"
+            //            cell.redScore.text = String(match.redWinChance!) + "%"
+            cell.blueScore.text = "Not"
+            cell.redScore.text = "Played"
         }
         
         switch matchList[indexPath.row].matchType{

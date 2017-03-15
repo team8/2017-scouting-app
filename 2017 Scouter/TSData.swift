@@ -57,7 +57,12 @@ class Data {
                 let payloadDict = value as! NSDictionary
                 
                 let teamNumber = payloadDict.object(forKey: "team_number") as! Int
-                let team = Team(teamNumber: teamNumber)
+                var team: Team
+                if let ranking = payloadDict.object(forKey: "ranking") {
+                    team = Team(teamNumber: teamNumber, ranking: ranking as? Int, rankingInfo: payloadDict.object(forKey: "rankingInfo") as? String)
+                } else {
+                    team = Team(teamNumber: teamNumber, ranking: nil, rankingInfo: nil	)
+                }
 //                team.saveToCoreData()
                 teamList.append(team)
                 

@@ -64,43 +64,48 @@ class MatchViewController: ViewController {
         //Parent
         self.redAllianceView.parent = self
         self.blueAllianceView.parent = self
-        //Scores
-        self.redAllianceView.score.text = String(self.match!.redScore!)
-        self.blueAllianceView.score.text = String(self.match!.blueScore!)
-        //Winner/loser/tie
-        if(self.match!.redScore! > self.match!.blueScore!) {
-            self.redAllianceView.winner.text = "Winner"
-            self.redAllianceView.score.font = UIFont(name: "Lato-Bold", size: 50)
-            self.blueAllianceView.winner.text = "Loser"
-        } else if(self.match!.redScore! < self.match!.blueScore!) {
-            self.redAllianceView.winner.text = "Loser"
-            self.blueAllianceView.winner.text = "Winner"
-            self.blueAllianceView.score.font = UIFont(name: "Lato-Bold", size: 50)
-        } else {
-            self.redAllianceView.winner.text = "Tie"
-            self.blueAllianceView.winner.text = "Tie"
-        }
         
-        //Match stats
-        //        if(!self.match!.redFourRotor!) {
-        //            self.redAllianceView.fourRotor.image = UIImage(named: "four-rotor-false")
-        //        }
-        //        if(!self.match!.blueFourRotor!) {
-        //            self.blueAllianceView.fourRotor.image = UIImage(named: "four-rotor-false")
-        //        }
-        self.redAllianceView.rotorLabel.text = String(self.match!.redRotor!)
-        self.blueAllianceView.rotorLabel.text = String(self.match!.blueRotor!)
-        if(!self.match!.redFortyKPa!) {
-            self.redAllianceView.fortyKPa.image = UIImage(named: "forty-kpa-false")
+        if (self.match!.played) {
+            //Scores
+            self.redAllianceView.score.text = String(self.match!.redScore!)
+            self.blueAllianceView.score.text = String(self.match!.blueScore!)
+            //Winner/loser/tie
+            if(self.match!.redScore! > self.match!.blueScore!) {
+                self.redAllianceView.winner.text = "Winner"
+                self.redAllianceView.score.font = UIFont(name: "Lato-Bold", size: 50)
+                self.blueAllianceView.winner.text = "Loser"
+            } else if(self.match!.redScore! < self.match!.blueScore!) {
+                self.redAllianceView.winner.text = "Loser"
+                self.blueAllianceView.winner.text = "Winner"
+                self.blueAllianceView.score.font = UIFont(name: "Lato-Bold", size: 50)
+            } else {
+                self.redAllianceView.winner.text = "Tie"
+                self.blueAllianceView.winner.text = "Tie"
+            }
+            
+            //Match stats
+            //        if(!self.match!.redFourRotor!) {
+            //            self.redAllianceView.fourRotor.image = UIImage(named: "four-rotor-false")
+            //        }
+            //        if(!self.match!.blueFourRotor!) {
+            //            self.blueAllianceView.fourRotor.image = UIImage(named: "four-rotor-false")
+            //        }
+            self.redAllianceView.rotorLabel.text = String(self.match!.redRotor!)
+            self.blueAllianceView.rotorLabel.text = String(self.match!.blueRotor!)
+            if(!self.match!.redFortyKPa!) {
+                self.redAllianceView.fortyKPa.image = UIImage(named: "forty-kpa-false")
+            } else {
+                self.redAllianceView.fortyKPa.image = UIImage(named: "forty-kpa-true")
+            }
+            if(!self.match!.blueFortyKPa!) {
+                self.blueAllianceView.fortyKPa.image = UIImage(named: "forty-kpa-false")
+            } else {
+                self.blueAllianceView.fortyKPa.image = UIImage(named: "forty-kpa-true")
+            }
         } else {
-            self.redAllianceView.fortyKPa.image = UIImage(named: "forty-kpa-true")
+            self.redAllianceView.score.text = "Not"
+            self.blueAllianceView.score.text = "Played"
         }
-        if(!self.match!.blueFortyKPa!) {
-            self.blueAllianceView.fortyKPa.image = UIImage(named: "forty-kpa-false")
-        } else {
-            self.blueAllianceView.fortyKPa.image = UIImage(named: "forty-kpa-true")
-        }
-        
         //Teams
         for (button) in self.redAllianceView.teamButtons {
             button.setTitle(String(self.match!.red[button.tag].teamNumber), for: .normal)

@@ -18,7 +18,7 @@ class TeamListViewController: ViewController, UITextFieldDelegate, UIPickerViewD
     @IBOutlet weak var menuButton: UIButton!
     
     @IBOutlet weak var sortTextField: UITextField!
-    let sortCriteria = ["Team Number"]
+    let sortCriteria = ["Team Number", "Ranking"]
     var criteriaIndex = 0
     var sortedTeamList = [Team]()
     let pickerView = UIView(frame: CGRect(x: 0, y: 0, width: 320, height: 200))
@@ -112,13 +112,21 @@ class TeamListViewController: ViewController, UITextFieldDelegate, UIPickerViewD
                 return t1.teamNumber < t2.teamNumber
             })
             break
-//        case 1:
-//            //Ranking
-//            //temporary reverse sorting
-//            self.sortedTeamList = Data.teamList.sorted(by: { (t1: Team, t2: Team) -> Bool in
-//                return t1.teamNumber < t2.teamNumber
-//            }).reversed()
-//            break
+        case 1:
+            //Ranking
+            //temporary reverse sorting
+            self.sortedTeamList = Data.teamList.sorted(by: { (t1: Team, t2: Team) -> Bool in
+                if let r1 = t1.ranking {
+                    if let r2 = t2.ranking {
+                        return r1 > r2
+                    }
+                }
+                return t1.teamNumber < t2.teamNumber
+            }).reversed()
+            if let ri = self.sortedTeamList[indexPath.row].rankingInfo {
+                cell.sortStat.text = ri
+            }
+            break
         default:
             let key = Team.rankedStats.components(separatedBy: ",")[self.criteriaIndex - self.sortCriteria.count]
             self.sortedTeamList = Data.teamList.sorted(by: { (t1: Team, t2: Team) -> Bool in
