@@ -167,13 +167,15 @@ class Data {
 //                let teamNumber = Int((teamKey as! String).components(separatedBy: "frc")[1])!
                 let teamNumber = Int(teamKey as! String)!
                 if let team = Data.getTeam(withNumber: teamNumber) {
-                    for (compLevel, d) in teamDict.value(forKey: "timd") as! NSDictionary {
+                    if let matches = teamDict.value(forKey: "timd") {
+                        for (compLevel, d) in matches as! NSDictionary {
 //                for (compLevel, d) in teamDict.value(forKey: "matches") as! NSDictionary {
-                        for (matchNum, data) in d as! NSDictionary {
-                            let match = Data.getMatch(withKey: Data.competition! + "_" + (compLevel as! String) + (matchNum as! String))!
-                            let timd = TIMD(team: team, match: match, data: data as! NSDictionary)
+                            for (matchNum, data) in d as! NSDictionary {
+                                let match = Data.getMatch(withKey: Data.competition! + "_" + (compLevel as! String) + (matchNum as! String))!
+                                let timd = TIMD(team: team, match: match, data: data as! NSDictionary)
 //                      timd.saveToCoreData()
-                            timdList.append(timd)
+                                timdList.append(timd)
+                            }
                         }
                     }
                 }
