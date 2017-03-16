@@ -114,7 +114,6 @@ class TeamListViewController: ViewController, UITextFieldDelegate, UIPickerViewD
             break
         case 1:
             //Ranking
-            //temporary reverse sorting
             self.sortedTeamList = Data.teamList.sorted(by: { (t1: Team, t2: Team) -> Bool in
                 if let r1 = t1.ranking {
                     if let r2 = t2.ranking {
@@ -122,7 +121,7 @@ class TeamListViewController: ViewController, UITextFieldDelegate, UIPickerViewD
                     }
                 }
                 return t1.teamNumber < t2.teamNumber
-            }).reversed()
+            })
             if let ri = self.sortedTeamList[indexPath.row].rankingInfo {
                 cell.sortStat.text = ri
             } else {
