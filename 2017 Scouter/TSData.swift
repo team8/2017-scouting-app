@@ -182,7 +182,7 @@ class Data {
                         }
                     }
                 } else {
-                    ServerInterfacer.sendBug(data: "[Firebase Data Error] Team " + teamNumber + " does not exist", callback: { _ in })
+                    ServerInterfacer.sendBug(data: "[Firebase Data Error] Team " + String(teamNumber) + " does not exist", callback: { _ in })
                 }
             }
             
