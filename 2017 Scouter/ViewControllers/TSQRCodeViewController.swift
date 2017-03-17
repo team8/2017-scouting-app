@@ -63,7 +63,7 @@ class QRCodeViewController : ViewController, QRCodeReaderViewControllerDelegate,
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ScannedMatchData.CURRENT_DATA_ELEMENTS_NUMBER
+        return ScannedMatchData.keys.count + 2
     }
 
     
