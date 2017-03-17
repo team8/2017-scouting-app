@@ -175,10 +175,14 @@ class Data {
                                     let timd = TIMD(team: team, match: match, data: data as! NSDictionary)
 //                      timd.saveToCoreData()
                                     timdList.append(timd)
+                                } else {
+                                    ServerInterfacer.sendBug(data: "[Firebase Data Error] Match " + Data.competition! + "_" + (compLevel as! String) + (matchNum as! String) + " does not exist", callback: { _ in })
                                 }
                             }
                         }
                     }
+                } else {
+                    ServerInterfacer.sendBug(data: "[Firebase Data Error] Team " + teamNumber + " does not exist", callback: { _ in })
                 }
             }
             
