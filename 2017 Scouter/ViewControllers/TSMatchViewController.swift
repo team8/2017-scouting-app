@@ -24,6 +24,8 @@ class MatchViewController: ViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        MatchStrategyViewController.match = match
+        
         //Menu Button Image Sizing
         menuButton.imageEdgeInsets = UIEdgeInsetsMake(10, 20, 10, 20)
         backButton.imageEdgeInsets = UIEdgeInsetsMake(10, 20, 10, 20)
