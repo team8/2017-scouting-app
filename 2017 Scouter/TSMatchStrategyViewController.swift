@@ -71,9 +71,78 @@ class MatchStrategyViewController : ViewController {
         
         
         let cycle : Double = team.importantStats["Tele-Gears-Cycles-Average"]! as! Double
-        retVal += "Gear Count Average: \(round(1000*cycle)/1000) \n\n"
-    
-        return retVal
+        retVal += "Gear Count Average: \(round(1000*cycle)/1000) \n"
+        
+        var rotorString = "Rotors Spinning: "
+        
+        for match in team.matches {
+            if (match.blue[0].teamNumber == team.teamNumber || match.blue[1].teamNumber == team.teamNumber || match.blue[2].teamNumber == team.teamNumber) {
+                if (match.matchNumber == team.matches[team.matches.count - 1].matchNumber) {
+                    rotorString += "\(match.blueRotor!)"
+                } else {
+                    rotorString += "\(match.blueRotor!), "
+                }
+            }
+            else {
+                if (match.matchNumber == team.matches[team.matches.count - 1].matchNumber) {
+                    rotorString += "\(match.redRotor!)"
+                } else {
+                    rotorString += "\(match.redRotor!), "
+                }
+            }
+        }
+        
+        retVal += rotorString + "\n"
+        
+        retVal += "AUTO: \n"
+        retVal += "Overall Rate: \(team.otherStats["Auto-Gears-Achieve-Rate"]!)\n"
+        
+        var centerCount = 0
+        var boilerCount = 0
+        var loadingCount = 0
+        
+        var centerFail = 0
+        var boilerFail = 0
+        var loadingFail = 0
+        
+        for match in team.matches {
+            let timd = Data.getTIMD(team: team, match: match)
+            
+            if (timd == nil) {
+                continue
+            }
+            
+            if ((timd?.stats["Auto-Gears-Positions"] as! String).contains("b")){
+                boilerCount += 1
+            }
+            if ((timd?.stats["Auto-Gears-Positions"] as! String).contains("l")){
+                loadingCount += 1
+            }
+            if ((timd?.stats["Auto-Gears-Positions"] as! String).contains("m")){
+                centerCount += 1
+            }
+            
+            if ((timd?.stats["Auto-Gears-Failed-Positions"] as! String).contains("b")){
+                boilerFail += 1
+            }
+            if ((timd?.stats["Auto-Gears-Failed-Positions"] as! String).contains("l")){
+                loadingFail += 1
+            }
+            if ((timd?.stats["Auto-Gears-Failed-Positions"] as! String).contains("m")){
+                centerFail += 1
+            }
+        }
+        
+        let roundCenter = 100 * (centerCount + centerFail) == 0 ? 0 : Double(round(100*Double(centerCount/(centerCount + centerFail)))/100)
+        
+        
+        let roundSide = 100 * (boilerCount + boilerFail + loadingFail + loadingCount) == 0 ? 0 : Double(round(100*Double((boilerCount + loadingCount)/(boilerCount + boilerFail + loadingFail + loadingCount)))/100)
+        
+        retVal += "Center Peg: \(centerCount) in \(centerCount+centerFail) attempts (\(roundCenter)%) \n"
+        
+        retVal += "Side Peg: \(boilerCount + loadingCount) in \(boilerCount + loadingCount + loadingFail + boilerFail) attempts (\(roundSide)%) \n"
+        
+        return retVal + "\n\n"
     }
     
 }
