@@ -45,12 +45,15 @@ class MatchStrategyViewController : ViewController {
         
         // Begin Climb
         
+        print(team.teamNumber)
         let percent : Double = team.importantStats["End-Takeoff-Achieve-Rate"]! as! Double
         print(percent)
         retVal = "Climb: \((round(1000*percent)/10))%"
         
         var climbCount : Int = 0
         var total : Int = 0
+        
+        var gearString = "Gears Delivered:"
         
         for match in team.matches {
             let timd = Data.getTIMD(team: team, match: match)
@@ -61,6 +64,9 @@ class MatchStrategyViewController : ViewController {
             if timd?.stats["End-Takeoff"] as! String == "2" {
                 climbCount += 1
             }
+            
+            gearString += timd?.stats["Tele-Gears-Cycles"] as! String + ", "
+            
             total += 1
         }
         
@@ -72,29 +78,27 @@ class MatchStrategyViewController : ViewController {
         
         let cycle : Double = team.importantStats["Tele-Gears-Cycles-Average"]! as! Double
         retVal += "Gear Count Average: \(round(1000*cycle)/1000) \n"
+        retVal += gearString + "\n"
         
         var rotorString = "Rotors Spinning: "
         
         for match in team.matches {
+            
+            if !match.played {
+                continue
+            }
+            
             if (match.blue[0].teamNumber == team.teamNumber || match.blue[1].teamNumber == team.teamNumber || match.blue[2].teamNumber == team.teamNumber) {
-                if (match.matchNumber == team.matches[team.matches.count - 1].matchNumber) {
-                    rotorString += "\(match.blueRotor!)"
-                } else {
-                    rotorString += "\(match.blueRotor!), "
-                }
+                rotorString += "\(match.blueRotor!), "
             }
             else {
-                if (match.matchNumber == team.matches[team.matches.count - 1].matchNumber) {
-                    rotorString += "\(match.redRotor!)"
-                } else {
-                    rotorString += "\(match.redRotor!), "
-                }
+                rotorString += "\(match.redRotor!), "
             }
         }
         
-        retVal += rotorString + "\n"
+        retVal += rotorString + "\n\n"
         
-        retVal += "AUTO: \n"
+        retVal += "Auto: \n"
         retVal += "Overall Rate: \(team.otherStats["Auto-Gears-Achieve-Rate"]!)\n"
         
         var centerCount = 0
@@ -133,10 +137,11 @@ class MatchStrategyViewController : ViewController {
             }
         }
         
-        let roundCenter = 100 * (centerCount + centerFail) == 0 ? 0 : Double(round(100*Double(centerCount/(centerCount + centerFail)))/100)
+        // Ternary operator used to prevent ZDE
+        let roundCenter = 100 * ((centerCount + centerFail) == 0 ? 0 : Double(round(100*Double(centerCount/(centerCount + centerFail)))/100))
         
         
-        let roundSide = 100 * (boilerCount + boilerFail + loadingFail + loadingCount) == 0 ? 0 : Double(round(100*Double((boilerCount + loadingCount)/(boilerCount + boilerFail + loadingFail + loadingCount)))/100)
+        let roundSide = 100 * ((boilerCount + boilerFail + loadingFail + loadingCount) == 0 ? 0 : Double(round(100*Double((boilerCount + loadingCount)/(boilerCount + boilerFail + loadingFail + loadingCount)))/100))
         
         retVal += "Center Peg: \(centerCount) in \(centerCount+centerFail) attempts (\(roundCenter)%) \n"
         

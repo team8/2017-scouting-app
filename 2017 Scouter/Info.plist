@@ -17,13 +17,13 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.1</string>
+	<string>8-svr-2</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>8</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
-		<string>58279a3488c9e145bd56169ac115b3ba37a3e43d</string>
+		<string>ce18d342bdc64bfebf948896e4f01d716b2a47b2</string>
 		<key>Kits</key>
 		<array>
 			<dict>
