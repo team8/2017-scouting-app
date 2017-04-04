@@ -209,6 +209,20 @@ class TBAMatch: CoreData {
         }
     }
     
+    func hasTeam(team: Team) -> Bool {
+        for t in blue {
+            if t.teamNumber == team.teamNumber {
+                return true
+            }
+        }
+        for t in red {
+            if t.teamNumber == team.teamNumber {
+                return true
+            }
+        }
+        return false
+    }
+    
     override func getJSON() -> NSDictionary {
         var blue = [Int]()
         for (team) in self.blue {
