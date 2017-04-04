@@ -462,7 +462,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" 58279a3488c9e145bd56169ac115b3ba37a3e43d 11948ecb9cd2a7cf642ce4109117fa961cf772ff8e521321ed742ef62b4ac117";
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" ce18d342bdc64bfebf948896e4f01d716b2a47b2";
 		};
 		BD66C2AD3732E6908DBE0F86 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -657,9 +657,10 @@
 				INFOPLIST_FILE = "2017 Scouter/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.palyrobotics.-017-Scouter";
+				PRODUCT_BUNDLE_IDENTIFIER = com.palyrobotics.017Scouter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -681,9 +682,10 @@
 				INFOPLIST_FILE = "2017 Scouter/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.palyrobotics.-017-Scouter";
+				PRODUCT_BUNDLE_IDENTIFIER = com.palyrobotics.017Scouter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
