@@ -46,6 +46,8 @@ class MatchStrategyViewController : ViewController {
         // Begin Climb
         
         print(team.teamNumber)
+        print(team.importantStats)
+        print(team.otherStats)
         let percent : Double = team.importantStats["End-Takeoff-Achieve-Rate"]! as! Double
         print(percent)
         retVal = "Climb: \((round(1000*percent)/10))%"
