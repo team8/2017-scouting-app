@@ -53,11 +53,13 @@ class MatchStrategyViewController : ViewController {
         var climbCount : Int = 0
         var total : Int = 0
         
-        var gearString = "Gears Delivered:"
+        var gearString = "Gears Delivered: "
+        
+        var notes = "Notes:\n\n"
         
         for match in team.matches {
             let timd = Data.getTIMD(team: team, match: match)
-            if (timd == nil) {
+            if (timd == nil || timd?.stats.count == 0) {
                 continue
             }
             
@@ -68,6 +70,11 @@ class MatchStrategyViewController : ViewController {
             gearString += timd?.stats["Tele-Gears-Cycles"] as! String + ", "
             
             total += 1
+            
+            if timd?.stats["End-Notes"] != nil && timd?.stats["End-Notes"] as! String != "" {
+                notes += "QM \(match.matchNumber): "
+                notes += timd?.stats["End-Notes"] as! String + "\n"
+            }
         }
         
         retVal += "(\(climbCount) of \(total)) \n"
@@ -146,6 +153,8 @@ class MatchStrategyViewController : ViewController {
         retVal += "Center Peg: \(centerCount) in \(centerCount+centerFail) attempts (\(roundCenter)%) \n"
         
         retVal += "Side Peg: \(boilerCount + loadingCount) in \(boilerCount + loadingCount + loadingFail + boilerFail) attempts (\(roundSide)%) \n"
+        
+        retVal += notes
         
         return retVal + "\n\n"
     }

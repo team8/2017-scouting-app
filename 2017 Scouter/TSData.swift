@@ -290,7 +290,7 @@ class Data {
                             matchList.append(TBAMatch(i))
                         }
                     }
-                    orderMatches()
+                    orderMatches()  
                     
                     //Populate teams with matches
                     for (team) in teamList {

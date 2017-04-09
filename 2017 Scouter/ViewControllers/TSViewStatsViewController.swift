@@ -61,7 +61,11 @@ class ViewStatsViewController: ViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        print (indexPath.row)
+//        print((timd!.importantStats.count + 1) / 2)
+        
         if (indexPath.row < (timd!.importantStats.count + 1) / 2) {
+            print("HERE")
             let cell = tableView.dequeueReusableCell(withIdentifier: "ImportantCell", for: indexPath) as! ImportantCell
             let key1 = Array(timd!.importantStats.keys)[indexPath.row * 2]
             let value1 = String(describing: timd!.importantStats[key1]!)
@@ -83,7 +87,7 @@ class ViewStatsViewController: ViewController, UITableViewDataSource, UITableVie
             
             let key = (Array(timd!.stats.keys).sorted { $0 < $1 })[indexPath.row - (timd!.importantStats.count + 1) / 2]
             let value = String(describing: timd!.stats[key]!)
-            cell.textLabel?.text = key + ": " + value
+            cell.textLabel?.text = key.replacingOccurrences(of: "-", with: " ").replacingOccurrences(of: "Tele", with: "Teleop") + ": " + value
             cell.textLabel?.textColor = UIColor.white
             cell.backgroundColor = UIColor.clear
             
@@ -172,4 +176,5 @@ class ViewStatsViewController: ViewController, UITableViewDataSource, UITableVie
     @IBAction func viewStatsUnwind(unwindSegue: UIStoryboardSegue) {
         
     }
+    
 }
