@@ -13,7 +13,7 @@ class ServerInterfacer {
     
     // This can be public because it can be changed so easily
 //    static let AUTH_TOKEN = "R0yMFRkeaaHPlWWkf73W00C88pHYNVNeFXPrsO8N"
-    static let AUTH_TOKEN = "password"
+    static let AUTH_TOKEN = "roebling"
     static let SERVER_ADDRESS = "http://server.palyrobotics.com:5000"
     
     static func testConnection(_ callback: @escaping (Bool) -> Void) -> Void {

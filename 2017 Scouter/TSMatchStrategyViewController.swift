@@ -48,9 +48,10 @@ class MatchStrategyViewController : ViewController {
         print(team.teamNumber)
         print(team.importantStats)
         print(team.otherStats)
-        let percent : Double = team.importantStats["End-Takeoff-Achieve-Rate"]! as! Double
+        let percent : String = team.importantStats["End-Takeoff-Achieve-Rate"]! as! String
         print(percent)
-        retVal = "Climb: \((round(1000*percent)/10))%"
+//        retVal = "Climb: \((round(1000*percent)/10))%"
+        retVal = "Climb: " + percent + "\n"
         
         var climbCount : Int = 0
         var total : Int = 0
@@ -59,6 +60,8 @@ class MatchStrategyViewController : ViewController {
         
         var notes = "Notes:\n\n"
         
+//        It was changed so that the server calculated the end-takeoff success counts
+//        This is here only for completeness
         for match in team.matches {
             let timd = Data.getTIMD(team: team, match: match)
             if (timd == nil || timd?.stats.count == 0) {
@@ -79,7 +82,7 @@ class MatchStrategyViewController : ViewController {
             }
         }
         
-        retVal += "(\(climbCount) of \(total)) \n"
+//        retVal += "(\(climbCount) of \(total)) \n"
         // End Climb
         
         retVal += "Climb Speed: \(team.importantStats["End-Takeoff-Speed-Average"]!)\n"

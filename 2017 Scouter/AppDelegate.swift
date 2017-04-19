@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var ref: FIRDatabaseReference!
     
     static let compList = ["Ventura 2017", "SVR 2017", "Champs 2017"]
-    static let compIDs = ["2017cave", "2017casj", "2017cmptx"]
+    static let compIDs = ["2017cave", "2017casj", "2017roe"]
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
